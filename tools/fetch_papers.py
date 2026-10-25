@@ -130,6 +130,11 @@ def rss(feed):
             creators = [c.strip() for c in creators[0].split(",")]
         a = (creators[0] + (" et al." if len(creators) > 1 else "")) if creators else ""
         j = clean(f("prism:publicationName", "dc:source")) or feed.get("journal", "")
+        if not j:
+            # Nature subject feeds: description starts "Leukemia, Published online: ..."
+            m = re.match(r"\s*([^,<]{2,60}), Published online", clean(f("description", "rss1:description", "content:encoded")))
+            if m:
+                j = m.group(1).strip()
         doi = clean(f("prism:doi", "dc:identifier")).replace("doi:", "")
         if not link and doi:
             link = "https://doi.org/" + doi
