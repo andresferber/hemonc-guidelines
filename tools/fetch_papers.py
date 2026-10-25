@@ -143,6 +143,51 @@ def rss(feed):
     return out
 
 
+NATURE = {"s41375": "Leukemia", "s41408": "Blood Cancer J", "s41409": "Bone Marrow Transplant", "s41591": "Nat Med",
+          "s41586": "Nature", "s41467": "Nat Commun", "s41598": "Sci Rep", "s41571": "Nat Rev Clin Oncol", "s43018": "Nat Cancer",
+          "s41416": "Br J Cancer", "s41388": "Oncogene", "s41392": "Signal Transduct Target Ther", "s41588": "Nat Genet",
+          "s41590": "Nat Immunol", "s41587": "Nat Biotechnol", "s41572": "Nat Rev Dis Primers", "s41573": "Nat Rev Drug Discov",
+          "s41577": "Nat Rev Immunol", "s41698": "NPJ Precis Oncol", "s41389": "Oncogenesis", "s41419": "Cell Death Dis",
+          "s41420": "Cell Death Discov", "s41422": "Cell Res", "s41423": "Cell Mol Immunol", "s42003": "Commun Biol",
+          "s43856": "Commun Med", "s41379": "Mod Pathol", "s41436": "Genet Med", "s41417": "Cancer Gene Ther", "s41401": "Acta Pharmacol Sin"}
+SKIP = re.compile(r"^(author correction|publisher correction|correction|erratum|retraction|addendum)\b", re.I)
+
+
+def enrich(items):
+    """Fill journal and first author from PubMed by DOI; fall back to the Nature journal code."""
+    dois = {}
+    for it in items:
+        m = re.search(r"nature\.com/articles/(s\d{5}-\d{3}-\d{5}-\w)", it["u"]) or re.search(r"(10\.\d{4,}/[^?#\s]+)", it["u"])
+        if not m:
+            continue
+        doi = m.group(1) if m.group(1).startswith("10.") else "10.1038/" + m.group(1)
+        dois[doi.lower()] = it
+        if not it.get("j") and m.group(1).startswith("s"):
+            it["j"] = NATURE.get(m.group(1)[:6], "Nature Portfolio")
+    if not dois:
+        return
+    try:
+        term = " OR ".join('"%s"[aid]' % d for d in dois)
+        ids = json.loads(get(EU + "esearch.fcgi?db=pubmed&retmode=json&retmax=50&term=" + urllib.parse.quote(term)))["esearchresult"]["idlist"]
+        time.sleep(0.5)
+        if not ids:
+            return
+        d = json.loads(get(EU + "esummary.fcgi?db=pubmed&retmode=json&id=" + ",".join(ids)))["result"]
+        for k in d["uids"]:
+            x = d[k]
+            doi = next((a["value"] for a in x.get("articleids", []) if a["idtype"] == "doi"), "").lower()
+            it = dois.get(doi)
+            if not it:
+                continue
+            au = x.get("authors") or []
+            it["j"] = x.get("source") or it.get("j", "")
+            if au and not it.get("a"):
+                it["a"] = au[0]["name"] + (" et al." if len(au) > 1 else "")
+            it["p"] = k
+    except Exception:
+        pass
+
+
 def main():
     old = {}
     if os.path.exists(OUT):
@@ -153,6 +198,10 @@ def main():
         rec = dict(key=fd["key"], title=fd["title"], sub=fd["sub"], home=fd["home"])
         try:
             items = pubmed(fd) if fd["kind"] == "pubmed" else rss(fd)
+            items = [x for x in items if not SKIP.match(x["t"])]
+            if fd["kind"] == "rss":
+                enrich(items)
+                time.sleep(0.5)
             if not items:
                 raise ValueError("no items")
             items.sort(key=lambda x: x.get("d") or "", reverse=True)
