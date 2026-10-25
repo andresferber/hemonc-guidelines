@@ -2199,15 +2199,14 @@
    "o": "IMWG",
    "p": "31162104",
    "x": "Whole-body low-dose CT, MRI and PET/CT in myeloma.",
+   "norepo": true,
    "t": "International myeloma working group consensus recommendations on imaging in monoclonal plasma cell disorders",
    "j": "Lancet Oncol",
    "d": "2019-06",
    "cite": "Lancet Oncol 2019;20(6):e302-e312",
    "doi": "10.1016/S1470-2045(19)30309-2",
    "pmc": "",
-   "au": "Hillengass J",
-   "free": "repo",
-   "repo": "http://hdl.handle.net/10366/162974"
+   "au": "Hillengass J"
   },
   {
    "k": "eortc-img-2021",
@@ -2232,15 +2231,14 @@
    "o": "ESC / ESR",
    "p": "40459417",
    "x": "Technique and reporting of CTPA.",
+   "norepo": true,
    "t": "Optimal Approach to Performing and Reporting Computed Tomography Angiography for Suspected Acute Pulmonary Embolism: A Clinical Consensus Statement of the ESC Working Group on Pulmonary Circulation & Right Ventricular Function, the Fleischner Society, the Association for Acute Cardiovascular Care (ACVC) and the European Association of Cardiovascular Imaging (EACVI) of the ESC, Endorsed by European Respiratory Society (ERS), Asian Society of Thoracic Radiology (ASTR), European Society of Thoracic Imaging (ESTI), and Society of Thoracic Radiology (STR)",
    "j": "Radiology",
    "d": "2025-06",
    "cite": "Radiology 2025;315(3):e243833",
    "doi": "10.1148/radiol.243833",
    "pmc": "",
-   "au": "Klok FA",
-   "free": "repo",
-   "repo": "https://repository.ubn.ru.nl/bitstream/handle/2066/320791/1/320791.pdf"
+   "au": "Klok FA"
   },
   {
    "k": "ilrog-isrt-2020",

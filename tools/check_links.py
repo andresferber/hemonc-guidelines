@@ -6,6 +6,9 @@ mean the site blocks automated checks or needs a login: recorded as "blocked", n
 import concurrent.futures as cf, datetime, json, os, urllib.request, urllib.error, ssl, socket
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Sites that refuse automated checks with an error code but open normally in a browser
+# (verified by hand). Recorded as "blocked", never as broken.
+BOT_BLOCKING = ("online.epocrates.com",)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 
 
@@ -57,6 +60,7 @@ def moved_home(url, final):
 
 def status(res, url=""):
     c = res["code"]
+    if any(h in url for h in BOT_BLOCKING) and not (200 <= c < 400): return "blocked"
     if 200 <= c < 400 and moved_home(url, res.get("final")): return "fail"
     if 200 <= c < 400: return "ok"
     if c in (401, 403, 429, 999): return "blocked"

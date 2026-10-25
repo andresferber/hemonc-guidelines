@@ -97,7 +97,7 @@ def main():
                 loc = (u or {}).get("best_oa_location") or {}
                 if loc.get("host_type") == "publisher":
                     r["free"] = "publisher"
-                elif loc.get("host_type") == "repository":
+                elif loc.get("host_type") == "repository" and not e.get("norepo"):
                     url = loc.get("url_for_pdf") or loc.get("url") or ""
                     if url and "pubmed" not in url and "doi.org" not in url:
                         r["free"] = "repo"

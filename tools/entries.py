@@ -172,9 +172,9 @@ dict(k="aha-chip-2026", c="card", n="AHA scientific statement: clonal hematopoie
 
 # ---------- imaging ----------
 dict(k="lugano-img", c="img", n="Lugano classification: PET/CT staging and response in lymphoma", o="International panel", p="25113753", x="Same reference as in the criteria section; the imaging standard for lymphoma.", dup=True),
-dict(k="imwg-img-2019", c="img", n="IMWG consensus: imaging in monoclonal plasma cell disorders", o="IMWG", p="31162104", x="Whole-body low-dose CT, MRI and PET/CT in myeloma."),
+dict(k="imwg-img-2019", c="img", n="IMWG consensus: imaging in monoclonal plasma cell disorders", o="IMWG", p="31162104", x="Whole-body low-dose CT, MRI and PET/CT in myeloma.", norepo=True),
 dict(k="eortc-img-2021", c="img", n="EORTC/MSGERC imaging guidance: pulmonary aspergillosis and mucormycosis", o="EORTC / MSGERC", p="33709131", x="CT findings for invasive mould disease."),
-dict(k="esc-ctpa-2025", c="img", n="ESC/ESR consensus: performing and reporting CT angiography for suspected PE", o="ESC / ESR", p="40459417", x="Technique and reporting of CTPA."),
+dict(k="esc-ctpa-2025", c="img", n="ESC/ESR consensus: performing and reporting CT angiography for suspected PE", o="ESC / ESR", p="40459417", x="Technique and reporting of CTPA.", norepo=True),
 dict(k="ilrog-isrt-2020", c="img", n="ILROG overview: involved site radiation therapy in adult lymphomas", o="ILROG", p="32272184", x="Target volumes and doses for lymphoma radiotherapy."),
 dict(k="rt-target-2024", c="img", n="NCTN consensus: radiation target nomenclature for lymphoma", o="NCTN groups", p="39362223", x="Standard terminology for lymphoma RT targets."),
 
