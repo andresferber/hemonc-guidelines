@@ -93,6 +93,8 @@
     ".hog .note{font-size:15px;color:#33434c;margin-top:2px}",
     ".hog .lk{font-size:14px;margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 14px}",
     ".hog .lk .free{color:#1d6b3d!important}",
+    ".hog mark.hss-hit{background:#ffd54a!important;color:inherit!important;padding:0 1px;border-radius:2px}",
+    ".hog ol.hog-list > li.hl{box-shadow:-8px 0 0 #fffbe9,-12px 0 0 #e0a800}",
     ".hog .hog-empty{padding:12px 0;color:var(--muted)}",
     ".hog .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5;display:flex;flex-direction:column;gap:6px}",
     ".hog mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -237,6 +239,42 @@
       '<div class="hog-livebody"><p class="hog-why">Loading…</p></div></details></div>';
   }
 
+  /* highlight the words searched in the Page ONE search box inside the item it opened */
+  function markSearched(li) {
+    var words = [];
+    try { words = window.__hssWords || JSON.parse(sessionStorage.getItem("hssWords") || "[]"); } catch (e) {}
+    try { sessionStorage.removeItem("hssWords"); } catch (e) {}
+    window.__hssWords = null;
+    [].slice.call(document.querySelectorAll("mark.hss-hit")).forEach(function (m) {
+      var p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+    });
+    words = (words || []).filter(function (w) { return w && w.length >= 2; });
+    if (!words.length) return;
+    var walker = document.createTreeWalker(li, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+    while ((n = walker.nextNode())) { if (!n.parentNode.closest("form, button, script, style")) nodes.push(n); }
+    nodes.forEach(function (node) {
+      var text = node.nodeValue, low = norm(text);
+      if (low.length !== text.length) low = text.toLowerCase();
+      var ranges = [];
+      words.forEach(function (w) {
+        var i = 0;
+        while ((i = low.indexOf(w, i)) >= 0) { ranges.push([i, i + w.length]); i += w.length; }
+      });
+      if (!ranges.length) return;
+      ranges.sort(function (a, b) { return a[0] - b[0]; });
+      var merged = [];
+      ranges.forEach(function (r) { var last = merged[merged.length - 1]; if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r.slice()); });
+      var frag = document.createDocumentFragment(), pos = 0;
+      merged.forEach(function (r) {
+        if (r[0] > pos) frag.appendChild(document.createTextNode(text.slice(pos, r[0])));
+        var mk = document.createElement("mark"); mk.className = "hss-hit"; mk.textContent = text.slice(r[0], r[1]);
+        frag.appendChild(mk); pos = r[1];
+      });
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   function jump(k) {
     var e = DATA.entries.filter(function (x) { return x.k === k; })[0];
     if (!e) return;
@@ -245,9 +283,10 @@
     if (item) toggle(item, true);
     var li = document.getElementById("gl-" + k);
     if (li) {
+      markSearched(li);
       li.scrollIntoView({ behavior: "smooth", block: "center" });
       li.classList.add("hl");
-      setTimeout(function () { li.classList.remove("hl"); }, 1800);
+      setTimeout(function () { li.classList.remove("hl"); }, 4000);
     }
   }
 

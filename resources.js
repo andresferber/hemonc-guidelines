@@ -68,6 +68,8 @@
       ".hor .calc output b{color:var(--deep);font-size:17px}",
       ".hor .calc .why{display:block;font-size:13.5px;color:var(--muted)}",
       ".hor ol.hog-list > li.hl{background:#fffbe9!important;transition:background 1.2s}",
+      ".hor mark.hss-hit{background:#ffd54a!important;color:inherit!important;padding:0 1px;border-radius:2px}",
+      ".hor ol.hog-list > li.hl{box-shadow:-8px 0 0 #fffbe9,-12px 0 0 #e0a800}",
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -89,6 +91,42 @@
     return esc(raw.slice(0, i)) + "<mark>" + esc(raw.slice(i, i + q.length)) + "</mark>" + esc(raw.slice(i + q.length));
   }
   function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60); }
+  /* highlight the words searched in the Page ONE search box inside the item it opened */
+  function markSearched(li) {
+    var words = [];
+    try { words = window.__hssWords || JSON.parse(sessionStorage.getItem("hssWords") || "[]"); } catch (e) {}
+    try { sessionStorage.removeItem("hssWords"); } catch (e) {}
+    window.__hssWords = null;
+    [].slice.call(document.querySelectorAll("mark.hss-hit")).forEach(function (m) {
+      var p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+    });
+    words = (words || []).filter(function (w) { return w && w.length >= 2; });
+    if (!words.length) return;
+    var walker = document.createTreeWalker(li, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+    while ((n = walker.nextNode())) { if (!n.parentNode.closest("form, button, script, style")) nodes.push(n); }
+    nodes.forEach(function (node) {
+      var text = node.nodeValue, low = norm(text);
+      if (low.length !== text.length) low = text.toLowerCase();
+      var ranges = [];
+      words.forEach(function (w) {
+        var i = 0;
+        while ((i = low.indexOf(w, i)) >= 0) { ranges.push([i, i + w.length]); i += w.length; }
+      });
+      if (!ranges.length) return;
+      ranges.sort(function (a, b) { return a[0] - b[0]; });
+      var merged = [];
+      ranges.forEach(function (r) { var last = merged[merged.length - 1]; if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]); else merged.push(r.slice()); });
+      var frag = document.createDocumentFragment(), pos = 0;
+      merged.forEach(function (r) {
+        if (r[0] > pos) frag.appendChild(document.createTextNode(text.slice(pos, r[0])));
+        var mk = document.createElement("mark"); mk.className = "hss-hit"; mk.textContent = text.slice(r[0], r[1]);
+        frag.appendChild(mk); pos = r[1];
+      });
+      if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+      node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   function domain(u) {
     var m = String(u || "").match(/^https?:\/\/(?:www\.)?([^\/?#]+)/i);
     return m ? m[1] : "";
@@ -204,9 +242,10 @@
       if (item) toggle(item, true);
       var li = document.getElementById(id);
       if (li) {
+        markSearched(li);
         li.scrollIntoView({ behavior: "smooth", block: "center" });
         li.classList.add("hl");
-        setTimeout(function () { li.classList.remove("hl"); }, 1800);
+        setTimeout(function () { li.classList.remove("hl"); }, 4000);
       }
     }
     function fromHash() {

@@ -91,10 +91,11 @@
     });
 
   var ORDER = ["Guidelines", "Calculators", "Useful tools", "Educational resources"];
-  var sel = -1;
+  var sel = -1, lastWords = [];
 
   function search(q) {
     var words = norm(q).split(/\s+/).filter(Boolean);
+    lastWords = words;
     if (!words.length) { close(); return; }
     var groups = {};
     ITEMS.forEach(function (it) {
@@ -149,6 +150,8 @@
     var a = e.target.closest("a.hit");
     if (!a) return;
     var href = a.getAttribute("href"), hash = href.slice(href.indexOf("#"));
+    window.__hssWords = lastWords;
+    try { sessionStorage.setItem("hssWords", JSON.stringify(lastWords)); } catch (err) {}
     var m = hash.match(/^#rs-([a-z]+)-/);
     var here = hash.indexOf("#gl-") === 0 ? document.getElementById("hemonc-guidelines")
       : m ? document.querySelector('[data-hog-section="' + m[1] + '"]')
