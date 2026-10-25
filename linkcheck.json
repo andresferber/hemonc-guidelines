@@ -1,0 +1,2618 @@
+{
+ "checked": "2026-10-25 18:31 UTC",
+ "summary": {
+  "ok": 299,
+  "blocked": 59,
+  "fail": 5,
+  "broken": 0
+ },
+ "links": {
+  "https://www.nccn.org/guidelines/category_1": {
+   "where": "guidelines: nccn",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines/venous-thromboembolism-guidelines-1": {
+   "where": "guidelines: ash-vte",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.esmo.org/guidelines/guidelines-by-topic/haematological-malignancies": {
+   "where": "guidelines: esmo",
+   "status": "fail",
+   "code": 404,
+   "fails": 1,
+   "broken": false
+  },
+  "https://ehaweb.org/clinical-practice/guidelines-by-areas-of-disease": {
+   "where": "guidelines: eha",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines": {
+   "where": "guidelines: ash",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://society.asco.org/practice-patients/guidelines": {
+   "where": "guidelines: asco",
+   "status": "fail",
+   "code": 0,
+   "fails": 1,
+   "broken": false,
+   "err": "[Errno -5] No address associated with hostname"
+  },
+  "https://b-s-h.org.uk/guidelines/": {
+   "where": "guidelines: bsh",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://b-s-h.org.uk/guidelines"
+  },
+  "https://www.mdanderson.org/for-physicians/clinical-tools-resources/clinical-practice-algorithms.html": {
+   "where": "guidelines: mda",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.acr.org/ac": {
+   "where": "guidelines: acr",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Appropriateness-Criteria"
+  },
+  "http://www.bloodjournal.org/collection/how-i-treat": {
+   "where": "guidelines: hit",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35797463/": {
+   "where": "guidelines: eln-aml-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2022016867": {
+   "where": "guidelines: eln-aml-2022",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39133932/": {
+   "where": "guidelines: eln-aml-li-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2024025409": {
+   "where": "guidelines: eln-aml-li-2024",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41321225/": {
+   "where": "guidelines: ash-aml-old-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12993901/": {
+   "where": "guidelines: ash-aml-old-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39913928/": {
+   "where": "guidelines: eln-fit-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12083920/": {
+   "where": "guidelines: eln-fit-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41397238/": {
+   "where": "guidelines: eln-mrd-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2025031480": {
+   "where": "guidelines: eln-mrd-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42237660/": {
+   "where": "guidelines: eln-flt3mrd-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13487476/": {
+   "where": "guidelines: eln-flt3mrd-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/32171751/": {
+   "where": "guidelines: esmo-aml-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2020.02.018": {
+   "where": "guidelines: esmo-aml-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753420360798"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/33221366/": {
+   "where": "guidelines: esmo-mds-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2020.11.002": {
+   "where": "guidelines: esmo-mds-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753420431291"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40646132/": {
+   "where": "guidelines: eln-cml-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12310532/": {
+   "where": "guidelines: eln-cml-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37794101/": {
+   "where": "guidelines: eln-cml-lab-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10624636/": {
+   "where": "guidelines: eln-cml-lab-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42873117/": {
+   "where": "guidelines: ash-mf-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/bloodadvances.2026021650": {
+   "where": "guidelines: ash-mf-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/29515238/": {
+   "where": "guidelines: eln-mpn-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC5986069/": {
+   "where": "guidelines: eln-mpn-2018",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35358444/": {
+   "where": "guidelines: eln-pv-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S2352-3026(22)00046-1": {
+   "where": "guidelines: eln-pv-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2352302622000461"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41344872/": {
+   "where": "guidelines: bsh-thrombocytosis-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.70260": {
+   "where": "guidelines: bsh-thrombocytosis-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37283522/": {
+   "where": "guidelines: icc-sm-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1002/ajh.26966": {
+   "where": "guidelines: icc-sm-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40774601/": {
+   "where": "guidelines: esmo-lym-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2025.07.014": {
+   "where": "guidelines: esmo-lym-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753425009111"
+  },
+  "https://pure.amsterdamumc.nl/en/publications/eee16631-2222-4428-85e7-325fcbca4550": {
+   "where": "guidelines: esmo-lym-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.amsterdamumc.nl/en/publications/lymphomas-esmo-clinical-practice-guideline-for-diagnosis-treatmen/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41670627/": {
+   "where": "guidelines: ash-all-aya-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13366240/": {
+   "where": "guidelines: ash-all-aya-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41670624/": {
+   "where": "guidelines: ash-all-rr-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13366310/": {
+   "where": "guidelines: ash-all-rr-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37832649/": {
+   "where": "guidelines: esmo-all-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2023.09.3112": {
+   "where": "guidelines: esmo-all-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753423040097"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42154904/": {
+   "where": "guidelines: cart-all-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2026033559": {
+   "where": "guidelines: cart-all-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40109190/": {
+   "where": "guidelines: asp-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12666278/": {
+   "where": "guidelines: asp-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42293463/": {
+   "where": "guidelines: eha-cll-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13254007/": {
+   "where": "guidelines: eha-cll-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41069109/": {
+   "where": "guidelines: bsh-cll-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.70100": {
+   "where": "guidelines: bsh-cll-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38755420/": {
+   "where": "guidelines: eric-tp53-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11217004/": {
+   "where": "guidelines: eric-tp53-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42903357/": {
+   "where": "guidelines: eha-fl-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13680546/": {
+   "where": "guidelines: eha-fl-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/31912792/": {
+   "where": "guidelines: esmo-mzl-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2019.10.010": {
+   "where": "guidelines: esmo-mzl-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753419354651"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/27903528/": {
+   "where": "guidelines: hcl-2017",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC5290982/": {
+   "where": "guidelines: hcl-2017",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41132246/": {
+   "where": "guidelines: eha-mcl-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12541557/": {
+   "where": "guidelines: eha-mcl-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40995463/": {
+   "where": "guidelines: eha-lbcl-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12456099/": {
+   "where": "guidelines: eha-lbcl-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40384597/": {
+   "where": "guidelines: bsh-rrlbcl-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.20129": {
+   "where": "guidelines: bsh-rrlbcl-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42634099/": {
+   "where": "guidelines: bsh-pmbcl-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.70768": {
+   "where": "guidelines: bsh-pmbcl-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38839484/": {
+   "where": "guidelines: pcnsl-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2023.11.010": {
+   "where": "guidelines: pcnsl-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753423050743"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39909657/": {
+   "where": "guidelines: burkitt-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S2352-3026(24)00351-X": {
+   "where": "guidelines: burkitt-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S235230262400351X"
+  },
+  "https://pure.amsterdamumc.nl/files/142738372/Diagnosis-and-treatment-of-burkitt-lymphoma-in-adults.pdf": {
+   "where": "guidelines: burkitt-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39232987/": {
+   "where": "guidelines: hiv-lym-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2024.06.003": {
+   "where": "guidelines: hiv-lym-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753424007294"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42345030/": {
+   "where": "guidelines: eha-hl-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13288861/": {
+   "where": "guidelines: eha-hl-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40345949/": {
+   "where": "guidelines: ptcl-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2025.01.023": {
+   "where": "guidelines: ptcl-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753425000596"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42640859/": {
+   "where": "guidelines: tlgl-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2025030252": {
+   "where": "guidelines: tlgl-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34758074/": {
+   "where": "guidelines: ctcl-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9353153/": {
+   "where": "guidelines: ctcl-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41915766/": {
+   "where": "guidelines: histio-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2026033049": {
+   "where": "guidelines: histio-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13639636/": {
+   "where": "guidelines: histio-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35271698/": {
+   "where": "guidelines: lch-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11022927/": {
+   "where": "guidelines: lch-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30181172/": {
+   "where": "guidelines: imcd-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC6238190/": {
+   "where": "guidelines: imcd-2018",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42314080/": {
+   "where": "guidelines: ctdna-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/OP-26-00311": {
+   "where": "guidelines: ctdna-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42814948/": {
+   "where": "guidelines: asco-mm-living",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO-26-02399": {
+   "where": "guidelines: asco-mm-living",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40624367/": {
+   "where": "guidelines: eha-emn-mm-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1038/s41571-025-01041-x": {
+   "where": "guidelines: eha-emn-mm-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=3ce555f3-f434-4361-a223-67ea3406cec9"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41069303/": {
+   "where": "guidelines: bsh-rrmm-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.70149": {
+   "where": "guidelines: bsh-rrmm-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40489728/": {
+   "where": "guidelines: imwg-hr-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13445576/": {
+   "where": "guidelines: imwg-hr-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39870767/": {
+   "where": "guidelines: imwg-seq-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11879857/": {
+   "where": "guidelines: imwg-seq-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38697166/": {
+   "where": "guidelines: imwg-bsab-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(24)00043-3": {
+   "where": "guidelines: imwg-bsab-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204524000433"
+  },
+  "https://dspace.library.uu.nl/handle/1874/452539": {
+   "where": "guidelines: imwg-bsab-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37414019/": {
+   "where": "guidelines: imwg-renal-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(23)00223-1": {
+   "where": "guidelines: imwg-renal-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204523002231"
+  },
+  "https://pure.amsterdamumc.nl/en/publications/ac41175b-81b6-4176-90c6-fa381709b3b9": {
+   "where": "guidelines: imwg-renal-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.amsterdamumc.nl/en/publications/management-of-multiple-myeloma-related-renal-impairment-recommend/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/33545067/": {
+   "where": "guidelines: imwg-bone-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(20)30559-3": {
+   "where": "guidelines: imwg-bone-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204520305593"
+  },
+  "https://pure.amsterdamumc.nl/en/publications/2d6dd05b-1bdb-444c-a9a2-c18bcfb9be1a": {
+   "where": "guidelines: imwg-bone-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.amsterdamumc.nl/en/publications/treatment-of-multiple-myeloma-related-bone-disease-recommendation-2/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35114152/": {
+   "where": "guidelines: imwg-inf-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S2352-3026(21)00283-0": {
+   "where": "guidelines: imwg-inf-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2352302621002830"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39924085/": {
+   "where": "guidelines: emn-pcl-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2025.01.022": {
+   "where": "guidelines: emn-pcl-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753425000584"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34261295/": {
+   "where": "guidelines: emn-smm-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8561280/": {
+   "where": "guidelines: emn-smm-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42485589/": {
+   "where": "guidelines: imwg-spc-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13528849/": {
+   "where": "guidelines: imwg-spc-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41592868/": {
+   "where": "guidelines: ash-al-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13425172/": {
+   "where": "guidelines: ash-al-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42099096/": {
+   "where": "guidelines: bsh-al-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1111/bjh.70472": {
+   "where": "guidelines: bsh-al-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://eprints.whiterose.ac.uk/id/eprint/243579/7/2025-01-08%20-%20Early%20diagnosis%20AL%20amyloidosis%20GPP%20-%20FINAL%20DRAFT%20MG%2016.03.2025.pdf": {
+   "where": "guidelines: bsh-al-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35838162/": {
+   "where": "guidelines: ehaisa-al-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1080/13506129.2022.2093635": {
+   "where": "guidelines: ehaisa-al-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34783272/": {
+   "where": "guidelines: ehaisa-asct-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1080/13506129.2021.2002841": {
+   "where": "guidelines: ehaisa-asct-2022",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39985185/": {
+   "where": "guidelines: isa-sup-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1080/13506129.2025.2463678": {
+   "where": "guidelines: isa-sup-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30285219/": {
+   "where": "guidelines: wm-esmo-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1093/annonc/mdy322": {
+   "where": "guidelines: wm-esmo-2018",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753419317156"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/36435884/": {
+   "where": "guidelines: ecwm-dx-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9898035/": {
+   "where": "guidelines: ecwm-dx-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40441983/": {
+   "where": "guidelines: iwwm12-hr-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1053/j.seminhematol.2025.04.001": {
+   "where": "guidelines: iwwm12-hr-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0037196325000113"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35732831/": {
+   "where": "guidelines: who5-my",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9252913/": {
+   "where": "guidelines: who5-my",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35732829/": {
+   "where": "guidelines: who5-ly",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9214472/": {
+   "where": "guidelines: who5-ly",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35767897/": {
+   "where": "guidelines: icc-my",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479031/": {
+   "where": "guidelines: icc-my",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35653592/": {
+   "where": "guidelines: icc-ly",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9479027/": {
+   "where": "guidelines: icc-ly",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38319256/": {
+   "where": "guidelines: ipssm",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1056/EVIDoa2200008": {
+   "where": "guidelines: ipssm",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://resolver.sub.uni-goettingen.de/purl?gro-2/155770": {
+   "where": "guidelines: ipssm",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/36724453/": {
+   "where": "guidelines: iwg-mds-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2022018604": {
+   "where": "guidelines: iwg-mds-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40905082/": {
+   "where": "guidelines: blast-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12775769/": {
+   "where": "guidelines: blast-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/29540348/": {
+   "where": "guidelines: iwcll-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood-2017-09-806398": {
+   "where": "guidelines: iwcll-2018",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/25439696/": {
+   "where": "guidelines: imwg-dx-2014",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(14)70442-5": {
+   "where": "guidelines: imwg-dx-2014",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204514704425"
+  },
+  "https://orbi.uliege.be/handle/2268/174646": {
+   "where": "guidelines: imwg-dx-2014",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/27511158/": {
+   "where": "guidelines: imwg-resp-2016",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(16)30206-6": {
+   "where": "guidelines: imwg-resp-2016",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204516302066"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/25113753/": {
+   "where": "guidelines: lugano-2014",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC4979083/": {
+   "where": "guidelines: lugano-2014",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42237010/": {
+   "where": "guidelines: lot-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13437232/": {
+   "where": "guidelines: lot-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40926035/": {
+   "where": "guidelines: ebmt-ind-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12583170/": {
+   "where": "guidelines: ebmt-ind-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37422194/": {
+   "where": "guidelines: astct-iec-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.jtct.2023.07.002": {
+   "where": "guidelines: astct-iec-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2666636723013866"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40619101/": {
+   "where": "guidelines: nmdp-donor-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12344661/": {
+   "where": "guidelines: nmdp-donor-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42711241/": {
+   "where": "guidelines: astct-tox-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.jtct.2026.05.020": {
+   "where": "guidelines: astct-tox-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2666636726003635"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30592986/": {
+   "where": "guidelines: astct-crs-2019",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12180426/": {
+   "where": "guidelines: astct-crs-2019",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34724386/": {
+   "where": "guidelines: asco-cart-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.21.01992": {
+   "where": "guidelines: asco-cart-2021",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37300386/": {
+   "where": "guidelines: icaht-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2023020578": {
+   "where": "guidelines: icaht-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/36906275/": {
+   "where": "guidelines: iechs-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10330221/": {
+   "where": "guidelines: iechs-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40179916/": {
+   "where": "guidelines: nonicans-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(24)00715-0": {
+   "where": "guidelines: nonicans-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204524007150"
+  },
+  "https://pure.amsterdamumc.nl/en/publications/f91a7887-d52a-4d50-a360-021cf63a874f": {
+   "where": "guidelines: nonicans-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.amsterdamumc.nl/en/publications/non-icans-neurological-complications-after-car-t-cell-therapies-r/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38252906/": {
+   "where": "guidelines: cd20bs-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2023022432": {
+   "where": "guidelines: cd20bs-2024",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37269857/": {
+   "where": "guidelines: emn-tcr-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(23)00159-6": {
+   "where": "guidelines: emn-tcr-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204523001596"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40409691/": {
+   "where": "guidelines: nih-cgvhd-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12354025/": {
+   "where": "guidelines: nih-cgvhd-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42155643/": {
+   "where": "guidelines: astct-agvhd-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.jtct.2026.04.053": {
+   "where": "guidelines: astct-agvhd-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2666636726003416"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38184001/": {
+   "where": "guidelines: ebmt-gvhd-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S2352-3026(23)00342-3": {
+   "where": "guidelines: ebmt-gvhd-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2352302623003423"
+  },
+  "https://pure.amsterdamumc.nl/en/publications/988b3b0e-b271-4bdf-a158-399ebcc69a6a": {
+   "where": "guidelines: ebmt-gvhd-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.amsterdamumc.nl/en/publications/prophylaxis-and-management-of-graft-versus-host-disease-after-ste/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40514012/": {
+   "where": "guidelines: tatma-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12718118/": {
+   "where": "guidelines: tatma-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38413247/": {
+   "where": "guidelines: survivor-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11181337/": {
+   "where": "guidelines: survivor-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37075273/": {
+   "where": "guidelines: asco-vte-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.23.00294": {
+   "where": "guidelines: asco-vte-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/33570602/": {
+   "where": "guidelines: ash-vte-ca-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7903232/": {
+   "where": "guidelines: ash-vte-ca-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35772465/": {
+   "where": "guidelines: itac-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9236567/": {
+   "where": "guidelines: itac-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/36638869/": {
+   "where": "guidelines: esmo-vte-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2022.12.014": {
+   "where": "guidelines: esmo-vte-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S092375342204786X"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40880878/": {
+   "where": "guidelines: emn-vte-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12381471/": {
+   "where": "guidelines: emn-vte-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35924068/": {
+   "where": "guidelines: eha-plt-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9281983/": {
+   "where": "guidelines: eha-plt-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41712677/": {
+   "where": "guidelines: pe-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1161/CIR.0000000000001415": {
+   "where": "guidelines: pe-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34352278/": {
+   "where": "guidelines: chest-vte-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.chest.2021.07.055": {
+   "where": "guidelines: chest-vte-2021",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0012369221015063"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37195076/": {
+   "where": "guidelines: ash-thrombophilia-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10709681/": {
+   "where": "guidelines: ash-thrombophilia-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30482768/": {
+   "where": "guidelines: ash-hit-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC6258919/": {
+   "where": "guidelines: ash-hit-2018",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30179565/": {
+   "where": "guidelines: asco-proph-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.18.00374": {
+   "where": "guidelines: asco-proph-2018",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/29461916/": {
+   "where": "guidelines: asco-fn-2018",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.2017.77.6211": {
+   "where": "guidelines: asco-fn-2018",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/35368047/": {
+   "where": "guidelines: ecil-targeted-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC9061290/": {
+   "where": "guidelines: ecil-targeted-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40200079/": {
+   "where": "guidelines: ecil-af-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12208874/": {
+   "where": "guidelines: ecil-af-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/31802125/": {
+   "where": "guidelines: eortc-ifd-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC7486838/": {
+   "where": "guidelines: eortc-ifd-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40188837/": {
+   "where": "guidelines: ecil-cmv-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1473-3099(25)00069-6": {
+   "where": "guidelines: ecil-cmv-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1473309925000696"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40581305/": {
+   "where": "guidelines: astct-cmv-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.jtct.2025.06.025": {
+   "where": "guidelines: astct-cmv-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2666636725012680"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40306834/": {
+   "where": "guidelines: ecil-hep-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S2352-3026(25)00049-3": {
+   "where": "guidelines: ecil-hep-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S2352302625000493"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/32716741/": {
+   "where": "guidelines: asco-hbv-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11828660/": {
+   "where": "guidelines: asco-hbv-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40885198/": {
+   "where": "guidelines: ecil-resp-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1473-3099(25)00365-2": {
+   "where": "guidelines: ecil-resp-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1473309925003652"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40456838/": {
+   "where": "guidelines: ecil-covid-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12380621/": {
+   "where": "guidelines: ecil-covid-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41766454/": {
+   "where": "guidelines: idsa-vax-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1093/cid/ciag114": {
+   "where": "guidelines: idsa-vax-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/38498792/": {
+   "where": "guidelines: asco-vax-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11095883/": {
+   "where": "guidelines: asco-vax-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41926972/": {
+   "where": "guidelines: agiho-vax-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(25)00765-X": {
+   "where": "guidelines: agiho-vax-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S147020452500765X"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/36017568/": {
+   "where": "guidelines: esc-co-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1093/eurheartj/ehac244": {
+   "where": "guidelines: esc-co-2022",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://academic.oup.com/eurheartj/article-pdf/43/41/4229/51099586/ehac244.pdf": {
+   "where": "guidelines: esc-co-2022",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/34904661/": {
+   "where": "guidelines: icos-2022",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC8803367/": {
+   "where": "guidelines: icos-2022",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40679941/": {
+   "where": "guidelines: hfa-prev-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1002/ejhf.3753": {
+   "where": "guidelines: hfa-prev-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pure.ulster.ac.uk/en/publications/d6498fa5-0fee-484f-9cca-e9149f3c5b77": {
+   "where": "guidelines: hfa-prev-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.ulster.ac.uk/en/publications/prevention-of-cancer-therapy-related-cardiac-dysfunction-and-hear/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39087551/": {
+   "where": "guidelines: hfa-immuno-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1002/ejhf.3340": {
+   "where": "guidelines: hfa-immuno-2024",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pure.eur.nl/en/publications/0dfad68c-4af6-4c5f-8f1c-9551a2b2837b": {
+   "where": "guidelines: hfa-immuno-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.eur.nl/en/publications/cardiovascular-toxicities-of-immune-therapies-for-cancera-scienti/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/27918725/": {
+   "where": "guidelines: asco-card-2017",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.2016.70.5400": {
+   "where": "guidelines: asco-card-2017",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41664921/": {
+   "where": "guidelines: aha-chip-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1161/CIR.0000000000001404": {
+   "where": "guidelines: aha-chip-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/31162104/": {
+   "where": "guidelines: imwg-img-2019",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/S1470-2045(19)30309-2": {
+   "where": "guidelines: imwg-img-2019",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S1470204519303092"
+  },
+  "http://hdl.handle.net/10366/162974": {
+   "where": "guidelines: imwg-img-2019",
+   "status": "fail",
+   "code": 500,
+   "fails": 1,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/33709131/": {
+   "where": "guidelines: eortc-img-2021",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1093/cid/ciaa1855": {
+   "where": "guidelines: eortc-img-2021",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40459417/": {
+   "where": "guidelines: esc-ctpa-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1148/radiol.243833": {
+   "where": "guidelines: esc-ctpa-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://repository.ubn.ru.nl/bitstream/handle/2066/320791/1/320791.pdf": {
+   "where": "guidelines: esc-ctpa-2025",
+   "status": "fail",
+   "code": 0,
+   "fails": 1,
+   "broken": false,
+   "err": "timed out"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/32272184/": {
+   "where": "guidelines: ilrog-isrt-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.ijrobp.2020.03.019": {
+   "where": "guidelines: ilrog-isrt-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0360301620309433"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39362223/": {
+   "where": "guidelines: rt-target-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11635836/": {
+   "where": "guidelines: rt-target-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37824153/": {
+   "where": "guidelines: aabb-rbc-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1001/jama.2023.12914": {
+   "where": "guidelines: aabb-rbc-2023",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pure.eur.nl/en/publications/cda1fd27-d649-40ea-91d6-68c7ae8ae3b9": {
+   "where": "guidelines: aabb-rbc-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://pure.eur.nl/en/publications/red-blood-cell-transfusion-2023-aabb-international-guidelines/"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40440268/": {
+   "where": "guidelines: aabb-plt-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1001/jama.2025.7529": {
+   "where": "guidelines: aabb-plt-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41740078/": {
+   "where": "guidelines: asco-gf-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO-25-02938": {
+   "where": "guidelines: asco-gf-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/32658626/": {
+   "where": "guidelines: asco-emesis-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO.20.01296": {
+   "where": "guidelines: asco-emesis-2020",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37579533/": {
+   "where": "guidelines: tls-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.ctrv.2023.102603": {
+   "where": "guidelines: tls-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0305737223000968"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/37459573/": {
+   "where": "guidelines: asco-geri-2023",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC12803700/": {
+   "where": "guidelines: asco-geri-2023",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40106739/": {
+   "where": "guidelines: asco-fert-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO-24-02782": {
+   "where": "guidelines: asco-fert-2025",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41380115/": {
+   "where": "guidelines: asco-preg-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1200/JCO-25-02115": {
+   "where": "guidelines: asco-preg-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/32976936/": {
+   "where": "guidelines: esmo-fert-2020",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1016/j.annonc.2020.09.006": {
+   "where": "guidelines: esmo-fert-2020",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://linkinghub.elsevier.com/retrieve/pii/S0923753420424482"
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42617047/": {
+   "where": "guidelines: ash-itp-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/bloodadvances.2026021269": {
+   "where": "guidelines: ash-itp-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41637560/": {
+   "where": "guidelines: itp-bleed-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13487680/": {
+   "where": "guidelines: itp-bleed-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/40533296/": {
+   "where": "guidelines: isth-ttp-2025",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13470878/": {
+   "where": "guidelines: isth-ttp-2025",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/41920091/": {
+   "where": "guidelines: ash-aa-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC13546908/": {
+   "where": "guidelines: ash-aa-2026",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/42747316/": {
+   "where": "guidelines: ash-iron-2026",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/bloodadvances.2025015950": {
+   "where": "guidelines: ash-iron-2026",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/39046779/": {
+   "where": "guidelines: hlh-2024",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC11619794/": {
+   "where": "guidelines: hlh-2024",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/30992265/": {
+   "where": "guidelines: hlh-adult-2019",
+   "status": "ok",
+   "code": 203,
+   "fails": 0,
+   "broken": false
+  },
+  "https://doi.org/10.1182/blood.2018894618": {
+   "where": "guidelines: hlh-adult-2019",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.openevidence.com/": {
+   "where": "tools / Clinical references: OpenEvidence",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.uptodate.com/login": {
+   "where": "tools / Clinical references: UpToDate",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pubmed.ncbi.nlm.nih.gov/": {
+   "where": "tools / Clinical references: PubMed",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://clinicaltrials.gov/": {
+   "where": "tools / Clinical trials: ClinicalTrials.gov",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.jeffersonhealth.org/clinical-specialties/cancer/clinical-trials?search-query=&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fhodgkin-lymphoma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fleukemia-other&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fnon-hodgkin-lymphoma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmyeloid-and-monocytic-leukemia&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmycosis-fungoides&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmultiple-myeloma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fother-hematopoietic&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Flymphoid-leukemia": {
+   "where": "tools / Clinical trials: Jefferson hematologic malignancy trials",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.jeffersonhealth.org/clinical-specialties/cancer/clinical-trials?search-query=": {
+   "where": "tools / Clinical trials: Jefferson oncology clinical trials",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://tjuv.sharepoint.com/sites/CTOSharePoint/SitePages/Disease-Maps.aspx": {
+   "where": "tools / Clinical trials: Disease maps",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUtablNBM2NxOUEwbU55UFQybE5RNDRoaEI5RlRIdGhTYnFsVmtVQk1nVXdHcFFhZXFBbjNWeFgrUkowSEhZMG5tbGFORlU3eHhtN1ppL1ZYNkpobk5TcGNDejFkY0FUT0RBY2pvS0JEMHFReFR4RnlmOUtJNEpCVUdCM2V6TUZVUUFBQUJqNFFSTlpmQnAzYmNPZFNZaUh1czdhTFdyOGw0UXJxUWc9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1LWm5TQTNjcTlBMG1OeVBUMmxOUTQ0aGhCOUZUSHRoU2JxbFZrVUJNZ1V3R3BRYWVxQW4zVnhYK1JKMEhIWTBuZz09IiwieSI6IkFBQUFNR2xhTkZVN3h4bTdaaS9WWDZKaG5OU3BjQ3oxZGNBVE9EQWNqb0tCRDBxUXhUeEZ5ZjlLSTRKQlVHQjNlek1GVVE9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=5A59FCBCAF5D145AF3FD4957E8D686B6FE74C5BB9541F425%2DAED372B72B066F9381C6582E52CEAA0A9B0924FE2169BE0C6EB504E2A041D9A6&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVIMlpqNFZKeHc5SG5NRkFaUWlkRTNSUEpGVXg0RHpYemFBQ3NMS05hRVclMkZqdkNYdjZFY0l2VUI1Z1Mzc0thSTFaZVhvSm5BUlJKd0d0TEFuaGkwJTJCcFBNYm5FQjVLNDJJUUFnWWRLdm1HTm4lMkZnWTJJdmVXM2lLQUQ3ZlR0b3VwRnFDcSUyQkl4eG93cm9TaVBkRXhrVm1FSlFLSGRKWUdiSUwwSUhMQ1BERnlDV0JGR1hNamYySDM3U0Q2YkhzcVZvcFBEQjZjOHVEaHl4b3UzdERDeFlTdU41MlRBdnFjVDdqcDNLZ1o5R2pzUVFuVlpVeEpyWFBpd1M5cmVVYTU1ZHlXbXJ1Y0QlMkZPbktvM2pLanM5Z0c2SXZvMyUyQlN3ZzQ1ZUgzMUdMR1F3WExwUENTU2pLVGZNTVJ0RHF2TjV4b3c0Z2RMaUswT2ozOFp2RHQwYVFJNlE0ak1NejVNJTNE&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=0b6848a2%2Df07d%2Df000%2Defbf%2D708f23c78276"
+  },
+  "http://atlasgeneticsoncology.org/": {
+   "where": "tools / Genetics and molecular biology: Atlas of Genetics and Cytogenetics in Oncology and Haematology",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://cancer.sanger.ac.uk/cosmic": {
+   "where": "tools / Genetics and molecular biology: COSMIC",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://cancer.sanger.ac.uk/cosmic/login"
+  },
+  "https://www.genecards.org/": {
+   "where": "tools / Genetics and molecular biology: GeneCards",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://reactome.org/PathwayBrowser/": {
+   "where": "tools / Genetics and molecular biology: Reactome",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://en.wikipedia.org/wiki/List_of_human_clusters_of_differentiation": {
+   "where": "tools / Genetics and molecular biology: CD marker guide",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.tumorportal.org/": {
+   "where": "tools / Genetics and molecular biology: Tumor Portal",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.tumorportal.org:443/"
+  },
+  "https://dailymed.nlm.nih.gov/dailymed/": {
+   "where": "tools / Drugs and protocols: DailyMed",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://online.epocrates.com/noFrame/": {
+   "where": "tools / Drugs and protocols: Epocrates",
+   "status": "fail",
+   "code": 500,
+   "fails": 1,
+   "broken": false
+  },
+  "https://crediblemeds.org/": {
+   "where": "tools / Drugs and protocols: CredibleMeds",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.pennstatehershey.org/web/cancer/patientcare/professionals/chemo-orders": {
+   "where": "tools / Drugs and protocols: Penn State Hershey chemotherapy orders",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.pennstatehealth.org/"
+  },
+  "https://www.ab-cip.org/": {
+   "where": "tools / Special populations: ABCIP",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-age.html": {
+   "where": "tools / Special populations: CDC adult immunization schedule",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "http://asheducationbook.hematologylibrary.org/content/current": {
+   "where": "edu / ASH and journals: ASH Education Program (Hematology)",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://aaod2.hematology.org/page/webcasts": {
+   "where": "edu / ASH and journals: ASH webcasts",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.bloodjournal.org/": {
+   "where": "edu / ASH and journals: Blood",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://imagebank.hematology.org/": {
+   "where": "edu / ASH and journals: ASH Image Bank",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://library.jefferson.edu/scott.cfm": {
+   "where": "edu / ASH and journals: Jefferson library",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://library.jefferson.edu/scott.cfm"
+  },
+  "https://en.wikipedia.org/wiki/Dermatome_(anatomy)#/media/File:Grant_1962_663.png": {
+   "where": "edu / Anatomy and infection: Dermatomes",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://human.biodigital.com/index.html": {
+   "where": "edu / Anatomy and infection: BioDigital Human",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.infectionlandscapes.org/": {
+   "where": "edu / Anatomy and infection: Infection Landscapes",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.mdcalc.com/": {
+   "where": "calc / General calculators: MDCalc",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://qxmd.com/calculate": {
+   "where": "calc / General calculators: QxMD Calculate",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.amlcompositemodel.org/": {
+   "where": "calc / Myeloid malignancies: AML composite model",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.mds-risk-model.com/": {
+   "where": "calc / Myeloid malignancies: IPSS-M risk calculator",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://cancer.sanger.ac.uk/mpn-multistage/": {
+   "where": "calc / Myeloid malignancies: MPN multistage calculator",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.sanger.ac.uk/tool/progmod/progmod/"
+  },
+  "https://www.mdcalc.com/sokal-index-chronic-myelogenous-leukemia-cml": {
+   "where": "calc / Myeloid malignancies: Sokal score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/2143/sokal-index-chronic-myelogenous-leukemia-cml"
+  },
+  "https://www.mdcalc.com/eutos-score-chronic-myelogenous-leukemia-cml": {
+   "where": "calc / Myeloid malignancies: EUTOS score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/3906/eutos-score-chronic-myelogenous-leukemia-cml"
+  },
+  "https://bioinf.stemcells.cam.ac.uk/shiny/vassiliou/MN_predict": {
+   "where": "calc / Myeloid malignancies: MN-predict",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://bioinf.stemcells.cam.ac.uk/shiny/vassiliou/MN_predict/"
+  },
+  "https://www.andresferber.org/uploads/5/6/7/1/56718329/ccus_risk_score.jpeg": {
+   "where": "calc / Myeloid malignancies: CCUS risk prediction score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC10361696/": {
+   "where": "calc / Myeloid malignancies: CHRS score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://icpss-risk.com/": {
+   "where": "calc / Myeloid malignancies: iCPSS: CMML risk calculator",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://ascopubs.org/doi/full/10.1200/JCO-25-02116": {
+   "where": "calc / Myeloid malignancies: iCPSS: CMML risk calculator",
+   "status": "blocked",
+   "code": 403,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.mdcalc.com/khorana-risk-score-venous-thromboembolism-cancer-patients": {
+   "where": "calc / Thrombosis and TTP: Khorana score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/3315/khorana-risk-score-venous-thromboembolism-cancer-patients"
+  },
+  "https://www.mdcalc.com/calc/3970/caprini-score-venous-thromboembolism-2005": {
+   "where": "calc / Thrombosis and TTP: Caprini score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://www.meducator3.net/algorithms/content/risk-score-rogers-et-al-predicting-venous-thromboembolism-general-or-vascular-surgery-0": {
+   "where": "calc / Thrombosis and TTP: Rogers score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.meducator3.net/"
+  },
+  "http://www.meducator3.net/algorithms/content/impactill-model-spyropoulos-et-al-identifying-hospitalized-medical-patient-risk-venous-0": {
+   "where": "calc / Thrombosis and TTP: IMPACT-ILL",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.meducator3.net/"
+  },
+  "http://cemsiis.meduniwien.ac.at/en/kb/science-research/software/clinical-software/recurrent-vte/": {
+   "where": "calc / Thrombosis and TTP: Vienna prediction model",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://data-science.meduniwien.ac.at/"
+  },
+  "https://www.mdcalc.com/calc/10200/plasmic-score-ttp": {
+   "where": "calc / Thrombosis and TTP: PLASMIC score",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "http://saintantoine.aphp.fr/score/": {
+   "where": "calc / HLH: HScore (HLH probability)",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://validate.perfdrive.com/?ssa=503e42fa-e7ce-4563-9fbb-157c367880eb&ssb=65981269290&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=49c5a7e7-cofn-44b4-8c47-517dfeac5d8c&ssk=botmanager_support@radware.com&ssm=37333009457196214108543231060667&ssn=c2a7e7200f2885225940d8fdf7efb886fc40dd98fb03-fb9b-458d-908404&sso=15e81526-177fd91fbbacd989dfcbc60dabc807040d7458a950f79fa0&ssp=53263926681792972729179292005279043&ssq=72274235302097368282153020698194493553441&ssr=MTcyLjE3NC4xNTcuMTI5&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImFwaHAuZnIiLCJfX3V6bWYiOiI3ZjkwMDBkZDk4ZmIwMy1mYjliLTQ1OGQtOTUyNi0xNzdmZDkxZmJiYWMxLTE3OTI5NTMwMjA4MTQwLTAwNTJlNjBkZjRmMjhmMDlmNGMxMCIsInV6bXgiOiI3ZmMwMDBlNjUyMzZiMC01MmFjLTQ1MzEtOTEwZC1iZWU5MDE1NDUyNzAxLTE3OTI5NTMwMjA4MTQwLTAwYTkzNjA4NzMwNzhlODBlODExMCJ9"
+  },
+  "https://www.andresferber.org/uploads/5/6/7/1/56718329/204_hlh_diagnostic_criteria.png": {
+   "where": "calc / HLH: HLH-2004 diagnostic criteria",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.mdcalc.com/follicular-lymphoma-international-prognostic-index-flipi": {
+   "where": "calc / Lymphoid malignancies: FLIPI",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/2320/follicular-lymphoma-international-prognostic-index-flipi"
+  },
+  "https://www.mdcalc.com/international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi": {
+   "where": "calc / Lymphoid malignancies: IPI and R-IPI",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/3936/international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi"
+  },
+  "https://www.mdcalc.com/mantle-cell-lymphoma-international-prognostic-index-mipi": {
+   "where": "calc / Lymphoid malignancies: MIPI",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false,
+   "final": "https://www.mdcalc.com/calc/4053/mantle-cell-lymphoma-international-prognostic-index-mipi"
+  },
+  "https://awmrisk.com/": {
+   "where": "calc / Lymphoid malignancies: Asymptomatic Waldenström progression",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://r2-iss-calc.streamlit.app/": {
+   "where": "calc / Monoclonal gammopathies: R2-ISS",
+   "status": "ok",
+   "code": 303,
+   "fails": 0,
+   "broken": false
+  },
+  "https://istopmm.com/riskmodel/": {
+   "where": "calc / Monoclonal gammopathies: iStopMM risk model",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  },
+  "https://www.mdcalc.com/calc/10642/hfa-icos-baseline-cardio-oncology-risk-assessment-anthracycline-chemotherapy": {
+   "where": "calc / Cardio-oncology: HFA-ICOS baseline risk",
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
+  }
+ }
+}
