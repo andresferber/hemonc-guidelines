@@ -44,6 +44,13 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
 8. Commit (Claude <noreply@anthropic.com>, with the session attribution trailers),
    `git pull --rebase`, push. Retry a failed push up to 3 times.
 9. Keep the pinned quick links (`pin=` in entries.py: NCCN, ASH VTE guidelines) unless Andres asks to change them.
-10. Summary for Andres: entries added, replaced, retired, and candidates skipped with a reason.
+10. Broken links: read `linkcheck.json` (written on the 3rd by the GitHub link check). For each
+   entry with `broken: true`, in guidelines or in `tools/resources.py`: find the current address
+   of the same resource (WebSearch; the publisher's or owner's own site) and update it, or, if
+   the resource no longer exists, list it for Andres instead of deleting it. Then run
+   `python3 tools/build_resources.py`. Links in `tools/resources.py` were chosen by Andres: never
+   add or remove one without asking; only repair addresses. The Jefferson links there are kept
+   by his choice.
+11. Summary for Andres (include links repaired and links that need his decision): entries added, replaced, retired, and candidates skipped with a reason.
    Never apply content changes that need his judgment (removing a whole category, adding a
    new category) without asking; list them as questions instead.

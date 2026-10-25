@@ -16,3 +16,17 @@ Curated, monthly-updated list of guidelines and consensus statements in hematolo
 - A monthly scheduled task follows `tools/UPDATE_GUIDE.md`.
 
 Every change is a commit, so earlier versions can always be restored from the history.
+
+## Page ONE link sections (tools, education, calculators)
+- `tools/resources.py` is the master list; `python3 tools/build_resources.py` writes `resources.json`.
+- `resources.js` builds each section in the same accordion style. Embed one per section:
+
+```html
+<div data-hog-section="tools"></div>   <!-- or "edu", or "calc" -->
+<script src="https://andresferber.github.io/hemonc-guidelines/resources.js"></script>
+```
+
+- `resources.html` previews all three.
+
+## Link check
+`.github/workflows/linkcheck.yml` runs `tools/check_links.py` on GitHub on the 3rd of every month (and whenever the lists change). It checks every link in both lists and saves `linkcheck.json`. A link is flagged broken after failing two checks in a row; sites that block automated checks or need a login are recorded as "blocked", not broken. The monthly update (5th) reads `linkcheck.json` and fixes or reports broken links.
