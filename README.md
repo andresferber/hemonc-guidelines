@@ -41,3 +41,11 @@ Every change is a commit, so earlier versions can always be restored from the hi
 
 ## Recent papers
 `.github/workflows/papers.yml` runs `tools/fetch_papers.py` on GitHub every morning: the latest 20 papers from each source Andres chose (PubMed for Blood, Blood Advances, Cancer Research and JCO; the NEJM hematology/oncology feed; Nature subject feeds for leukemia, lymphomas, myeloma, MPN and MDS), saved in `papers.json`. If a source fails, its previous list is kept. Shown on Page ONE by `resources.js` with `<div data-hog-section="papers"></div>`.
+
+## Hematology images slideshow
+`slideshow.js` shows the pictures listed in `slides.json` (file, size, caption) in the Page ONE design: fade, arrows, dots, swipe, pause, and a full-size viewer. Add pictures with `python3 -I tools/add_slides.py <files>`: every picture is re-saved without any metadata (no GPS location, camera or date) and checked before it is added. Embed:
+
+```html
+<div id="hemonc-slides"></div>
+<script src="https://andresferber.github.io/hemonc-guidelines/slideshow.js"></script>
+```
