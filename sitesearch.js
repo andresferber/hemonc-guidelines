@@ -171,6 +171,19 @@
   function clearHash() {
     if (/^#(gl|rs)-/.test(location.hash) && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
   }
+  /* close the bar and every panel the search touched, including the one holding the last result */
+  function closeAll() {
+    var it = results[cur];
+    if (it) {
+      var hash = it.href.slice(it.href.indexOf("#") + 1);
+      var li = document.getElementById(hash);
+      var item = li && li.closest(".hog-item.open");
+      if (item) { var t = item.querySelector(".hog-t"); if (t) t.click(); }
+    }
+    bar.hidden = true; cur = -1;
+    closePanels();
+    clearHash();
+  }
   function goTo(i) {
     var it = results[i];
     if (!it) return;
@@ -206,7 +219,7 @@
     if (!b) return;
     if (b.classList.contains("next")) goTo(cur + 1);
     else if (b.classList.contains("prev")) goTo(cur - 1);
-    else if (b.classList.contains("x")) { bar.hidden = true; cur = -1; closePanels(); clearHash(); }
+    else if (b.classList.contains("x")) { closeAll(); }
     else if (b.classList.contains("all")) {
       root.scrollIntoView({ behavior: "smooth", block: "start" });
       input.focus({ preventScroll: true });
@@ -215,7 +228,7 @@
   });
 
   var timer;
-  input.addEventListener("input", function () { bar.hidden = true; cur = -1; clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 100); });
+  input.addEventListener("input", function () { if (cur >= 0) closeAll(); clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 100); });
   input.addEventListener("focus", function () { if (input.value.trim()) search(input.value); });
   input.addEventListener("keydown", function (e) {
     if (e.key === "ArrowDown") { e.preventDefault(); move(1); }
