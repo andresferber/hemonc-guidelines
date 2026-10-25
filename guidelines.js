@@ -38,6 +38,11 @@
     ".hog p{margin:0}",
     /* toolbar */
     ".hog .hog-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}",
+    ".hog .hog-pins{display:flex;gap:10px;flex-wrap:wrap}",
+    ".hog a.hog-pin{display:inline-flex;align-items:center;gap:8px;font:700 16px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#fff!important;background:var(--deep)!important;text-decoration:none!important;border-radius:8px;padding:12px 16px}",
+    ".hog a.hog-pin:hover{background:#0f4a61!important}",
+    ".hog a.hog-pin:focus-visible{outline:3px solid rgba(20,90,117,.45);outline-offset:2px}",
+    ".hog a.hog-pin svg{flex:none}",
     ".hog .hog-q{all:unset;box-sizing:border-box;flex:1 1 260px;min-width:0;font:400 16px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:var(--ink)!important;background:var(--paper)!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:11px 14px!important;height:auto!important}",
     ".hog .hog-q:focus{outline:3px solid rgba(20,90,117,.28);outline-offset:1px}",
     ".hog button.hog-btn{all:unset;box-sizing:border-box;cursor:pointer;font:600 14px/1 'Source Sans 3',system-ui,sans-serif!important;color:var(--deep)!important;background:var(--paper)!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:12px 14px!important;height:auto!important;text-transform:none!important;box-shadow:none!important}",
@@ -280,7 +285,12 @@
     DATA = data;
     var built = data.built ? fmtDate(data.built.slice(0, 7)) : "";
     var n = data.entries.filter(function (e) { return !e.u && !e.old && !e.dup; }).length;
+    var pins = data.entries.filter(function (e) { return e.pin && e.u; });
+    var ext = '<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 6 10M11 9v4H3V5h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     mount.innerHTML = '<div class="hog">' +
+      (pins.length ? '<nav class="hog-pins" aria-label="Most used guidelines">' + pins.map(function (e) {
+        return '<a class="hog-pin" href="' + esc(e.u) + '" target="_blank" rel="noopener">' + esc(e.pin) + ext + "</a>";
+      }).join("") + "</nav>" : "") +
       '<div class="hog-bar"><input class="hog-q" type="search" placeholder="Search guidelines: disease, society, topic (e.g. CMV, ELN, CAR-T)" aria-label="Search guidelines">' +
       '<button class="hog-btn hog-all" type="button">Open all</button></div>' +
       '<div class="hog-status" aria-live="polite"></div>' +

@@ -23,7 +23,8 @@ CATS = [
 
 E = [
 # ---------- libraries ----------
-dict(k="nccn", c="lib", n="NCCN Guidelines (treatment by cancer type)", o="NCCN", u="https://www.nccn.org/guidelines/category_1", x="Continuously updated US guidelines; free registration required."),
+dict(k="nccn", c="lib", n="NCCN Guidelines (treatment by cancer type)", o="NCCN", u="https://www.nccn.org/guidelines/category_1", x="Continuously updated US guidelines; free registration required.", pin="NCCN Guidelines"),
+dict(k="ash-vte", c="lib", n="ASH guidelines for management of venous thromboembolism", o="ASH", u="https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines/venous-thromboembolism-guidelines-1", x="All ASH VTE guidelines in one place: cancer, treatment, prophylaxis, HIT, thrombophilia, pregnancy and more.", pin="ASH thrombosis (VTE) guidelines"),
 dict(k="esmo", c="lib", n="ESMO guidelines: haematological malignancies", o="ESMO", u="https://www.esmo.org/guidelines/guidelines-by-topic/haematological-malignancies", x="European guidelines with eUpdates between full versions."),
 dict(k="eha", c="lib", n="EHA guidelines by area of disease", o="EHA", u="https://ehaweb.org/clinical-practice/guidelines-by-areas-of-disease", x="EHA clinical practice guidelines and endorsements."),
 dict(k="ash", c="lib", n="ASH clinical practice guidelines", o="ASH", u="https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines", x="GRADE-based guidelines: VTE, AML, ALL, ITP, aplastic anemia, myelofibrosis and more."),

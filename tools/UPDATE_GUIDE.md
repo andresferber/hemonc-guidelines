@@ -43,6 +43,7 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
    live feed, phone width, no page errors other than font loading).
 8. Commit (Claude <noreply@anthropic.com>, with the session attribution trailers),
    `git pull --rebase`, push. Retry a failed push up to 3 times.
-9. Summary for Andres: entries added, replaced, retired, and candidates skipped with a reason.
+9. Keep the pinned quick links (`pin=` in entries.py: NCCN, ASH VTE guidelines) unless Andres asks to change them.
+10. Summary for Andres: entries added, replaced, retired, and candidates skipped with a reason.
    Never apply content changes that need his judgment (removing a whole category, adding a
    new category) without asking; list them as questions instead.

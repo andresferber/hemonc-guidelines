@@ -70,7 +70,17 @@
    "n": "NCCN Guidelines (treatment by cancer type)",
    "o": "NCCN",
    "u": "https://www.nccn.org/guidelines/category_1",
-   "x": "Continuously updated US guidelines; free registration required."
+   "x": "Continuously updated US guidelines; free registration required.",
+   "pin": "NCCN Guidelines"
+  },
+  {
+   "k": "ash-vte",
+   "c": "lib",
+   "n": "ASH guidelines for management of venous thromboembolism",
+   "o": "ASH",
+   "u": "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines/venous-thromboembolism-guidelines-1",
+   "x": "All ASH VTE guidelines in one place: cancer, treatment, prophylaxis, HIT, thrombophilia, pregnancy and more.",
+   "pin": "ASH thrombosis (VTE) guidelines"
   },
   {
    "k": "esmo",
