@@ -30,3 +30,11 @@ Every change is a commit, so earlier versions can always be restored from the hi
 
 ## Link check
 `.github/workflows/linkcheck.yml` runs `tools/check_links.py` on GitHub on the 3rd of every month (and whenever the lists change). It checks every link in both lists and saves `linkcheck.json`. A link is flagged broken after failing two checks in a row; sites that block automated checks or need a login are recorded as "blocked", not broken. The monthly update (5th) reads `linkcheck.json` and fixes or reports broken links.
+
+## Page ONE search box
+`sitesearch.js` searches the guidelines, useful tools, educational resources and calculators together (Page ONE only; it is not connected to the Landmark Trials project). Results open the matching item in its section. Embed:
+
+```html
+<div id="hemonc-search"></div>
+<script src="https://andresferber.github.io/hemonc-guidelines/sitesearch.js"></script>
+```

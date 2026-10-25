@@ -67,6 +67,7 @@
       ".hor .calc output{flex:1 1 220px;min-width:0;font-size:15px;color:var(--ink);padding-bottom:6px}",
       ".hor .calc output b{color:var(--deep);font-size:17px}",
       ".hor .calc .why{display:block;font-size:13.5px;color:var(--muted)}",
+      ".hor ol.hog-list > li.hl{background:#fffbe9!important;transition:background 1.2s}",
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -87,6 +88,7 @@
     if (i < 0) return esc(raw);
     return esc(raw.slice(0, i)) + "<mark>" + esc(raw.slice(i, i + q.length)) + "</mark>" + esc(raw.slice(i + q.length));
   }
+  function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60); }
   function domain(u) {
     var m = String(u || "").match(/^https?:\/\/(?:www\.)?([^\/?#]+)/i);
     return m ? m[1] : "";
@@ -126,7 +128,7 @@
     var dom = it.u ? '<span class="dom">' + esc(domain(it.u)) + "</span>" : "";
     var ref = it.ref ? '<div class="ref">Reference: <a href="' + esc(it.ref[1]) + '" target="_blank" rel="noopener">' + esc(it.ref[0]) + "</a></div>" : "";
     var w = it.widget && WIDGETS[it.widget] ? WIDGETS[it.widget]("hor-" + sec + "-" + idx) : "";
-    return "<li><div class=\"gn\">" + name + badges + dom + "</div>" +
+    return "<li id=\"rs-" + sec.split("-")[0] + "-" + slug(it.n) + "\"><div class=\"gn\">" + name + badges + dom + "</div>" +
       (it.x ? '<p class="note">' + hilite(it.x, q) + "</p>" : "") + ref + w + "</li>";
   }
 
@@ -192,6 +194,27 @@
       }
     });
     root.addEventListener("submit", function (ev) { ev.preventDefault(); });
+
+    function jumpTo(id) {
+      var panel = null;
+      panels.forEach(function (p) { p.items.forEach(function (it) { if ("rs-" + key + "-" + slug(it.n) === id) panel = p.key; }); });
+      if (!panel) return;
+      if (state.q) { state.q = ""; var qi = root.querySelector(".hog-q"); if (qi) qi.value = ""; render(); }
+      var item = root.querySelector('.hog-item[data-k="' + panel + '"]');
+      if (item) toggle(item, true);
+      var li = document.getElementById(id);
+      if (li) {
+        li.scrollIntoView({ behavior: "smooth", block: "center" });
+        li.classList.add("hl");
+        setTimeout(function () { li.classList.remove("hl"); }, 1800);
+      }
+    }
+    function fromHash() {
+      var h = decodeURIComponent(location.hash.replace(/^#/, ""));
+      if (h.indexOf("rs-" + key + "-") === 0) setTimeout(function () { jumpTo(h); }, 50);
+    }
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
   }
 
   function mountAll(data) {

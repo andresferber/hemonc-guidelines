@@ -325,8 +325,12 @@
     root.querySelector("details.hog-live").addEventListener("toggle", function once(ev) {
       if (ev.target.open) { loadLive(); ev.target.removeEventListener("toggle", once); }
     });
-    var h = location.hash.match(/^#gl-(.+)$/);
-    if (h) setTimeout(function () { jump(decodeURIComponent(h[1])); }, 50);
+    function fromHash() {
+      var h = location.hash.match(/^#gl-(.+)$/);
+      if (h) setTimeout(function () { jump(decodeURIComponent(h[1])); }, 50);
+    }
+    fromHash();
+    window.addEventListener("hashchange", fromHash);
   }
 
   fetch(base + "guidelines.json" + bust)
