@@ -275,12 +275,21 @@
     });
   }
 
+  /* lets the Page ONE search close the panels it opened */
+  (window.__hogClosers = window.__hogClosers || []).push(function (except) {
+    [].slice.call(mount.querySelectorAll('.hog-item[data-sopen="1"]')).forEach(function (it) {
+      if (except && it.contains(except)) return;
+      it.removeAttribute("data-sopen");
+      toggle(it, false);
+    });
+  });
+
   function jump(k) {
     var e = DATA.entries.filter(function (x) { return x.k === k; })[0];
     if (!e) return;
     if (state.q) { state.q = ""; mount.querySelector(".hog-q").value = ""; renderAcc(); }
     var item = mount.querySelector('.hog-item[data-k="' + e.c + '"]');
-    if (item) toggle(item, true);
+    if (item && !item.classList.contains("open")) { toggle(item, true); item.setAttribute("data-sopen", "1"); }
     var li = document.getElementById("gl-" + k);
     if (li) {
       [].slice.call(document.querySelectorAll("li.hl")).forEach(function (x) { x.classList.remove("hl"); });

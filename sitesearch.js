@@ -165,6 +165,12 @@
     hits[sel].scrollIntoView({ block: "nearest" });
   }
 
+  function closePanels(except) {
+    (window.__hogClosers || []).forEach(function (f) { try { f(except); } catch (e) {} });
+  }
+  function clearHash() {
+    if (/^#(gl|rs)-/.test(location.hash) && history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+  }
   function goTo(i) {
     var it = results[i];
     if (!it) return;
@@ -177,8 +183,12 @@
     var here = hash.indexOf("#gl-") === 0 ? document.getElementById("hemonc-guidelines")
       : m ? document.querySelector('[data-hog-section="' + m[1] + '"]') : null;
     if (!here) { location.href = it.href; return; }
-    if (location.hash === hash) window.dispatchEvent(new HashChangeEvent("hashchange"));
-    else location.hash = hash;
+    closePanels();
+    if (history.replaceState) {
+      history.replaceState(null, "", location.pathname + location.search + hash);
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    } else location.hash = hash;
+    setTimeout(clearHash, 400);
     showBar();
   }
   function showBar() {
@@ -196,7 +206,7 @@
     if (!b) return;
     if (b.classList.contains("next")) goTo(cur + 1);
     else if (b.classList.contains("prev")) goTo(cur - 1);
-    else if (b.classList.contains("x")) { bar.hidden = true; cur = -1; }
+    else if (b.classList.contains("x")) { bar.hidden = true; cur = -1; closePanels(); clearHash(); }
     else if (b.classList.contains("all")) {
       root.scrollIntoView({ behavior: "smooth", block: "start" });
       input.focus({ preventScroll: true });
