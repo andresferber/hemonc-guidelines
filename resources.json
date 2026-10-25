@@ -8,29 +8,6 @@
  "sections": {
   "tools": [
    {
-    "key": "ref",
-    "title": "Clinical references",
-    "sub": "AI search, point-of-care references",
-    "items": [
-     {
-      "n": "OpenEvidence",
-      "u": "https://www.openevidence.com/",
-      "x": "AI search engine over the medical literature, for clinicians."
-     },
-     {
-      "n": "UpToDate",
-      "u": "https://www.uptodate.com/login",
-      "x": "Peer-reviewed point-of-care clinical reference.",
-      "login": true
-     },
-     {
-      "n": "PubMed",
-      "u": "https://pubmed.ncbi.nlm.nih.gov/",
-      "x": "Search the biomedical literature (NLM)."
-     }
-    ]
-   },
-   {
     "key": "trials",
     "title": "Clinical trials",
     "sub": "Find open studies",

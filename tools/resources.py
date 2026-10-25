@@ -9,11 +9,6 @@
 
 SECTIONS = {
 "tools": [
-  ("ref", "Clinical references", "AI search, point-of-care references", [
-    dict(n="OpenEvidence", u="https://www.openevidence.com/", x="AI search engine over the medical literature, for clinicians."),
-    dict(n="UpToDate", u="https://www.uptodate.com/login", x="Peer-reviewed point-of-care clinical reference.", login=True),
-    dict(n="PubMed", u="https://pubmed.ncbi.nlm.nih.gov/", x="Search the biomedical literature (NLM)."),
-  ]),
   ("trials", "Clinical trials", "Find open studies", [
     dict(n="ClinicalTrials.gov", u="https://clinicaltrials.gov/", x="Registry of clinical studies worldwide (NIH)."),
     dict(n="Jefferson hematologic malignancy trials", u="https://www.jeffersonhealth.org/clinical-specialties/cancer/clinical-trials?search-query=&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fhodgkin-lymphoma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fleukemia-other&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fnon-hodgkin-lymphoma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmyeloid-and-monocytic-leukemia&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmycosis-fungoides&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fmultiple-myeloma&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Fother-hematopoietic&tag=health2021%2Fclinical-trials%2Foncology%2Fcancer-type%3A%3Ahealth2021%2Fclinical-trials%2Foncology%2Fcancer-type%2Flymphoid-leukemia", x="Hematologic malignancy trials open at the Sidney Kimmel Cancer Center."),
