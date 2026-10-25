@@ -202,7 +202,10 @@
     el.setAttribute("data-hog-done", "1");
     var key = el.getAttribute("data-hog-section");
     var panels = data.sections[key];
-    if (!panels) { el.innerHTML = ""; return; }
+    if (!panels) {
+      el.innerHTML = key === "papers" ? '<p style="color:#56656f">The paper lists could not be loaded. Please reload the page.</p>' : "";
+      return;
+    }
     var total = 0;
     panels.forEach(function (p) { total += p.items.length; });
     var withSearch = total > 15;
@@ -294,31 +297,37 @@
     window.addEventListener("hashchange", fromHash);
   }
 
+  /* the papers list is fetched separately, the first time a papers section appears on the page */
+  function withPapers(data) {
+    if (data.sections.papers || !document.querySelector('[data-hog-section="papers"]')) return Promise.resolve(data);
+    if (!window.__horPapers) {
+      window.__horPapers = fetch(base + "papers.json" + bust).then(function (r) { return r.json(); }).then(function (pj) {
+        data.titles.papers = "Recent papers";
+        data.papersBuilt = pj.built;
+        data.sections.papers = pj.feeds.filter(function (f) { return f.items && f.items.length; }).map(function (f) {
+          return { key: f.key, title: f.title, sub: f.sub, home: f.home,
+            fresh: f.items.filter(function (x) { return isRecent(x.d, 7); }).length,
+            items: f.items.map(function (x) { return { n: x.t, u: x.u, paper: x }; }) };
+        });
+        return data;
+      }).catch(function () { return data; });
+    }
+    return window.__horPapers;
+  }
   function mountAll(data) {
-    document.querySelectorAll("[data-hog-section]").forEach(function (el) { mountSection(el, data); });
+    document.querySelectorAll("[data-hog-section]").forEach(function (el) {
+      if (el.getAttribute("data-hog-section") === "papers") {
+        withPapers(data).then(function (d) { mountSection(el, d); });
+      } else mountSection(el, data);
+    });
   }
 
   var w = window;
   if (w.__horData) { mountAll(w.__horData); return; }
   if (w.__horLoading) { w.__horLoading.then(mountAll); return; }
-  var wantPapers = !!document.querySelector('[data-hog-section="papers"]');
-  w.__horLoading = Promise.all([
-    fetch(base + "resources.json" + bust).then(function (r) { return r.json(); }),
-    wantPapers ? fetch(base + "papers.json" + bust).then(function (r) { return r.json(); }).catch(function () { return null; }) : null
-  ]).then(function (r) {
-    var d = r[0], pj = r[1];
-    if (pj) {
-      d.titles.papers = "Recent papers";
-      d.papersBuilt = pj.built;
-      d.sections.papers = pj.feeds.filter(function (f) { return f.items && f.items.length; }).map(function (f) {
-        return { key: f.key, title: f.title, sub: f.sub, home: f.home,
-          fresh: f.items.filter(function (x) { return isRecent(x.d, 7); }).length,
-          items: f.items.map(function (x) { return { n: x.t, u: x.u, paper: x }; }) };
-      });
-    }
-    w.__horData = d;
-    return d;
-  });
+  w.__horLoading = fetch(base + "resources.json" + bust)
+    .then(function (r) { return r.json(); })
+    .then(function (d) { w.__horData = d; return d; });
   w.__horLoading.then(mountAll).catch(function () {
     document.querySelectorAll("[data-hog-section]:not([data-hog-done])").forEach(function (el) {
       el.innerHTML = '<p style="color:#56656f">This list could not be loaded. Please reload the page.</p>';
