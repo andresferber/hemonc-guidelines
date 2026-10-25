@@ -53,6 +53,10 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
    by his choice. If a repository copy ("Free copy (repository)") is broken, add `norepo=True`
    to that entry. If a site works in a browser but refuses the checker, add its host to
    `BOT_BLOCKING` in `tools/check_links.py`.
-11. Summary for Andres (include links repaired and links that need his decision): entries added, replaced, retired, and candidates skipped with a reason.
+11. Recent papers: check that `papers.json` was updated within the last 2 days (field `built`) and
+   that no feed in it has an `error`. If a feed keeps failing, find the source's current feed
+   address (same journal or subject), update it in `tools/fetch_papers.py`, and push; the daily
+   GitHub job then refreshes the list. Report it in the summary.
+12. Summary for Andres (include links repaired and links that need his decision): entries added, replaced, retired, and candidates skipped with a reason.
    Never apply content changes that need his judgment (removing a whole category, adding a
    new category) without asking; list them as questions instead.
