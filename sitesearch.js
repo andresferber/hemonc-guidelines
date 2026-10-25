@@ -10,7 +10,6 @@
   var base = me && me.src ? me.src.replace(/[^\/]*(\?.*)?$/, "") : "";
   var PAGE_ONE = "https://www.andresferber.org/";
   var bust = "?v=" + Math.floor(Date.now() / 600000);
-  var PER_GROUP = 6;
 
   var mount = document.getElementById("hemonc-search");
   if (!mount) {
@@ -110,14 +109,14 @@
       var list = groups[gname];
       if (!list) return;
       list.sort(function (a, b) { return a.s - b.s; });
-      html += '<div class="grp">' + esc(gname) + (list.length > PER_GROUP ? "<span>" + PER_GROUP + " of " + list.length + "</span>" : "") + "</div>";
-      list.slice(0, PER_GROUP).forEach(function (o) {
+      html += '<div class="grp">' + esc(gname) + "<span>" + list.length + "</span></div>";
+      list.forEach(function (o) {
         html += '<a class="hit" role="option" href="' + esc(o.it.href) + '">' +
           '<span class="t">' + hilite(o.it.t, words) + '</span><span class="m">' + esc(o.it.m) + "</span></a>";
         n++;
       });
     });
-    box.innerHTML = n ? html + '<div class="hint">Add a word to narrow the results. Enter opens the highlighted result.</div>'
+    box.innerHTML = n ? html + '<div class="hint">' + n + (n === 1 ? " result" : " results") + '. Scroll for more; add a word to narrow them. Arrow keys and Enter also work.</div>'
       : '<div class="none">' + (ITEMS.length ? "Nothing found for “" + esc(q) + "”. Try a disease, a drug, a society or a score name." : "Loading…") + "</div>";
     box.hidden = false;
     input.setAttribute("aria-expanded", "true");
