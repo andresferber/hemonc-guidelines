@@ -18,12 +18,12 @@
   }
   if (!document.getElementById("hor-style")) {
     var css = [
-      ".hog.hor{--sky:#a9e4f8;--sky2:#d6f2fc;--ink:#1f2a33;--muted:#56656f;--deep:#145a75;--rule:#cfe3ea;--paper:#fff;--new:#9a5a00;--newbg:#fff1d6;",
+      ".hor{container-type:inline-size;--sky:#a9e4f8;--sky2:#d6f2fc;--ink:#1f2a33;--muted:#56656f;--deep:#145a75;--rule:#cfe3ea;--paper:#fff;--new:#9a5a00;--newbg:#fff1d6;",
       "font:400 16px/1.5 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);text-align:left;display:flex;flex-direction:column;gap:12px;font-variant-numeric:tabular-nums}",
       ".hor *{box-sizing:border-box}",
       ".hor a{color:var(--deep)!important;text-decoration:underline!important;text-underline-offset:2px;text-decoration-thickness:1px}",
       ".hor a:hover{text-decoration-thickness:2px}",
-      ".hor p{margin:0}",
+      ".hor p{margin:0!important;padding:0!important}",
       ".hor .hog-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}",
       ".hor .hog-q{all:unset;box-sizing:border-box;flex:1 1 240px;min-width:0;font:400 16px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:var(--ink)!important;background:var(--paper)!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:11px 14px!important;height:auto!important;text-transform:none!important}",
       ".hor .hog-q:focus{outline:3px solid rgba(20,90,117,.28);outline-offset:1px}",
@@ -48,15 +48,16 @@
       ".hor .hog-c{display:none;padding:4px 16px 12px}",
       ".hor .hog-item.open > .hog-c{display:block}",
       ".hor ol.hog-list{margin:0!important;padding:0!important;list-style:none!important}",
-      ".hor ol.hog-list > li{list-style:none!important;background:none!important;margin:0!important;padding:10px 0!important;border-bottom:1px solid #eef4f6}",
+      ".hor ol.hog-list > li{display:block!important;list-style:none!important;background:none!important;margin:0!important;padding:10px 0!important;border-bottom:1px solid #eef4f6;text-indent:0!important}",
       ".hor ol.hog-list > li:last-child{border-bottom:0}",
-      ".hor .gn{font-weight:600;font-size:16px;line-height:1.35}",
+      ".hor .gn{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-weight:600;font-size:16px;line-height:1.35;min-width:0}",
+      ".hor .gn > a, .hor .gn > span.nmx{overflow-wrap:anywhere}",
       ".hor .gn a{color:var(--ink)!important;text-decoration-color:#9cc9d8!important}",
       ".hor .gn a:hover{color:var(--deep)!important}",
-      ".hor .gn .dom{font-weight:400;font-size:13.5px;color:var(--muted);margin-left:8px;white-space:nowrap}",
+      ".hor .gn .dom{font-weight:400;font-size:13.5px;color:var(--muted);overflow-wrap:anywhere}",
       ".hor .note{font-size:15px;color:#33434c;margin-top:2px}",
       ".hor .ref{font-size:14px;color:var(--muted);margin-top:2px}",
-      ".hor .badge{display:inline-block;font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;padding:4px 7px;border-radius:999px;background:#e3f1f6;color:var(--deep)!important;white-space:nowrap;margin-left:6px;vertical-align:1px}",
+      ".hor .badge{display:inline-block;font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;padding:4px 7px;border-radius:999px;background:#e3f1f6;color:var(--deep)!important;white-space:nowrap}",
       ".hor .badge.warn{background:var(--newbg);color:var(--new)!important}",
       ".hor .badge.ol{background:#eef0f1;color:#5d676d!important}",
       /* built-in calculator */
@@ -69,7 +70,8 @@
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
-      "@media (max-width:560px){.hor .hog-t .sb{display:none}.hor .gn .dom{display:block;margin-left:0}}",
+      "@container (max-width:460px){.hor .gn .dom{flex-basis:100%}.hor .hog-t{padding:10px 12px!important}.hor .hog-c{padding:4px 12px 10px}.hor .calc input{width:100%}.hor .calc label{flex:1 1 100%}}",
+      "@media (max-width:560px){.hor .hog-t .sb{display:none}}",
       "@media print{.hor .hog-bar{display:none}.hor .hog-c{display:block!important}}"
     ].join("\n");
     var st = document.createElement("style");
@@ -120,7 +122,7 @@
     if (it.note) badges += '<span class="badge warn">' + esc(it.note) + "</span>";
     var name = it.u
       ? '<a href="' + esc(it.u) + '" target="_blank" rel="noopener">' + hilite(it.n, q) + "</a>"
-      : hilite(it.n, q);
+      : '<span class="nmx">' + hilite(it.n, q) + "</span>";
     var dom = it.u ? '<span class="dom">' + esc(domain(it.u)) + "</span>" : "";
     var ref = it.ref ? '<div class="ref">Reference: <a href="' + esc(it.ref[1]) + '" target="_blank" rel="noopener">' + esc(it.ref[0]) + "</a></div>" : "";
     var w = it.widget && WIDGETS[it.widget] ? WIDGETS[it.widget]("hor-" + sec + "-" + idx) : "";
@@ -137,7 +139,7 @@
     var total = 0;
     panels.forEach(function (p) { total += p.items.length; });
     var withSearch = total > 15;
-    el.innerHTML = '<div class="hog hor">' +
+    el.innerHTML = '<div class="hor">' +
       (withSearch ? '<div class="hog-bar"><input class="hog-q" type="search" placeholder="Search ' + esc(data.titles[key].toLowerCase()) + '" aria-label="Search ' + esc(data.titles[key]) + '">' +
         '<button class="hog-btn hog-all" type="button">Open all</button></div><div class="hog-status" aria-live="polite"></div>' : "") +
       '<div class="hog-acc"></div>' +
