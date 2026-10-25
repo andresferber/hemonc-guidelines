@@ -242,6 +242,7 @@
       if (item) toggle(item, true);
       var li = document.getElementById(id);
       if (li) {
+        [].slice.call(document.querySelectorAll("li.hl")).forEach(function (x) { x.classList.remove("hl"); });
         markSearched(li);
         li.scrollIntoView({ behavior: "smooth", block: "center" });
         li.classList.add("hl");

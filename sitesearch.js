@@ -91,11 +91,40 @@
     });
 
   var ORDER = ["Guidelines", "Calculators", "Useful tools", "Educational resources"];
-  var sel = -1, lastWords = [];
+  var sel = -1, lastWords = [], lastQuery = "", results = [], cur = -1;
+
+  /* bar that stays on screen after a result opens: previous / next / all results */
+  var bar = document.createElement("div");
+  bar.className = "hss-bar";
+  bar.setAttribute("role", "navigation");
+  bar.setAttribute("aria-label", "Search results");
+  bar.hidden = true;
+  bar.innerHTML = '<button type="button" class="b prev" aria-label="Previous result">‹ Previous</button>' +
+    '<div class="lab"><span class="pos"></span><span class="ttl"></span></div>' +
+    '<button type="button" class="b next" aria-label="Next result">Next ›</button>' +
+    '<button type="button" class="b all">All results</button>' +
+    '<button type="button" class="b x" aria-label="Close search results">✕</button>';
+  document.body.appendChild(bar);
+  var bcss = document.createElement("style");
+  bcss.textContent = [
+    ".hss-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9999;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 24px);width:640px;background:#145a75;color:#fff;border-radius:12px;padding:8px;box-shadow:0 10px 30px -8px rgba(10,30,45,.55);font:400 15px/1.3 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;text-align:left}",
+    ".hss-bar[hidden]{display:none}",
+    ".hss-bar .lab{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;padding:0 6px}",
+    ".hss-bar .pos{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    ".hss-bar .ttl{font-size:13.5px;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    ".hss-bar button.b{all:unset;box-sizing:border-box;cursor:pointer;flex:none;font:600 14.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border-radius:8px;padding:10px 12px!important;height:auto!important;text-transform:none!important;box-shadow:none!important;white-space:nowrap}",
+    ".hss-bar button.b:hover{background:#d6f2fc!important}",
+    ".hss-bar button.b:disabled{opacity:.45;cursor:default}",
+    ".hss-bar button.x,.hss-bar button.all{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)}",
+    ".hss-bar button.x:hover,.hss-bar button.all:hover{background:rgba(255,255,255,.15)!important}",
+    ".hss-bar button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
+    "@media (max-width:560px){.hss-bar .ttl{display:none}.hss-bar button.all{display:none}.hss-bar button.b{padding:10px 10px!important}}"
+  ].join("\n");
+  document.head.appendChild(bcss);
 
   function search(q) {
     var words = norm(q).split(/\s+/).filter(Boolean);
-    lastWords = words;
+    lastWords = words; lastQuery = q.trim();
     if (!words.length) { close(); return; }
     var groups = {};
     ITEMS.forEach(function (it) {
@@ -105,19 +134,22 @@
       words.forEach(function (w) { if (title.indexOf(w) >= 0) score--; });
       (groups[it.grp] = groups[it.grp] || []).push({ it: it, s: score });
     });
-    var html = "", n = 0;
+    var html = "";
+    results = [];
     ORDER.forEach(function (gname) {
       var list = groups[gname];
       if (!list) return;
       list.sort(function (a, b) { return a.s - b.s; });
       html += '<div class="grp">' + esc(gname) + "<span>" + list.length + "</span></div>";
       list.forEach(function (o) {
-        html += '<a class="hit" role="option" href="' + esc(o.it.href) + '">' +
+        html += '<a class="hit" role="option" data-i="' + results.length + '" href="' + esc(o.it.href) + '">' +
           '<span class="t">' + hilite(o.it.t, words) + '</span><span class="m">' + esc(o.it.m) + "</span></a>";
-        n++;
+        results.push(o.it);
       });
     });
-    box.innerHTML = n ? html + '<div class="hint">' + n + (n === 1 ? " result" : " results") + '. Scroll for more; add a word to narrow them. Arrow keys and Enter also work.</div>'
+    var n = results.length;
+    box.innerHTML = n ? html + '<div class="hint">' + n + (n === 1 ? " result" : " results") +
+        (n > 1 ? ". Open one, then use Next at the bottom of the screen to go through the others." : ".") + "</div>"
       : '<div class="none">' + (ITEMS.length ? "Nothing found for “" + esc(q) + "”. Try a disease, a drug, a society or a score name." : "Loading…") + "</div>";
     box.hidden = false;
     input.setAttribute("aria-expanded", "true");
@@ -133,36 +165,61 @@
     hits[sel].scrollIntoView({ block: "nearest" });
   }
 
+  function goTo(i) {
+    var it = results[i];
+    if (!it) return;
+    cur = i;
+    window.__hssWords = lastWords;
+    try { sessionStorage.setItem("hssWords", JSON.stringify(lastWords)); } catch (err) {}
+    close();
+    var hash = it.href.slice(it.href.indexOf("#"));
+    var m = hash.match(/^#rs-([a-z]+)-/);
+    var here = hash.indexOf("#gl-") === 0 ? document.getElementById("hemonc-guidelines")
+      : m ? document.querySelector('[data-hog-section="' + m[1] + '"]') : null;
+    if (!here) { location.href = it.href; return; }
+    if (location.hash === hash) window.dispatchEvent(new HashChangeEvent("hashchange"));
+    else location.hash = hash;
+    showBar();
+  }
+  function showBar() {
+    var n = results.length;
+    if (n < 1 || cur < 0) { bar.hidden = true; return; }
+    bar.querySelector(".pos").textContent = "Result " + (cur + 1) + " of " + n + " for “" + lastQuery + "”";
+    bar.querySelector(".ttl").textContent = results[cur].t;
+    bar.querySelector(".prev").disabled = cur === 0;
+    bar.querySelector(".next").disabled = cur === n - 1;
+    bar.hidden = false;
+  }
+
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    if (b.classList.contains("next")) goTo(cur + 1);
+    else if (b.classList.contains("prev")) goTo(cur - 1);
+    else if (b.classList.contains("x")) { bar.hidden = true; cur = -1; }
+    else if (b.classList.contains("all")) {
+      root.scrollIntoView({ behavior: "smooth", block: "start" });
+      input.focus({ preventScroll: true });
+      search(input.value);
+    }
+  });
+
   var timer;
-  input.addEventListener("input", function () { clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 100); });
+  input.addEventListener("input", function () { bar.hidden = true; cur = -1; clearTimeout(timer); timer = setTimeout(function () { search(input.value); }, 100); });
   input.addEventListener("focus", function () { if (input.value.trim()) search(input.value); });
   input.addEventListener("keydown", function (e) {
     if (e.key === "ArrowDown") { e.preventDefault(); move(1); }
     else if (e.key === "ArrowUp") { e.preventDefault(); move(-1); }
     else if (e.key === "Escape") { close(); }
     else if (e.key === "Enter") {
-      var hits = box.querySelectorAll("a.hit");
-      var target = hits[sel >= 0 ? sel : 0];
-      if (target) { e.preventDefault(); target.click(); }
+      if (results.length) { e.preventDefault(); goTo(sel >= 0 ? sel : 0); }
     }
   });
   box.addEventListener("click", function (e) {
     var a = e.target.closest("a.hit");
     if (!a) return;
-    var href = a.getAttribute("href"), hash = href.slice(href.indexOf("#"));
-    window.__hssWords = lastWords;
-    try { sessionStorage.setItem("hssWords", JSON.stringify(lastWords)); } catch (err) {}
-    var m = hash.match(/^#rs-([a-z]+)-/);
-    var here = hash.indexOf("#gl-") === 0 ? document.getElementById("hemonc-guidelines")
-      : m ? document.querySelector('[data-hog-section="' + m[1] + '"]')
-      : null;
-    if (here) {
-      href = hash;
-      e.preventDefault();
-      close();
-      if (location.hash === href) window.dispatchEvent(new HashChangeEvent("hashchange"));
-      else location.hash = href;
-    }
+    e.preventDefault();
+    goTo(+a.getAttribute("data-i"));
   });
-  document.addEventListener("click", function (e) { if (!root.contains(e.target)) close(); });
+  document.addEventListener("click", function (e) { if (!root.contains(e.target) && !bar.contains(e.target)) close(); });
 })();
