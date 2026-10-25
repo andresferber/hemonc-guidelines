@@ -70,6 +70,13 @@
       ".hor ol.hog-list > li.hl{background:#fffbe9!important;transition:background 1.2s}",
       ".hor mark.hss-hit{background:#ffd54a!important;color:inherit!important;padding:0 1px;border-radius:2px}",
       ".hor ol.hog-list > li.hl{box-shadow:-8px 0 0 #fffbe9,-12px 0 0 #e0a800}",
+      ".hor ol.hog-list > li.pp{display:grid!important;grid-template-columns:62px 1fr;gap:10px}",
+      ".hor .pd{font-size:14px;color:var(--muted);white-space:nowrap;padding-top:1px;line-height:1.35}",
+      ".hor .pd.isnew{color:var(--new);font-weight:600}",
+      ".hor li.pp .gn{font-size:15.5px}",
+      ".hor .lk{font-size:14px;margin-top:3px}",
+      ".hor .more{font-size:14px;padding:10px 0 2px;border-top:1px solid #eef4f6}",
+      ".hor .hog-t .rt .badge{background:var(--newbg);color:var(--new)!important}",
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -155,7 +162,27 @@
     }
   }
 
+  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function shortDate(d) {
+    var m = String(d || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return "";
+    var thisYear = new Date().getFullYear() === +m[1];
+    return MON[+m[2] - 1] + " " + (+m[3]) + (thisYear ? "" : ", " + m[1]);
+  }
+  function isRecent(d, days) {
+    var m = String(d || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
+    return m ? (Date.now() - new Date(+m[1], +m[2] - 1, +m[3]).getTime()) / 864e5 <= days : false;
+  }
+  function paperHTML(it, q) {
+    var pp = it.paper, meta = [pp.j, pp.a].filter(Boolean).join(". ");
+    var links = pp.p ? '<div class="lk"><a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a></div>' : "";
+    return '<li class="pp"><div class="pd' + (isRecent(pp.d, 7) ? " isnew" : "") + '">' + esc(shortDate(pp.d)) + "</div><div>" +
+      '<div class="gn"><a href="' + esc(it.u) + '" target="_blank" rel="noopener">' + hilite(it.n, q) + "</a></div>" +
+      '<div class="ref">' + hilite(meta, q) + (pp.ty ? ' <span class="badge ol">' + esc(pp.ty) + "</span>" : "") + "</div>" + links + "</div></li>";
+  }
+
   function rowHTML(it, q, sec, idx) {
+    if (it.paper) return paperHTML(it, q);
     var badges = "";
     if (it.widget) badges += '<span class="badge">Built in</span>';
     if (it.login) badges += '<span class="badge ol">Login required</span>';
@@ -183,6 +210,7 @@
       (withSearch ? '<div class="hog-bar"><input class="hog-q" type="search" placeholder="Search ' + esc(data.titles[key].toLowerCase()) + '" aria-label="Search ' + esc(data.titles[key]) + '">' +
         '<button class="hog-btn hog-all" type="button">Open all</button></div><div class="hog-status" aria-live="polite"></div>' : "") +
       '<div class="hog-acc"></div>' +
+      (key === "papers" && data.papersBuilt ? '<p class="hog-foot">Updated daily from PubMed and the journals\u2019 own feeds; last update ' + esc(data.papersBuilt) + ". Newest first.</p>" : "") +
       (key === "calc" ? '<p class="hog-foot">Missing a calculator or found an error? <a href="mailto:' + MAIL + '?subject=Calculators%20section">Send a suggestion</a>.</p>' : "") + "</div>";
     var root = el.firstChild, state = { q: "" };
 
@@ -190,15 +218,16 @@
       var q = norm(state.q.trim()), acc = root.querySelector(".hog-acc"), open = {}, html = "", hits = 0;
       acc.querySelectorAll(".hog-item.open").forEach(function (n) { open[n.getAttribute("data-k")] = 1; });
       panels.forEach(function (p) {
-        var items = p.items.filter(function (it) { return !q || norm([it.n, it.x, it.note, domain(it.u), p.title].join(" ")).indexOf(q) >= 0; });
+        var items = p.items.filter(function (it) { return !q || norm([it.n, it.x, it.note, it.paper ? it.paper.j + " " + it.paper.a : domain(it.u), p.title].join(" ")).indexOf(q) >= 0; });
         if (q && !items.length) return;
         hits += items.length;
         var isOpen = q ? true : !!open[p.key];
         html += '<div class="hog-item' + (isOpen ? " open" : "") + '" data-k="' + esc(p.key) + '">' +
           '<button class="hog-t" type="button" aria-expanded="' + isOpen + '"><span class="nm">' + esc(p.title) + "</span>" +
-          '<span class="rt"><span>' + (q ? items.length + " of " + p.items.length : p.items.length) + '</span><span class="pm" aria-hidden="true">' + (isOpen ? "–" : "+") + "</span></span>" +
+          '<span class="rt">' + (p.fresh && !q ? '<span class="badge">' + p.fresh + " new</span>" : "") + "<span>" + (q ? items.length + " of " + p.items.length : p.items.length) + '</span><span class="pm" aria-hidden="true">' + (isOpen ? "–" : "+") + "</span></span>" +
           '<span class="sb">' + esc(p.sub) + "</span></button>" +
-          '<div class="hog-c"><ol class="hog-list">' + items.map(function (it, i) { return rowHTML(it, q, key + "-" + p.key, i); }).join("") + "</ol></div></div>";
+          '<div class="hog-c"><ol class="hog-list">' + items.map(function (it, i) { return rowHTML(it, q, key + "-" + p.key, i); }).join("") + "</ol>" +
+          (p.home ? '<p class="more">More at <a href="' + esc(p.home[1]) + '" target="_blank" rel="noopener">' + esc(p.home[0]) + "</a></p>" : "") + "</div></div>";
       });
       acc.innerHTML = html || '<p class="hog-empty">Nothing matches “' + esc(state.q) + '”.</p>';
       var s = root.querySelector(".hog-status");
@@ -272,9 +301,24 @@
   var w = window;
   if (w.__horData) { mountAll(w.__horData); return; }
   if (w.__horLoading) { w.__horLoading.then(mountAll); return; }
-  w.__horLoading = fetch(base + "resources.json" + bust)
-    .then(function (r) { return r.json(); })
-    .then(function (d) { w.__horData = d; return d; });
+  var wantPapers = !!document.querySelector('[data-hog-section="papers"]');
+  w.__horLoading = Promise.all([
+    fetch(base + "resources.json" + bust).then(function (r) { return r.json(); }),
+    wantPapers ? fetch(base + "papers.json" + bust).then(function (r) { return r.json(); }).catch(function () { return null; }) : null
+  ]).then(function (r) {
+    var d = r[0], pj = r[1];
+    if (pj) {
+      d.titles.papers = "Recent papers";
+      d.papersBuilt = pj.built;
+      d.sections.papers = pj.feeds.filter(function (f) { return f.items && f.items.length; }).map(function (f) {
+        return { key: f.key, title: f.title, sub: f.sub, home: f.home,
+          fresh: f.items.filter(function (x) { return isRecent(x.d, 7); }).length,
+          items: f.items.map(function (x) { return { n: x.t, u: x.u, paper: x }; }) };
+      });
+    }
+    w.__horData = d;
+    return d;
+  });
   w.__horLoading.then(mountAll).catch(function () {
     document.querySelectorAll("[data-hog-section]:not([data-hog-done])").forEach(function (el) {
       el.innerHTML = '<p style="color:#56656f">This list could not be loaded. Please reload the page.</p>';

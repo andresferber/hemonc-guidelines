@@ -38,3 +38,6 @@ Every change is a commit, so earlier versions can always be restored from the hi
 <div id="hemonc-search"></div>
 <script src="https://andresferber.github.io/hemonc-guidelines/sitesearch.js"></script>
 ```
+
+## Recent papers
+`.github/workflows/papers.yml` runs `tools/fetch_papers.py` on GitHub every morning: the latest 20 papers from each source Andres chose (PubMed for Blood, Blood Advances, Cancer Research and JCO; the NEJM hematology/oncology feed; Nature subject feeds for leukemia, lymphomas, myeloma, MPN and MDS), saved in `papers.json`. If a source fails, its previous list is kept. Shown on Page ONE by `resources.js` with `<div data-hog-section="papers"></div>`.
