@@ -49,8 +49,15 @@ def check(url):
     return {"code": 0, "err": "no response"}
 
 
-def status(res):
+def moved_home(url, final):
+    from urllib.parse import urlparse
+    a, b = urlparse(url), urlparse(final or url)
+    return bool(final) and len(a.path.strip("/")) > 0 and b.path.strip("/") == "" and not b.query
+
+
+def status(res, url=""):
     c = res["code"]
+    if 200 <= c < 400 and moved_home(url, res.get("final")): return "fail"
     if 200 <= c < 400: return "ok"
     if c in (401, 403, 429, 999): return "blocked"
     return "fail"
@@ -63,7 +70,7 @@ def main():
     out = {}
     with cf.ThreadPoolExecutor(8) as ex:
         for url, res in zip(links, ex.map(check, links)):
-            st = status(res)
+            st = status(res, url)
             prev = old.get(url, {})
             fails = prev.get("fails", 0) + 1 if st == "fail" else 0
             out[url] = dict(where=links[url], status=st, code=res["code"], fails=fails,
