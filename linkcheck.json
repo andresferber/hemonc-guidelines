@@ -1,10 +1,10 @@
 {
- "checked": "2026-10-25 18:31 UTC",
+ "checked": "2026-10-25 18:35 UTC",
  "summary": {
-  "ok": 299,
+  "ok": 301,
   "blocked": 59,
-  "fail": 5,
-  "broken": 0
+  "fail": 3,
+  "broken": 3
  },
  "links": {
   "https://www.nccn.org/guidelines/category_1": {
@@ -21,11 +21,11 @@
    "fails": 0,
    "broken": false
   },
-  "https://www.esmo.org/guidelines/guidelines-by-topic/haematological-malignancies": {
+  "https://www.esmo.org/guidelines/esmo-clinical-practice-guidelines-haematological-malignancies": {
    "where": "guidelines: esmo",
-   "status": "fail",
-   "code": 404,
-   "fails": 1,
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
    "broken": false
   },
   "https://ehaweb.org/clinical-practice/guidelines-by-areas-of-disease": {
@@ -42,13 +42,12 @@
    "fails": 0,
    "broken": false
   },
-  "https://society.asco.org/practice-patients/guidelines": {
+  "https://www.asco.org/practice-patients/guidelines": {
    "where": "guidelines: asco",
-   "status": "fail",
-   "code": 0,
-   "fails": 1,
-   "broken": false,
-   "err": "[Errno -5] No address associated with hostname"
+   "status": "ok",
+   "code": 200,
+   "fails": 0,
+   "broken": false
   },
   "https://b-s-h.org.uk/guidelines/": {
    "where": "guidelines: bsh",
@@ -727,7 +726,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=3ce555f3-f434-4361-a223-67ea3406cec9"
+   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=797df7d9-11cf-4ce5-b416-9a9a97e3f3fb"
   },
   "https://pubmed.ncbi.nlm.nih.gov/41069303/": {
    "where": "guidelines: bsh-rrmm-2025",
@@ -1917,8 +1916,8 @@
    "where": "guidelines: imwg-img-2019",
    "status": "fail",
    "code": 500,
-   "fails": 1,
-   "broken": false
+   "fails": 2,
+   "broken": true
   },
   "https://pubmed.ncbi.nlm.nih.gov/33709131/": {
    "where": "guidelines: eortc-img-2021",
@@ -1952,8 +1951,8 @@
    "where": "guidelines: esc-ctpa-2025",
    "status": "fail",
    "code": 0,
-   "fails": 1,
-   "broken": false,
+   "fails": 2,
+   "broken": true,
    "err": "timed out"
   },
   "https://pubmed.ncbi.nlm.nih.gov/32272184/": {
@@ -2267,7 +2266,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUtablNBM2NxOUEwbU55UFQybE5RNDRoaEI5RlRIdGhTYnFsVmtVQk1nVXdHcFFhZXFBbjNWeFgrUkowSEhZMG5tbGFORlU3eHhtN1ppL1ZYNkpobk5TcGNDejFkY0FUT0RBY2pvS0JEMHFReFR4RnlmOUtJNEpCVUdCM2V6TUZVUUFBQUJqNFFSTlpmQnAzYmNPZFNZaUh1czdhTFdyOGw0UXJxUWc9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1LWm5TQTNjcTlBMG1OeVBUMmxOUTQ0aGhCOUZUSHRoU2JxbFZrVUJNZ1V3R3BRYWVxQW4zVnhYK1JKMEhIWTBuZz09IiwieSI6IkFBQUFNR2xhTkZVN3h4bTdaaS9WWDZKaG5OU3BjQ3oxZGNBVE9EQWNqb0tCRDBxUXhUeEZ5ZjlLSTRKQlVHQjNlek1GVVE9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=5A59FCBCAF5D145AF3FD4957E8D686B6FE74C5BB9541F425%2DAED372B72B066F9381C6582E52CEAA0A9B0924FE2169BE0C6EB504E2A041D9A6&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVIMlpqNFZKeHc5SG5NRkFaUWlkRTNSUEpGVXg0RHpYemFBQ3NMS05hRVclMkZqdkNYdjZFY0l2VUI1Z1Mzc0thSTFaZVhvSm5BUlJKd0d0TEFuaGkwJTJCcFBNYm5FQjVLNDJJUUFnWWRLdm1HTm4lMkZnWTJJdmVXM2lLQUQ3ZlR0b3VwRnFDcSUyQkl4eG93cm9TaVBkRXhrVm1FSlFLSGRKWUdiSUwwSUhMQ1BERnlDV0JGR1hNamYySDM3U0Q2YkhzcVZvcFBEQjZjOHVEaHl4b3UzdERDeFlTdU41MlRBdnFjVDdqcDNLZ1o5R2pzUVFuVlpVeEpyWFBpd1M5cmVVYTU1ZHlXbXJ1Y0QlMkZPbktvM2pLanM5Z0c2SXZvMyUyQlN3ZzQ1ZUgzMUdMR1F3WExwUENTU2pLVGZNTVJ0RHF2TjV4b3c0Z2RMaUswT2ozOFp2RHQwYVFJNlE0ak1NejVNJTNE&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=0b6848a2%2Df07d%2Df000%2Defbf%2D708f23c78276"
+   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQU5NcG9aUmdXa3Y3bVBtOEZoT3lwVmIxVUxCLzNvYi9VV0ovcU94eEFQbzQyRWwrS1h5SGYyRzYwRVJVRW4yQTBCNmNMOEZ4ZzRUcFhFc29oT2hsZEJwWE9qS0pmNmo5S205MjUzVkpOY0RRSVFLT24yNm5nL3lvU2xGejcrZ1BLQUFBQUJoemxGWlR3RDhqNzBLWU5aWHY3U3F4N0M4eXd4UERURDg9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1OTXBvWlJnV2t2N21QbThGaE95cFZiMVVMQi8zb2IvVVdKL3FPeHhBUG80MkVsK0tYeUhmMkc2MEVSVUVuMkEwQT09IiwieSI6IkFBQUFNQjZjTDhGeGc0VHBYRXNvaE9obGRCcFhPaktKZjZqOUttOTI1M1ZKTmNEUUlRS09uMjZuZy95b1NsRno3K2dQS0E9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=F4786CA0603F0347AC933842D5DB70A2BE54DDE127E31546%2D924344D5210A6844D188E54B57097625CC344DABEA4729D6097FBD9BFC225290&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVGU2pGejBwSHY5UHVZRkdTZFRuM2szY1Q3dFMlMkJXcHBXaENzbTAxWGZkWUJUSEUyREpGdGhiOVd0NWZHSnVXRnJRbGRTdmVkOTgzNld1NVBsMTQlMkYlMkYyNnRodEVHZmthdnhSbDh0T0w1bVROUUtHMiUyQkdnYVI2aDVydXFnTVBnSVIyTGdyOXRqbjBTeEVuWUI1VXolMkZCRmhFWXVSc081VmVubSUyRnE0eCUyQlB3T1FQMmlDa3Z1TUV6ZzVGekdjb3FQN29QVTh5YXNIR0VQb2dsUkt6bHZiajFXVkRTVWUzQmZqMVFIUUF2ejQ5cUUzYnhkUGRNVzBIemVuanhla2hOVktVayUyQmJnN2tXMWZwZ05IOWNMbENaOU9nZUI1MTJ1ZEFDYXRNdXBWU0NEYVN3a0Rua0gxeUFWaSUyRjNGUUd5NFRIRTJMS2dNZGJ1elpqc1M1cHVTWnY1cFl1JTJGMSUyQk51dks&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4f6848a2%2Db042%2D0001%2D11f5%2D519445593a8f"
   },
   "http://atlasgeneticsoncology.org/": {
    "where": "tools / Genetics and molecular biology: Atlas of Genetics and Cytogenetics in Oncology and Haematology",
@@ -2324,8 +2323,8 @@
    "where": "tools / Drugs and protocols: Epocrates",
    "status": "fail",
    "code": 500,
-   "fails": 1,
-   "broken": false
+   "fails": 2,
+   "broken": true
   },
   "https://crediblemeds.org/": {
    "where": "tools / Drugs and protocols: CredibleMeds",
@@ -2334,13 +2333,12 @@
    "fails": 0,
    "broken": false
   },
-  "http://www.pennstatehershey.org/web/cancer/patientcare/professionals/chemo-orders": {
-   "where": "tools / Drugs and protocols: Penn State Hershey chemotherapy orders",
+  "https://cancer.psu.edu/health-care-professionals/chemo-orders-and-consents": {
+   "where": "tools / Drugs and protocols: Penn State Cancer Institute chemotherapy orders",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.pennstatehealth.org/"
+   "broken": false
   },
   "https://www.ab-cip.org/": {
    "where": "tools / Special populations: ABCIP",
@@ -2441,29 +2439,26 @@
    "fails": 0,
    "broken": false
   },
-  "https://cancer.sanger.ac.uk/mpn-multistage/": {
+  "https://www.sanger.ac.uk/tool/progmod/progmod/": {
    "where": "calc / Myeloid malignancies: MPN multistage calculator",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.sanger.ac.uk/tool/progmod/progmod/"
+   "broken": false
   },
-  "https://www.mdcalc.com/sokal-index-chronic-myelogenous-leukemia-cml": {
+  "https://www.mdcalc.com/calc/2143/sokal-index-chronic-myelogenous-leukemia-cml": {
    "where": "calc / Myeloid malignancies: Sokal score",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/2143/sokal-index-chronic-myelogenous-leukemia-cml"
+   "broken": false
   },
-  "https://www.mdcalc.com/eutos-score-chronic-myelogenous-leukemia-cml": {
+  "https://www.mdcalc.com/calc/3906/eutos-score-chronic-myelogenous-leukemia-cml": {
    "where": "calc / Myeloid malignancies: EUTOS score",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/3906/eutos-score-chronic-myelogenous-leukemia-cml"
+   "broken": false
   },
   "https://bioinf.stemcells.cam.ac.uk/shiny/vassiliou/MN_predict": {
    "where": "calc / Myeloid malignancies: MN-predict",
@@ -2501,13 +2496,12 @@
    "fails": 0,
    "broken": false
   },
-  "https://www.mdcalc.com/khorana-risk-score-venous-thromboembolism-cancer-patients": {
+  "https://www.mdcalc.com/calc/3315/khorana-risk-score-venous-thromboembolism-cancer-patients": {
    "where": "calc / Thrombosis and TTP: Khorana score",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/3315/khorana-risk-score-venous-thromboembolism-cancer-patients"
+   "broken": false
   },
   "https://www.mdcalc.com/calc/3970/caprini-score-venous-thromboembolism-2005": {
    "where": "calc / Thrombosis and TTP: Caprini score",
@@ -2516,29 +2510,26 @@
    "fails": 0,
    "broken": false
   },
-  "http://www.meducator3.net/algorithms/content/risk-score-rogers-et-al-predicting-venous-thromboembolism-general-or-vascular-surgery-0": {
+  "https://pubmed.ncbi.nlm.nih.gov/17544079/": {
    "where": "calc / Thrombosis and TTP: Rogers score",
    "status": "ok",
-   "code": 200,
+   "code": 203,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.meducator3.net/"
+   "broken": false
   },
-  "http://www.meducator3.net/algorithms/content/impactill-model-spyropoulos-et-al-identifying-hospitalized-medical-patient-risk-venous-0": {
+  "https://pubmed.ncbi.nlm.nih.gov/21436241/": {
    "where": "calc / Thrombosis and TTP: IMPACT-ILL",
    "status": "ok",
-   "code": 200,
+   "code": 203,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.meducator3.net/"
+   "broken": false
   },
-  "http://cemsiis.meduniwien.ac.at/en/kb/science-research/software/clinical-software/recurrent-vte/": {
+  "https://pmc.ncbi.nlm.nih.gov/articles/PMC3959721/": {
    "where": "calc / Thrombosis and TTP: Vienna prediction model",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://data-science.meduniwien.ac.at/"
+   "broken": false
   },
   "https://www.mdcalc.com/calc/10200/plasmic-score-ttp": {
    "where": "calc / Thrombosis and TTP: PLASMIC score",
@@ -2553,7 +2544,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://validate.perfdrive.com/?ssa=503e42fa-e7ce-4563-9fbb-157c367880eb&ssb=65981269290&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=49c5a7e7-cofn-44b4-8c47-517dfeac5d8c&ssk=botmanager_support@radware.com&ssm=37333009457196214108543231060667&ssn=c2a7e7200f2885225940d8fdf7efb886fc40dd98fb03-fb9b-458d-908404&sso=15e81526-177fd91fbbacd989dfcbc60dabc807040d7458a950f79fa0&ssp=53263926681792972729179292005279043&ssq=72274235302097368282153020698194493553441&ssr=MTcyLjE3NC4xNTcuMTI5&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImFwaHAuZnIiLCJfX3V6bWYiOiI3ZjkwMDBkZDk4ZmIwMy1mYjliLTQ1OGQtOTUyNi0xNzdmZDkxZmJiYWMxLTE3OTI5NTMwMjA4MTQwLTAwNTJlNjBkZjRmMjhmMDlmNGMxMCIsInV6bXgiOiI3ZmMwMDBlNjUyMzZiMC01MmFjLTQ1MzEtOTEwZC1iZWU5MDE1NDUyNzAxLTE3OTI5NTMwMjA4MTQwLTAwYTkzNjA4NzMwNzhlODBlODExMCJ9"
+   "final": "https://validate.perfdrive.com/?ssa=835655b8-0379-47bf-b13b-bfd8ac9659d7&ssb=25588273560&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=ab27b5ad-cofn-483b-b8bf-977f6b61f7e5&ssk=botmanager_support@radware.com&ssm=75520124280411079104099085336024&ssn=937280496daa19300adbb862e2d4fc4ddd9753f0accd-4096-46b4-be206d&sso=0a5ea9e3-9d087e8201f4ace4a16f9d42e5bd649732c4273d61dc4e74&ssp=80586666921792969846179294351379659&ssq=42046965329828654917453298102835693084314&ssr=MjAuMTcxLjM3LjE4NQ==&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwNDcwMDU5YjctYTBiMi00MjE2LWE3MjYtYjBiNmRiNjQyYWVmMS0xNzkyOTUzMjk4MTA3MC0wMGE3Mjc4YjkwZmU2MWFiYzRiMTAiLCJfX3V6bWYiOiI3ZjkwMDA1M2YwYWNjZC00MDk2LTQ2YjQtYjllMy05ZDA4N2U4MjAxZjQxLTE3OTI5NTMyOTgxMDcwLTAwNTMyMWZiMjZmMmJmMWRkZDkxMCIsInJkIjoiYXBocC5mciJ9"
   },
   "https://www.andresferber.org/uploads/5/6/7/1/56718329/204_hlh_diagnostic_criteria.png": {
    "where": "calc / HLH: HLH-2004 diagnostic criteria",
@@ -2562,29 +2553,26 @@
    "fails": 0,
    "broken": false
   },
-  "https://www.mdcalc.com/follicular-lymphoma-international-prognostic-index-flipi": {
+  "https://www.mdcalc.com/calc/2320/follicular-lymphoma-international-prognostic-index-flipi": {
    "where": "calc / Lymphoid malignancies: FLIPI",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/2320/follicular-lymphoma-international-prognostic-index-flipi"
+   "broken": false
   },
-  "https://www.mdcalc.com/international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi": {
+  "https://www.mdcalc.com/calc/3936/international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi": {
    "where": "calc / Lymphoid malignancies: IPI and R-IPI",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/3936/international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi"
+   "broken": false
   },
-  "https://www.mdcalc.com/mantle-cell-lymphoma-international-prognostic-index-mipi": {
+  "https://www.mdcalc.com/calc/4053/mantle-cell-lymphoma-international-prognostic-index-mipi": {
    "where": "calc / Lymphoid malignancies: MIPI",
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false,
-   "final": "https://www.mdcalc.com/calc/4053/mantle-cell-lymphoma-international-prognostic-index-mipi"
+   "broken": false
   },
   "https://awmrisk.com/": {
    "where": "calc / Lymphoid malignancies: Asymptomatic Waldenström progression",
