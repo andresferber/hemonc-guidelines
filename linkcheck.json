@@ -1,8 +1,8 @@
 {
- "checked": "2026-10-25 18:37 UTC",
+ "checked": "2026-10-25 18:56 UTC",
  "summary": {
-  "ok": 302,
-  "blocked": 59,
+  "ok": 300,
+  "blocked": 58,
   "fail": 0,
   "broken": 0
  },
@@ -726,7 +726,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=09b13574-a54a-4aeb-ab5d-1715dc69c8f1"
+   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=56431b0a-61c2-419c-9b2b-08c868538249"
   },
   "https://pubmed.ncbi.nlm.nih.gov/41069303/": {
    "where": "guidelines: bsh-rrmm-2025",
@@ -2203,27 +2203,6 @@
    "fails": 0,
    "broken": false
   },
-  "https://www.openevidence.com/": {
-   "where": "tools / Clinical references: OpenEvidence",
-   "status": "blocked",
-   "code": 403,
-   "fails": 0,
-   "broken": false
-  },
-  "https://www.uptodate.com/login": {
-   "where": "tools / Clinical references: UpToDate",
-   "status": "ok",
-   "code": 200,
-   "fails": 0,
-   "broken": false
-  },
-  "https://pubmed.ncbi.nlm.nih.gov/": {
-   "where": "tools / Clinical references: PubMed",
-   "status": "ok",
-   "code": 200,
-   "fails": 0,
-   "broken": false
-  },
   "https://clinicaltrials.gov/": {
    "where": "tools / Clinical trials: ClinicalTrials.gov",
    "status": "ok",
@@ -2251,7 +2230,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUtacmlRV2Uvbi9UcUF6aFd0cmpTY3BVYVdweEJ3Qzh4SWpHQ2RHRDB1enk5RFpoZm5IN1dwekhzTzVPYjhBd3NBcTU5c2EwMHJNaTVxYUpOZDJabm9KTVJMWmp1NDlEOEZ5QnlJcHIvYU5xeklPc2JUVURkcXZHaC9VcC9mOXcyQUFBQUJnN2NCejMrRnR6TUZoZXNIUDJWOElaRDdIa1JsSUovMEE9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1LWnJpUVdlL24vVHFBemhXdHJqU2NwVWFXcHhCd0M4eElqR0NkR0QwdXp5OURaaGZuSDdXcHpIc081T2I4QXdzQT09IiwieSI6IkFBQUFNQXE1OXNhMDByTWk1cWFKTmQyWm5vSk1STFpqdTQ5RDhGeUJ5SXByL2FOcXpJT3NiVFVEZHF2R2gvVXAvZjl3MkE9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=2FC0B5830695BA520343A58AE3E3E542FB2845542D2FE375%2D54CF6307566AE2FD18655FAD96E3955EF343103D2CE2F9AEC41F7A8CEF153F39&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVEcTQ5elpjQldSSmxkcjd6REV2V1ZxejJ1WTI0RzRMcHdZRVVyYThQVlpReDB4QXYxaGtNYndqNEJVT0M4ZVJUYUIlMkJhNFVJTG1zOCUyQkwlMkJYSlBKN2xuRnZVUUsyblF6U2ZlT2xKbXFIV3RubzdsOEFHdEZxQTJzTXglMkZBRCUyQjJtQ2t2cURhVDd5ciUyRnk4TG9kMWdoRmZQVTRYbGYlMkI1cmRZNW04RVdaMG4lMkIxN2ExOEpVcVB4U2RFUExGNlhkTyUyQmRQMyUyRmlRQ3NHR0Q0JTJCQUhRSGFwMFZ5OGx5QkNTWWx4R2dJayUyQlpQV1lZNFVFQzFXVWRiRlJlNVBTWiUyRmVVb2FkSUIzWFJsWWlJT05aS3pLbzM4JTJGcUN5YTdUbnhSdEZ5MlRhJTJCNnlTciUyQlVlSjZoZVBCd3hibkdHTXIlMkY1cTdIblJLSDNJQiUyRlpHZG9takNuRjZ6ZXhjNGF1TnAweSUyQjVpWlJwNCUyQjAlM0Q&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=6a6848a2%2D9084%2Df000%2Defbf%2D760c9b223324"
+   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQVBENTZzY0tEdFQrQXN0Uk11bnQybGZldFp5dkIwZklBZFdqVTczcGUrd1R6U0VpR0JrMGY3U3dNOERRWTQwS1F2TlBpNGsyR0prTXdBczExZXUrODZMd3pwaXM5T25EVjdiZEFGRHRmV2xOYjBQVFVHVGFCbDNFUG5VNE5ib3lXUUFBQUJnT240WWx4dVIrOUFDdDd3dy9SVEh2a3o2TzZ3d1BRY1E9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1QRDU2c2NLRHRUK0FzdFJNdW50MmxmZXRaeXZCMGZJQWRXalU3M3BlK3dUelNFaUdCazBmN1N3TThEUVk0MEtRZz09IiwieSI6IkFBQUFNUE5QaTRrMkdKa013QXMxMWV1Kzg2THd6cGlzOU9uRFY3YmRBRkR0ZldsTmIwUFRVR1RhQmwzRVBuVTROYm95V1E9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=F967CA53FE5CB69B8CA2EA57BB330146415AF6215D70189A%2D3CD17BF768E464C3FBFE26CC4A8A4F6EA233ACC45747F11F02311117CBA0D99A&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVOc0I0N25JJTJGJTJGUklqU1Z6V3RIWDZGbTFuMFdRZURrNHF3WjZXdFBDVHEzQXJrZHlZSGdJTmUzcmFoV2VXUGxLOU5QNDdXd21MM0hxOXpEYnhwd1NrVkxhQ1ZqSWxRV2ozcyUyQlRPVExXUWREQ2ElMkZjR0ZWeXFaVCUyRkxRaVhaV0hNYzNXeXhRa2hRMVI0c0E3dExVbmlqUjJWNDJZY1hzTXQlMkJqTTRVb0hFbGpwZjY3SE5pcGVPZjRpNjBYSkV3T2xEemVwemNOWFVxNG9wUjFzQzhXRE5hTnAydEdVU2QwMXB5WGlUSEpNZUVjZSUyQnZvem1XbG9lVll4bzdFNTlGQ3VuTTcyZTZjWGxmU0tzJTJCZ2h3VHg2SHQ0N3ppcVR0NlpqT3ZQNzJrMFVsWjJFbG1jeGJTYzFKM3RTJTJGektnS3ZjRlp6JTJCRjZybEM4TWMzbEZRVGFNU3FKcXN3SHdXV3B5VlRnJTNE&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=846948a2%2Dc09a%2Df000%2Defbf%2D75ecdd2d3aee"
   },
   "http://atlasgeneticsoncology.org/": {
    "where": "tools / Genetics and molecular biology: Atlas of Genetics and Cytogenetics in Oncology and Haematology",
@@ -2529,7 +2508,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://validate.perfdrive.com/?ssa=7403ef09-d5fc-4286-b547-48356144338b&ssb=00420297465&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=89d75ae7-cofn-40c5-a5e5-f6435d6b16c0&ssk=botmanager_support@radware.com&ssm=69072197438600950106246997758726&ssn=3b26aae7c43c77bebf6b0a19ecdf0df665e08b2aea34-9dfd-4700-97fe66&sso=88bd7b57-0730ca716ab7cc85e9b74d72a161ea43f32fb6bef4ac6024&ssp=26709716791792981692179291925026558&ssq=18878665340924390962153409395098830784560&ssr=MTcyLjIxNS4yMTYuMjEx&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJ1em14IjoiN2ZjMDAwZTYwZThiZGItMmMzMC00NWViLWI5MjctMmMwNzFiNGVhMTFiMS0xNzkyOTUzNDA5MTg2MC0wMGEzYjFhM2QyNTA0NWNmYzkzMTAiLCJfX3V6bWYiOiI3ZjkwMDA4YjJhZWEzNC05ZGZkLTQ3MDAtOWI1Ny0wNzMwY2E3MTZhYjcxLTE3OTI5NTM0MDkxODYwLTAwNTQzNDE3ZTQ5MTk4NTg3ZTgxMCIsInJkIjoiYXBocC5mciJ9"
+   "final": "https://validate.perfdrive.com/?ssa=8484e372-84e3-46e9-850c-b6b7ea7de773&ssb=19634261386&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=77d87f24-cofn-4a04-9837-524091b476c5&ssk=botmanager_support@radware.com&ssm=33109757547497167100816009926806&ssn=8d9710bb630fca35405f6e2a83ca8d30a28ef190363a-a633-41ec-8592b0&sso=4cbaee78-5749a1a7cf35ef3c8821cdcc42df9d4d79d0935157879616&ssp=56684121181792930607179294687099453&ssq=99044925456466279552154564812562366277987&ssr=MTM1LjIzMi4yMDguMTE5&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImFwaHAuZnIiLCJfX3V6bWYiOiI3ZjkwMDBmMTkwMzYzYS1hNjMzLTQxZWMtOGU3OC01NzQ5YTFhN2NmMzUxLTE3OTI5NTQ1NjQwODAwLTAwNWY5YTc3MzNjNmQxODY5ZmYxMCIsInV6bXgiOiI3ZmMwMDBlNjcwNjk4Zi02ZGYxLTRmNTItOTI1Yy1hY2E2ZGNjMTY0OGYxLTE3OTI5NTQ1NjQwODAwLTAwYThjZGY2NDU2MWVlMTAyZjkxMCJ9"
   },
   "https://www.andresferber.org/uploads/5/6/7/1/56718329/204_hlh_diagnostic_criteria.png": {
    "where": "calc / HLH: HLH-2004 diagnostic criteria",
