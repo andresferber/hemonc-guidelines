@@ -143,7 +143,7 @@
       (withSearch ? '<div class="hog-bar"><input class="hog-q" type="search" placeholder="Search ' + esc(data.titles[key].toLowerCase()) + '" aria-label="Search ' + esc(data.titles[key]) + '">' +
         '<button class="hog-btn hog-all" type="button">Open all</button></div><div class="hog-status" aria-live="polite"></div>' : "") +
       '<div class="hog-acc"></div>' +
-      '<p class="hog-foot">Links checked automatically every month. Broken link or a suggestion? <a href="mailto:' + MAIL + '?subject=' + encodeURIComponent(data.titles[key]) + '">Email ' + MAIL + "</a>.</p></div>";
+      (key === "calc" ? '<p class="hog-foot">Missing a calculator or found an error? <a href="mailto:' + MAIL + '?subject=Calculators%20section">Send a suggestion</a>.</p>' : "") + "</div>";
     var root = el.firstChild, state = { q: "" };
 
     function render() {
