@@ -1,10 +1,10 @@
 {
- "built": "2026-10-25 21:41 UTC",
+ "built": "2026-10-25 21:42 UTC",
  "feeds": [
   {
    "key": "blood",
    "title": "Blood: First Edition and latest papers",
-   "sub": "Blood (ASH), newest first",
+   "sub": "Blood (ASH)",
    "home": [
     "Blood First Edition",
     "https://ashpublications.org/blood/first-edition"
@@ -201,9 +201,149 @@
     "NEJM hematology/oncology",
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Osimertinib–Savolitinib in Advanced NSCLC after Progression during EGFR-TKI Therapy",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611335",
+     "j": "N Engl J Med",
+     "d": "2026-10-25",
+     "a": "Shun Lu et al."
+    },
+    {
+     "t": "Divarasib as Compared with Sotorasib or Adagrasib in KRAS G12C–Mutated NSCLC",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2605703",
+     "j": "N Engl J Med",
+     "d": "2026-10-25",
+     "a": "Ferdinandos Skoulidis et al."
+    },
+    {
+     "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611280",
+     "j": "N Engl J Med",
+     "d": "2026-10-25",
+     "a": "Fei Zhou et al."
+    },
+    {
+     "t": "Durvalumab, Tremelimumab, and Enfortumab Vedotin in Muscle-Invasive Bladder Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2608323",
+     "j": "N Engl J Med",
+     "d": "2026-10-24",
+     "a": "Thomas Powles et al."
+    },
+    {
+     "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
+     "j": "N Engl J Med",
+     "d": "2026-10-24",
+     "a": "Jiayu Wang et al."
+    },
+    {
+     "t": "Tarlatamab–Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2609482",
+     "j": "N Engl J Med",
+     "d": "2026-10-24",
+     "a": "Maurice Pérol et al."
+    },
+    {
+     "t": "Targeting HER2 — A Triumph of Science",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2611466",
+     "j": "N Engl J Med",
+     "d": "2026-10-24",
+     "a": "Sandra M. Swain"
+    },
+    {
+     "t": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610229",
+     "j": "N Engl J Med",
+     "d": "2026-10-22",
+     "a": "Yuanyuan Zhao et al."
+    },
+    {
+     "t": "Helicobacter pylori Infection — Advances, Challenges, and the Road Ahead",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMra2414530",
+     "j": "N Engl J Med",
+     "d": "2026-10-22",
+     "a": "Hong Li et al."
+    },
+    {
+     "t": "Reengineering Coagulation with a Bispecific Antibody",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcibr2608873",
+     "j": "N Engl J Med",
+     "d": "2026-10-22",
+     "a": "Flora Peyvandi"
+    },
+    {
+     "t": "Case 30-2026: A 52-Year-Old Man with Vision Loss in the Left Eye",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603184",
+     "j": "N Engl J Med",
+     "d": "2026-10-22",
+     "a": "Lucia Sobrin et al."
+    },
+    {
+     "t": "In Vivo Aquaporin-1 Circular RNA Therapy for Radiation-Induced Xerostomia",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMc2604891",
+     "j": "N Engl J Med",
+     "d": "2026-10-22",
+     "a": "Henry T. Hoffman et al."
+    },
+    {
+     "t": "Ponatinib–Blinatumomab or Imatinib–Chemotherapy for Adult Ph-Positive ALL",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2606208",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Sabina Chiaretti et al."
+    },
+    {
+     "t": "Lonvoguran Ziclumeran — In Vivo CRISPR Gene Editing in Hereditary Angioedema",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2600931",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Danny M. Cohn et al."
+    },
+    {
+     "t": "Case 29-2026: A 39-Year-Old Man with Abdominal Pain, Foot Drop, and a Spinal Mass",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603183",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Allan E. Pineda et al."
+    },
+    {
+     "t": "Flushing in Carcinoid Syndrome",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMicm2606144",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "N. Karthik et al."
+    },
+    {
+     "t": "Adapting to Genomic Medicine",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2608188",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Peter Marks"
+    },
+    {
+     "t": "IARC Perspective on Lung Cancer Screening",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMsb2608211",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Luciana Neamtiu et al."
+    },
+    {
+     "t": "Chemotherapy-free Treatment of Ph-Positive ALL",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2610489",
+     "j": "N Engl J Med",
+     "d": "2026-10-15",
+     "a": "Adele K. Fielding"
+    },
+    {
+     "t": "Effect of Screening with Multicancer Early-Detection Test on Late-Stage Cancer Diagnosis",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505723",
+     "j": "N Engl J Med",
+     "d": "2026-10-08",
+     "a": "Peter Sasieni et al."
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "leuk",
@@ -213,9 +353,149 @@
     "Nature: leukaemia",
     "https://www.nature.com/subjects/leukaemia"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Gradient-driven microfluidic framework for the screening of ratiometric drug combinations towards precision oncology in paediatric leukaemia",
+     "u": "https://www.nature.com/articles/s41551-026-01818-0",
+     "j": "",
+     "d": "2026-10-23",
+     "a": ""
+    },
+    {
+     "t": "Serine auxotrophy is a targetable vulnerability driven by PSAT1 suppression in AML",
+     "u": "https://www.nature.com/articles/s41375-026-03176-x",
+     "j": "",
+     "d": "2026-10-23",
+     "a": ""
+    },
+    {
+     "t": "Concordance between bone marrow and blood measurable residual disease after first-line novel agent treatment for chronic lymphocytic leukemia: a systematic review and meta-analysis",
+     "u": "https://www.nature.com/articles/s41375-026-03178-9",
+     "j": "",
+     "d": "2026-10-22",
+     "a": ""
+    },
+    {
+     "t": "FZR1 deficiency induces synthetic lethality with ATR inhibition by promoting premature cell cycle and mitotic catastrophe in acute lymphoblastic leukemia",
+     "u": "https://www.nature.com/articles/s41419-026-09310-y",
+     "j": "",
+     "d": "2026-10-21",
+     "a": ""
+    },
+    {
+     "t": "Immune reconstitution and clinical outcomes in B-ALL patients with versus without pre-HSCT Immunotherapy",
+     "u": "https://www.nature.com/articles/s41408-026-01638-0",
+     "j": "",
+     "d": "2026-10-21",
+     "a": ""
+    },
+    {
+     "t": "Allogeneic transplantation for plasma cell myeloma clears pre-transplant clonal haematopoiesis and is associated with a low rate of myeloid neoplasm post-cytotoxic-therapy",
+     "u": "https://www.nature.com/articles/s41409-026-02949-3",
+     "j": "",
+     "d": "2026-10-21",
+     "a": ""
+    },
+    {
+     "t": "ROR2-expressing acute myelogenous leukemia cells can be selectively targeted by anti-ROR2 CAR T cells",
+     "u": "https://www.nature.com/articles/s41417-026-01087-8",
+     "j": "",
+     "d": "2026-10-21",
+     "a": ""
+    },
+    {
+     "t": "Targeting the mitochondrial complex I subunit NDUFS2 potentiates FLT3 inhibition in acute myeloid leukaemia with FLT3 internal tandem duplication",
+     "u": "https://www.nature.com/articles/s41375-026-03170-3",
+     "j": "",
+     "d": "2026-10-19",
+     "a": ""
+    },
+    {
+     "t": "Targeting the eIF4F translation initiation complex disrupts BCR::ABL1 translation and overcomes drug resistance in CML",
+     "u": "https://www.nature.com/articles/s41375-026-03157-0",
+     "j": "",
+     "d": "2026-10-16",
+     "a": ""
+    },
+    {
+     "t": "BRCAness in FLT3-ITD AML confers vulnerability to PARP inhibition",
+     "u": "https://www.nature.com/articles/s41419-026-09228-5",
+     "j": "",
+     "d": "2026-10-14",
+     "a": ""
+    },
+    {
+     "t": "Inhibition of PHB2/PINK1-mediated mitophagy potentiates venetoclax activity in acute myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41375-026-03160-5",
+     "j": "",
+     "d": "2026-10-13",
+     "a": ""
+    },
+    {
+     "t": "Fibroblast growth factor receptor-signaling confers stroma-mediated drug resistance in malignant B cells",
+     "u": "https://www.nature.com/articles/s41375-026-03143-6",
+     "j": "",
+     "d": "2026-10-13",
+     "a": ""
+    },
+    {
+     "t": "An all-oral triplet regimen (decitabine/cedazuridine, venetoclax, and gilteritinib) for newly diagnosed and relapsed/refractory FLT3-mutated AML and high-risk MDS",
+     "u": "https://www.nature.com/articles/s41408-026-01643-3",
+     "j": "",
+     "d": "2026-10-13",
+     "a": ""
+    },
+    {
+     "t": "Ki-67, the chromosome periphery and de-compartmentalisation each contribute to nucleophosmin mislocalisation in acute myeloid leukaemia",
+     "u": "https://www.nature.com/articles/s41467-026-78560-3",
+     "j": "",
+     "d": "2026-10-12",
+     "a": ""
+    },
+    {
+     "t": "PHI-101: a novel FLT3 inhibitor with potent activity against the F691L gatekeeper resistance mutation",
+     "u": "https://www.nature.com/articles/s41375-026-03171-2",
+     "j": "",
+     "d": "2026-10-12",
+     "a": ""
+    },
+    {
+     "t": "Bridging therapy in pediatric and AYA patients under 25 years with relapsed/refractory B-ALL undergoing anti-CD19 CAR-T therapy: a multicenter retrospective study by the Spanish group GETH-TC",
+     "u": "https://www.nature.com/articles/s41409-026-03067-w",
+     "j": "",
+     "d": "2026-10-12",
+     "a": ""
+    },
+    {
+     "t": "Correction: BCR::ABL1 tyrosine kinase inhibitors induce ribosome collisions to activate ZAK-dependent ribotoxic stress and apoptosis in chronic myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41375-026-03166-z",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    },
+    {
+     "t": "Increased mitochondrial biogenesis by GPR56 contributes to venetoclax resistance in acute myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41419-026-09225-8",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    },
+    {
+     "t": "RUNX1 aberrations in blast-phase chronic myeloid leukaemia induce the RNA-binding protein SPATS2L, which promotes growth, survival and stress granule assembly",
+     "u": "https://www.nature.com/articles/s41375-026-03161-4",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    },
+    {
+     "t": "Mitochondria transfer via tunneling nanotubes drives macrophage immunosuppression and metabolic reprogramming in pediatric AML",
+     "u": "https://www.nature.com/articles/s41375-026-03164-1",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "nhl",
@@ -225,9 +505,149 @@
     "Nature: non-Hodgkin lymphoma",
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Determinants of response to CAR T cell therapy in a multicenter, multi-trial cohort analysis of patients with lymphoma",
+     "u": "https://www.nature.com/articles/s41591-026-04707-w",
+     "j": "",
+     "d": "2026-10-23",
+     "a": ""
+    },
+    {
+     "t": "Evaluation of gene expression assays to classify large B-cell lymphoma by molecular subtype using formalin-fixed paraffin-embedded tumor biopsies",
+     "u": "https://www.nature.com/articles/s41408-026-01640-6",
+     "j": "",
+     "d": "2026-10-19",
+     "a": ""
+    },
+    {
+     "t": "Allogeneic versus autologous stem cell transplantation for extranodal NK/T-Cell lymphoma: A systematic review and meta-analysis",
+     "u": "https://www.nature.com/articles/s41409-026-03078-7",
+     "j": "",
+     "d": "2026-10-16",
+     "a": ""
+    },
+    {
+     "t": "Combating CD24 to overcome CD19 CAR-T resistance via induction of innate and adaptive immunity in B-cell malignancies",
+     "u": "https://www.nature.com/articles/s41375-026-03159-y",
+     "j": "",
+     "d": "2026-10-12",
+     "a": ""
+    },
+    {
+     "t": "Targeting the gene encoding human T-cell leukemia virus type 1 basic zip factor via CRISPR/Cas9 potentially affects ATL cell survival",
+     "u": "https://www.nature.com/articles/s41598-026-74231-x",
+     "j": "",
+     "d": "2026-10-08",
+     "a": ""
+    },
+    {
+     "t": "A multi-center, single-arm, phase 2 trial of dasatinib in T follicular helper cell lymphomas",
+     "u": "https://www.nature.com/articles/s41467-026-78100-z",
+     "j": "",
+     "d": "2026-10-05",
+     "a": ""
+    },
+    {
+     "t": "ROR1 upregulation after CD19-CAR T-cell relapse in mantle cell lymphoma identifies a targetable vulnerability for ROR1-directed bispecific modalities",
+     "u": "https://www.nature.com/articles/s41375-026-03146-3",
+     "j": "",
+     "d": "2026-10-01",
+     "a": ""
+    },
+    {
+     "t": "Real-world treatment patterns and outcomes of brentuximab vedotin–based therapy in CD30-positive lymphomas in China: the prospective BRAVE study",
+     "u": "https://www.nature.com/articles/s41408-026-01627-3",
+     "j": "",
+     "d": "2026-09-30",
+     "a": ""
+    },
+    {
+     "t": "End-of-induction circulating tumor DNA outperforms conventional cellular MRD for predicting early progression in follicular lymphoma: an ancillary study of the RELEVANCE randomized trial",
+     "u": "https://www.nature.com/articles/s41408-026-01631-7",
+     "j": "",
+     "d": "2026-09-29",
+     "a": ""
+    },
+    {
+     "t": "Targeting USP14 disrupts lipid metabolism and survival pathways in diffuse large B-cell lymphoma (DLBCL)",
+     "u": "https://www.nature.com/articles/s41419-026-09311-x",
+     "j": "",
+     "d": "2026-09-28",
+     "a": ""
+    },
+    {
+     "t": "Reduced-intensity T-replete allogeneic stem cell transplantation provides long-term survival in relapsed angioimmunoblastic T-cell lymphoma post-autologous transplant in patients over the age of 50",
+     "u": "https://www.nature.com/articles/s41409-026-03037-2",
+     "j": "",
+     "d": "2026-09-23",
+     "a": ""
+    },
+    {
+     "t": "Comparative efficacy and safety of CD19 chimeric antigen receptor T-cell therapy versus CD3/CD20 bispecific antibodies in relapsed/refractory mantle cell lymphoma: a meta-analysis of clinical trials and real-world studies",
+     "u": "https://www.nature.com/articles/s41408-026-01624-6",
+     "j": "",
+     "d": "2026-09-23",
+     "a": ""
+    },
+    {
+     "t": "Long-term survival and cause-specific mortality after event-free survival at 24 months (EFS24) in mantle cell lymphoma: an international multicohort study",
+     "u": "https://www.nature.com/articles/s41408-026-01625-5",
+     "j": "",
+     "d": "2026-09-22",
+     "a": ""
+    },
+    {
+     "t": "Ablation of CDK6 and STAT5B rewires T cell developmental dynamics and prevents ALK+ lymphoma formation",
+     "u": "https://www.nature.com/articles/s41467-026-77466-4",
+     "j": "",
+     "d": "2026-09-15",
+     "a": ""
+    },
+    {
+     "t": "Safety and efficacy of birelentinib, a novel LYN/BTK dual inhibitor, in relapsed/refractory diffuse large B-cell lymphoma: a phase 2 study (TAI-SHAN9)",
+     "u": "https://www.nature.com/articles/s41408-026-01617-5",
+     "j": "",
+     "d": "2026-09-08",
+     "a": ""
+    },
+    {
+     "t": "Early deterioration and subsequent recovery of nursing complexity after CAR-T therapy: a prospective score-based analysis",
+     "u": "https://www.nature.com/articles/s41409-026-03031-8",
+     "j": "",
+     "d": "2026-09-05",
+     "a": ""
+    },
+    {
+     "t": "Pre–CAR-T B-cell–directed immunotherapy exposure and outcomes after CD19 CAR-T for large B-cell lymphoma: An EBMT registry analysis",
+     "u": "https://www.nature.com/articles/s41409-026-02979-x",
+     "j": "",
+     "d": "2026-09-01",
+     "a": ""
+    },
+    {
+     "t": "Publisher Correction: Decade-long persistence of CD19 CAR T cells in B cell lymphomas",
+     "u": "https://www.nature.com/articles/s41591-026-04668-0",
+     "j": "",
+     "d": "2026-08-26",
+     "a": ""
+    },
+    {
+     "t": "Genome-wide CRISPR screens identify an RXR–MYLIP–LDLR axis regulating BH3 mimetic sensitivity in peripheral T-cell lymphomas",
+     "u": "https://www.nature.com/articles/s41388-026-03970-y",
+     "j": "",
+     "d": "2026-08-25",
+     "a": ""
+    },
+    {
+     "t": "Multimodal spatial profiling reveals distinct myeloid-defined ENKTL subgroups and tumor-myeloid cooperativity within prognostic inflammatory niche",
+     "u": "https://www.nature.com/articles/s41375-026-03118-7",
+     "j": "",
+     "d": "2026-08-24",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "hl",
@@ -237,9 +657,149 @@
     "Nature: Hodgkin lymphoma",
     "https://www.nature.com/subjects/hodgkin-lymphoma"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "BEAM versus EAM, FEAM, BeEAM, and TEAM: exploring conditioning strategies in autologous stem cell transplantation for Hodgkin lymphoma a retrospective study of the LWP of EBMT",
+     "u": "https://www.nature.com/articles/s41409-026-03043-4",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Real-world treatment patterns and outcomes of brentuximab vedotin–based therapy in CD30-positive lymphomas in China: the prospective BRAVE study",
+     "u": "https://www.nature.com/articles/s41408-026-01627-3",
+     "j": "",
+     "d": "2026-09-30",
+     "a": ""
+    },
+    {
+     "t": "Hodgkin lymphoma transformation in patients with chemotherapy-naïve chronic lymphocytic leukemia",
+     "u": "https://www.nature.com/articles/s41408-026-01622-8",
+     "j": "",
+     "d": "2026-09-26",
+     "a": ""
+    },
+    {
+     "t": "Prevalence, pattern and prognosis of lung lesions in pediatric Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41598-026-60214-5",
+     "j": "",
+     "d": "2026-07-06",
+     "a": ""
+    },
+    {
+     "t": "Baseline plasma-informed circulating tumor DNA analyses comparing multiplex digital PCR and NGS for longitudinal monitoring in Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41408-026-01555-2",
+     "j": "",
+     "d": "2026-06-27",
+     "a": ""
+    },
+    {
+     "t": "Efficacy of post-transplant brentuximab vedotin maintenance by pre-transplant disease status in relapsed/refractory classic Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41408-026-01523-w",
+     "j": "",
+     "d": "2026-06-25",
+     "a": ""
+    },
+    {
+     "t": "Author Correction: Genome-scale spatial mapping of the Hodgkin lymphoma microenvironment identifies tumor cell survival factors",
+     "u": "https://www.nature.com/articles/s41467-026-73753-2",
+     "j": "",
+     "d": "2026-05-29",
+     "a": ""
+    },
+    {
+     "t": "Role of consolidative radiotherapy in preventing relapses and subsequent salvage ASCT in early-stage classic Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41409-026-02921-1",
+     "j": "",
+     "d": "2026-05-28",
+     "a": ""
+    },
+    {
+     "t": "Inhibition of glycosphingolipid synthesis overcomes the steric hindrance of CD30 N-glycans to augment CD30-targeted immunotherapeutic efficacy",
+     "u": "https://www.nature.com/articles/s41423-026-01421-y",
+     "j": "",
+     "d": "2026-04-27",
+     "a": ""
+    },
+    {
+     "t": "PIM kinase inhibition attenuates pro-tumoral and immunosuppressive functions of macrophages in classic Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41419-025-08402-5",
+     "j": "",
+     "d": "2025-12-26",
+     "a": ""
+    },
+    {
+     "t": "Genome-scale spatial mapping of the Hodgkin lymphoma microenvironment identifies tumor cell survival factors",
+     "u": "https://www.nature.com/articles/s41467-025-67539-1",
+     "j": "",
+     "d": "2025-12-20",
+     "a": ""
+    },
+    {
+     "t": "Impact of early failure of induction on transplant outcomes in Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41409-025-02773-1",
+     "j": "",
+     "d": "2025-12-18",
+     "a": ""
+    },
+    {
+     "t": "Advanced stage classical Hodgkin lymphoma patients with a positive interim-PET (PET-2) Deauville score 5 after 2 ABVD cycles: a pooled analysis of three multicenter trials",
+     "u": "https://www.nature.com/articles/s41408-025-01364-z",
+     "j": "",
+     "d": "2025-10-16",
+     "a": ""
+    },
+    {
+     "t": "Distinct cell state ecosystems for nodular lymphocyte-predominant Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41467-025-63339-9",
+     "j": "",
+     "d": "2025-09-26",
+     "a": ""
+    },
+    {
+     "t": "Lymph node transcriptomic profiles suggest susceptibility to bleomycin-induced pulmonary toxicity in classic hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41598-025-16218-8",
+     "j": "",
+     "d": "2025-08-18",
+     "a": ""
+    },
+    {
+     "t": "Subgroup analysis of treatment pathways and clinical outcomes in Hodgkin lymphoma in Latin America from the retrospective B-HOLISTIC study",
+     "u": "https://www.nature.com/articles/s41598-025-07704-0",
+     "j": "",
+     "d": "2025-07-07",
+     "a": ""
+    },
+    {
+     "t": "Treatment outcomes of ABVD in classical Hodgkin lymphoma patients from Thailand without procarbazine access",
+     "u": "https://www.nature.com/articles/s41598-025-07187-z",
+     "j": "",
+     "d": "2025-07-01",
+     "a": ""
+    },
+    {
+     "t": "Clinical features and outcomes of newly diagnosed classical Hodgkin lymphoma patients in Saudi Arabia: a multicenter cohort study",
+     "u": "https://www.nature.com/articles/s41598-025-02577-9",
+     "j": "",
+     "d": "2025-05-26",
+     "a": ""
+    },
+    {
+     "t": "Refining histopathological growth pattern-based risk group discrimination in nodular lymphocyte-predominant Hodgkin lymphoma: an analysis from the German Hodgkin Study Group",
+     "u": "https://www.nature.com/articles/s41375-025-02641-3",
+     "j": "",
+     "d": "2025-05-13",
+     "a": ""
+    },
+    {
+     "t": "Sulforaphane promotes natural killer cell-mediated anti-tumor immune responses partially via cGAS-STING pathway in classical Hodgkin lymphoma",
+     "u": "https://www.nature.com/articles/s41375-025-02627-1",
+     "j": "",
+     "d": "2025-04-28",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "mm",
@@ -249,9 +809,149 @@
     "Nature: myeloma",
     "https://www.nature.com/subjects/myeloma"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Early treatment failure after ciltacabtagene autoleucel in multiple myeloma with high-risk features: implications for risk-informed care",
+     "u": "https://www.nature.com/articles/s41408-026-01649-x",
+     "j": "",
+     "d": "2026-10-22",
+     "a": ""
+    },
+    {
+     "t": "Multiple myeloma in the Netherlands: 35-year trends in incidence and survival",
+     "u": "https://www.nature.com/articles/s41375-026-03156-1",
+     "j": "",
+     "d": "2026-10-22",
+     "a": ""
+    },
+    {
+     "t": "Allogeneic transplantation for plasma cell myeloma clears pre-transplant clonal haematopoiesis and is associated with a low rate of myeloid neoplasm post-cytotoxic-therapy",
+     "u": "https://www.nature.com/articles/s41409-026-02949-3",
+     "j": "",
+     "d": "2026-10-21",
+     "a": ""
+    },
+    {
+     "t": "Author Correction: FcRH5×CD3 bispecific antibody cevostamab in relapsed or refractory multiple myeloma: a phase 1 trial",
+     "u": "https://www.nature.com/articles/s41591-026-04757-0",
+     "j": "",
+     "d": "2026-10-20",
+     "a": ""
+    },
+    {
+     "t": "Molecular predictors of minimal residual disease in newly diagnosed multiple myeloma treated with quadruplet therapy",
+     "u": "https://www.nature.com/articles/s41591-026-04692-0",
+     "j": "",
+     "d": "2026-10-19",
+     "a": ""
+    },
+    {
+     "t": "Final analysis results from DREAMM-3, a phase 3 study of belantamab mafodotin versus pomalidomide plus dexamethasone in patients with relapsed/refractory multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01646-0",
+     "j": "",
+     "d": "2026-10-17",
+     "a": ""
+    },
+    {
+     "t": "Targeting FcRL5 in multiple myeloma: biological rationale and strategic sequencing beyond BCMA and GPRC5D",
+     "u": "https://www.nature.com/articles/s41408-026-01639-z",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    },
+    {
+     "t": "Overall survival of Black patients with newly diagnosed multiple myeloma in the era of triplet and quadruplet therapies",
+     "u": "https://www.nature.com/articles/s41408-026-01645-1",
+     "j": "",
+     "d": "2026-10-07",
+     "a": ""
+    },
+    {
+     "t": "SETD2 is a novel and druggable dependency in IMiD/CELMoD resistant multiple myeloma models",
+     "u": "https://www.nature.com/articles/s41408-026-01632-6",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Measurable residual disease-guided, fixed-duration, potentially definitive therapy for standard risk newly diagnosed multiple myeloma",
+     "u": "https://www.nature.com/articles/s41375-026-03162-3",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "MAIA frailty subgroup analysis: long-term follow-up with daratumumab plus lenalidomide/dexamethasone in transplant-ineligible newly diagnosed myeloma",
+     "u": "https://www.nature.com/articles/s41375-026-03128-5",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Extended follow-up of in vivo BCMA CAR-T therapy in relapsed/refractory multiple myeloma",
+     "u": "https://www.nature.com/articles/s41591-026-04704-z",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Bridging therapy response and type as determinants of cilta-cel outcomes in relapsed/refractory multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01633-5",
+     "j": "",
+     "d": "2026-10-01",
+     "a": ""
+    },
+    {
+     "t": "Infection risk and management in patients with relapsed/refractory multiple myeloma treated with linvoseltamab in the LINKER-MM1 study",
+     "u": "https://www.nature.com/articles/s41408-026-01636-2",
+     "j": "",
+     "d": "2026-10-01",
+     "a": ""
+    },
+    {
+     "t": "IRF1-mediated thioredoxin (TXN) protects multiple myeloma cells from ferroptosis through remodeling of PUFA-containing phospholipids",
+     "u": "https://www.nature.com/articles/s41419-026-09291-y",
+     "j": "",
+     "d": "2026-09-26",
+     "a": ""
+    },
+    {
+     "t": "Daratumumab ± pomalidomide maintenance after salvage autologous transplantation in relapsed multiple myeloma: a phase 2 study",
+     "u": "https://www.nature.com/articles/s41408-026-01620-w",
+     "j": "",
+     "d": "2026-09-26",
+     "a": ""
+    },
+    {
+     "t": "A positive feedback loop between YTHDC1 and EP300 drives multiple myeloma tumorigenesis",
+     "u": "https://www.nature.com/articles/s41388-026-03992-6",
+     "j": "",
+     "d": "2026-09-25",
+     "a": ""
+    },
+    {
+     "t": "Clinical, cytogenetic, and germline genetic determinants of arterial thromboembolism in IMiD-treated multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01635-3",
+     "j": "",
+     "d": "2026-09-24",
+     "a": ""
+    },
+    {
+     "t": "Stem cell autograft minimal residual disease negativity and survival outcomes for multiple myeloma autotransplant",
+     "u": "https://www.nature.com/articles/s41408-026-01621-9",
+     "j": "",
+     "d": "2026-09-22",
+     "a": ""
+    },
+    {
+     "t": "RNA-binding protein CIRBP mediates PKM2 intron retention to negatively regulate multiple myeloma progression and macrophage alternative activation",
+     "u": "https://www.nature.com/articles/s42003-026-10902-9",
+     "j": "",
+     "d": "2026-09-22",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "mpn",
@@ -261,9 +961,149 @@
     "Nature: myeloproliferative disease",
     "https://www.nature.com/subjects/myeloproliferative-disease"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Marrow hypercellularity is common and clinically neutral in essential thrombocythemia",
+     "u": "https://www.nature.com/articles/s41375-026-03151-6",
+     "j": "",
+     "d": "2026-10-12",
+     "a": ""
+    },
+    {
+     "t": "Predicting the clinical course of advanced systemic mastocytosis on treatment with avapritinib or midostaurin",
+     "u": "https://www.nature.com/articles/s41375-026-03149-0",
+     "j": "",
+     "d": "2026-10-09",
+     "a": ""
+    },
+    {
+     "t": "Peri-transplant ruxolitinib in myelofibrosis patients undergoing αβTCR and CD19-depleted stem cell transplantation",
+     "u": "https://www.nature.com/articles/s41409-026-03063-0",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "KT-253, a highly potent and selective MDM2 protein degrader, eliminates malignant myelofibrosis stem/progenitor cells",
+     "u": "https://www.nature.com/articles/s41375-026-03163-2",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Chronic myeloid leukemia in a global context: confirmatory findings and novel discoveries from a refined Japanese Cohort",
+     "u": "https://www.nature.com/articles/s41375-026-03155-2",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Two cases of an imatinib-sensitive PRKG2::PDGFRA-positive chronic myeloid neoplasm with basophilia",
+     "u": "https://www.nature.com/articles/s41375-026-03132-9",
+     "j": "",
+     "d": "2026-09-28",
+     "a": ""
+    },
+    {
+     "t": "PIM1 in myeloproliferative neoplasms: potential pathogenic and therapeutic implications",
+     "u": "https://www.nature.com/articles/s41375-026-03144-5",
+     "j": "",
+     "d": "2026-09-28",
+     "a": ""
+    },
+    {
+     "t": "Clinical and molecular characteristics of clonal monocytosis with and without cytopenia(s)",
+     "u": "https://www.nature.com/articles/s41375-026-03140-9",
+     "j": "",
+     "d": "2026-09-28",
+     "a": ""
+    },
+    {
+     "t": "Selective dependency of CALR-mutant myeloproliferative neoplasms on TYK2 signaling",
+     "u": "https://www.nature.com/articles/s41375-026-03139-2",
+     "j": "",
+     "d": "2026-09-24",
+     "a": ""
+    },
+    {
+     "t": "Clinical evaluation of AI-assisted quantitative marrow fibrosis assessment using Continuous Indexing of Fibrosis (CIF)",
+     "u": "https://www.nature.com/articles/s41375-026-03126-7",
+     "j": "",
+     "d": "2026-09-16",
+     "a": ""
+    },
+    {
+     "t": "Expanding the reach of menin inhibitors",
+     "u": "https://www.nature.com/articles/s41568-026-00981-5",
+     "j": "",
+     "d": "2026-09-02",
+     "a": ""
+    },
+    {
+     "t": "Incidence, prevalence, and survival outcomes of patients with myeloproliferative neoplasms in the United States: a Surveillance, Epidemiology, and End Results (SEER) database analysis, years 2000–2021",
+     "u": "https://www.nature.com/articles/s41375-026-03124-9",
+     "j": "",
+     "d": "2026-08-31",
+     "a": ""
+    },
+    {
+     "t": "Immunotherapeutic targeting of calreticulin mutant myeloproliferative neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03115-w",
+     "j": "",
+     "d": "2026-08-18",
+     "a": ""
+    },
+    {
+     "t": "Inhibition of RhoA-mediated secretory autophagy in megakaryocytes mitigates myelofibrosis in mice",
+     "u": "https://www.nature.com/articles/s41467-026-76615-z",
+     "j": "",
+     "d": "2026-08-13",
+     "a": ""
+    },
+    {
+     "t": "Non-invasive multiparametric characterization of essential thrombocythemia, premyelofibrosis, and overt myelofibrosis",
+     "u": "https://www.nature.com/articles/s41375-026-03088-w",
+     "j": "",
+     "d": "2026-08-03",
+     "a": ""
+    },
+    {
+     "t": "Improved inter-lab precision after CML international scale adoption: a 15-year history of BCR::ABL1 proficiency testing",
+     "u": "https://www.nature.com/articles/s41375-026-03062-6",
+     "j": "",
+     "d": "2026-07-27",
+     "a": ""
+    },
+    {
+     "t": "Selinexor for myelofibrosis or a drug in search of a disease?",
+     "u": "https://www.nature.com/articles/s41408-026-01587-8",
+     "j": "",
+     "d": "2026-07-25",
+     "a": ""
+    },
+    {
+     "t": "Molecular and clinical analyses of c-CBL mutations affecting tyrosine 371 in myelodysplastic and proliferative disorders",
+     "u": "https://www.nature.com/articles/s41375-026-03072-4",
+     "j": "",
+     "d": "2026-07-22",
+     "a": ""
+    },
+    {
+     "t": "Nonmyeloablative and reduced-intensity conditioning for allogeneic hematopoietic stem cell transplantation in sickle cell disease: a narrative review of safety, engraftment, and graft-versus-host-disease outcomes in adults and high-risk populations",
+     "u": "https://www.nature.com/articles/s41409-026-02982-2",
+     "j": "",
+     "d": "2026-07-22",
+     "a": ""
+    },
+    {
+     "t": "Arterial thrombosis and cancer: insights from observations in myeloproliferative neoplasms and CHIP",
+     "u": "https://www.nature.com/articles/s41408-026-01580-1",
+     "j": "",
+     "d": "2026-07-17",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "mds",
@@ -273,14 +1113,154 @@
     "Nature: myelodysplastic syndrome",
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
-   "items": [],
-   "updated": "",
-   "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+   "items": [
+    {
+     "t": "Biopsy-free score for screening myelodysplastic syndrome and related diseases in cytopenic patients",
+     "u": "https://www.nature.com/articles/s41598-026-76612-8",
+     "j": "",
+     "d": "2026-10-17",
+     "a": ""
+    },
+    {
+     "t": "Correction: spatial remodeling of bone marrow architecture defines tissue-state signatures of disease activity and therapeutic response in myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03090-2",
+     "j": "",
+     "d": "2026-10-07",
+     "a": ""
+    },
+    {
+     "t": "Auto-immune diseases associated with myelodysplastic syndrome and chronic myelomonocytic leukemia do not impact allogenic transplantation outcomes",
+     "u": "https://www.nature.com/articles/s41409-026-03065-y",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Sensitivity to ATR–CHK1 pathway inhibition in MDS/AML is enhanced by SRSF2 mutations and reduced by RUNX1 loss",
+     "u": "https://www.nature.com/articles/s41375-026-03142-7",
+     "j": "",
+     "d": "2026-10-06",
+     "a": ""
+    },
+    {
+     "t": "Early post-transplant molecular residual disease predicts outcomes in myelodysplastic neoplasms/syndromes and acute myeloid leukemia undergoing allogeneic transplantation",
+     "u": "https://www.nature.com/articles/s41408-026-01637-1",
+     "j": "",
+     "d": "2026-10-01",
+     "a": ""
+    },
+    {
+     "t": "Allogeneic hematopoietic cell transplantation for myelodysplastic syndrome in young adults: A retrospective study on behalf of the EBMT Chronic Malignancies Working Party",
+     "u": "https://www.nature.com/articles/s41409-026-03036-3",
+     "j": "",
+     "d": "2026-09-30",
+     "a": ""
+    },
+    {
+     "t": "Germline homologous recombination deficiency influences TP53-mutant clonal hematopoiesis fitness during platinum and PARP inhibitor treatment",
+     "u": "https://www.nature.com/articles/s41588-026-02752-2",
+     "j": "",
+     "d": "2026-09-28",
+     "a": ""
+    },
+    {
+     "t": "Canakinumab or emavusertib for anemia in lower-risk MDS: results of the CANFIRE and LUCAS phase 2, open-label, multicenter trials",
+     "u": "https://www.nature.com/articles/s43856-026-01885-z",
+     "j": "",
+     "d": "2026-09-16",
+     "a": ""
+    },
+    {
+     "t": "SRSF2 mutations contribute to bone marrow immune microenvironment alterations",
+     "u": "https://www.nature.com/articles/s41419-026-09205-y",
+     "j": "",
+     "d": "2026-08-19",
+     "a": ""
+    },
+    {
+     "t": "Prognostic factors of second allogeneic hematopoietic stem cell transplantation for relapsed or refractory myelodysplastic syndromes: nationwide registry analysis",
+     "u": "https://www.nature.com/articles/s41409-026-03015-8",
+     "j": "",
+     "d": "2026-08-19",
+     "a": ""
+    },
+    {
+     "t": "Allogeneic hematopoietic cell transplantation for myelodysplastic syndromes harboring a paroxysmal nocturnal hemoglobinuria clone—a study on behalf of the Chronic Malignancies and Severe Aplastic Anemia Working Parties of the EBMT",
+     "u": "https://www.nature.com/articles/s41409-026-03007-8",
+     "j": "",
+     "d": "2026-08-13",
+     "a": ""
+    },
+    {
+     "t": "MDS without clonal marker: when depth outperforms breadth",
+     "u": "https://www.nature.com/articles/s41375-026-03096-w",
+     "j": "",
+     "d": "2026-08-10",
+     "a": ""
+    },
+    {
+     "t": "The FOLR2-IRF2BP2 axis mediates erythropoiesis impairment by excess folic acid in myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03038-6",
+     "j": "",
+     "d": "2026-08-10",
+     "a": ""
+    },
+    {
+     "t": "SLF2 and SMC5 dysfunction drives HSC aging and predisposes to MDS, defining a new inherited bone marrow failure syndrome",
+     "u": "https://www.nature.com/articles/s41375-026-03061-7",
+     "j": "",
+     "d": "2026-08-07",
+     "a": ""
+    },
+    {
+     "t": "Impacts of IPSS-M and transplant conditioning intensity in allogeneic stem cell transplant for myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41409-026-02939-5",
+     "j": "",
+     "d": "2026-07-27",
+     "a": ""
+    },
+    {
+     "t": "Molecular and clinical analyses of c-CBL mutations affecting tyrosine 371 in myelodysplastic and proliferative disorders",
+     "u": "https://www.nature.com/articles/s41375-026-03072-4",
+     "j": "",
+     "d": "2026-07-22",
+     "a": ""
+    },
+    {
+     "t": "Successful allogeneic hematopoietic stem cell transplantation in children with myeloid malignancies secondary to GATA2 deficiency using decitabine-containing busulfan conditioning",
+     "u": "https://www.nature.com/articles/s41409-026-02978-y",
+     "j": "",
+     "d": "2026-07-18",
+     "a": ""
+    },
+    {
+     "t": "IKZF1N159S is associated with adverse outcomes in patients with myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03066-2",
+     "j": "",
+     "d": "2026-07-14",
+     "a": ""
+    },
+    {
+     "t": "Genomic landscape, clinical correlates and prognostic implications of U2AF1 mutation subtypes in myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41408-026-01573-0",
+     "j": "",
+     "d": "2026-07-10",
+     "a": ""
+    },
+    {
+     "t": "Spatial remodeling of bone marrow architecture defines tissue-state signatures of disease activity and therapeutic response in myelodysplastic neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03029-7",
+     "j": "",
+     "d": "2026-06-30",
+     "a": ""
+    }
+   ],
+   "updated": "2026-10-25"
   },
   {
    "key": "ba",
    "title": "Blood Advances",
-   "sub": "Blood Advances (ASH), newest first",
+   "sub": "Blood Advances (ASH)",
    "home": [
     "Blood Advances",
     "https://ashpublications.org/bloodadvances"
@@ -472,7 +1452,7 @@
   {
    "key": "aacr",
    "title": "AACR online first",
-   "sub": "Cancer Research (AACR), newest first",
+   "sub": "Cancer Research (AACR)",
    "home": [
     "Cancer Research online first",
     "https://aacrjournals.org/cancerres"
@@ -664,7 +1644,7 @@
   {
    "key": "jco",
    "title": "JCO",
-   "sub": "Journal of Clinical Oncology, newest first",
+   "sub": "Journal of Clinical Oncology",
    "home": [
     "JCO",
     "https://ascopubs.org/journal/jco"
