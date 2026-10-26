@@ -1,5 +1,5 @@
 {
- "built": "2026-10-25 21:44 UTC",
+ "built": "2026-10-26 11:17 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "nejm",
@@ -356,7 +356,7 @@
      "p": "42776074"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "leuk",
@@ -515,7 +515,7 @@
      "p": "42855473"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "nhl",
@@ -671,7 +671,7 @@
      "p": "42637876"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "hl",
@@ -835,7 +835,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "mm",
@@ -991,7 +991,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "mpn",
@@ -1163,7 +1163,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "mds",
@@ -1324,7 +1324,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "ba",
@@ -1516,7 +1516,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "aacr",
@@ -1708,7 +1708,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   },
   {
    "key": "jco",
@@ -1719,6 +1719,15 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Dalmelitinib Plus Aumolertinib in Advanced NSCLC Patients With EGFR-TKI Resistance and MET Amplification: A Randomized Phase 3 Trial",
+     "u": "https://doi.org/10.1200/JCO-26-02432",
+     "p": "42928710",
+     "j": "J Clin Oncol",
+     "d": "2026-10-26",
+     "a": "Li Z et al.",
+     "ty": ""
+    },
     {
      "t": "ENZARAD (ANZUP 1303): Phase 3 Trial of Enzalutamide With Androgen Deprivation Therapy and Radiation Therapy in High-Risk Localized or Locally Advanced Prostate Cancer",
      "u": "https://doi.org/10.1200/JCO-26-01794",
@@ -1889,18 +1898,9 @@
      "d": "2026-10-13",
      "a": "Prabhakar MM et al.",
      "ty": ""
-    },
-    {
-     "t": "VERIFY: A Phase III Trial of Rusfertide Versus Placebo in Phlebotomy-Dependent Patients With Polycythemia Vera Receiving Standard-of-Care Therapy",
-     "u": "https://doi.org/10.1200/JCO-26-00992",
-     "p": "42868322",
-     "j": "J Clin Oncol",
-     "d": "2026-10-13",
-     "a": "Kuykendall AT et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-25"
+   "updated": "2026-10-26"
   }
  ]
 }
