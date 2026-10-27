@@ -285,21 +285,48 @@
     if (cur.trim()) out.push(cur);
     return out;
   }
+  /* iPhone and iPad Safari need extra care: speech must first be started inside a tap, the
+     audio session must be switched to playback (otherwise the silent switch mutes it), a
+     cancel() followed at once by speak() is ignored, and utterances must be kept referenced */
+  var IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var unlocked = false, keep = [], SILENT = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAADgAAA5IAQUFBQUFBQVBQUFBQUFBeXl5eXl5ebW1tbW1tbXx8fHx8fHyKioqKioqKmZmZmZmZmaioqKioqKiotra2tra2tsXFxcXFxcXU1NTU1NTU4uLi4uLi4vHx8fHx8fH/////////AAAAAExhdmM2MC4zMQAAAAAAAAAAAAAAACQDaQAAAAAAAAOSa0I+rwAAAAAAAAAAAAAAAAD/8yDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVV//MixCcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVX/8yDETwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVV//MgxHYAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVf/zIMSdAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/8yLExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIsTXAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MixNcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=";
+  function unlock() {
+    if (unlocked || !canSpeak) return;
+    unlocked = true;
+    try { var a = new Audio(SILENT); a.setAttribute("playsinline", ""); var pr = a.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (e) {}
+    try { var u = new SpeechSynthesisUtterance(" "); u.volume = 0; keep.push(u); speechSynthesis.speak(u); } catch (e) {}
+  }
   function say(text, then) {
-    var gen = P.gen, cs = chunks(text), v = voice();
-    cs.forEach(function (c, k) {
-      var u = new SpeechSynthesisUtterance(c);
-      if (v) u.voice = v;
-      u.lang = (v && v.lang) || "en-US"; u.rate = P.rate;
-      if (k === cs.length - 1 && then) u.onend = function () { if (gen === P.gen && !P.paused) setTimeout(function () { if (gen === P.gen) then(); }, 700); };
-      speechSynthesis.speak(u);
-    });
+    var gen = P.gen, cs = chunks(text), v = IOS ? null : voice(), started = false;
+    keep = [];
+    var go = function () {
+      if (gen !== P.gen) return;
+      if (speechSynthesis.paused) speechSynthesis.resume();
+      cs.forEach(function (c, k) {
+        var u = new SpeechSynthesisUtterance(c);
+        if (v) u.voice = v;
+        u.lang = (v && v.lang) || "en-US"; u.rate = P.rate;
+        u.onstart = function () { started = true; };
+        if (k === cs.length - 1 && then) u.onend = function () { if (gen === P.gen && !P.paused) setTimeout(function () { if (gen === P.gen) then(); }, 700); };
+        keep.push(u);
+        speechSynthesis.speak(u);
+      });
+      /* tell the listener if nothing starts */
+      setTimeout(function () {
+        if (gen === P.gen && !started && !P.paused && !bar.hidden) {
+          bar.querySelector(".pos").textContent = IOS ? "No sound? Turn off Silent mode and raise the volume, then tap Replay" : "No sound? Check the volume, then tap Replay";
+          P.done = true; bar.querySelector(".ps").textContent = "Replay";
+        }
+      }, 4000);
+    };
+    if (IOS && (speechSynthesis.speaking || speechSynthesis.pending)) { speechSynthesis.cancel(); setTimeout(go, 150); }
+    else go();
   }
   function play(i, intro) {
     if (i < 0 || i >= P.list.length) { stop(); return; }
     P.i = i; P.paused = false; P.done = false; P.end = false;
     P.gen++;
-    speechSynthesis.cancel();
+    if (!IOS && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
     say((intro ? intro + " " : "") + spoken(P.list[i]), finished);
     updateBar();
     markPlaying(true);
@@ -357,6 +384,7 @@
   bar.addEventListener("click", function (e) {
     var b = e.target.closest("button");
     if (!b) return;
+    unlock();
     if (b.classList.contains("nx")) play(P.i + 1);
     else if (b.classList.contains("pv")) play(P.i - 1);
     else if (b.classList.contains("x")) stop();
@@ -390,6 +418,7 @@
     if (e.target.closest(".next")) { loadWeek(Math.max(0, state.wi - 1)); return; }
     var ea = e.target.closest("button.earlier");
     if (ea) { showEarlier(ea.getAttribute("data-topic"), ea); return; }
+    if (e.target.closest("button.listen, button[data-play]")) unlock();
     var lt = e.target.closest("button.listen");
     if (lt) { startTopic(lt.getAttribute("data-topic")); return; }
     var one = e.target.closest("button[data-play]");
