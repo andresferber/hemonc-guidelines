@@ -81,6 +81,12 @@
     ".hdg button.ls{all:unset;cursor:pointer;color:var(--deep)!important;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif!important;text-decoration:underline;text-underline-offset:2px}",
     ".hdg .empty{color:var(--muted);font-size:15px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}",
     ".hdg .wnote{font-size:13.5px;color:var(--muted)}",
+    ".hdg .auto{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink)}",
+    ".hdg button.sw{all:unset;box-sizing:border-box;flex:none;cursor:pointer;width:46px;height:26px;border-radius:13px;background:#c4dbe3!important;position:relative;transition:background .2s}",
+    ".hdg button.sw::after{content:'';position:absolute;top:3px;left:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s}",
+    ".hdg button.sw[aria-checked='true']{background:var(--deep)!important}",
+    ".hdg button.sw[aria-checked='true']::after{left:23px}",
+    ".hdg .auto label{cursor:pointer}",
     ".hdg .foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
     ".hdg mark{background:#fff0a8;color:inherit;padding:0 1px}",
     "@container (max-width:460px){.hdg button.t{padding:10px 12px!important}.hdg .c{padding:8px 12px 12px}}",
@@ -96,6 +102,7 @@
     ".hdg-bar button:disabled{opacity:.45;cursor:default}",
     ".hdg-bar button.ghost{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)}",
     ".hdg-bar button.ghost:hover{background:rgba(255,255,255,.15)!important}",
+    ".hdg-bar button.au[aria-pressed='true']{background:#ffd54a!important;color:#1f2a33!important;border-color:#ffd54a}",
     ".hdg-bar button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
     "@media (max-width:560px){.hdg-bar .ttl{display:none}.hdg-bar button{padding:10px 9px!important}.hdg-bar .spd{display:none}}"
   ].join("\n");
@@ -135,9 +142,12 @@
       '<button class="b next" type="button" aria-label="Next week">›</button></div>' +
       '<p class="sum" aria-live="polite"></p>' +
       '<input class="q" type="search" placeholder="Search this week’s papers" aria-label="Search this week’s papers">' +
+      (canSpeak ? '<div class="auto"><button class="sw" type="button" role="switch" id="hdg-auto" aria-checked="false"></button>' +
+        '<label for="hdg-auto">Play the next paper automatically (continues into the next topic)</label></div>' : "") +
       '<div class="acc"></div>' +
       '<p class="foot">New papers added to PubMed each week (Monday to Sunday), updated every Monday. Summaries are the authors’ own conclusions, or the final sentences of the abstract when it has no conclusion section; they are not AI-written. Study labels on very recent papers are inferred from the title and methods.</p>';
     loadWeek(0);
+    setAuto(P.auto);
   }).catch(function () { root.innerHTML = '<p class="sum">The digest could not be loaded. Please reload the page.</p>'; });
 
   function loadWeek(i) {
@@ -165,12 +175,13 @@
       '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
   }
 
-  var LISTS = {};  // topic key -> papers currently shown (for the player)
+  var LISTS = {}, TITLES = {}, ORDER = [];  // topic key -> papers currently shown (for the player)
 
   function render(d) {
     var q = norm(state.q.trim()), total = 0, keys = 0, html = "";
-    LISTS = {};
+    LISTS = {}; ORDER = []; TITLES = {};
     d.topics.forEach(function (t) {
+      ORDER.push(t.key); TITLES[t.key] = t.title;
       var ps = t.papers.filter(function (p) { return !q || norm([p.t, p.j, p.a, p.c, p.ty].join(" ")).indexOf(q) >= 0; });
       LISTS[t.key] = ps;
       total += ps.length;
@@ -235,9 +246,27 @@
     '<button type="button" class="nx" aria-label="Next paper">›</button>' +
     '<button type="button" class="ps">Pause</button>' +
     '<button type="button" class="ghost spd" aria-label="Reading speed">1×</button>' +
+    '<button type="button" class="ghost au" aria-pressed="false" aria-label="Play the next paper automatically">Auto</button>' +
     '<button type="button" class="ghost x" aria-label="Stop listening">✕</button>';
   document.body.appendChild(bar);
-  var P = { list: [], i: -1, tk: "", paused: false, rate: 1, gen: 0 };
+  var P = { list: [], i: -1, tk: "", paused: false, done: false, end: false, rate: 1, gen: 0, auto: false, lock: null };
+  try { P.auto = localStorage.getItem("hdgAuto") === "1"; } catch (e) {}
+  function setAuto(on) {
+    P.auto = !!on;
+    try { localStorage.setItem("hdgAuto", P.auto ? "1" : "0"); } catch (e) {}
+    var sw = mount.querySelector("#hdg-auto");
+    if (sw) sw.setAttribute("aria-checked", P.auto ? "true" : "false");
+    bar.querySelector(".au").setAttribute("aria-pressed", P.auto ? "true" : "false");
+    bar.querySelector(".au").textContent = P.auto ? "Auto on" : "Auto";
+    keepAwake(P.auto && P.i >= 0);
+  }
+  /* keep the phone screen on while playing automatically, so the browser keeps speaking */
+  function keepAwake(on) {
+    if (!("wakeLock" in navigator)) return;
+    if (on && !P.lock) navigator.wakeLock.request("screen").then(function (l) { P.lock = l; l.addEventListener("release", function () { P.lock = null; }); }).catch(function () {});
+    if (!on && P.lock) { P.lock.release().catch(function () {}); P.lock = null; }
+  }
+  document.addEventListener("visibilitychange", function () { if (!document.hidden && P.auto && P.i >= 0) keepAwake(true); });
   var RATES = [1, 1.15, 1.3, 1.5, 0.9];
 
   function voice() {
@@ -256,30 +285,51 @@
     if (cur.trim()) out.push(cur);
     return out;
   }
-  function play(i) {
-    if (i < 0 || i >= P.list.length) { stop(); return; }
-    P.i = i; P.paused = false;
-    var gen = ++P.gen, p = P.list[i];
-    speechSynthesis.cancel();
-    var cs = chunks(spoken(p)), v = voice();
+  function say(text, then) {
+    var gen = P.gen, cs = chunks(text), v = voice();
     cs.forEach(function (c, k) {
       var u = new SpeechSynthesisUtterance(c);
       if (v) u.voice = v;
       u.lang = (v && v.lang) || "en-US"; u.rate = P.rate;
-      if (k === cs.length - 1) u.onend = function () { if (gen === P.gen && !P.paused) setTimeout(function () { if (gen === P.gen) play(P.i + 1); }, 700); };
+      if (k === cs.length - 1 && then) u.onend = function () { if (gen === P.gen && !P.paused) setTimeout(function () { if (gen === P.gen) then(); }, 700); };
       speechSynthesis.speak(u);
     });
+  }
+  function play(i, intro) {
+    if (i < 0 || i >= P.list.length) { stop(); return; }
+    P.i = i; P.paused = false; P.done = false; P.end = false;
+    P.gen++;
+    speechSynthesis.cancel();
+    say((intro ? intro + " " : "") + spoken(P.list[i]), finished);
     updateBar();
     markPlaying(true);
+    keepAwake(P.auto);
+  }
+  /* what happens when a paper has been read */
+  function finished() {
+    if (!P.auto) { P.done = true; updateBar(); return; }           // default: wait for Next
+    if (P.i + 1 < P.list.length) { play(P.i + 1); return; }
+    var k = ORDER.indexOf(P.tk);                                    // end of a topic: go on to the next one
+    for (var j = k + 1; j < ORDER.length; j++) {
+      var nl = (LISTS[ORDER[j]] || []).filter(function (p) { return p.c; });
+      if (nl.length) {
+        var title = (TITLES[ORDER[j]] || "").replace(/^AML and MDS$/, "A M L and M D S");
+        startTopic(ORDER[j], null, "Next topic: " + title + ".");
+        return;
+      }
+    }
+    P.gen++;
+    say("End of this week's digest.", null);
+    P.done = true; P.end = true; updateBar(); keepAwake(false);
   }
   function updateBar() {
     var p = P.list[P.i];
     if (!p) return;
-    bar.querySelector(".pos").textContent = "Listening: " + (P.i + 1) + " of " + P.list.length;
-    bar.querySelector(".ttl").textContent = p.t;
+    bar.querySelector(".pos").textContent = P.end ? "End of this week\u2019s digest" : (P.done ? "Finished " : "Listening: ") + (P.i + 1) + " of " + P.list.length;
+    bar.querySelector(".ttl").textContent = P.done && !P.end && P.i < P.list.length - 1 ? "Press \u203a for the next paper" : p.t;
     bar.querySelector(".pv").disabled = P.i === 0;
     bar.querySelector(".nx").disabled = P.i === P.list.length - 1;
-    bar.querySelector(".ps").textContent = P.paused ? "Resume" : "Pause";
+    bar.querySelector(".ps").textContent = P.done ? "Replay" : P.paused ? "Resume" : "Pause";
     bar.querySelector(".spd").textContent = P.rate + "×";
     bar.hidden = false;
   }
@@ -294,15 +344,15 @@
     if (li) { li.classList.add("playing"); if (scroll) li.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
   }
   function stop() {
-    P.gen++; speechSynthesis.cancel(); P.i = -1; bar.hidden = true; markPlaying();
+    P.gen++; speechSynthesis.cancel(); P.i = -1; P.done = false; P.end = false; bar.hidden = true; markPlaying(); keepAwake(false);
   }
-  function startTopic(tk, at) {
+  function startTopic(tk, at, intro) {
     var list = (LISTS[tk] || []).filter(function (p) { return p.c; });
     if (!list.length) return;
     P.list = list; P.tk = tk;
     var item = root.querySelector('.it[data-t="' + tk + '"]');
     if (item && !item.classList.contains("open")) toggle(item, true);
-    play(at ? Math.max(0, list.indexOf(at)) : 0);
+    play(at ? Math.max(0, list.indexOf(at)) : 0, intro);
   }
   bar.addEventListener("click", function (e) {
     var b = e.target.closest("button");
@@ -310,7 +360,9 @@
     if (b.classList.contains("nx")) play(P.i + 1);
     else if (b.classList.contains("pv")) play(P.i - 1);
     else if (b.classList.contains("x")) stop();
+    else if (b.classList.contains("au")) setAuto(!P.auto);
     else if (b.classList.contains("ps")) {
+      if (P.done) { play(P.i); return; }
       if (P.paused) { P.paused = false; if (speechSynthesis.paused) speechSynthesis.resume(); else play(P.i); }
       else { P.paused = true; speechSynthesis.pause(); }
       updateBar();
@@ -333,6 +385,7 @@
   mount.addEventListener("click", function (e) {
     var t = e.target.closest("button.t");
     if (t) { toggle(t.parentNode); return; }
+    if (e.target.closest("#hdg-auto")) { setAuto(!P.auto); return; }
     if (e.target.closest(".prev")) { loadWeek(Math.min(INDEX.weeks.length - 1, state.wi + 1)); return; }
     if (e.target.closest(".next")) { loadWeek(Math.max(0, state.wi - 1)); return; }
     var ea = e.target.closest("button.earlier");
