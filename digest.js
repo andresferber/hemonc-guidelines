@@ -98,13 +98,14 @@
     ".hdg-bar .pos{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
     ".hdg-bar .ttl{font-size:13.5px;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
     ".hdg-bar button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;font:600 14.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border-radius:8px;padding:10px 12px!important;white-space:nowrap}",
+    ".hdg-bar button[hidden]{display:none!important}",
     ".hdg-bar button:hover{background:#d6f2fc!important}",
     ".hdg-bar button:disabled{opacity:.45;cursor:default}",
     ".hdg-bar button.ghost{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)}",
     ".hdg-bar button.ghost:hover{background:rgba(255,255,255,.15)!important}",
     ".hdg-bar button.au[aria-pressed='true']{background:#ffd54a!important;color:#1f2a33!important;border-color:#ffd54a}",
     ".hdg-bar button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
-    "@media (max-width:560px){.hdg-bar .ttl{display:none}.hdg-bar button{padding:10px 9px!important}.hdg-bar .spd{display:none}}"
+    "@media (max-width:560px){.hdg-bar{flex-wrap:wrap;row-gap:8px}.hdg-bar .lab{order:-1;flex-basis:100%}.hdg-bar .ttl{display:none}.hdg-bar button{flex:1 1 auto;padding:12px 8px!important;text-align:center;justify-content:center}.hdg-bar .spd{display:none}}"
   ].join("\n");
   var st = document.createElement("style");
   st.textContent = css;
@@ -169,7 +170,8 @@
     var ab = p.ab && p.ab.length ? '<details class="ab"><summary>Full abstract</summary>' + p.ab.map(function (s) { return "<p>" + (s[0] ? "<b>" + esc(s[0]) + ":</b> " : "") + hil(s[1], q) + "</p>"; }).join("") + "</details>" : "";
     var links = '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.p) + '/" target="_blank" rel="noopener">PubMed</a>' +
       (p.free && p.pmc ? '<a class="free" href="https://pmc.ncbi.nlm.nih.gov/articles/' + esc(p.pmc) + '/" target="_blank" rel="noopener">Free full text</a>' : "") +
-      (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "");
+      (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "") +
+      (canSpeak && p.ab && p.ab.length ? '<button class="ls" type="button" data-full="1" data-play="' + esc(tk) + ":" + idx + '">▶ Listen to full abstract</button>' : "");
     return '<li data-k="' + esc(tk) + ":" + idx + '">' + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
       '<div class="ti"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + hil(p.t, q) + "</a></div>" +
       '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
@@ -246,6 +248,7 @@
     '<button type="button" class="nx" aria-label="Next paper">›</button>' +
     '<button type="button" class="ps">Pause</button>' +
     '<button type="button" class="ghost spd" aria-label="Reading speed">1×</button>' +
+    '<button type="button" class="ghost fa" aria-label="Read the full abstract of this paper">Full abstract</button>' +
     '<button type="button" class="ghost au" aria-pressed="false" aria-label="Play the next paper automatically">Auto</button>' +
     '<button type="button" class="ghost x" aria-label="Stop listening">✕</button>';
   /* attach to <html>, outside Weebly's phone-layout page wrapper, which moves anything in <body>
@@ -284,6 +287,12 @@
   }
   function spoken(p) {
     var t = p.t.replace(/\s*\[[^\]]*\]\s*/g, " ") + ". " + (p.cl === "Abstract" ? "" : (p.cl.indexOf("Authors") === 0 ? "Authors' conclusion. " : "From the abstract. ")) + p.c;
+    return t.replace(/\bvs\.?\s/gi, "versus ").replace(/\bpts\b/gi, "patients").replace(/(\d)\s*%/g, "$1 percent").replace(/\s+/g, " ");
+  }
+  function hasFull(p) { return !!(p.ab && p.ab.length); }
+  function spokenFull(p) {
+    var t = p.t.replace(/\s*\[[^\]]*\]\s*/g, " ") + ". Full abstract. " +
+      (hasFull(p) ? p.ab.map(function (s) { return (s[0] ? s[0] + ". " : "") + s[1]; }).join(" ") : p.c);
     return t.replace(/\bvs\.?\s/gi, "versus ").replace(/\bpts\b/gi, "patients").replace(/(\d)\s*%/g, "$1 percent").replace(/\s+/g, " ");
   }
   function chunks(text) {
@@ -329,12 +338,13 @@
     if (IOS && (speechSynthesis.speaking || speechSynthesis.pending)) { speechSynthesis.cancel(); setTimeout(go, 150); }
     else go();
   }
-  function play(i, intro) {
+  function play(i, intro, full) {
     if (i < 0 || i >= P.list.length) { stop(); return; }
     P.i = i; P.paused = false; P.done = false; P.end = false;
     P.gen++;
     if (!IOS && (speechSynthesis.speaking || speechSynthesis.pending)) speechSynthesis.cancel();
-    say((intro ? intro + " " : "") + spoken(P.list[i]), finished);
+    P.full = !!full;
+    say((intro ? intro + " " : "") + (full ? spokenFull(P.list[i]) : spoken(P.list[i])), finished);
     updateBar();
     markPlaying(true);
     keepAwake(P.auto);
@@ -364,6 +374,8 @@
     bar.querySelector(".pv").disabled = P.i === 0;
     bar.querySelector(".nx").disabled = P.i === P.list.length - 1;
     bar.querySelector(".ps").textContent = P.done ? "Replay" : P.paused ? "Resume" : "Pause";
+    bar.querySelector(".fa").hidden = !!P.end || !hasFull(p) || (!!P.full && !P.done);
+    if (P.full && !P.done && !P.end) bar.querySelector(".pos").textContent = "Full abstract: " + (P.i + 1) + " of " + P.list.length;
     bar.querySelector(".spd").textContent = P.rate + "×";
     bar.hidden = false;
   }
@@ -380,19 +392,20 @@
   function stop() {
     P.gen++; speechSynthesis.cancel(); P.i = -1; P.done = false; P.end = false; bar.hidden = true; markPlaying(); keepAwake(false);
   }
-  function startTopic(tk, at, intro) {
+  function startTopic(tk, at, intro, full) {
     var list = (LISTS[tk] || []).filter(function (p) { return p.c; });
     if (!list.length) return;
     P.list = list; P.tk = tk;
     var item = root.querySelector('.it[data-t="' + tk + '"]');
     if (item && !item.classList.contains("open")) toggle(item, true);
-    play(at ? Math.max(0, list.indexOf(at)) : 0, intro);
+    play(at ? Math.max(0, list.indexOf(at)) : 0, intro, full);
   }
   bar.addEventListener("click", function (e) {
     var b = e.target.closest("button");
     if (!b) return;
     unlock();
-    if (b.classList.contains("nx")) play(P.i + 1);
+    if (b.classList.contains("fa")) play(P.i, null, true);
+    else if (b.classList.contains("nx")) play(P.i + 1);
     else if (b.classList.contains("pv")) play(P.i - 1);
     else if (b.classList.contains("x")) stop();
     else if (b.classList.contains("au")) setAuto(!P.auto);
@@ -431,7 +444,7 @@
     var one = e.target.closest("button[data-play]");
     if (one) {
       var k = one.getAttribute("data-play").split(":");
-      startTopic(k[0], LISTS[k[0]][+k[1]]);
+      startTopic(k[0], LISTS[k[0]][+k[1]], null, one.hasAttribute("data-full"));
     }
   });
   mount.addEventListener("change", function (e) { if (e.target.tagName === "SELECT") loadWeek(+e.target.value); });
