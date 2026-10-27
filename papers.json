@@ -1,5 +1,5 @@
 {
- "built": "2026-10-26 11:17 UTC",
+ "built": "2026-10-27 11:16 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,33 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Initial fixed low-versus moderate-dose hydroxyurea assignment in the long-term follow-up of the SPRINT cohort",
+     "u": "https://doi.org/10.1182/blood.2026034384",
+     "p": "42932254",
+     "j": "Blood",
+     "d": "2026-10-26",
+     "a": "Iguda SM et al.",
+     "ty": ""
+    },
+    {
+     "t": "Molecular Underpinnings and Prevalence of Donor Cell-Derived Hematologic Neoplasms among Spanish Transplantation Centers",
+     "u": "https://doi.org/10.1182/blood.2026035181",
+     "p": "42932250",
+     "j": "Blood",
+     "d": "2026-10-26",
+     "a": "Gabarros-Subira M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Splicing Factor Mutations in Myeloid Malignancies",
+     "u": "https://doi.org/10.1182/blood.2026035568",
+     "p": "42932249",
+     "j": "Blood",
+     "d": "2026-10-26",
+     "a": "Cazzola M et al.",
+     "ty": ""
+    },
     {
      "t": "CD8 T-cell exhaustion linked with CAR T-cell failure can be mitigated by a non-alpha IL2 receptor agonist",
      "u": "https://doi.org/10.1182/blood.2026033885",
@@ -162,36 +189,9 @@
      "d": "2026-10-15",
      "a": "Vachhani P et al.",
      "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Bone marrow ménage à trois balances neutrophil production",
-     "u": "https://doi.org/10.1182/blood.2026035694",
-     "p": "42879182",
-     "j": "Blood",
-     "d": "2026-10-15",
-     "a": "Suerdieck V et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Taking the brakes off cytolytic CD4+ T cells",
-     "u": "https://doi.org/10.1182/blood.2026035655",
-     "p": "42879181",
-     "j": "Blood",
-     "d": "2026-10-15",
-     "a": "Wertheimer T",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Untangling the ties that bind: the NG2-ITGA4 axis in B-ALL",
-     "u": "https://doi.org/10.1182/blood.2026035164",
-     "p": "42879180",
-     "j": "Blood",
-     "d": "2026-10-15",
-     "a": "Park CS et al.",
-     "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "nejm",
@@ -207,49 +207,48 @@
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611335",
      "j": "N Engl J Med",
      "d": "2026-10-25",
-     "a": "Shun Lu et al."
+     "a": "Shun Lu et al.",
+     "p": "42929693"
     },
     {
      "t": "Divarasib as Compared with Sotorasib or Adagrasib in KRAS G12C–Mutated NSCLC",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2605703",
      "j": "N Engl J Med",
      "d": "2026-10-25",
-     "a": "Ferdinandos Skoulidis et al."
+     "a": "Ferdinandos Skoulidis et al.",
+     "p": "42929675"
     },
     {
      "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611280",
      "j": "N Engl J Med",
      "d": "2026-10-25",
-     "a": "Fei Zhou et al."
+     "a": "Fei Zhou et al.",
+     "p": "42929694"
     },
     {
      "t": "Durvalumab, Tremelimumab, and Enfortumab Vedotin in Muscle-Invasive Bladder Cancer",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2608323",
      "j": "N Engl J Med",
      "d": "2026-10-24",
-     "a": "Thomas Powles et al."
-    },
-    {
-     "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
-     "j": "N Engl J Med",
-     "d": "2026-10-24",
-     "a": "Jiayu Wang et al."
+     "a": "Thomas Powles et al.",
+     "p": "42929692"
     },
     {
      "t": "Tarlatamab–Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2609482",
      "j": "N Engl J Med",
      "d": "2026-10-24",
-     "a": "Maurice Pérol et al."
+     "a": "Maurice Pérol et al.",
+     "p": "42929702"
     },
     {
      "t": "Targeting HER2 — A Triumph of Science",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2611466",
      "j": "N Engl J Med",
      "d": "2026-10-24",
-     "a": "Sandra M. Swain"
+     "a": "Sandra M. Swain",
+     "p": "42929707"
     },
     {
      "t": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy",
@@ -354,9 +353,17 @@
      "d": "2026-10-08",
      "a": "Peter Sasieni et al.",
      "p": "42776074"
+    },
+    {
+     "t": "Advances in Systemic Treatment of Breast Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMra2500695",
+     "j": "N Engl J Med",
+     "d": "2026-10-08",
+     "a": "Sara Alsterlind Hurvitz",
+     "p": "42842904"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "leuk",
@@ -367,6 +374,13 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Albendazole induces ferroptosis through the USP7-GPX4 axis in B-cell acute lymphoblastic leukemia",
+     "u": "https://www.nature.com/articles/s42003-026-11229-1",
+     "j": "Commun Biol",
+     "d": "2026-10-27",
+     "a": ""
+    },
     {
      "t": "Gradient-driven microfluidic framework for the screening of ratiometric drug combinations towards precision oncology in paediatric leukaemia",
      "u": "https://www.nature.com/articles/s41551-026-01818-0",
@@ -505,17 +519,9 @@
      "d": "2026-10-09",
      "a": "Palmer DA et al.",
      "p": "42855471"
-    },
-    {
-     "t": "Mitochondria transfer via tunneling nanotubes drives macrophage immunosuppression and metabolic reprogramming in pediatric AML",
-     "u": "https://www.nature.com/articles/s41375-026-03164-1",
-     "j": "Leukemia",
-     "d": "2026-10-09",
-     "a": "Perzolli A et al.",
-     "p": "42855473"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "nhl",
@@ -671,7 +677,7 @@
      "p": "42637876"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "hl",
@@ -835,7 +841,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "mm",
@@ -991,7 +997,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "mpn",
@@ -1163,7 +1169,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "mds",
@@ -1324,7 +1330,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "ba",
@@ -1516,7 +1522,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "aacr",
@@ -1527,6 +1533,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Patient Sociodemographic Factors Impact the Breast Cancer Microenvironment",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5500",
+     "p": "42929736",
+     "j": "Cancer Res",
+     "d": "2026-10-26",
+     "a": "DeWitt JT et al.",
+     "ty": ""
+    },
     {
      "t": "Gastric Mixed Neuroendocrine-Non-neuroendocrine Neoplasms Develop from POU2F3+ Multipotent Progenitors",
      "u": "https://doi.org/10.1158/0008-5472.CAN-25-5714",
@@ -1697,18 +1712,9 @@
      "d": "2026-10-06",
      "a": "Senent Y et al.",
      "ty": ""
-    },
-    {
-     "t": "Modeling Wilms Tumor Development with Multiple Lineage Human Fetal Kidney Organoids Reveals the Cellular Origin and Specific Drivers of Tumorigenesis",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0060",
-     "p": "42836583",
-     "j": "Cancer Res",
-     "d": "2026-10-06",
-     "a": "Gong X et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   },
   {
    "key": "jco",
@@ -1900,7 +1906,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-26"
+   "updated": "2026-10-27"
   }
  ]
 }
