@@ -84,7 +84,14 @@
     lb.setAttribute("role", "dialog"); lb.setAttribute("aria-label", "Image viewer");
     lb.innerHTML = '<img alt=""><div class="lbcap"></div><button class="x" type="button" aria-label="Close">✕</button>' +
       (n > 1 ? '<button class="l" type="button" aria-label="Previous image">‹</button><button class="r" type="button" aria-label="Next image">›</button>' : "");
-    document.body.appendChild(lb);
+    /* attach to <html>, outside Weebly's phone-layout page wrapper, which moves anything in <body>
+     into a transformed container and so breaks position:fixed; put it back if anything moves it */
+  (function pin(el) {
+    document.documentElement.appendChild(el);
+    if (window.MutationObserver) new MutationObserver(function () {
+      if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
+    }).observe(document.body, { childList: true, subtree: true });
+  })(lb);
 
     function load(i) {
       var el = els[(i + n) % n], img = el.querySelector("img"), bg = el.querySelector(".bg");

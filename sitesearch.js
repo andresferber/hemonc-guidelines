@@ -104,7 +104,14 @@
     '<button type="button" class="b next" aria-label="Next result">Next ›</button>' +
     '<button type="button" class="b all">All results</button>' +
     '<button type="button" class="b x" aria-label="Close search results">✕</button>';
-  document.body.appendChild(bar);
+  /* attach to <html>, outside Weebly's phone-layout page wrapper, which moves anything in <body>
+     into a transformed container and so breaks position:fixed; put it back if anything moves it */
+  (function pin(el) {
+    document.documentElement.appendChild(el);
+    if (window.MutationObserver) new MutationObserver(function () {
+      if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
+    }).observe(document.body, { childList: true, subtree: true });
+  })(bar);
   var bcss = document.createElement("style");
   bcss.textContent = [
     ".hss-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9999;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 24px);width:640px;background:#145a75;color:#fff;border-radius:12px;padding:8px;box-shadow:0 10px 30px -8px rgba(10,30,45,.55);font:400 15px/1.3 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;text-align:left}",

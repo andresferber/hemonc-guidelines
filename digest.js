@@ -248,7 +248,14 @@
     '<button type="button" class="ghost spd" aria-label="Reading speed">1×</button>' +
     '<button type="button" class="ghost au" aria-pressed="false" aria-label="Play the next paper automatically">Auto</button>' +
     '<button type="button" class="ghost x" aria-label="Stop listening">✕</button>';
-  document.body.appendChild(bar);
+  /* attach to <html>, outside Weebly's phone-layout page wrapper, which moves anything in <body>
+     into a transformed container and so breaks position:fixed; put it back if anything moves it */
+  (function pin(el) {
+    document.documentElement.appendChild(el);
+    if (window.MutationObserver) new MutationObserver(function () {
+      if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
+    }).observe(document.body, { childList: true, subtree: true });
+  })(bar);
   var P = { list: [], i: -1, tk: "", paused: false, done: false, end: false, rate: 1, gen: 0, auto: false, lock: null };
   try { P.auto = localStorage.getItem("hdgAuto") === "1"; } catch (e) {}
   function setAuto(on) {
