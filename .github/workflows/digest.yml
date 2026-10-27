@@ -1,0 +1,26 @@
+name: Weekly digest
+on:
+  schedule:
+    - cron: "23 11 * * 1"   # Mondays, about 7:23 am Eastern: last week's digest
+    - cron: "23 11 * * 4"   # Thursdays: catch-up if Monday's run failed
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: digest
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tools/build_digest.py
+      - name: Save results
+        run: |
+          git config user.name "weekly-digest"
+          git config user.email "weekly-digest@users.noreply.github.com"
+          git add digest
+          git diff --cached --quiet || (git commit -m "Weekly digest $(date -u +%Y-%m-%d)" && git pull --rebase && git push)

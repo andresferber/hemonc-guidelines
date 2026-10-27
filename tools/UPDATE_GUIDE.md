@@ -57,6 +57,12 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
    that no feed in it has an `error`. If a feed keeps failing, find the source's current feed
    address (same journal or subject), update it in `tools/fetch_papers.py`, and push; the daily
    GitHub job then refreshes the list. Report it in the summary.
-12. Summary for Andres (include links repaired and links that need his decision): entries added, replaced, retired, and candidates skipped with a reason.
+12. Weekly digest: check that `digest/index.json` has a week ending last Sunday (the GitHub job
+   runs on Mondays, with a catch-up run on Thursdays). If a week is missing, run
+   `python3 tools/build_digest.py` and push. Spot-check a few papers per topic for relevance;
+   if a topic's search keeps pulling in off-topic papers, tighten its query in
+   `tools/build_digest.py` and rebuild with `--weeks 8`. Summaries must stay the authors'
+   own words from the abstract (no AI-written text).
+13. Summary for Andres (include links repaired and links that need his decision): entries added, replaced, retired, and candidates skipped with a reason.
    Never apply content changes that need his judgment (removing a whole category, adding a
    new category) without asking; list them as questions instead.

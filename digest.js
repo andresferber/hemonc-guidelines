@@ -1,0 +1,356 @@
+/* Weekly digest for andresferber.org (Page ONE), in the Page ONE design.
+   Usage:
+     <div id="hemonc-digest"></div>
+     <script src="https://andresferber.github.io/hemonc-guidelines/digest.js"></script>
+   Reads digest/index.json and digest/<week>.json (built every Monday on GitHub by
+   tools/build_digest.py). Summaries are the authors' own conclusions from the abstract. */
+(function () {
+  "use strict";
+  var me = document.currentScript;
+  var base = me && me.src ? me.src.replace(/[^\/]*(\?.*)?$/, "") : "";
+  var bust = "?v=" + Math.floor(Date.now() / 600000);
+  var mount = document.getElementById("hemonc-digest");
+  if (!mount) {
+    mount = document.createElement("div");
+    mount.id = "hemonc-digest";
+    if (me && me.parentNode) me.parentNode.insertBefore(mount, me); else document.body.appendChild(mount);
+  }
+  if (mount.getAttribute("data-done")) return;
+  mount.setAttribute("data-done", "1");
+
+  if (!document.getElementById("hog-font")) {
+    var lf = document.createElement("link");
+    lf.id = "hog-font"; lf.rel = "stylesheet";
+    lf.href = "https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap";
+    document.head.appendChild(lf);
+  }
+  var css = [
+    ".hdg{container-type:inline-size;--sky:#a9e4f8;--sky2:#d6f2fc;--ink:#1f2a33;--muted:#56656f;--deep:#145a75;--rule:#cfe3ea;--paper:#fff;--new:#9a5a00;--newbg:#fff1d6;",
+    "font:400 16px/1.5 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);text-align:left;display:flex;flex-direction:column;gap:12px;font-variant-numeric:tabular-nums}",
+    ".hdg *{box-sizing:border-box}",
+    ".hdg p{margin:0!important;padding:0!important}",
+    ".hdg a{color:var(--deep)!important;text-decoration:underline!important;text-underline-offset:2px;text-decoration-thickness:1px}",
+    ".hdg button{font-family:inherit}",
+    ".hdg button.b{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font:600 14px/1 'Source Sans 3',system-ui,sans-serif!important;color:var(--deep)!important;background:var(--paper)!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:10px 12px!important;height:auto!important;text-transform:none!important;box-shadow:none!important;white-space:nowrap}",
+    ".hdg button.b:hover{background:var(--sky2)!important}",
+    ".hdg button.b:disabled{opacity:.4;cursor:default}",
+    ".hdg button.b.solid{background:var(--deep)!important;color:#fff!important;border-color:var(--deep)!important}",
+    ".hdg button.b.solid:hover{background:#0f4a61!important}",
+    ".hdg button:focus-visible,.hdg select:focus-visible,.hdg input:focus-visible{outline:3px solid rgba(20,90,117,.45)!important;outline-offset:2px}",
+    /* week navigation */
+    ".hdg .wk{display:flex;align-items:center;gap:8px}",
+    ".hdg .wk select{all:unset;box-sizing:border-box;flex:1 1 auto;min-width:0;cursor:pointer;font:700 16px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:var(--ink)!important;background:var(--paper) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 20 20'%3E%3Cpath d='M5 7.5l5 5 5-5' fill='none' stroke='%23145a75' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\") no-repeat right 12px center!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:10px 32px 10px 12px!important;height:auto!important;text-align:center}",
+    ".hdg .wk button.b{padding:10px 11px!important}",
+    ".hdg .sum{font-size:14.5px;color:var(--muted);text-align:center}",
+    ".hdg .q{all:unset;box-sizing:border-box;display:block;width:100%;font:400 16px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:var(--ink)!important;background:var(--paper)!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:10px 14px!important;height:auto!important}",
+    /* accordion */
+    ".hdg .acc{display:flex;flex-direction:column}",
+    ".hdg .it{border:1px solid #8fbccb;margin-top:-1px;background:var(--paper)}",
+    ".hdg .it:first-child{border-radius:8px 8px 0 0}.hdg .it:last-child{border-radius:0 0 8px 8px}",
+    ".hdg button.t{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 12px;align-items:center;width:100%;padding:12px 16px!important;background:var(--sky)!important;color:var(--ink)!important;height:auto!important;text-transform:none!important;box-shadow:none!important}",
+    ".hdg .it:first-child button.t{border-radius:7px 7px 0 0}.hdg .it:last-child:not(.open) button.t{border-radius:0 0 7px 7px}",
+    ".hdg button.t:hover{background:#97dcf4!important}",
+    ".hdg .it.open > button.t{background:#76cae9!important}",
+    ".hdg .t .nm{font:700 16.5px/1.25 'Source Sans 3',system-ui,sans-serif!important;color:var(--ink)!important}",
+    ".hdg .t .sb{grid-column:1;font-size:14px;color:#2f4a55;line-height:1.3}",
+    ".hdg .t .rt{grid-row:1/span 2;grid-column:2;display:flex;gap:8px;align-items:center;font-size:14px;color:#2f4a55;white-space:nowrap}",
+    ".hdg .t .pm{font:400 22px/1 'Source Sans 3',system-ui,sans-serif;width:18px;text-align:center;color:var(--deep)}",
+    ".hdg .badge{display:inline-block;font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;padding:4px 7px;border-radius:999px;background:#e3f1f6;color:var(--deep)!important;white-space:nowrap}",
+    ".hdg .badge.key{background:var(--newbg);color:var(--new)!important}",
+    ".hdg .badge.ol{background:#eef0f1;color:#5d676d!important}",
+    ".hdg .c{display:none;padding:10px 16px 14px}",
+    ".hdg .it.open > .c{display:block}",
+    ".hdg .tools{display:flex;justify-content:flex-start;margin-bottom:4px}",
+    ".hdg h4.sh{font:700 14.5px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:var(--deep)!important;margin:12px 0 2px!important;padding:0 0 4px!important;border-bottom:1px solid var(--rule);text-transform:none!important;letter-spacing:0!important}",
+    ".hdg ol.l{margin:0!important;padding:0!important;list-style:none!important}",
+    ".hdg ol.l > li{display:block!important;list-style:none!important;background:none!important;margin:0!important;padding:12px 0!important;border-bottom:1px solid #eef4f6;text-indent:0!important}",
+    ".hdg ol.l > li:last-child{border-bottom:0}",
+    ".hdg ol.l > li.playing{background:#fffbe9!important;box-shadow:-8px 0 0 #fffbe9,-12px 0 0 #e0a800}",
+    ".hdg .ti{font-weight:600;font-size:16px;line-height:1.35;overflow-wrap:anywhere}",
+    ".hdg .ti a{color:var(--ink)!important;text-decoration-color:#9cc9d8!important}",
+    ".hdg .ti a:hover{color:var(--deep)!important}",
+    ".hdg .meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:14px;color:var(--muted);margin-top:3px}",
+    ".hdg .cc{margin-top:6px;font-size:15px;color:#33434c;line-height:1.5}",
+    ".hdg .cc b{color:var(--ink);font-weight:600}",
+    ".hdg details.ab{margin-top:6px;font-size:14.5px}",
+    ".hdg details.ab summary{cursor:pointer;color:var(--deep);font-weight:600;list-style:revert!important}",
+    ".hdg details.ab p{margin:6px 0 0!important;color:#33434c}",
+    ".hdg details.ab p b{color:var(--ink)}",
+    ".hdg .lk{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:14px;margin-top:6px}",
+    ".hdg .lk .free{color:#1d6b3d!important}",
+    ".hdg button.ls{all:unset;cursor:pointer;color:var(--deep)!important;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif!important;text-decoration:underline;text-underline-offset:2px}",
+    ".hdg .empty{color:var(--muted);font-size:15px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}",
+    ".hdg .wnote{font-size:13.5px;color:var(--muted)}",
+    ".hdg .foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
+    ".hdg mark{background:#fff0a8;color:inherit;padding:0 1px}",
+    "@container (max-width:460px){.hdg button.t{padding:10px 12px!important}.hdg .c{padding:8px 12px 12px}}",
+    "@media (max-width:560px){.hdg .t .sb{display:none}}",
+    /* listening bar */
+    ".hdg-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9998;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 24px);width:660px;background:#145a75;color:#fff;border-radius:12px;padding:8px;box-shadow:0 10px 30px -8px rgba(10,30,45,.55);font:400 15px/1.3 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;text-align:left}",
+    ".hdg-bar[hidden]{display:none}",
+    ".hdg-bar .lab{flex:1 1 auto;min-width:0;display:flex;flex-direction:column;padding:0 6px}",
+    ".hdg-bar .pos{font-weight:700;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    ".hdg-bar .ttl{font-size:13.5px;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+    ".hdg-bar button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;font:600 14.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border-radius:8px;padding:10px 12px!important;white-space:nowrap}",
+    ".hdg-bar button:hover{background:#d6f2fc!important}",
+    ".hdg-bar button:disabled{opacity:.45;cursor:default}",
+    ".hdg-bar button.ghost{background:transparent!important;color:#fff!important;border:1px solid rgba(255,255,255,.5)}",
+    ".hdg-bar button.ghost:hover{background:rgba(255,255,255,.15)!important}",
+    ".hdg-bar button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
+    "@media (max-width:560px){.hdg-bar .ttl{display:none}.hdg-bar button{padding:10px 9px!important}.hdg-bar .spd{display:none}}"
+  ].join("\n");
+  var st = document.createElement("style");
+  st.textContent = css;
+  document.head.appendChild(st);
+
+  var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function norm(s) { return String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function hil(text, q) {
+    var raw = String(text || ""), i = q ? norm(raw).indexOf(q) : -1;
+    if (i < 0) return esc(raw);
+    return esc(raw.slice(0, i)) + "<mark>" + esc(raw.slice(i, i + q.length)) + "</mark>" + esc(raw.slice(i + q.length));
+  }
+  function d8(s) { var m = String(s || "").match(/^(\d{4})-(\d{2})-(\d{2})/); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
+  function short(s) { var d = d8(s); return d ? MON[d.getMonth()] + " " + d.getDate() : ""; }
+  function weekLabel(w, end) {
+    var a = d8(w), b = d8(end);
+    if (!a || !b) return w;
+    return "Week of " + MON[a.getMonth()] + " " + a.getDate() + "–" + (a.getMonth() === b.getMonth() ? "" : MON[b.getMonth()] + " ") + b.getDate() + ", " + b.getFullYear();
+  }
+  function getJSON(u) { return fetch(base + u + bust).then(function (r) { if (!r.ok) throw 0; return r.json(); }); }
+
+  var INDEX = null, CACHE = {}, state = { wi: 0, q: "", open: {} };
+  var canSpeak = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+
+  mount.innerHTML = '<div class="hdg"><p class="sum">Loading the weekly digest…</p></div>';
+  var root = mount.firstChild;
+
+  getJSON("digest/index.json").then(function (ix) {
+    INDEX = ix;
+    if (!ix.weeks.length) { root.innerHTML = '<p class="sum">The first digest will appear after the next Monday update.</p>'; return; }
+    root.innerHTML =
+      '<div class="wk"><button class="b prev" type="button" aria-label="Previous week">‹</button>' +
+      '<select aria-label="Choose a week">' + ix.weeks.map(function (w, i) { return '<option value="' + i + '">' + esc(weekLabel(w.week, w.end)) + "</option>"; }).join("") + "</select>" +
+      '<button class="b next" type="button" aria-label="Next week">›</button></div>' +
+      '<p class="sum" aria-live="polite"></p>' +
+      '<input class="q" type="search" placeholder="Search this week’s papers" aria-label="Search this week’s papers">' +
+      '<div class="acc"></div>' +
+      '<p class="foot">New papers added to PubMed each week (Monday to Sunday), updated every Monday. Summaries are the authors’ own conclusions, or the final sentences of the abstract when it has no conclusion section; they are not AI-written. Study labels on very recent papers are inferred from the title and methods.</p>';
+    loadWeek(0);
+  }).catch(function () { root.innerHTML = '<p class="sum">The digest could not be loaded. Please reload the page.</p>'; });
+
+  function loadWeek(i) {
+    state.wi = i;
+    var w = INDEX.weeks[i];
+    root.querySelector("select").value = String(i);
+    root.querySelector(".prev").disabled = i >= INDEX.weeks.length - 1;
+    root.querySelector(".next").disabled = i <= 0;
+    var p = CACHE[w.week] ? Promise.resolve(CACHE[w.week]) : getJSON("digest/" + w.week + ".json").then(function (d) { CACHE[w.week] = d; return d; });
+    p.then(function (d) { if (state.wi === i) render(d); })
+     .catch(function () { root.querySelector(".acc").innerHTML = '<p class="sum">This week could not be loaded.</p>'; });
+  }
+
+  function paperHTML(p, tk, idx, q, note) {
+    var url = p.doi ? "https://doi.org/" + p.doi : "https://pubmed.ncbi.nlm.nih.gov/" + p.p + "/";
+    var meta = '<span>' + esc(short(p.d)) + "</span><span>" + hil(p.j, q) + (p.a ? ". " + hil(p.a, q) : "") + "</span>" +
+      (p.ty ? '<span class="badge' + (p.key ? " key" : p.ty === "Letter" || p.ty === "Case report" ? " ol" : "") + '">' + esc(p.ty) + "</span>" : "");
+    var cc = p.c ? '<p class="cc"><b>' + esc(p.cl) + ":</b> " + hil(p.c, q) + "</p>" : '<p class="cc wnote">No abstract in PubMed yet.</p>';
+    var ab = p.ab && p.ab.length ? '<details class="ab"><summary>Full abstract</summary>' + p.ab.map(function (s) { return "<p>" + (s[0] ? "<b>" + esc(s[0]) + ":</b> " : "") + hil(s[1], q) + "</p>"; }).join("") + "</details>" : "";
+    var links = '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.p) + '/" target="_blank" rel="noopener">PubMed</a>' +
+      (p.free && p.pmc ? '<a class="free" href="https://pmc.ncbi.nlm.nih.gov/articles/' + esc(p.pmc) + '/" target="_blank" rel="noopener">Free full text</a>' : "") +
+      (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "");
+    return '<li data-k="' + esc(tk) + ":" + idx + '">' + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
+      '<div class="ti"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + hil(p.t, q) + "</a></div>" +
+      '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
+  }
+
+  var LISTS = {};  // topic key -> papers currently shown (for the player)
+
+  function render(d) {
+    var q = norm(state.q.trim()), total = 0, keys = 0, html = "";
+    LISTS = {};
+    d.topics.forEach(function (t) {
+      var ps = t.papers.filter(function (p) { return !q || norm([p.t, p.j, p.a, p.c, p.ty].join(" ")).indexOf(q) >= 0; });
+      LISTS[t.key] = ps;
+      total += ps.length;
+      var nk = ps.filter(function (p) { return p.key; }).length;
+      keys += nk;
+      if (q && !ps.length) return;
+      var open = q ? ps.length > 0 : !!state.open[t.key];
+      var body;
+      if (!ps.length) {
+        body = '<div class="empty"><span>No new papers on this topic this week.</span><button class="b earlier" type="button" data-topic="' + esc(t.key) + '">Show the most recent papers</button></div>';
+      } else {
+        var kp = ps.filter(function (p) { return p.key; }), op = ps.filter(function (p) { return !p.key; });
+        var list = function (arr) { return '<ol class="l">' + arr.map(function (p) { return paperHTML(p, t.key, ps.indexOf(p), q); }).join("") + "</ol>"; };
+        body = (canSpeak && ps.some(function (p) { return p.c; }) ? '<div class="tools"><button class="b solid listen" type="button" data-topic="' + esc(t.key) + '">▶ Listen to this topic</button></div>' : "") +
+          (kp.length && op.length ? '<h4 class="sh">Trials, meta-analyses and guidelines</h4>' + list(kp) + '<h4 class="sh">Other papers</h4>' + list(op) : list(ps));
+      }
+      html += '<div class="it' + (open ? " open" : "") + '" data-t="' + esc(t.key) + '">' +
+        '<button class="t" type="button" aria-expanded="' + open + '"><span class="nm">' + esc(t.title) + "</span>" +
+        '<span class="rt">' + (nk ? '<span class="badge key">' + nk + (nk === 1 ? " key study" : " key studies") + "</span>" : "") + "<span>" + ps.length + '</span><span class="pm" aria-hidden="true">' + (open ? "–" : "+") + "</span></span>" +
+        '<span class="sb">' + esc(t.sub) + "</span></button>" +
+        '<div class="c">' + body + "</div></div>";
+    });
+    root.querySelector(".acc").innerHTML = html || '<p class="sum">Nothing this week matches “' + esc(state.q) + '”.</p>';
+    root.querySelector(".sum").textContent = q
+      ? total + (total === 1 ? " match" : " matches") + " this week"
+      : total + " new papers" + (keys ? ", " + keys + (keys === 1 ? " trial, meta-analysis or guideline" : " trials, meta-analyses or guidelines") : "");
+    markPlaying();
+  }
+
+  /* earlier papers for a topic with nothing this week */
+  function showEarlier(tk, btn) {
+    btn.disabled = true; btn.textContent = "Loading…";
+    var found = [], i = state.wi + 1;
+    function next() {
+      if (found.length >= 5 || i >= INDEX.weeks.length || i > state.wi + 12) return done();
+      var w = INDEX.weeks[i++];
+      if (!w.counts[tk]) return next();
+      (CACHE[w.week] ? Promise.resolve(CACHE[w.week]) : getJSON("digest/" + w.week + ".json").then(function (d) { CACHE[w.week] = d; return d; }))
+        .then(function (d) {
+          d.topics.forEach(function (t) { if (t.key === tk) t.papers.forEach(function (p) { found.push({ p: p, w: d }); }); });
+          next();
+        }).catch(next);
+    }
+    function done() {
+      var box = btn.closest(".c");
+      if (!found.length) { btn.parentNode.innerHTML = "<span>No papers on this topic in recent weeks.</span>"; return; }
+      found = found.slice(0, 5);
+      LISTS[tk] = found.map(function (f) { return f.p; });
+      box.innerHTML = '<p class="wnote">No new papers this week. The most recent ones:</p>' +
+        (canSpeak ? '<div class="tools" style="margin-top:8px"><button class="b solid listen" type="button" data-topic="' + esc(tk) + '">▶ Listen to these</button></div>' : "") +
+        '<ol class="l">' + found.map(function (f, k) { return paperHTML(f.p, tk, k, "", weekLabel(f.w.week, f.w.end)); }).join("") + "</ol>";
+    }
+    next();
+  }
+
+  /* ---------- listening ---------- */
+  var bar = document.createElement("div");
+  bar.className = "hdg-bar"; bar.hidden = true;
+  bar.setAttribute("role", "region"); bar.setAttribute("aria-label", "Digest audio");
+  bar.innerHTML = '<button type="button" class="pv" aria-label="Previous paper">‹</button>' +
+    '<div class="lab"><span class="pos"></span><span class="ttl"></span></div>' +
+    '<button type="button" class="nx" aria-label="Next paper">›</button>' +
+    '<button type="button" class="ps">Pause</button>' +
+    '<button type="button" class="ghost spd" aria-label="Reading speed">1×</button>' +
+    '<button type="button" class="ghost x" aria-label="Stop listening">✕</button>';
+  document.body.appendChild(bar);
+  var P = { list: [], i: -1, tk: "", paused: false, rate: 1, gen: 0 };
+  var RATES = [1, 1.15, 1.3, 1.5, 0.9];
+
+  function voice() {
+    var vs = speechSynthesis.getVoices().filter(function (v) { return /^en(-|_|$)/i.test(v.lang); });
+    var pref = [/natural/i, /neural/i, /premium|enhanced/i, /google us english/i, /samantha/i, /aria|jenny|guy/i, /google uk english/i, /daniel|karen|moira|tessa/i];
+    for (var k = 0; k < pref.length; k++) { var v = vs.filter(function (x) { return pref[k].test(x.name); })[0]; if (v) return v; }
+    return vs.filter(function (x) { return /en-US/i.test(x.lang); })[0] || vs[0] || null;
+  }
+  function spoken(p) {
+    var t = p.t.replace(/\s*\[[^\]]*\]\s*/g, " ") + ". " + (p.cl === "Abstract" ? "" : (p.cl.indexOf("Authors") === 0 ? "Authors' conclusion. " : "From the abstract. ")) + p.c;
+    return t.replace(/\bvs\.?\s/gi, "versus ").replace(/\bpts\b/gi, "patients").replace(/(\d)\s*%/g, "$1 percent").replace(/\s+/g, " ");
+  }
+  function chunks(text) {
+    var parts = text.match(/[^.!?;]+[.!?;]*\s*/g) || [text], out = [], cur = "";
+    parts.forEach(function (s) { if ((cur + s).length > 180 && cur) { out.push(cur); cur = s; } else cur += s; });
+    if (cur.trim()) out.push(cur);
+    return out;
+  }
+  function play(i) {
+    if (i < 0 || i >= P.list.length) { stop(); return; }
+    P.i = i; P.paused = false;
+    var gen = ++P.gen, p = P.list[i];
+    speechSynthesis.cancel();
+    var cs = chunks(spoken(p)), v = voice();
+    cs.forEach(function (c, k) {
+      var u = new SpeechSynthesisUtterance(c);
+      if (v) u.voice = v;
+      u.lang = (v && v.lang) || "en-US"; u.rate = P.rate;
+      if (k === cs.length - 1) u.onend = function () { if (gen === P.gen && !P.paused) setTimeout(function () { if (gen === P.gen) play(P.i + 1); }, 700); };
+      speechSynthesis.speak(u);
+    });
+    updateBar();
+    markPlaying(true);
+  }
+  function updateBar() {
+    var p = P.list[P.i];
+    if (!p) return;
+    bar.querySelector(".pos").textContent = "Listening: " + (P.i + 1) + " of " + P.list.length;
+    bar.querySelector(".ttl").textContent = p.t;
+    bar.querySelector(".pv").disabled = P.i === 0;
+    bar.querySelector(".nx").disabled = P.i === P.list.length - 1;
+    bar.querySelector(".ps").textContent = P.paused ? "Resume" : "Pause";
+    bar.querySelector(".spd").textContent = P.rate + "×";
+    bar.hidden = false;
+  }
+  function markPlaying(scroll) {
+    [].forEach.call(root.querySelectorAll("li.playing"), function (x) { x.classList.remove("playing"); });
+    if (bar.hidden || P.i < 0) return;
+    var p = P.list[P.i], li = null;
+    [].forEach.call(root.querySelectorAll('.it[data-t="' + P.tk + '"] li[data-k]'), function (x) {
+      var k = x.getAttribute("data-k").split(":"), arr = LISTS[k[0]];
+      if (arr && arr[+k[1]] === p) li = x;
+    });
+    if (li) { li.classList.add("playing"); if (scroll) li.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
+  }
+  function stop() {
+    P.gen++; speechSynthesis.cancel(); P.i = -1; bar.hidden = true; markPlaying();
+  }
+  function startTopic(tk, at) {
+    var list = (LISTS[tk] || []).filter(function (p) { return p.c; });
+    if (!list.length) return;
+    P.list = list; P.tk = tk;
+    var item = root.querySelector('.it[data-t="' + tk + '"]');
+    if (item && !item.classList.contains("open")) toggle(item, true);
+    play(at ? Math.max(0, list.indexOf(at)) : 0);
+  }
+  bar.addEventListener("click", function (e) {
+    var b = e.target.closest("button");
+    if (!b) return;
+    if (b.classList.contains("nx")) play(P.i + 1);
+    else if (b.classList.contains("pv")) play(P.i - 1);
+    else if (b.classList.contains("x")) stop();
+    else if (b.classList.contains("ps")) {
+      if (P.paused) { P.paused = false; if (speechSynthesis.paused) speechSynthesis.resume(); else play(P.i); }
+      else { P.paused = true; speechSynthesis.pause(); }
+      updateBar();
+    } else if (b.classList.contains("spd")) {
+      P.rate = RATES[(RATES.indexOf(P.rate) + 1) % RATES.length];
+      if (!P.paused) play(P.i); else updateBar();
+    }
+  });
+  window.addEventListener("pagehide", function () { if (canSpeak) speechSynthesis.cancel(); });
+
+  /* ---------- interactions ---------- */
+  function toggle(item, on) {
+    on = on == null ? !item.classList.contains("open") : on;
+    item.classList.toggle("open", on);
+    state.open[item.getAttribute("data-t")] = on;
+    var b = item.querySelector("button.t");
+    b.setAttribute("aria-expanded", on);
+    b.querySelector(".pm").textContent = on ? "–" : "+";
+  }
+  mount.addEventListener("click", function (e) {
+    var t = e.target.closest("button.t");
+    if (t) { toggle(t.parentNode); return; }
+    if (e.target.closest(".prev")) { loadWeek(Math.min(INDEX.weeks.length - 1, state.wi + 1)); return; }
+    if (e.target.closest(".next")) { loadWeek(Math.max(0, state.wi - 1)); return; }
+    var ea = e.target.closest("button.earlier");
+    if (ea) { showEarlier(ea.getAttribute("data-topic"), ea); return; }
+    var lt = e.target.closest("button.listen");
+    if (lt) { startTopic(lt.getAttribute("data-topic")); return; }
+    var one = e.target.closest("button[data-play]");
+    if (one) {
+      var k = one.getAttribute("data-play").split(":");
+      startTopic(k[0], LISTS[k[0]][+k[1]]);
+    }
+  });
+  mount.addEventListener("change", function (e) { if (e.target.tagName === "SELECT") loadWeek(+e.target.value); });
+  var timer;
+  mount.addEventListener("input", function (e) {
+    if (!e.target.classList.contains("q")) return;
+    clearTimeout(timer);
+    timer = setTimeout(function () { state.q = e.target.value; var w = INDEX.weeks[state.wi]; if (CACHE[w.week]) render(CACHE[w.week]); }, 150);
+  });
+  if (canSpeak) { speechSynthesis.getVoices(); if ("onvoiceschanged" in speechSynthesis) speechSynthesis.onvoiceschanged = function () {}; }
+})();

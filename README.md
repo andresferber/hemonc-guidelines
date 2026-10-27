@@ -49,3 +49,11 @@ Every change is a commit, so earlier versions can always be restored from the hi
 <div id="hemonc-slides"></div>
 <script src="https://andresferber.github.io/hemonc-guidelines/slideshow.js"></script>
 ```
+
+## Weekly digest
+`tools/build_digest.py` runs on GitHub every Monday (`.github/workflows/digest.yml`, catch-up on Thursdays) and saves last week's new PubMed papers (Monday to Sunday, by date added to PubMed) for four topics: hematologic malignancies in pregnancy (all journals), AML and MDS, lymphoma, and myeloma (major hematology and oncology journals). One file per week in `digest/`, listed in `digest/index.json`. Each paper shows the authors' own conclusion from the abstract (or the abstract's final sentences, labelled as such); nothing is AI-written. `digest.js` shows it on Page ONE with a week selector, search, and audio (browser speech). Embed:
+
+```html
+<div id="hemonc-digest"></div>
+<script src="https://andresferber.github.io/hemonc-guidelines/digest.js"></script>
+```

@@ -1,0 +1,155 @@
+{
+ "built": "2026-10-27 01:16 UTC",
+ "topics": [
+  {
+   "key": "preg",
+   "title": "Hematologic malignancies in pregnancy",
+   "sub": "All journals"
+  },
+  {
+   "key": "aml",
+   "title": "AML and MDS",
+   "sub": "Major hematology and oncology journals"
+  },
+  {
+   "key": "lym",
+   "title": "Lymphoma",
+   "sub": "Major hematology and oncology journals"
+  },
+  {
+   "key": "mm",
+   "title": "Myeloma",
+   "sub": "Major hematology and oncology journals"
+  }
+ ],
+ "weeks": [
+  {
+   "week": "2026-10-19",
+   "end": "2026-10-25",
+   "counts": {
+    "preg": 0,
+    "aml": 11,
+    "lym": 24,
+    "mm": 8
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 1,
+    "lym": 2,
+    "mm": 0
+   }
+  },
+  {
+   "week": "2026-10-12",
+   "end": "2026-10-18",
+   "counts": {
+    "preg": 2,
+    "aml": 22,
+    "lym": 17,
+    "mm": 8
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 0,
+    "lym": 1,
+    "mm": 0
+   }
+  },
+  {
+   "week": "2026-10-05",
+   "end": "2026-10-11",
+   "counts": {
+    "preg": 1,
+    "aml": 18,
+    "lym": 22,
+    "mm": 15
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 1,
+    "lym": 1,
+    "mm": 2
+   }
+  },
+  {
+   "week": "2026-09-28",
+   "end": "2026-10-04",
+   "counts": {
+    "preg": 1,
+    "aml": 13,
+    "lym": 19,
+    "mm": 15
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 1,
+    "lym": 4,
+    "mm": 3
+   }
+  },
+  {
+   "week": "2026-09-21",
+   "end": "2026-09-27",
+   "counts": {
+    "preg": 1,
+    "aml": 12,
+    "lym": 26,
+    "mm": 13
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 3,
+    "lym": 2,
+    "mm": 4
+   }
+  },
+  {
+   "week": "2026-09-14",
+   "end": "2026-09-20",
+   "counts": {
+    "preg": 0,
+    "aml": 20,
+    "lym": 14,
+    "mm": 13
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 0,
+    "lym": 0,
+    "mm": 0
+   }
+  },
+  {
+   "week": "2026-09-07",
+   "end": "2026-09-13",
+   "counts": {
+    "preg": 1,
+    "aml": 11,
+    "lym": 17,
+    "mm": 11
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 0,
+    "lym": 0,
+    "mm": 3
+   }
+  },
+  {
+   "week": "2026-08-31",
+   "end": "2026-09-06",
+   "counts": {
+    "preg": 1,
+    "aml": 31,
+    "lym": 19,
+    "mm": 22
+   },
+   "keys": {
+    "preg": 0,
+    "aml": 3,
+    "lym": 1,
+    "mm": 2
+   }
+  }
+ ]
+}
