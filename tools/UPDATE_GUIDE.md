@@ -53,6 +53,9 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
    by his choice. If a repository copy ("Free copy (repository)") is broken, add `norepo=True`
    to that entry. If a site works in a browser but refuses the checker, add its host to
    `BOT_BLOCKING` in `tools/check_links.py`.
+   Patient education (`patient-education.json`, English and Spanish addresses `u` / `u_es`):
+   same rule, only repair addresses; never add or remove a resource without asking Andres.
+   Resources must be free and non-commercial (no company-produced material).
 11. Recent papers: check that `papers.json` was updated within the last 2 days (field `built`) and
    that no feed in it has an `error`. If a feed keeps failing, find the source's current feed
    address (same journal or subject), update it in `tools/fetch_papers.py`, and push; the daily

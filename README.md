@@ -57,3 +57,13 @@ Every change is a commit, so earlier versions can always be restored from the hi
 <div id="hemonc-digest"></div>
 <script src="https://andresferber.github.io/hemonc-guidelines/digest.js"></script>
 ```
+
+## Patient education page
+`patient-education.json` lists the patient and family resources (six topics, English and Spanish text, a Spanish address `u_es` where the source has one, tags and diagnosis filters). `patient-education.js` shows it with an English/Español switch, diagnosis buttons and a search box. Its links are part of the monthly link check. Embed:
+
+```html
+<div id="patient-education"></div>
+<script src="https://andresferber.github.io/hemonc-guidelines/patient-education.js"></script>
+```
+
+`patient-education.html` previews it.

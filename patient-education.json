@@ -1,0 +1,500 @@
+{
+ "updated": "2026-10-28",
+ "diagnoses": [
+  {
+   "k": "all",
+   "en": "All",
+   "es": "Todos"
+  },
+  {
+   "k": "lymphoma",
+   "en": "Lymphoma",
+   "es": "Linfoma"
+  },
+  {
+   "k": "leukemia",
+   "en": "Leukemia",
+   "es": "Leucemia"
+  },
+  {
+   "k": "myeloma",
+   "en": "Myeloma",
+   "es": "Mieloma"
+  },
+  {
+   "k": "mds",
+   "en": "MDS / MPN",
+   "es": "SMD / NMP"
+  },
+  {
+   "k": "clots",
+   "en": "Blood clots",
+   "es": "Coágulos"
+  },
+  {
+   "k": "benign",
+   "en": "Anemia, sickle cell, bleeding",
+   "es": "Anemia, falciforme, sangrado"
+  }
+ ],
+ "sections": [
+  {
+   "en": "Understand your diagnosis",
+   "es": "Entender su diagnóstico",
+   "open": true,
+   "items": [
+    {
+     "n": "Blood Cancer United (formerly the Leukemia & Lymphoma Society)",
+     "u": "https://bloodcancerunited.org",
+     "en": "Disease-specific booklets, nurse educators and support for every blood cancer.",
+     "es": "Folletos por enfermedad, enfermeras educadoras y apoyo para todos los cánceres de la sangre.",
+     "tags": [
+      "booklet",
+      "phone",
+      "new"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "National Cancer Institute (NCI) cancer types",
+     "u": "https://www.cancer.gov/types",
+     "u_es": "https://www.cancer.gov/espanol/tipos",
+     "en": "Plain-language summaries reviewed by experts, from the U.S. government.",
+     "es": "Resúmenes en lenguaje sencillo revisados por expertos, del gobierno de EE. UU.",
+     "tags": [
+      "es"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "NCCN Guidelines for Patients",
+     "u": "https://www.nccn.org/patients/guidelines/cancers.aspx",
+     "en": "The same treatment guidelines doctors use, rewritten for patients.",
+     "es": "Las mismas guías que usan los médicos, escritas para pacientes (algunas en español).",
+     "tags": [
+      "booklet"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "Cancer.Net (ASCO)",
+     "u": "https://www.cancer.net",
+     "u_es": "https://www.cancer.net/es",
+     "en": "Oncologist-approved guides by cancer type, with questions to ask your doctor.",
+     "es": "Guías aprobadas por oncólogos, con preguntas para su médico.",
+     "tags": [
+      "es",
+      "new"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "Lymphoma Research Foundation",
+     "u": "https://lymphoma.org",
+     "en": "Detailed guides for each lymphoma subtype and a patient helpline.",
+     "es": "Guías para cada subtipo de linfoma y línea de ayuda.",
+     "tags": [
+      "phone"
+     ],
+     "dx": [
+      "lymphoma"
+     ]
+    },
+    {
+     "n": "International Myeloma Foundation",
+     "u": "https://www.myeloma.org",
+     "en": "Patient handbook series and InfoLine staffed by myeloma specialists.",
+     "es": "Manuales para pacientes y línea de información sobre mieloma.",
+     "tags": [
+      "booklet",
+      "phone",
+      "new"
+     ],
+     "dx": [
+      "myeloma"
+     ]
+    },
+    {
+     "n": "CLL Society",
+     "u": "https://cllsociety.org",
+     "en": "Patient-run education focused on CLL/SLL.",
+     "es": "Educación sobre LLC dirigida por pacientes.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "leukemia"
+     ]
+    },
+    {
+     "n": "Aplastic Anemia & MDS International Foundation",
+     "u": "https://www.aamds.org",
+     "en": "MDS, aplastic anemia and PNH education and support.",
+     "es": "Educación y apoyo sobre SMD, anemia aplásica y HPN.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "mds"
+     ]
+    },
+    {
+     "n": "MPN Research Foundation",
+     "u": "https://www.mpnresearchfoundation.org",
+     "en": "Polycythemia vera, ET and myelofibrosis explained.",
+     "es": "Policitemia vera, TE y mielofibrosis explicadas.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "mds"
+     ]
+    },
+    {
+     "n": "MD Anderson cancer types",
+     "u": "https://www.mdanderson.org/cancer-types.html",
+     "en": "Searchable cancer-type pages.",
+     "es": "Páginas de búsqueda por tipo de cáncer.",
+     "tags": [],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    }
+   ]
+  },
+  {
+   "en": "Treatment and side effects",
+   "es": "Tratamiento y efectos secundarios",
+   "open": false,
+   "items": [
+    {
+     "n": "NCI patient education publications",
+     "u": "https://www.cancer.gov/publications/patient-education",
+     "en": "Free booklets such as \"Chemotherapy and You\" and \"Radiation Therapy and You\".",
+     "es": "Folletos gratuitos sobre quimioterapia y radioterapia.",
+     "tags": [
+      "booklet"
+     ],
+     "dx": []
+    },
+    {
+     "n": "American Cancer Society side effects",
+     "u": "https://www.cancer.org/cancer/managing-cancer/side-effects.html",
+     "u_es": "https://www.cancer.org/es.html",
+     "en": "Hair loss, mouth sores, infections, fatigue, nausea and more.",
+     "es": "Caída del cabello, llagas en la boca, infecciones, cansancio y más.",
+     "tags": [
+      "es"
+     ],
+     "dx": []
+    },
+    {
+     "n": "MedlinePlus drug information",
+     "u": "https://medlineplus.gov/druginformation.html",
+     "u_es": "https://medlineplus.gov/spanish/druginformation.html",
+     "en": "What each medicine does and how to take it, by generic name.",
+     "es": "Qué hace cada medicamento y cómo tomarlo.",
+     "tags": [
+      "es",
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "NMDP (Be The Match) patient support",
+     "u": "https://www.nmdp.org/patients",
+     "en": "Preparing for stem cell transplant or CAR T-cell therapy.",
+     "es": "Preparación para trasplante de células madre o terapia CAR-T.",
+     "tags": [
+      "phone",
+      "new"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "Find a clinical trial (NCI)",
+     "u": "https://www.cancer.gov/research/participate/clinical-trials-search",
+     "u_es": "https://www.cancer.gov/espanol/investigacion/participe/buscar",
+     "en": "Search open trials, or call the number above for help.",
+     "es": "Busque estudios abiertos, o llame al número de arriba.",
+     "tags": [
+      "es",
+      "phone",
+      "new"
+     ],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds",
+      "clots",
+      "benign"
+     ]
+    }
+   ]
+  },
+  {
+   "en": "Blood clots and non-cancer blood conditions",
+   "es": "Coágulos y enfermedades de la sangre no cancerosas",
+   "open": false,
+   "items": [
+    {
+     "n": "Clot Connect (UNC)",
+     "u": "https://clotconnect.org/patient-resources/",
+     "en": "Relaunched by UNC; clear information on DVT, PE and blood thinners.",
+     "es": "Información sobre trombosis, embolia pulmonar y anticoagulantes.",
+     "tags": [],
+     "dx": [
+      "clots"
+     ]
+    },
+    {
+     "n": "National Blood Clot Alliance",
+     "u": "https://www.stoptheclot.org",
+     "en": "Patient stories, warning signs and support groups.",
+     "es": "Señales de alarma y grupos de apoyo.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "clots"
+     ]
+    },
+    {
+     "n": "American Society of Hematology: for patients",
+     "u": "https://www.hematology.org/education/patients",
+     "en": "Anemia, clotting, bleeding and blood cancers from hematologists.",
+     "es": "Anemia, coagulación, sangrado y cánceres de la sangre.",
+     "tags": [],
+     "dx": [
+      "clots",
+      "benign"
+     ]
+    },
+    {
+     "n": "NHLBI blood diseases",
+     "u": "https://www.nhlbi.nih.gov/health",
+     "en": "Government guides to anemia, sickle cell disease, hemophilia and more (many in Spanish).",
+     "es": "Guías del gobierno sobre anemia, enfermedad falciforme y hemofilia.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "benign",
+      "clots"
+     ]
+    },
+    {
+     "n": "Sickle Cell Disease Association of America",
+     "u": "https://www.sicklecelldisease.org",
+     "en": "Education, local chapters and advocacy.",
+     "es": "Educación y grupos locales.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "benign"
+     ]
+    },
+    {
+     "n": "National Bleeding Disorders Foundation",
+     "u": "https://www.bleeding.org",
+     "en": "Hemophilia, von Willebrand disease and other bleeding disorders.",
+     "es": "Hemofilia, enfermedad de von Willebrand y otros trastornos.",
+     "tags": [
+      "new"
+     ],
+     "dx": [
+      "benign"
+     ]
+    }
+   ]
+  },
+  {
+   "en": "Money, insurance and work",
+   "es": "Dinero, seguro y trabajo",
+   "open": false,
+   "items": [
+    {
+     "n": "CancerCare financial assistance",
+     "u": "https://www.cancercare.org/financial",
+     "en": "Limited grants plus free counseling by oncology social workers.",
+     "es": "Ayuda económica y consejería gratuita con trabajadores sociales.",
+     "tags": [
+      "phone",
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Triage Cancer",
+     "u": "https://triagecancer.org",
+     "en": "Insurance, employment rights and disability benefits explained.",
+     "es": "Seguros, derechos laborales y beneficios por discapacidad.",
+     "tags": [
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Patient Advocate Foundation",
+     "u": "https://www.patientadvocate.org",
+     "en": "Free case managers for insurance denials and medical debt.",
+     "es": "Gestores gratuitos para negaciones de seguro y deudas médicas.",
+     "tags": [
+      "phone",
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Blood Cancer United financial support",
+     "u": "https://bloodcancerunited.org",
+     "en": "Co-pay and travel assistance programs for blood cancer.",
+     "es": "Ayuda para copagos y transporte.",
+     "tags": [],
+     "dx": [
+      "lymphoma",
+      "leukemia",
+      "myeloma",
+      "mds"
+     ]
+    },
+    {
+     "n": "American Cancer Society cost resources",
+     "u": "https://www.cancer.org/cancer/financial-insurance-matters.html",
+     "en": "Lodging, transportation and programs that help with costs.",
+     "es": "Alojamiento, transporte y programas de ayuda.",
+     "tags": [],
+     "dx": []
+    }
+   ]
+  },
+  {
+   "en": "Fertility, sexuality and family",
+   "es": "Fertilidad, sexualidad y familia",
+   "open": false,
+   "items": [
+    {
+     "n": "Advisory Board on Cancer, Infertility and Pregnancy (ABCIP)",
+     "u": "https://ab-cip.org/",
+     "en": "Expert advice for patients and doctors on cancer during pregnancy.",
+     "es": "Asesoría experta sobre cáncer durante el embarazo.",
+     "tags": [],
+     "dx": []
+    },
+    {
+     "n": "Alliance for Fertility Preservation",
+     "u": "https://www.allianceforfertilitypreservation.org",
+     "en": "Options before treatment, and financial help.",
+     "es": "Opciones antes del tratamiento y ayuda económica.",
+     "tags": [],
+     "dx": []
+    },
+    {
+     "n": "The SAMFund (now part of Expect Miracles Foundation)",
+     "u": "https://expectmiraclesfoundation.org",
+     "en": "Grants for young adult survivors, including family-building costs.",
+     "es": "Becas para sobrevivientes jóvenes, incluidos gastos para formar una familia.",
+     "tags": [],
+     "dx": []
+    },
+    {
+     "n": "Helping children when a family member has cancer (ACS)",
+     "u": "https://www.cancer.org/cancer/caregivers/helping-children-when-a-family-member-has-cancer.html",
+     "en": "How to talk with children of different ages.",
+     "es": "Cómo hablar con niños de distintas edades.",
+     "tags": [],
+     "dx": []
+    }
+   ]
+  },
+  {
+   "en": "Emotional support, caregivers and survivorship",
+   "es": "Apoyo emocional, cuidadores y supervivencia",
+   "open": false,
+   "items": [
+    {
+     "n": "Cancer Support Community",
+     "u": "https://www.cancersupportcommunity.org",
+     "en": "Free helpline, support groups and an online community.",
+     "es": "Línea de ayuda gratuita y grupos de apoyo.",
+     "tags": [
+      "phone",
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "CancerCare counseling",
+     "u": "https://www.cancercare.org/counseling",
+     "en": "Free counseling with oncology social workers, by phone or online.",
+     "es": "Consejería gratuita por teléfono o en línea.",
+     "tags": [
+      "phone",
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Family Caregiver Alliance",
+     "u": "https://www.caregiver.org",
+     "en": "Practical guides for the people doing the caring.",
+     "es": "Guías prácticas para cuidadores.",
+     "tags": [
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Cancer.Net survivorship",
+     "u": "https://www.cancer.net/survivorship",
+     "en": "Life after treatment: follow-up care, late effects and returning to work.",
+     "es": "La vida después del tratamiento.",
+     "tags": [
+      "new"
+     ],
+     "dx": []
+    },
+    {
+     "n": "Get Palliative Care (CAPC)",
+     "u": "https://getpalliativecare.org",
+     "en": "What palliative care is and how it helps at any stage.",
+     "es": "Qué son los cuidados paliativos y cómo ayudan.",
+     "tags": [
+      "new"
+     ],
+     "dx": []
+    }
+   ]
+  }
+ ]
+}

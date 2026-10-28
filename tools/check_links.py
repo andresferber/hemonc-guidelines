@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check every link in guidelines.json and resources.json; write linkcheck.json.
+"""Check every link in guidelines.json, resources.json and patient-education.json; write linkcheck.json.
 Runs in GitHub Actions (open internet). A link counts as broken only after it fails on two
 consecutive checks, so a site that is briefly down does not raise an alarm. 401/403/429
 mean the site blocks automated checks or needs a login: recorded as "blocked", not broken."""
@@ -29,6 +29,13 @@ def collect():
                 where = "%s / %s: %s" % (sec, p["title"], it["n"])
                 if it.get("u"): links.setdefault(it["u"], where)
                 if it.get("ref"): links.setdefault(it["ref"][1], where)
+    pe = os.path.join(ROOT, "patient-education.json")
+    if os.path.exists(pe):
+        for s in json.load(open(pe))["sections"]:
+            for it in s["items"]:
+                where = "patient education / %s: %s" % (s["en"], it["n"])
+                links.setdefault(it["u"], where)
+                if it.get("u_es"): links.setdefault(it["u_es"], where + " (Español)")
     return links
 
 
