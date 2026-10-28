@@ -1,5 +1,5 @@
 {
- "built": "2026-10-27 11:16 UTC",
+ "built": "2026-10-28 11:20 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "nejm",
@@ -233,6 +233,14 @@
      "d": "2026-10-24",
      "a": "Thomas Powles et al.",
      "p": "42929692"
+    },
+    {
+     "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
+     "j": "N Engl J Med",
+     "d": "2026-10-24",
+     "a": "Jiayu Wang et al.",
+     "p": "42929681"
     },
     {
      "t": "Tarlatamab–Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer",
@@ -353,17 +361,9 @@
      "d": "2026-10-08",
      "a": "Peter Sasieni et al.",
      "p": "42776074"
-    },
-    {
-     "t": "Advances in Systemic Treatment of Breast Cancer",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMra2500695",
-     "j": "N Engl J Med",
-     "d": "2026-10-08",
-     "a": "Sara Alsterlind Hurvitz",
-     "p": "42842904"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "leuk",
@@ -374,6 +374,21 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Oncogenic modulation of MAPK signaling in leukemia via SPNS2-driven sphingolipid metabolism and membrane nanodomains remodeling",
+     "u": "https://www.nature.com/articles/s41467-026-78821-1",
+     "j": "Nat Commun",
+     "d": "2026-10-28",
+     "a": ""
+    },
+    {
+     "t": "Outcomes with fractionated gemtuzumab ozogamicin in molecularly defined favorable-risk acute myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41408-026-01655-z",
+     "j": "Blood Cancer J",
+     "d": "2026-10-27",
+     "a": "Chornenki N et al.",
+     "p": "42946711"
+    },
     {
      "t": "Albendazole induces ferroptosis through the USP7-GPX4 axis in B-cell acute lymphoblastic leukemia",
      "u": "https://www.nature.com/articles/s42003-026-11229-1",
@@ -504,24 +519,9 @@
      "d": "2026-10-12",
      "a": "Galán-Gómez V et al.",
      "p": "42864394"
-    },
-    {
-     "t": "Increased mitochondrial biogenesis by GPR56 contributes to venetoclax resistance in acute myeloid leukemia",
-     "u": "https://www.nature.com/articles/s41419-026-09225-8",
-     "j": "Cell Death Dis",
-     "d": "2026-10-09",
-     "a": ""
-    },
-    {
-     "t": "RUNX1 aberrations in blast-phase chronic myeloid leukaemia induce the RNA-binding protein SPATS2L, which promotes growth, survival and stress granule assembly",
-     "u": "https://www.nature.com/articles/s41375-026-03161-4",
-     "j": "Leukemia",
-     "d": "2026-10-09",
-     "a": "Palmer DA et al.",
-     "p": "42855471"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "nhl",
@@ -677,7 +677,7 @@
      "p": "42637876"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "hl",
@@ -841,7 +841,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "mm",
@@ -997,7 +997,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "mpn",
@@ -1169,7 +1169,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "mds",
@@ -1330,7 +1330,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "ba",
@@ -1522,7 +1522,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "aacr",
@@ -1533,6 +1533,33 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Targeting Branched-Chain Amino Acid Transamination Sensitizes Clear Cell Renal Cell Carcinoma to Glutaminase Inhibition",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0563",
+     "p": "42945304",
+     "j": "Cancer Res",
+     "d": "2026-10-27",
+     "a": "Coffey NJ et al.",
+     "ty": ""
+    },
+    {
+     "t": "SLC3A2 Drives an Immunosuppressive Metabolic Axis that Limits Oncolytic Virotherapy Efficacy",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1659",
+     "p": "42944699",
+     "j": "Cancer Res",
+     "d": "2026-10-27",
+     "a": "Dai W et al.",
+     "ty": ""
+    },
+    {
+     "t": "Histopathology-Based Spatial Profiling of Immune and Molecular Features Predicts Cancer Risk in Barrett's Esophagus Patients",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1476",
+     "p": "42944677",
+     "j": "Cancer Res",
+     "d": "2026-10-27",
+     "a": "Ercan C et al.",
+     "ty": ""
+    },
     {
      "t": "Patient Sociodemographic Factors Impact the Breast Cancer Microenvironment",
      "u": "https://doi.org/10.1158/0008-5472.CAN-25-5500",
@@ -1685,36 +1712,9 @@
      "d": "2026-10-08",
      "a": "Guo Z et al.",
      "ty": ""
-    },
-    {
-     "t": "The HDAC8-U2AF1 Axis Dysregulates DNA Damage-Responsive RNA Splicing and Creates Targetable Vulnerabilities in Acute Myeloid Leukemia",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5027",
-     "p": "42847724",
-     "j": "Cancer Res",
-     "d": "2026-10-08",
-     "a": "Zhang L et al.",
-     "ty": ""
-    },
-    {
-     "t": "Single-Cell and Spatial Transcriptomics Reveal CHCHD3 as a Therapeutic Target to Activate cGAS-STING and Overcome Immunosuppression in Lung Adenocarcinoma",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-2727",
-     "p": "42841543",
-     "j": "Cancer Res",
-     "d": "2026-10-07",
-     "a": "Zhang M et al.",
-     "ty": ""
-    },
-    {
-     "t": "Epigenetic Priming Sensitizes Metastatic Breast Cancer to Checkpoint Blockade by Rewiring the Tumor-Immune Microenvironment",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-3968",
-     "p": "42836774",
-     "j": "Cancer Res",
-     "d": "2026-10-06",
-     "a": "Senent Y et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   },
   {
    "key": "jco",
@@ -1725,6 +1725,51 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "PARP Inhibitors in the Management of Ovarian Cancer: ASCO Living Guideline, Version 2026.1.0",
+     "u": "https://doi.org/10.1200/JCO-26-02412",
+     "p": "42945508",
+     "j": "J Clin Oncol",
+     "d": "2026-10-27",
+     "a": "Tew WP et al.",
+     "ty": ""
+    },
+    {
+     "t": "Art as a Shared Space: Tracing the Unseen Through a Body Map",
+     "u": "https://doi.org/10.1200/JCO-26-01143",
+     "p": "42945507",
+     "j": "J Clin Oncol",
+     "d": "2026-10-27",
+     "a": "Choi GE",
+     "ty": ""
+    },
+    {
+     "t": "Advancing Cascade Genetic Testing for BRCA1/2 Pathogenic Variants Beyond the Academic Research Setting",
+     "u": "https://doi.org/10.1200/JCO-26-02163",
+     "p": "42945506",
+     "j": "J Clin Oncol",
+     "d": "2026-10-27",
+     "a": "Roberts MC",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Was Futility in RADICAL Robust to Analytic Specification?",
+     "u": "https://doi.org/10.1200/JCO-26-02068",
+     "p": "42945503",
+     "j": "J Clin Oncol",
+     "d": "2026-10-27",
+     "a": "Li H",
+     "ty": "Letter"
+    },
+    {
+     "t": "Reply to: Was Futility in RADICAL Robust to Analytic Specification?",
+     "u": "https://doi.org/10.1200/JCO-26-02352",
+     "p": "42945497",
+     "j": "J Clin Oncol",
+     "d": "2026-10-27",
+     "a": "McKay RR et al.",
+     "ty": ""
+    },
     {
      "t": "Dalmelitinib Plus Aumolertinib in Advanced NSCLC Patients With EGFR-TKI Resistance and MET Amplification: A Randomized Phase 3 Trial",
      "u": "https://doi.org/10.1200/JCO-26-02432",
@@ -1859,54 +1904,9 @@
      "d": "2026-10-14",
      "a": "Padevit L et al.",
      "ty": "Review"
-    },
-    {
-     "t": "Radiation Oncology at a Crossroads: Interpreting the Evidence on Proton Versus Photon Radiotherapy for Oropharyngeal Cancer",
-     "u": "https://doi.org/10.1200/JCO-26-01434",
-     "p": "42874015",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Ramanan S et al.",
-     "ty": ""
-    },
-    {
-     "t": "Dose-Escalated Focal Salvage High-Dose-Rate Brachytherapy and Genomic Classifier Risk Stratification in Radiorecurrent Prostate Cancer: The F-SHARP Phase I/II Clinical Trial",
-     "u": "https://doi.org/10.1200/JCO-25-02730",
-     "p": "42874014",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Solanki AA et al.",
-     "ty": ""
-    },
-    {
-     "t": "Treatment of Advanced Biliary Tract Cancer: ASCO Living Guideline, Version 2026.1.0",
-     "u": "https://doi.org/10.1200/JCO-26-02462",
-     "p": "42874012",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Shroff RT et al.",
-     "ty": ""
-    },
-    {
-     "t": "Prescription Does Not Ensure Patient Access: Progress and Remaining Challenges in Addressing Access Barriers to Specialty Oral Anticancer Medications",
-     "u": "https://doi.org/10.1200/JCO-26-02192",
-     "p": "42874011",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Sepassi A et al.",
-     "ty": "Editorial"
-    },
-    {
-     "t": "The Boy Who Became a Tiger",
-     "u": "https://doi.org/10.1200/JCO-26-00001",
-     "p": "42868326",
-     "j": "J Clin Oncol",
-     "d": "2026-10-13",
-     "a": "Prabhakar MM et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-27"
+   "updated": "2026-10-28"
   }
  ]
 }
