@@ -8,7 +8,6 @@
   var me = document.currentScript;
   var base = me && me.src ? me.src.replace(/[^\/]*(\?.*)?$/, "") : "";
   var bust = "?v=" + Math.floor(Date.now() / 600000);
-  var MAIL = "andresferber@hotmail.com";
 
   if (!document.getElementById("ped-font")) {
     var lf = document.createElement("link");
@@ -61,7 +60,7 @@
       ".ped-tag.new{background:var(--warn-soft);color:var(--warn)}",
       ".ped-empty{color:var(--muted);text-align:center;padding:12px}",
       ".ped-foot{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:grid;gap:4px}",
-      ".ped-mail{user-select:all;font-weight:700}"
+      ".ped-f1{font-style:italic}"
     ].join("\n");
     var st = document.createElement("style");
     st.id = "ped-style"; st.textContent = css;
@@ -69,8 +68,8 @@
   }
 
   var T = {
-    en: { h1: "Patient & Family Resources", lede: "Trusted, free, non-commercial information about blood cancers and blood disorders. Start with your diagnosis or a topic below.", helpTitle: "Talk to a person", helpBody: 'NCI Cancer Information Service (English and Spanish): <span class="ped-num">1-800-422-6237</span>', helpNote: "For urgent symptoms such as fever during chemotherapy, call your care team or 911.", chipLabel: "Find your diagnosis", q: "Search resources (e.g. fertility, insurance, myeloma)", n: "resources", none: "No resources match. Try another word.", foot1: "Links checked monthly. Found a broken link or have a suggestion? Write to ", foot2: "This page is for education and does not replace advice from your own medical team.", es: "Español", booklet: "Free booklets", phone: "Helpline", "new": "New" },
-    es: { h1: "Recursos para pacientes y familias", lede: "Información confiable, gratuita y sin fines comerciales sobre cánceres de la sangre y enfermedades hematológicas. Empiece por su diagnóstico o por un tema.", helpTitle: "Hable con una persona", helpBody: 'Servicio de Información sobre el Cáncer del NCI (inglés y español): <span class="ped-num">1-800-422-6237</span>', helpNote: "Ante síntomas urgentes, como fiebre durante la quimioterapia, llame a su equipo médico o al 911.", chipLabel: "Busque su diagnóstico", q: "Buscar recursos (ej. fertilidad, seguro, mieloma)", n: "recursos", none: "No hay resultados. Pruebe otra palabra.", foot1: "Enlaces revisados cada mes. ¿Encontró un enlace roto o tiene una sugerencia? Escriba a ", foot2: "Esta página es educativa y no reemplaza el consejo de su equipo médico.", es: "Español", booklet: "Folletos gratis", phone: "Línea de ayuda", "new": "Nuevo" }
+    en: { h1: "Patient & Family Resources", lede: "Trusted, free, non-commercial information about blood cancers and blood disorders. Start with your diagnosis or a topic below.", helpTitle: "Talk to a person", helpBody: 'NCI Cancer Information Service (English and Spanish): <span class="ped-num">1-800-422-6237</span>', helpNote: "For urgent symptoms such as fever during chemotherapy, call your care team or 911.", chipLabel: "Find your diagnosis", q: "Search resources (e.g. fertility, insurance, myeloma)", n: "resources", none: "No resources match. Try another word.", foot1: "Links checked monthly.", foot2: "This page is for education and does not replace advice from your own medical team.", es: "Español", booklet: "Free booklets", phone: "Helpline", "new": "New" },
+    es: { h1: "Recursos para pacientes y familias", lede: "Información confiable, gratuita y sin fines comerciales sobre cánceres de la sangre y enfermedades hematológicas. Empiece por su diagnóstico o por un tema.", helpTitle: "Hable con una persona", helpBody: 'Servicio de Información sobre el Cáncer del NCI (inglés y español): <span class="ped-num">1-800-422-6237</span>', helpNote: "Ante síntomas urgentes, como fiebre durante la quimioterapia, llame a su equipo médico o al 911.", chipLabel: "Busque su diagnóstico", q: "Buscar recursos (ej. fertilidad, seguro, mieloma)", n: "recursos", none: "No hay resultados. Pruebe otra palabra.", foot1: "Enlaces revisados cada mes.", foot2: "Esta página es educativa y no reemplaza el consejo de su equipo médico.", es: "Español", booklet: "Folletos gratis", phone: "Línea de ayuda", "new": "Nuevo" }
   };
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -99,7 +98,7 @@
       $(".ped-h1").textContent = L.h1; $(".ped-lede").textContent = L.lede;
       $(".ped-ht").textContent = L.helpTitle; $(".ped-hb").innerHTML = L.helpBody; $(".ped-hn").textContent = L.helpNote;
       $(".ped-label").textContent = L.chipLabel; $(".ped-search").placeholder = L.q;
-      $(".ped-f1").innerHTML = esc(L.foot1) + '<span class="ped-mail">' + MAIL + "</span>"; $(".ped-f2").textContent = L.foot2;
+      $(".ped-f1").textContent = L.foot1; $(".ped-f2").textContent = L.foot2;
       root.querySelectorAll(".ped-lang button").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-l") === lang); });
       $(".ped-chips").innerHTML = data.diagnoses.map(function (d) {
         return '<button type="button" class="ped-chip" data-dx="' + d.k + '" aria-pressed="' + (dx === d.k) + '">' + esc(d[lang]) + "</button>";
