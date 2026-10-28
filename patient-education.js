@@ -48,6 +48,11 @@
       ".ped-items{border-top:1px solid var(--line)}",
       ".ped-item{padding:12px 16px;display:grid;gap:4px;border-bottom:1px solid var(--line);min-width:0}",
       ".ped-item:last-child{border-bottom:0}",
+      ".ped-item.hit{background:var(--accent-soft);box-shadow:inset 0 0 0 2px var(--accent);border-radius:8px}",
+      ".ped-item.hit.flash{animation:pedflash 1.4s ease-out}",
+      "@keyframes pedflash{0%{box-shadow:inset 0 0 0 4px var(--accent)}100%{box-shadow:inset 0 0 0 2px var(--accent)}}",
+      "@media (prefers-reduced-motion:reduce){.ped-item.hit.flash{animation:none}}",
+      ".ped-tag.dx{background:var(--accent);color:#fff;font-weight:700}",
       ".ped-item a{color:var(--accent)!important;font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}",
       ".ped-item p{margin:0;color:var(--muted);font-size:15.5px}",
       ".ped-tags{display:flex;flex-wrap:wrap;gap:6px}",
@@ -108,12 +113,15 @@
           return true;
         });
         if (!items.length) return "";
+        if (dx !== "all") items = items.filter(function (it) { return it.dx.indexOf(dx) >= 0; }).concat(items.filter(function (it) { return it.dx.indexOf(dx) < 0; }));
+        var dxName = ""; data.diagnoses.forEach(function (d) { if (d.k === dx) dxName = d[lang]; });
         var isOpen = (q || dx !== "all") ? true : (openState ? openState[si] : s.open);
         return "<details" + (isOpen ? " open" : "") + "><summary><h3>" + esc(s[lang]) + '</h3><span class="ped-count">' + items.length + " " + L.n + "</span></summary>" +
           '<div class="ped-items">' + items.map(function (it) {
             var url = (lang === "es" && it.u_es) ? it.u_es : it.u;
-            return '<div class="ped-item"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(it.n) + "</a><p>" + esc(it[lang]) + "</p>" +
-              (it.tags.length ? '<div class="ped-tags">' + it.tags.map(function (t) { return tag(t, L); }).join("") + "</div>" : "") + "</div>";
+            var hit = dx !== "all" && it.dx.indexOf(dx) >= 0;
+            return '<div class="ped-item' + (hit ? ' hit' : '') + '"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(it.n) + "</a><p>" + esc(it[lang]) + "</p>" +
+              ((hit || it.tags.length) ? '<div class="ped-tags">' + (hit ? '<span class="ped-tag dx">' + esc(dxName) + "</span>" : "") + it.tags.map(function (t) { return tag(t, L); }).join("") + "</div>" : "") + "</div>";
           }).join("") + "</div></details>";
       }).join("");
       $(".ped-sections").innerHTML = html || '<p class="ped-empty">' + esc(L.none) + "</p>";
@@ -123,7 +131,16 @@
       var b = e.target.closest(".ped-lang button");
       if (b) { lang = b.getAttribute("data-l"); try { localStorage.setItem("ped-lang", lang); } catch (x) {} render(); return; }
       var c = e.target.closest(".ped-chip");
-      if (c) { dx = c.getAttribute("data-dx"); render(); }
+      if (c) {
+        dx = c.getAttribute("data-dx"); render();
+        var first = root.querySelector(".ped-item.hit");
+        if (first) {
+          root.querySelectorAll(".ped-item.hit").forEach(function (el) { el.classList.add("flash"); });
+          var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          var sec = first.closest("details");
+          (sec || first).scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+        }
+      }
     });
     $(".ped-search").addEventListener("input", function (e) { q = e.target.value.trim().toLowerCase(); render(); });
     render();
