@@ -1,5 +1,5 @@
 {
- "built": "2026-10-28 11:20 UTC",
+ "built": "2026-10-29 11:21 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,24 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Multi-omics reveals evolution from CD7-negative T cell dysregulation to EBV-positive LPD after CD7 CAR-T therapy",
+     "u": "https://doi.org/10.1182/blood.2026034648",
+     "p": "42950083",
+     "j": "Blood",
+     "d": "2026-10-28",
+     "a": "Huang M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Low Incidence of Cryptic Genetic Marrow Failure in Pediatric Severe Aplastic Anemia Following Negative Clinical Workup",
+     "u": "https://doi.org/10.1182/blood.2026034684",
+     "p": "42949905",
+     "j": "Blood",
+     "d": "2026-10-28",
+     "a": "de Jong JLO et al.",
+     "ty": ""
+    },
     {
      "t": "Initial fixed low-versus moderate-dose hydroxyurea assignment in the long-term follow-up of the SPRINT cohort",
      "u": "https://doi.org/10.1182/blood.2026034384",
@@ -171,27 +189,9 @@
      "d": "2026-10-16",
      "a": "Crary SE et al.",
      "ty": ""
-    },
-    {
-     "t": "Genomic and clinical landscape of RAS mutations in acute myeloid leukemia",
-     "u": "https://doi.org/10.1182/blood.2026033409",
-     "p": "42886676",
-     "j": "Blood",
-     "d": "2026-10-16",
-     "a": "Rodríguez-Arbolí E et al.",
-     "ty": ""
-    },
-    {
-     "t": "Myelofibrosis end points and self-evident truths",
-     "u": "https://doi.org/10.1182/blood.2026035301",
-     "p": "42879183",
-     "j": "Blood",
-     "d": "2026-10-15",
-     "a": "Vachhani P et al.",
-     "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "nejm",
@@ -202,6 +202,14 @@
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
    "items": [
+    {
+     "t": "Splenosis",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMicm2609770",
+     "j": "N Engl J Med",
+     "d": "2026-10-29",
+     "a": "Mariam Markouli et al.",
+     "p": "42950204"
+    },
     {
      "t": "Osimertinib–Savolitinib in Advanced NSCLC after Progression during EGFR-TKI Therapy",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611335",
@@ -353,17 +361,9 @@
      "d": "2026-10-15",
      "a": "Adele K. Fielding",
      "p": "42874109"
-    },
-    {
-     "t": "Effect of Screening with Multicancer Early-Detection Test on Late-Stage Cancer Diagnosis",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505723",
-     "j": "N Engl J Med",
-     "d": "2026-10-08",
-     "a": "Peter Sasieni et al.",
-     "p": "42776074"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "leuk",
@@ -521,7 +521,7 @@
      "p": "42864394"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "nhl",
@@ -677,7 +677,7 @@
      "p": "42637876"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "hl",
@@ -841,7 +841,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "mm",
@@ -997,7 +997,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "mpn",
@@ -1169,7 +1169,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "mds",
@@ -1330,7 +1330,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "ba",
@@ -1341,6 +1341,60 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Omission of Radiation Therapy is Associated with Inferior Disease Control in High Risk Early-Stage Hodgkin Lymphoma",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021839",
+     "p": "42950253",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Dave NK et al.",
+     "ty": ""
+    },
+    {
+     "t": "Grip strength and incremental value in MDS",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022682",
+     "p": "42950252",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Liao N et al.",
+     "ty": ""
+    },
+    {
+     "t": "Impact of initial dosing and subsequent dose reduction of zanubrutinib in patients with Waldenström macroglobulinemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021622",
+     "p": "42950251",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Guijosa A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Reduced-Intensity Haploidentical Bone Marrow Transplantation in Children with Severe Sickle Cell Disease: BMT CTN 1507",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021576",
+     "p": "42950248",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Walters MC et al.",
+     "ty": ""
+    },
+    {
+     "t": "CAR T-cell therapy referral patterns and utilization for relapsed/refractory large B-cell lymphoma in the United States",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021289",
+     "p": "42950247",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Shadman M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Effects of post-transplant cyclophosphamide on immune reconstitution after haploidentical and HLA-matched transplant",
+     "u": "https://doi.org/10.1182/bloodadvances.2026019683",
+     "p": "42950245",
+     "j": "Blood Adv",
+     "d": "2026-10-28",
+     "a": "Ansuinelli M et al.",
+     "ty": ""
+    },
     {
      "t": "Adverse impact of deletion of the chromosome 6 on clinical outcomes after allogeneic hematopoietic transplantation",
      "u": "https://doi.org/10.1182/bloodadvances.2026021320",
@@ -1466,63 +1520,9 @@
      "d": "2026-10-19",
      "a": "Eurelings LEM et al.",
      "ty": ""
-    },
-    {
-     "t": "Long-Term Outcomes in Patients with Relapsed or Refractory Severe Aplastic Anemia after Immunosuppression",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021514",
-     "p": "42896197",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Hoff FW et al.",
-     "ty": ""
-    },
-    {
-     "t": "National Alliance of Sickle Cell Disease Consensus Recommendations for Gene Therapy Implementation",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021027",
-     "p": "42896182",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Leonard A et al.",
-     "ty": ""
-    },
-    {
-     "t": "Advancing Sickle Cell Disease Care Through Collaboration: the HHS and ASH Registry Leaders' Roundtable Initiative",
-     "u": "https://doi.org/10.1182/bloodadvances.2025017965",
-     "p": "42896181",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Wood WA et al.",
-     "ty": ""
-    },
-    {
-     "t": "Response to \" Bone Mineral Density in Hemophilia & VWD\"",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021513",
-     "p": "42896180",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Citla-Sridhar D et al.",
-     "ty": ""
-    },
-    {
-     "t": "2026 ASH ITP guidelines: rethinking therapy",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022152",
-     "p": "42895772",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Mathew C et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Clinical characteristics and outcome of a cohort of CLL patients with BTK T474 gatekeeper mutation",
-     "u": "https://doi.org/10.1182/bloodadvances.2025019251",
-     "p": "42887491",
-     "j": "Blood Adv",
-     "d": "2026-10-16",
-     "a": "Omer Z et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "aacr",
@@ -1714,7 +1714,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   },
   {
    "key": "jco",
@@ -1725,6 +1725,33 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Darovasertib and Crizotinib First-Line Treatment for Metastatic Uveal Melanoma: Overall Survival, Efficacy, and Safety From the OptimUM-01 Study",
+     "u": "https://doi.org/10.1200/JCO-26-00802",
+     "p": "42950186",
+     "j": "J Clin Oncol",
+     "d": "2026-10-28",
+     "a": "McKean M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Immunotherapy With Stereotactic Body Radiation Therapy in Early-Stage Non‑Small Cell Lung Cancer: Matching Risk, Biology, and Timing",
+     "u": "https://doi.org/10.1200/JCO-26-01966",
+     "p": "42950185",
+     "j": "J Clin Oncol",
+     "d": "2026-10-28",
+     "a": "Shaverdian N et al.",
+     "ty": "Editorial"
+    },
+    {
+     "t": "KEYNOTE-867: A Phase III, Randomized, Double-Blind Study of Stereotactic Body Radiotherapy With Pembrolizumab for Unresected Stage I or II Non-Small Cell Lung Cancer",
+     "u": "https://doi.org/10.1200/JCO-26-00404",
+     "p": "42950173",
+     "j": "J Clin Oncol",
+     "d": "2026-10-28",
+     "a": "Jabbour SK et al.",
+     "ty": ""
+    },
     {
      "t": "PARP Inhibitors in the Management of Ovarian Cancer: ASCO Living Guideline, Version 2026.1.0",
      "u": "https://doi.org/10.1200/JCO-26-02412",
@@ -1877,36 +1904,9 @@
      "d": "2026-10-15",
      "a": "Ebbelaar CF et al.",
      "ty": ""
-    },
-    {
-     "t": "Selpercatinib in Pediatric and Adolescent Patients With RET-Altered Solid Tumors: Safety and Efficacy Results From the Phase I/II LIBRETTO-121 Study",
-     "u": "https://doi.org/10.1200/JCO-25-03013",
-     "p": "42874021",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Laetsch TW et al.",
-     "ty": ""
-    },
-    {
-     "t": "Clinical Trial Prediction Markets",
-     "u": "https://doi.org/10.1200/JCO-26-01303",
-     "p": "42874020",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Zaorsky NG",
-     "ty": ""
-    },
-    {
-     "t": "Neurodevelopmental Blueprint in Gliomas: Toward an Ontogenetic Multimodal Integrated Therapy",
-     "u": "https://doi.org/10.1200/JCO-25-02798",
-     "p": "42874018",
-     "j": "J Clin Oncol",
-     "d": "2026-10-14",
-     "a": "Padevit L et al.",
-     "ty": "Review"
     }
    ],
-   "updated": "2026-10-28"
+   "updated": "2026-10-29"
   }
  ]
 }
