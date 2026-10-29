@@ -306,11 +306,22 @@
      cancel() followed at once by speak() is ignored, and utterances must be kept referenced */
   var IOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   var unlocked = false, keep = [], SILENT = "data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjYwLjE2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAADgAAA5IAQUFBQUFBQVBQUFBQUFBeXl5eXl5ebW1tbW1tbXx8fHx8fHyKioqKioqKmZmZmZmZmaioqKioqKiotra2tra2tsXFxcXFxcXU1NTU1NTU4uLi4uLi4vHx8fHx8fH/////////AAAAAExhdmM2MC4zMQAAAAAAAAAAAAAAACQDaQAAAAAAAAOSa0I+rwAAAAAAAAAAAAAAAAD/8yDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVV//MixCcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVX/8yDETwAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVV//MgxHYAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVf/zIMSdAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVX/8yLExAAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVTEFNRTMuMTAwVVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVMQU1FMy4xMDBVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIsTXAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MgxNgAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zIMTYAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVX/8yDE2AAAA0gAAAAAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV//MixNcAAANIAAAAAFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVU=";
+  var bed = null;  // silent looping track that holds the phone in media-playback mode while reading
   function unlock() {
-    if (unlocked || !canSpeak) return;
+    if (!canSpeak) return;
+    /* Safari 17+: declare this page as media playback, which is not muted by the Silent switch */
+    try { if (navigator.audioSession) navigator.audioSession.type = "playback"; } catch (e) {}
+    try {
+      if (!bed) { bed = new Audio(SILENT); bed.loop = true; bed.setAttribute("playsinline", ""); bed.volume = 0.01; }
+      var pr = bed.play(); if (pr && pr.catch) pr.catch(function () {});
+    } catch (e) {}
+    if (unlocked) return;
     unlocked = true;
-    try { var a = new Audio(SILENT); a.setAttribute("playsinline", ""); var pr = a.play(); if (pr && pr.catch) pr.catch(function () {}); } catch (e) {}
     try { var u = new SpeechSynthesisUtterance(" "); u.volume = 0; keep.push(u); speechSynthesis.speak(u); } catch (e) {}
+  }
+  function release() {
+    try { if (bed) bed.pause(); } catch (e) {}
+    try { if (navigator.audioSession) navigator.audioSession.type = "auto"; } catch (e) {}
   }
   function say(text, then) {
     var gen = P.gen, cs = chunks(text), v = IOS ? null : voice(), started = false;
@@ -390,6 +401,7 @@
     if (li) { li.classList.add("playing"); if (scroll) li.scrollIntoView({ behavior: "smooth", block: "nearest" }); }
   }
   function stop() {
+    release();
     P.gen++; speechSynthesis.cancel(); P.i = -1; P.done = false; P.end = false; bar.hidden = true; markPlaying(); keepAwake(false);
   }
   function startTopic(tk, at, intro, full) {
