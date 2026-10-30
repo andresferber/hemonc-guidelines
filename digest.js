@@ -83,6 +83,9 @@
     ".hdg li.isread{opacity:.92}",
     ".hdg button.rd{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
     ".hdg li.isread button.rd{color:#5b3e96!important;text-decoration:none;background:#f1ecfa;border-radius:999px;padding:3px 8px}",
+    ".hdg button.hd{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#e3f1f6;border-radius:999px;padding:3px 8px}",
+    ".hdg button.hd[hidden]{display:none!important}",
+    ".hdg li.isheard .ti a{color:#4f6f7c!important}",
     ".hdg .empty{color:var(--muted);font-size:15px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}",
     ".hdg .wnote{font-size:13.5px;color:var(--muted)}",
     ".hdg .auto{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink)}",
@@ -179,7 +182,25 @@
     try { localStorage.setItem(RK, JSON.stringify(m)); } catch (e) {}
     applyRead();
   }
+  /* "listened" marks: same privacy as "opened" (this browser only), set when a paper has been read aloud to the end */
+  var HK = "hogHeard";
+  function heardMap() { try { return JSON.parse(localStorage.getItem(HK) || "{}") || {}; } catch (e) { return {}; } }
+  function isHeard(id) { return !!(id && heardMap()[id]); }
+  function setHeard(id, on) {
+    if (!id) return;
+    var m = heardMap(), now = Date.now();
+    if (on) m[id] = now; else delete m[id];
+    for (var k in m) if (now - m[k] > 365 * 864e5) delete m[k];
+    try { localStorage.setItem(HK, JSON.stringify(m)); } catch (e) {}
+    applyRead();
+  }
   function applyRead() {
+    var hm = heardMap();
+    [].forEach.call(document.querySelectorAll("li[data-rid]"), function (li) {
+      var on = !!hm[li.getAttribute("data-rid")], b = li.querySelector("button.hd");
+      li.classList.toggle("isheard", on);
+      if (b) b.hidden = !on;
+    });
     var m = readMap();
     [].forEach.call(document.querySelectorAll("li[data-rid]"), function (li) {
       var on = !!m[li.getAttribute("data-rid")];
@@ -188,7 +209,7 @@
       if (b) { b.textContent = on ? "✓ Opened" : "Mark as opened"; b.setAttribute("aria-pressed", on ? "true" : "false"); }
     });
   }
-  window.addEventListener("storage", function (e) { if (e.key === RK) applyRead(); });
+  window.addEventListener("storage", function (e) { if (e.key === RK || e.key === HK) applyRead(); });
 
   function paperHTML(p, tk, idx, q, note) {
     var url = p.doi ? "https://doi.org/" + p.doi : "https://pubmed.ncbi.nlm.nih.gov/" + p.p + "/";
@@ -200,8 +221,9 @@
       (p.free && p.pmc ? '<a class="free" href="https://pmc.ncbi.nlm.nih.gov/articles/' + esc(p.pmc) + '/" target="_blank" rel="noopener">Free full text</a>' : "") +
       (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "") +
       (canSpeak && p.ab && p.ab.length ? '<button class="ls" type="button" data-full="1" data-play="' + esc(tk) + ":" + idx + '">▶ Listen to full abstract</button>' : "") +
-      '<button class="rd" type="button">' + (isRead("pm" + p.p) ? "\u2713 Opened" : "Mark as opened") + "</button>";
-    return '<li data-k="' + esc(tk) + ":" + idx + '" data-rid="pm' + esc(p.p) + '"' + (isRead("pm" + p.p) ? ' class="isread"' : "") + ">" + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
+      '<button class="rd" type="button">' + (isRead("pm" + p.p) ? "\u2713 Opened" : "Mark as opened") + "</button>" +
+      '<button class="hd" type="button" title="Tap to remove"' + (isHeard("pm" + p.p) ? "" : " hidden") + '>\u2713 Listened</button>';
+    return '<li data-k="' + esc(tk) + ":" + idx + '" data-rid="pm' + esc(p.p) + '"' + (isRead("pm" + p.p) || isHeard("pm" + p.p) ? ' class="' + (isRead("pm" + p.p) ? "isread " : "") + (isHeard("pm" + p.p) ? "isheard" : "") + '"' : "") + ">" + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
       '<div class="ti"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + hil(p.t, q) + "</a></div>" +
       '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
   }
@@ -391,6 +413,8 @@
   }
   /* what happens when a paper has been read */
   function finished() {
+    var cur = P.list[P.i];
+    if (cur && cur.p) setHeard("pm" + cur.p, true);
     if (!P.auto) { P.done = true; updateBar(); return; }           // default: wait for Next
     if (P.i + 1 < P.list.length) { play(P.i + 1); return; }
     var k = ORDER.indexOf(P.tk);                                    // end of a topic: go on to the next one
@@ -473,6 +497,7 @@
   }
   mount.addEventListener("click", function (e) {
     var rli = e.target.closest("li[data-rid]");
+    if (rli && e.target.closest("button.hd")) { setHeard(rli.getAttribute("data-rid"), false); return; }
     if (rli && e.target.closest("button.rd")) { setRead(rli.getAttribute("data-rid"), !isRead(rli.getAttribute("data-rid"))); return; }
     if (rli && e.target.closest("a")) setRead(rli.getAttribute("data-rid"), true);
     var t = e.target.closest("button.t");
