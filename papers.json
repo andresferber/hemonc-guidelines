@@ -1,5 +1,5 @@
 {
- "built": "2026-10-29 11:21 UTC",
+ "built": "2026-10-30 11:17 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,87 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "A TAG team for achieving deep remissions in BPDCN",
+     "u": "https://doi.org/10.1182/blood.2026035436",
+     "p": "42954980",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Carlsgaard P et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Targeting MYC through GSPT1 codegradation in blood cancers",
+     "u": "https://doi.org/10.1182/blood.2026035659",
+     "p": "42954979",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Powell JA et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "ITP: a new CAR for an old road",
+     "u": "https://doi.org/10.1182/blood.2026035830",
+     "p": "42954978",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Semple JW et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Splicing mishap in ITP: exon skipping dysregulates T cells",
+     "u": "https://doi.org/10.1182/blood.2026035941",
+     "p": "42954977",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Kapur R",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "CD4+ T cells facilitate immunotherapy in ALK+ ALCL",
+     "u": "https://doi.org/10.1182/blood.2026035434",
+     "p": "42954976",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Moriggl R",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "MEIS1 guardian USP22 fuels transcription in KMT2Ar leukemia",
+     "u": "https://doi.org/10.1182/blood.2026035512",
+     "p": "42954975",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Wenge DV",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Securing HMO coverage for HSCT",
+     "u": "https://doi.org/10.1182/blood.2026035889",
+     "p": "42954974",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Jinno CN et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Dying to tell the diagnosis: apoptotic neutrophils in dyskeratosis congenita",
+     "u": "https://doi.org/10.1182/blood.2026035786",
+     "p": "42954973",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "Maddox A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Constantinescu SN, Vainchenker W, Pecquet C. Next-generation JAK inhibitors in the treatment of myeloproliferative neoplasms. Blood. 2026;147(12):1255-1266",
+     "u": "https://doi.org/10.1182/blood.2026036374",
+     "p": "42954972",
+     "j": "Blood",
+     "d": "2026-10-29",
+     "a": "",
+     "ty": ""
+    },
     {
      "t": "Multi-omics reveals evolution from CD7-negative T cell dysregulation to EBV-positive LPD after CD7 CAR-T therapy",
      "u": "https://doi.org/10.1182/blood.2026034648",
@@ -108,90 +189,9 @@
      "d": "2026-10-23",
      "a": "Manier S",
      "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Reframing APS thrombogenesis: a new PF4-driven mechanism",
-     "u": "https://doi.org/10.1182/blood.2026035161",
-     "p": "42911648",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "Chong BH",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "DEK: once a translocation partner, now an oncogenic effector",
-     "u": "https://doi.org/10.1182/blood.2026035302",
-     "p": "42911647",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "Grey W",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Age-related anemia: a new microbial clue in old blood",
-     "u": "https://doi.org/10.1182/blood.2026035380",
-     "p": "42911646",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "Das NK et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "No cure without consequence: HCT and CH in SCD",
-     "u": "https://doi.org/10.1182/blood.2026035674",
-     "p": "42911645",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "Lapite A et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Chen L, Hu L, Liu X, et al. Single-cell profiling of ANKRD26 thrombocytopenia reveals progenitor expansion and polyploid apoptosis via JUNB-p21. Blood. 2026;147(17):1984-1998",
-     "u": "https://doi.org/10.1182/blood.2026036427",
-     "p": "42911644",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "",
-     "ty": ""
-    },
-    {
-     "t": "Kauskot A, Vandenbriele C, Louwette S, et al. PEAR1 attenuates megakaryopoiesis via control of the PI3K/PTEN pathway. Blood. 2013;121(26):5208-5217",
-     "u": "https://doi.org/10.1182/blood.2026036422",
-     "p": "42911643",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "",
-     "ty": ""
-    },
-    {
-     "t": "A new reporter strategy reveals a subset of nonmigratory hematopoietic stem cells located in a dynamic bone marrow niche",
-     "u": "https://doi.org/10.1182/blood.2025031114",
-     "p": "42895921",
-     "j": "Blood",
-     "d": "2026-10-19",
-     "a": "Secchi MA et al.",
-     "ty": ""
-    },
-    {
-     "t": "A randomized phase 2 study combining midostaurin, low-dose cytarabine and venetoclax in newly diagnosed AML ≥60 years",
-     "u": "https://doi.org/10.1182/blood.2026035389",
-     "p": "42895904",
-     "j": "Blood",
-     "d": "2026-10-19",
-     "a": "Chua CC et al.",
-     "ty": ""
-    },
-    {
-     "t": "Cases of High-Titer Inhibitor Formation After AAV Gene Therapy for Hemophilia A",
-     "u": "https://doi.org/10.1182/blood.2026035372",
-     "p": "42886677",
-     "j": "Blood",
-     "d": "2026-10-16",
-     "a": "Crary SE et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "nejm",
@@ -217,14 +217,6 @@
      "d": "2026-10-25",
      "a": "Shun Lu et al.",
      "p": "42929693"
-    },
-    {
-     "t": "Divarasib as Compared with Sotorasib or Adagrasib in KRAS G12C–Mutated NSCLC",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2605703",
-     "j": "N Engl J Med",
-     "d": "2026-10-25",
-     "a": "Ferdinandos Skoulidis et al.",
-     "p": "42929675"
     },
     {
      "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
@@ -361,9 +353,17 @@
      "d": "2026-10-15",
      "a": "Adele K. Fielding",
      "p": "42874109"
+    },
+    {
+     "t": "Effect of Screening with Multicancer Early-Detection Test on Late-Stage Cancer Diagnosis",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505723",
+     "j": "N Engl J Med",
+     "d": "2026-10-08",
+     "a": "Peter Sasieni et al.",
+     "p": "42776074"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "leuk",
@@ -375,11 +375,34 @@
    ],
    "items": [
     {
+     "t": "Clinical and molecular characteristics of FLT3-ITD microclones in elderly patients with acute myeloid leukemia receiving less-intensive therapy",
+     "u": "https://www.nature.com/articles/s41375-026-03165-0",
+     "j": "Leukemia",
+     "d": "2026-10-30",
+     "a": ""
+    },
+    {
+     "t": "Measurable residual disease is not a universally reliable surrogate for progression-free survival in clinical trials of new chronic lymphocytic leukemia therapies",
+     "u": "https://www.nature.com/articles/s41375-026-03185-w",
+     "j": "Leukemia",
+     "d": "2026-10-28",
+     "a": "Wang Y et al.",
+     "p": "42957753"
+    },
+    {
      "t": "Oncogenic modulation of MAPK signaling in leukemia via SPNS2-driven sphingolipid metabolism and membrane nanodomains remodeling",
      "u": "https://www.nature.com/articles/s41467-026-78821-1",
      "j": "Nat Commun",
      "d": "2026-10-28",
      "a": ""
+    },
+    {
+     "t": "Rapid proteasomal degradation of mutant feline McDonough sarcoma-like tyrosine kinase-3 overcomes inhibitor resistance mechanisms of acute myeloid leukemia cells",
+     "u": "https://www.nature.com/articles/s41375-026-03168-x",
+     "j": "Leukemia",
+     "d": "2026-10-28",
+     "a": "Halilovic M et al.",
+     "p": "42957752"
     },
     {
      "t": "Outcomes with fractionated gemtuzumab ozogamicin in molecularly defined favorable-risk acute myeloid leukemia",
@@ -503,25 +526,9 @@
      "j": "Nat Commun",
      "d": "2026-10-12",
      "a": ""
-    },
-    {
-     "t": "PHI-101: a novel FLT3 inhibitor with potent activity against the F691L gatekeeper resistance mutation",
-     "u": "https://www.nature.com/articles/s41375-026-03171-2",
-     "j": "Leukemia",
-     "d": "2026-10-12",
-     "a": "Mitrou M et al.",
-     "p": "42864417"
-    },
-    {
-     "t": "Bridging therapy in pediatric and AYA patients under 25 years with relapsed/refractory B-ALL undergoing anti-CD19 CAR-T therapy: a multicenter retrospective study by the Spanish group GETH-TC",
-     "u": "https://www.nature.com/articles/s41409-026-03067-w",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-10-12",
-     "a": "Galán-Gómez V et al.",
-     "p": "42864394"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "nhl",
@@ -532,6 +539,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Nivolumab consolidation in patients with double and triple hit high-grade B-cell lymphoma in complete metabolic remission after DA-EPOCH-R",
+     "u": "https://www.nature.com/articles/s41408-026-01657-x",
+     "j": "Blood Cancer J",
+     "d": "2026-10-30",
+     "a": ""
+    },
     {
      "t": "Determinants of response to CAR T cell therapy in a multicenter, multi-trial cohort analysis of patients with lymphoma",
      "u": "https://www.nature.com/articles/s41591-026-04707-w",
@@ -667,17 +681,9 @@
      "d": "2026-08-25",
      "a": "Yokoyama K et al.",
      "p": "42642488"
-    },
-    {
-     "t": "Multimodal spatial profiling reveals distinct myeloid-defined ENKTL subgroups and tumor-myeloid cooperativity within prognostic inflammatory niche",
-     "u": "https://www.nature.com/articles/s41375-026-03118-7",
-     "j": "Leukemia",
-     "d": "2026-08-24",
-     "a": "Deng L et al.",
-     "p": "42637876"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "hl",
@@ -841,7 +847,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "mm",
@@ -852,6 +858,37 @@
     "https://www.nature.com/subjects/myeloma"
    ],
    "items": [
+    {
+     "t": "Biomarkers of cellular senescence and their association with frailty, clinical outcomes, and survival in multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01652-2",
+     "j": "Blood Cancer J",
+     "d": "2026-10-30",
+     "a": ""
+    },
+    {
+     "t": "Beyond binary: graded frailty assessment and outcomes after CAR-T cell therapy in relapsed/refractory multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01653-1",
+     "j": "Blood Cancer J",
+     "d": "2026-10-28",
+     "a": "Hashmi H et al.",
+     "p": "42957637"
+    },
+    {
+     "t": "Problematic control arms in National Cancer Institute myeloma trials",
+     "u": "https://www.nature.com/articles/s41571-026-01221-3",
+     "j": "Nat Rev Clin Oncol",
+     "d": "2026-10-28",
+     "a": "Kunesh J et al.",
+     "p": "42957904"
+    },
+    {
+     "t": "Single-cell analysis reveals favorable responses of tumor-associated monocytes to bortezomib-based treatment in multiple myeloma",
+     "u": "https://www.nature.com/articles/s41698-026-01666-w",
+     "j": "NPJ Precis Oncol",
+     "d": "2026-10-28",
+     "a": "Cheng T et al.",
+     "p": "42957756"
+    },
     {
      "t": "Early treatment failure after ciltacabtagene autoleucel in multiple myeloma with high-risk features: implications for risk-informed care",
      "u": "https://www.nature.com/articles/s41408-026-01649-x",
@@ -966,38 +1003,9 @@
      "d": "2026-09-26",
      "a": "Pasvolsky O et al.",
      "p": "42800806"
-    },
-    {
-     "t": "A positive feedback loop between YTHDC1 and EP300 drives multiple myeloma tumorigenesis",
-     "u": "https://www.nature.com/articles/s41388-026-03992-6",
-     "j": "Oncogene",
-     "d": "2026-09-25",
-     "a": "Hou Y et al.",
-     "p": "42791263"
-    },
-    {
-     "t": "Clinical, cytogenetic, and germline genetic determinants of arterial thromboembolism in IMiD-treated multiple myeloma",
-     "u": "https://www.nature.com/articles/s41408-026-01635-3",
-     "j": "Blood Cancer J",
-     "d": "2026-09-24",
-     "a": ""
-    },
-    {
-     "t": "Stem cell autograft minimal residual disease negativity and survival outcomes for multiple myeloma autotransplant",
-     "u": "https://www.nature.com/articles/s41408-026-01621-9",
-     "j": "Blood Cancer J",
-     "d": "2026-09-22",
-     "a": ""
-    },
-    {
-     "t": "RNA-binding protein CIRBP mediates PKM2 intron retention to negatively regulate multiple myeloma progression and macrophage alternative activation",
-     "u": "https://www.nature.com/articles/s42003-026-10902-9",
-     "j": "Commun Biol",
-     "d": "2026-09-22",
-     "a": ""
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "mpn",
@@ -1169,7 +1177,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "mds",
@@ -1330,7 +1338,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "ba",
@@ -1341,6 +1349,24 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Fludarabine-treosulfan compared with fludarabine-melphalan conditioning for adult acute lymphoblastic leukemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021035",
+     "p": "42954476",
+     "j": "Blood Adv",
+     "d": "2026-10-29",
+     "a": "Avenoso D et al.",
+     "ty": ""
+    },
+    {
+     "t": "Patterns of Response to Eculizumab in High-Risk Transplant-Associated Thrombotic Microangiopathy",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020911",
+     "p": "42954470",
+     "j": "Blood Adv",
+     "d": "2026-10-29",
+     "a": "Jodele S et al.",
+     "ty": ""
+    },
     {
      "t": "Omission of Radiation Therapy is Associated with Inferior Disease Control in High Risk Early-Stage Hodgkin Lymphoma",
      "u": "https://doi.org/10.1182/bloodadvances.2026021839",
@@ -1502,27 +1528,9 @@
      "d": "2026-10-22",
      "a": "Chaitowitz M",
      "ty": ""
-    },
-    {
-     "t": "PML with Bispecific Antibodies: An Analysis of FAERS",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022641",
-     "p": "42906180",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Li WF et al.",
-     "ty": ""
-    },
-    {
-     "t": "MRD-guided ibrutinib plus venetoclax improves quality of life in relapsed/refractory CLL: HOVON 141/VISION trial results",
-     "u": "https://doi.org/10.1182/bloodadvances.2025019500",
-     "p": "42896583",
-     "j": "Blood Adv",
-     "d": "2026-10-19",
-     "a": "Eurelings LEM et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "aacr",
@@ -1533,6 +1541,24 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Opening the window for immunotherapy in pancreatic cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4570",
+     "p": "42954752",
+     "j": "Cancer Res",
+     "d": "2026-10-29",
+     "a": "Haerr ME et al.",
+     "ty": ""
+    },
+    {
+     "t": "FUCA1-Mediated Metabolic Adaptation Facilitates Lactylation-Induced Vasculogenic Mimicry in Glioblastoma",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0035",
+     "p": "42954743",
+     "j": "Cancer Res",
+     "d": "2026-10-29",
+     "a": "Fu J et al.",
+     "ty": ""
+    },
     {
      "t": "Targeting Branched-Chain Amino Acid Transamination Sensitizes Clear Cell Renal Cell Carcinoma to Glutaminase Inhibition",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-0563",
@@ -1694,27 +1720,9 @@
      "d": "2026-10-08",
      "a": "Gao Y et al.",
      "ty": ""
-    },
-    {
-     "t": "Paired Single-Cell Profiling Reveals Glutathione-Dependent Immune Evasion in Breast Cancer Liver Metastasis",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1201",
-     "p": "42848958",
-     "j": "Cancer Res",
-     "d": "2026-10-08",
-     "a": "Lyu C et al.",
-     "ty": ""
-    },
-    {
-     "t": "ANXA1 Promotes Endoplasmic Reticulum-Mitochondria Calcium Coupling to Sustain Lenvatinib Resistance in Hepatocellular Carcinoma",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-2074",
-     "p": "42848956",
-     "j": "Cancer Res",
-     "d": "2026-10-08",
-     "a": "Guo Z et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   },
   {
    "key": "jco",
@@ -1725,6 +1733,15 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Therapy for Stage IV Non-Small Cell Lung Cancer With Driver Alterations: ASCO Living Guideline, Version 2026.3.4",
+     "u": "https://doi.org/10.1200/JCO-26-02597",
+     "p": "42956324",
+     "j": "J Clin Oncol",
+     "d": "2026-10-29",
+     "a": "Reuss J et al.",
+     "ty": ""
+    },
     {
      "t": "Darovasertib and Crizotinib First-Line Treatment for Metastatic Uveal Melanoma: Overall Survival, Efficacy, and Safety From the OptimUM-01 Study",
      "u": "https://doi.org/10.1200/JCO-26-00802",
@@ -1895,18 +1912,9 @@
      "d": "2026-10-15",
      "a": "Vo PT et al.",
      "ty": ""
-    },
-    {
-     "t": "Expert Histopathologic Evaluation and Molecular Analyses for Ambiguous Cutaneous Melanocytic Tumors",
-     "u": "https://doi.org/10.1200/JCO-26-00432",
-     "p": "42879715",
-     "j": "J Clin Oncol",
-     "d": "2026-10-15",
-     "a": "Ebbelaar CF et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-29"
+   "updated": "2026-10-30"
   }
  ]
 }
