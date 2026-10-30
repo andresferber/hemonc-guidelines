@@ -67,3 +67,6 @@ Every change is a commit, so earlier versions can always be restored from the hi
 ```
 
 `patient-education.html` previews it.
+
+## Private marks and sync
+"Opened" (Recent papers, Weekly digest) and "Listened" (Weekly digest) marks live only in the reader's browser (localStorage keys `hogRead`, `hogHeard`). "Sync with my other devices" makes a link whose `#hogsync=` hash carries the marked PubMed IDs; opening it on another device merges them there. Nothing is stored on the site. The shared code is `tools/sync_snippet.js`, copied into `resources.js` and `digest.js`.
