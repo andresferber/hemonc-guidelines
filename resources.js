@@ -74,9 +74,13 @@
       ".hor .pd{font-size:14px;color:var(--muted);white-space:nowrap;padding-top:1px;line-height:1.35}",
       ".hor .pd.isnew{color:var(--new);font-weight:600}",
       ".hor li.pp .gn{font-size:15.5px}",
-      ".hor .lk{font-size:14px;margin-top:3px}",
+      ".hor .lk{font-size:14px;margin-top:3px;display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center}",
       ".hor .more{font-size:14px;padding:10px 0 2px;border-top:1px solid #eef4f6}",
       ".hor .hog-t .rt .badge{background:var(--newbg);color:var(--new)!important}",
+      ".hor li.isread .gn a, .hor li.isread .ti a{color:#7a6f8f!important;font-weight:600}",
+      ".hor li.isread{opacity:.92}",
+      ".hor button.rd{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
+      ".hor li.isread button.rd{color:#5b3e96!important;text-decoration:none;background:#f1ecfa;border-radius:999px;padding:3px 8px}",
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -173,10 +177,36 @@
     var m = String(d || "").match(/^(\d{4})-(\d{2})-(\d{2})/);
     return m ? (Date.now() - new Date(+m[1], +m[2] - 1, +m[3]).getTime()) / 864e5 <= days : false;
   }
+  /* "already opened" marks: kept only in this browser (localStorage), never sent anywhere.
+     Shared by Recent papers and the Weekly digest (same key), by PubMed ID when known. */
+  var RK = "hogRead";
+  function readMap() { try { return JSON.parse(localStorage.getItem(RK) || "{}") || {}; } catch (e) { return {}; } }
+  function isRead(id) { return !!(id && readMap()[id]); }
+  function setRead(id, on) {
+    if (!id) return;
+    var m = readMap(), now = Date.now();
+    if (on) m[id] = now; else delete m[id];
+    for (var k in m) if (now - m[k] > 365 * 864e5) delete m[k];          // forget after a year
+    try { localStorage.setItem(RK, JSON.stringify(m)); } catch (e) {}
+    applyRead();
+  }
+  function applyRead() {
+    var m = readMap();
+    [].forEach.call(document.querySelectorAll("li[data-rid]"), function (li) {
+      var on = !!m[li.getAttribute("data-rid")];
+      li.classList.toggle("isread", on);
+      var b = li.querySelector("button.rd");
+      if (b) { b.textContent = on ? "✓ Opened" : "Mark as opened"; b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    });
+  }
+  window.addEventListener("storage", function (e) { if (e.key === RK) applyRead(); });
+
   function paperHTML(it, q) {
     var pp = it.paper, meta = [pp.j, pp.a].filter(Boolean).join(". ");
-    var links = pp.p ? '<div class="lk"><a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a></div>' : "";
-    return '<li class="pp"><div class="pd' + (isRecent(pp.d, 7) ? " isnew" : "") + '">' + esc(shortDate(pp.d)) + "</div><div>" +
+    var rid = pp.p ? "pm" + pp.p : "u" + it.u;
+    var links = '<div class="lk">' + (pp.p ? '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a> ' : "") +
+      '<button class="rd" type="button">' + (isRead(rid) ? "\u2713 Opened" : "Mark as opened") + "</button></div>";
+    return '<li class="pp' + (isRead(rid) ? " isread" : "") + '" data-rid="' + esc(rid) + '"><div class="pd' + (isRecent(pp.d, 7) ? " isnew" : "") + '">' + esc(shortDate(pp.d)) + "</div><div>" +
       '<div class="gn"><a href="' + esc(it.u) + '" target="_blank" rel="noopener">' + hilite(it.n, q) + "</a></div>" +
       '<div class="ref">' + hilite(meta, q) + (pp.ty ? ' <span class="badge ol">' + esc(pp.ty) + "</span>" : "") + "</div>" + links + "</div></li>";
   }
@@ -245,6 +275,9 @@
     }
     render();
     root.addEventListener("click", function (ev) {
+      var rli = ev.target.closest("li[data-rid]");
+      if (rli && ev.target.closest("button.rd")) { setRead(rli.getAttribute("data-rid"), !isRead(rli.getAttribute("data-rid"))); return; }
+      if (rli && ev.target.closest("a")) setRead(rli.getAttribute("data-rid"), true);
       var t = ev.target.closest(".hog-t");
       if (t) { toggle(t.parentNode); return; }
       var all = ev.target.closest(".hog-all");

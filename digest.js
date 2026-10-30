@@ -79,6 +79,10 @@
     ".hdg .lk{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:14px;margin-top:6px}",
     ".hdg .lk .free{color:#1d6b3d!important}",
     ".hdg button.ls{all:unset;cursor:pointer;color:var(--deep)!important;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif!important;text-decoration:underline;text-underline-offset:2px}",
+    ".hdg li.isread .gn a, .hdg li.isread .ti a{color:#7a6f8f!important;font-weight:600}",
+    ".hdg li.isread{opacity:.92}",
+    ".hdg button.rd{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
+    ".hdg li.isread button.rd{color:#5b3e96!important;text-decoration:none;background:#f1ecfa;border-radius:999px;padding:3px 8px}",
     ".hdg .empty{color:var(--muted);font-size:15px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}",
     ".hdg .wnote{font-size:13.5px;color:var(--muted)}",
     ".hdg .auto{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--ink)}",
@@ -162,6 +166,30 @@
      .catch(function () { root.querySelector(".acc").innerHTML = '<p class="sum">This week could not be loaded.</p>'; });
   }
 
+  /* "already opened" marks: kept only in this browser (localStorage), never sent anywhere.
+     Shared by Recent papers and the Weekly digest (same key), by PubMed ID when known. */
+  var RK = "hogRead";
+  function readMap() { try { return JSON.parse(localStorage.getItem(RK) || "{}") || {}; } catch (e) { return {}; } }
+  function isRead(id) { return !!(id && readMap()[id]); }
+  function setRead(id, on) {
+    if (!id) return;
+    var m = readMap(), now = Date.now();
+    if (on) m[id] = now; else delete m[id];
+    for (var k in m) if (now - m[k] > 365 * 864e5) delete m[k];          // forget after a year
+    try { localStorage.setItem(RK, JSON.stringify(m)); } catch (e) {}
+    applyRead();
+  }
+  function applyRead() {
+    var m = readMap();
+    [].forEach.call(document.querySelectorAll("li[data-rid]"), function (li) {
+      var on = !!m[li.getAttribute("data-rid")];
+      li.classList.toggle("isread", on);
+      var b = li.querySelector("button.rd");
+      if (b) { b.textContent = on ? "✓ Opened" : "Mark as opened"; b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    });
+  }
+  window.addEventListener("storage", function (e) { if (e.key === RK) applyRead(); });
+
   function paperHTML(p, tk, idx, q, note) {
     var url = p.doi ? "https://doi.org/" + p.doi : "https://pubmed.ncbi.nlm.nih.gov/" + p.p + "/";
     var meta = '<span>' + esc(short(p.d)) + "</span><span>" + hil(p.j, q) + (p.a ? ". " + hil(p.a, q) : "") + "</span>" +
@@ -171,8 +199,9 @@
     var links = '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(p.p) + '/" target="_blank" rel="noopener">PubMed</a>' +
       (p.free && p.pmc ? '<a class="free" href="https://pmc.ncbi.nlm.nih.gov/articles/' + esc(p.pmc) + '/" target="_blank" rel="noopener">Free full text</a>' : "") +
       (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "") +
-      (canSpeak && p.ab && p.ab.length ? '<button class="ls" type="button" data-full="1" data-play="' + esc(tk) + ":" + idx + '">▶ Listen to full abstract</button>' : "");
-    return '<li data-k="' + esc(tk) + ":" + idx + '">' + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
+      (canSpeak && p.ab && p.ab.length ? '<button class="ls" type="button" data-full="1" data-play="' + esc(tk) + ":" + idx + '">▶ Listen to full abstract</button>' : "") +
+      '<button class="rd" type="button">' + (isRead("pm" + p.p) ? "\u2713 Opened" : "Mark as opened") + "</button>";
+    return '<li data-k="' + esc(tk) + ":" + idx + '" data-rid="pm' + esc(p.p) + '"' + (isRead("pm" + p.p) ? ' class="isread"' : "") + ">" + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
       '<div class="ti"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + hil(p.t, q) + "</a></div>" +
       '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
   }
@@ -443,6 +472,9 @@
     b.querySelector(".pm").textContent = on ? "–" : "+";
   }
   mount.addEventListener("click", function (e) {
+    var rli = e.target.closest("li[data-rid]");
+    if (rli && e.target.closest("button.rd")) { setRead(rli.getAttribute("data-rid"), !isRead(rli.getAttribute("data-rid"))); return; }
+    if (rli && e.target.closest("a")) setRead(rli.getAttribute("data-rid"), true);
     var t = e.target.closest("button.t");
     if (t) { toggle(t.parentNode); return; }
     if (e.target.closest("#hdg-auto")) { setAuto(!P.auto); return; }
