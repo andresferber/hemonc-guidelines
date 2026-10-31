@@ -1,5 +1,5 @@
 {
- "built": "2026-10-30 11:17 UTC",
+ "built": "2026-10-31 11:13 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "nejm",
@@ -217,6 +217,14 @@
      "d": "2026-10-25",
      "a": "Shun Lu et al.",
      "p": "42929693"
+    },
+    {
+     "t": "Divarasib as Compared with Sotorasib or Adagrasib in KRAS G12C–Mutated NSCLC",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2605703",
+     "j": "N Engl J Med",
+     "d": "2026-10-25",
+     "a": "Ferdinandos Skoulidis et al.",
+     "p": "42929675"
     },
     {
      "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
@@ -353,17 +361,9 @@
      "d": "2026-10-15",
      "a": "Adele K. Fielding",
      "p": "42874109"
-    },
-    {
-     "t": "Effect of Screening with Multicancer Early-Detection Test on Late-Stage Cancer Diagnosis",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2505723",
-     "j": "N Engl J Med",
-     "d": "2026-10-08",
-     "a": "Peter Sasieni et al.",
-     "p": "42776074"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "leuk",
@@ -375,11 +375,19 @@
    ],
    "items": [
     {
+     "t": "STAG2 mutation predicts superior posttransplant survival in acute myeloid leukemia treated with low-intensity induction",
+     "u": "https://www.nature.com/articles/s41408-026-01661-1",
+     "j": "Blood Cancer J",
+     "d": "2026-10-31",
+     "a": ""
+    },
+    {
      "t": "Clinical and molecular characteristics of FLT3-ITD microclones in elderly patients with acute myeloid leukemia receiving less-intensive therapy",
      "u": "https://www.nature.com/articles/s41375-026-03165-0",
      "j": "Leukemia",
      "d": "2026-10-30",
-     "a": ""
+     "a": "Hupe HC et al.",
+     "p": "42963415"
     },
     {
      "t": "Measurable residual disease is not a universally reliable surrogate for progression-free survival in clinical trials of new chronic lymphocytic leukemia therapies",
@@ -519,16 +527,9 @@
      "j": "Blood Cancer J",
      "d": "2026-10-13",
      "a": ""
-    },
-    {
-     "t": "Ki-67, the chromosome periphery and de-compartmentalisation each contribute to nucleophosmin mislocalisation in acute myeloid leukaemia",
-     "u": "https://www.nature.com/articles/s41467-026-78560-3",
-     "j": "Nat Commun",
-     "d": "2026-10-12",
-     "a": ""
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "nhl",
@@ -545,6 +546,14 @@
      "j": "Blood Cancer J",
      "d": "2026-10-30",
      "a": ""
+    },
+    {
+     "t": "Socioeconomic deprivation does not affect survival outcomes in patients with mantle cell lymphoma: evidence from a German nationwide study",
+     "u": "https://www.nature.com/articles/s41408-026-01658-w",
+     "j": "Blood Cancer J",
+     "d": "2026-10-30",
+     "a": "von Kroge S et al.",
+     "p": "42963359"
     },
     {
      "t": "Determinants of response to CAR T cell therapy in a multicenter, multi-trial cohort analysis of patients with lymphoma",
@@ -673,17 +682,9 @@
      "d": "2026-09-01",
      "a": "Schroeder JC et al.",
      "p": "42680810"
-    },
-    {
-     "t": "Genome-wide CRISPR screens identify an RXR–MYLIP–LDLR axis regulating BH3 mimetic sensitivity in peripheral T-cell lymphomas",
-     "u": "https://www.nature.com/articles/s41388-026-03970-y",
-     "j": "Oncogene",
-     "d": "2026-08-25",
-     "a": "Yokoyama K et al.",
-     "p": "42642488"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "hl",
@@ -847,7 +848,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "mm",
@@ -1005,7 +1006,7 @@
      "p": "42800806"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "mpn",
@@ -1177,7 +1178,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "mds",
@@ -1338,7 +1339,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "ba",
@@ -1349,6 +1350,123 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Plasma metabolomics and ctDNA analysis in newly diagnosed diffuse large B-cell lymphoma: an exploratory study",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021464",
+     "p": "42962272",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Dondolin R et al.",
+     "ty": ""
+    },
+    {
+     "t": "Progressive Multifocal Leukoencephalopathy in Lymphoid Malignancies: A Multicenter GELTAMO Case Series",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021203",
+     "p": "42962271",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Martín-Carrizosa A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Comparative survival and time toxicity outcomes of CAR-T versus bispecific antibody therapies in relapsed/refractory FL",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020899",
+     "p": "42962270",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Major A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Therapeutic Synergy and Immune Activation by SUMOylation Pathway Inhibition in Acute Myeloid Leukemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020561",
+     "p": "42962268",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Son H et al.",
+     "ty": ""
+    },
+    {
+     "t": "Immunogenicity of CpG-Adjuvanted Hepatitis B Vaccine in Hematopoietic Cell Transplant Recipients",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021625",
+     "p": "42962267",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Einarsdottir S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Metformin and Thrombosis in MPNs: A Cautious Interpretation",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022918",
+     "p": "42962266",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Demirci U et al.",
+     "ty": ""
+    },
+    {
+     "t": "Novel flow cytometric assay 'Flow IAT' reveals hidden IgM driving complement activation in autoimmune hemolytic anemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2025019072",
+     "p": "42962265",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Mulder FV et al.",
+     "ty": ""
+    },
+    {
+     "t": "Non-hemostatic effects of recombinant FVIII and emicizumab on endothelial cell function in hemophilia A",
+     "u": "https://doi.org/10.1182/bloodadvances.2026019646",
+     "p": "42962224",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Olgasi C et al.",
+     "ty": ""
+    },
+    {
+     "t": "Duffy-null screening in children: testing for all?",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021418",
+     "p": "42961432",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Takemoto CM et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Affordable cure within reach for thalassemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021500",
+     "p": "42961431",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Sharma A et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Hematologic care for transgender and gender-diverse people",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021832",
+     "p": "42961430",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "Connell NT et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Hu B, Reagan PM, Sehn LH, et al. Subgroup analysis of older patients ≥60 years with diffuse large B-cell lymphoma in the phase 3 POLARIX study. Blood Adv. 2025;9(10):2489-2499",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022540",
+     "p": "42961429",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "",
+     "ty": ""
+    },
+    {
+     "t": "Sorror ML, Saber W, Logan B, et al. Novel composite health assessment risk model for older allogeneic transplant recipients: BMT-CTN 1704. Blood Adv. 2025;9(13):3268-3280",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022538",
+     "p": "42961428",
+     "j": "Blood Adv",
+     "d": "2026-10-30",
+     "a": "",
+     "ty": ""
+    },
     {
      "t": "Fludarabine-treosulfan compared with fludarabine-melphalan conditioning for adult acute lymphoblastic leukemia",
      "u": "https://doi.org/10.1182/bloodadvances.2026021035",
@@ -1411,126 +1529,9 @@
      "d": "2026-10-28",
      "a": "Shadman M et al.",
      "ty": ""
-    },
-    {
-     "t": "Effects of post-transplant cyclophosphamide on immune reconstitution after haploidentical and HLA-matched transplant",
-     "u": "https://doi.org/10.1182/bloodadvances.2026019683",
-     "p": "42950245",
-     "j": "Blood Adv",
-     "d": "2026-10-28",
-     "a": "Ansuinelli M et al.",
-     "ty": ""
-    },
-    {
-     "t": "Adverse impact of deletion of the chromosome 6 on clinical outcomes after allogeneic hematopoietic transplantation",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021320",
-     "p": "42913459",
-     "j": "Blood Adv",
-     "d": "2026-10-23",
-     "a": "Tamaki M et al.",
-     "ty": ""
-    },
-    {
-     "t": "A European study on blood mutation monitoring in children with BRAFV600E-positive Langerhans Cell Histiocytosis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021834",
-     "p": "42913456",
-     "j": "Blood Adv",
-     "d": "2026-10-23",
-     "a": "Milne P et al.",
-     "ty": ""
-    },
-    {
-     "t": "Frontline Bruton tyrosine kinase inhibitors are associated with improved response and PFS in primary CNS lymphoma",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020093",
-     "p": "42913449",
-     "j": "Blood Adv",
-     "d": "2026-10-23",
-     "a": "Wang X et al.",
-     "ty": ""
-    },
-    {
-     "t": "Safety and Feasibility of Reduced-Frequency Dosing of Axatilimab in Patients Treated in the AGAVE-201 Study",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021323",
-     "p": "42913434",
-     "j": "Blood Adv",
-     "d": "2026-10-23",
-     "a": "Farhadfar N et al.",
-     "ty": ""
-    },
-    {
-     "t": "Structure of the extrinsic factor Xase substrate complex with the bi-Kunitz inhibitor ixolaris",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020317",
-     "p": "42913430",
-     "j": "Blood Adv",
-     "d": "2026-10-23",
-     "a": "Andersen JF et al.",
-     "ty": ""
-    },
-    {
-     "t": "Hematopoietic Cell Transplantation Outcomes in the Era of Post-Transplant Cyclophosphamide: Comprehensive Donor Analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021883",
-     "p": "42907170",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Aljawai YM et al.",
-     "ty": ""
-    },
-    {
-     "t": "High Initial Dose and Accelerated vs. Slow Titration Ropeginterferon Alfa-2b for Polycythemia Vera: A Meta-Analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020729",
-     "p": "42907169",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Yacoub A et al.",
-     "ty": ""
-    },
-    {
-     "t": "Maintenance ALK inhibitor after hematopoietic cell transplantation in patients with anaplastic large cell lymphoma",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022085",
-     "p": "42907166",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Choe M et al.",
-     "ty": ""
-    },
-    {
-     "t": "Prospective phase 2 trial of high- and intermediate-intensity myeloablative conditioning for cord blood transplantation",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021974",
-     "p": "42907159",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Colgan JN et al.",
-     "ty": ""
-    },
-    {
-     "t": "The Best Attainable Evidence for Cytoreduction in MPN-SVT",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022622",
-     "p": "42906183",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Tremblay D et al.",
-     "ty": ""
-    },
-    {
-     "t": "Glofitamab with polatuzumab vedotin in relapsed/refractory central nervous system lymphomas",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022200",
-     "p": "42906182",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Lopedote P et al.",
-     "ty": ""
-    },
-    {
-     "t": "Ferritin screening in pregnancy",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022263",
-     "p": "42906181",
-     "j": "Blood Adv",
-     "d": "2026-10-22",
-     "a": "Chaitowitz M",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "aacr",
@@ -1541,6 +1542,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Senescence-modulating nanoparticles SELECT the right senescent cells to treat fibrosis and cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4564",
+     "p": "42961778",
+     "j": "Cancer Res",
+     "d": "2026-10-30",
+     "a": "Mori H et al.",
+     "ty": ""
+    },
     {
      "t": "Opening the window for immunotherapy in pancreatic cancer",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-4570",
@@ -1711,18 +1721,9 @@
      "d": "2026-10-09",
      "a": "Yao L et al.",
      "ty": ""
-    },
-    {
-     "t": "Sodium-Glucose Cotransporter SGLT2 Supports Metabolic Fitness and Ferroptosis Resistance in CAR-T Cells to Enhance Activity Against Solid Tumors",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1157",
-     "p": "42848976",
-     "j": "Cancer Res",
-     "d": "2026-10-08",
-     "a": "Gao Y et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   },
   {
    "key": "jco",
@@ -1733,6 +1734,24 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "From TAILORx to OPTIMA: Evolving Evidence for Genomically Guided Chemotherapy in Hormone Receptor-Positive Human Epidermal Growth Factor Receptor 2-Negative Breast Cancer",
+     "u": "https://doi.org/10.1200/JCO-26-01976",
+     "p": "42962160",
+     "j": "J Clin Oncol",
+     "d": "2026-10-30",
+     "a": "Abdou Y et al.",
+     "ty": ""
+    },
+    {
+     "t": "Methylphenidate for Hematologic Cancer-Related Fatigue: A Randomized Clinical Trial",
+     "u": "https://doi.org/10.1200/JCO-26-00578",
+     "p": "42962158",
+     "j": "J Clin Oncol",
+     "d": "2026-10-30",
+     "a": "Frederiksen H et al.",
+     "ty": ""
+    },
     {
      "t": "Therapy for Stage IV Non-Small Cell Lung Cancer With Driver Alterations: ASCO Living Guideline, Version 2026.3.4",
      "u": "https://doi.org/10.1200/JCO-26-02597",
@@ -1894,27 +1913,9 @@
      "d": "2026-10-16",
      "a": "Torre E et al.",
      "ty": "Editorial"
-    },
-    {
-     "t": "Effectiveness of a Multisite Oncology Financial Navigation Intervention: The Lessening the Impact of Financial Toxicity Clinical Trial",
-     "u": "https://doi.org/10.1200/JCO-26-00617",
-     "p": "42885694",
-     "j": "J Clin Oncol",
-     "d": "2026-10-16",
-     "a": "Wheeler SB et al.",
-     "ty": ""
-    },
-    {
-     "t": "First-In-Human Study of (211)At-CD45 Radioimmunotherapy With Nonmyeloablative Conditioning Hematopoietic Cell Transplantation for Adults With Hematologic Malignancies",
-     "u": "https://doi.org/10.1200/JCO-26-00877",
-     "p": "42879732",
-     "j": "J Clin Oncol",
-     "d": "2026-10-15",
-     "a": "Vo PT et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-10-30"
+   "updated": "2026-10-31"
   }
  ]
 }
