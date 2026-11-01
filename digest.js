@@ -214,6 +214,314 @@
   window.addEventListener("hog-marks", applyRead);
 
 
+  /* ===== SAVED CORE: identical in resources.js, digest.js and guidelines.js =====
+     One shared list for the whole site, kept only in this browser (localStorage key hogSaved), never sent anywhere.
+     Entry: { s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
+              x: note or conclusion, xl: its label, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
+     A snapshot is stored, so a saved item stays after it leaves its feed. Backups are plain JSON files the reader
+     downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
+  var SK = "hogSaved", SAVED = {}, saveWarn = false, firstSave = {};
+  var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
+  var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
+  function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
+  function makeSid(s, p, u, k) { return entryId({ s: s, k: k || "", u: u || "", paper: { p: p || "" } }); }
+  /* validate everything that comes from storage or from a backup file: only http(s) links, plain-text fields */
+  function cleanSaved(raw) {
+    var out = {}, list = Array.isArray(raw) ? raw : (raw && typeof raw === "object" ? Object.keys(raw).map(function (k) { return raw[k]; }) : []);
+    list.slice(0, 2000).forEach(function (e) {
+      if (!e || typeof e !== "object" || typeof e.n !== "string" || !e.n || !/^https?:\/\//i.test(String(e.u || ""))) return;
+      var s = /^(papers|digest|guide)$/.test(String(e.s)) ? String(e.s) : "papers";
+      var pp = e.paper && typeof e.paper === "object" ? e.paper : {};
+      var c = {
+        s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0,
+        o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60),
+        k: /^[A-Za-z0-9_.\-]{1,80}$/.test(String(e.k || "")) ? String(e.k) : "",
+        paper: {
+          p: /^\d{1,9}$/.test(String(pp.p || "")) ? String(pp.p) : "",
+          j: String(pp.j || "").slice(0, 200), a: String(pp.a || "").slice(0, 200),
+          d: /^\d{4}(-\d{2}){0,2}/.test(String(pp.d || "")) ? String(pp.d).slice(0, 10) : "",
+          ty: String(pp.ty || "").slice(0, 120)
+        }
+      };
+      if (s === "guide" && !c.k) return;
+      out[entryId(c)] = c;
+    });
+    return out;
+  }
+  function readStore() { try { return cleanSaved(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) { return null; } }
+  function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) SAVED = m; }
+  function savedList(src) {
+    return Object.keys(SAVED).map(function (k) { return SAVED[k]; })
+      .filter(function (e) { return !src || e.s === src; })
+      .sort(function (a, b) { return b.t - a.t; });
+  }
+  function persistSaved() {
+    saveWarn = false;
+    try { localStorage.setItem(SK, JSON.stringify(savedList())); } catch (e) { saveWarn = true; }
+  }
+  function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
+  function applySaved() {
+    [].forEach.call(document.querySelectorAll("button.sv[data-sid]"), function (b) {
+      if (b.classList.contains("rm")) return;
+      var on = !!SAVED[b.getAttribute("data-sid")];
+      b.textContent = on ? "★ Saved" : "☆ Save";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+  var inSavedRows = false;   // true while a Saved row is being drawn: its buttons read Remove
+  function saveBtnHTML(sidv, label) {
+    var on = !!SAVED[sidv];
+    if (inSavedRows && on) return '<button class="sv rm" type="button" data-sid="' + esc(sidv) + '" aria-label="Remove from saved">\u2715 Remove</button>';
+    return '<button class="sv" type="button" data-sid="' + esc(sidv) + '" aria-label="' + esc(label) + '" aria-pressed="' + on + '">' + (on ? "\u2605 Saved" : "\u2606 Save") + "</button>";
+  }
+  /* save or unsave one snapshot; returns true (now saved), false (removed) or null (nothing done) */
+  function toggleSaveEntry(snap) {
+    var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
+    if (!id) return null;
+    syncSaved();
+    if (SAVED[id]) { delete SAVED[id]; now = false; } else { SAVED[id] = c[id]; now = true; }
+    persistSaved(); savedChanged();
+    return now;
+  }
+
+  var toastEl, toastT;
+  /* small message at the bottom of the screen; with act = { label, fn } it also offers a button (used for Undo).
+     The action lives on the element so that whichever of the three scripts made it, the click finds it. */
+  function toast(msg, act) {
+    toastEl = document.getElementById("hor-toast");
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.id = "hor-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      toastEl.addEventListener("click", function (e) {
+        var bt = e.target.closest ? e.target.closest("button") : null, f = toastEl._act;
+        if (!bt || !f) return;
+        toastEl._act = null; toastEl.className = "";
+        f();
+      });
+      document.body.appendChild(toastEl);
+    }
+    toastEl._act = act && act.fn ? act.fn : null;
+    toastEl.textContent = msg;
+    if (act && act.label) {
+      var bt = document.createElement("button");
+      bt.type = "button"; bt.textContent = act.label;
+      toastEl.appendChild(bt);
+    }
+    toastEl.className = act ? "on act" : "on";
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { toastEl.className = ""; toastEl._act = null; }, act ? 6500 : 3800);
+  }
+  function saveToast(now, where, snap) {
+    if (now === null) return;
+    if (saveWarn) { toast(STORE_WARN); return; }
+    if (!now) {
+      toast("Removed from saved.", snap ? { label: "Undo", fn: function () { var r = toggleSaveEntry(snap); if (r) toast("Restored."); } } : null);
+      return;
+    }
+    if (!firstSave[where]) { firstSave[where] = 1; toast("Saved. Find it under \u201c" + where + "\u201d at the top of this list."); } else toast("Saved.");
+  }
+
+  /* group a list of saved entries by topic heading: headings follow the order the section shows its topics in */
+  function groupSaved(list, order) {
+    var by = {}, names = [];
+    list.forEach(function (e) { var g = e.g || "Other"; (by[g] = by[g] || []).push(e); });
+    (order || []).forEach(function (g) { if (by[g] && names.indexOf(g) < 0) names.push(g); });
+    Object.keys(by).sort().forEach(function (g) { if (names.indexOf(g) < 0 && g !== "Other") names.push(g); });
+    if (by.Other) names.push("Other");
+    return names.map(function (g) { return { g: g, items: by[g] }; });
+  }
+  function savedGroupsHTML(list, order, rowFn, listClass) {
+    inSavedRows = true;
+    try {
+      return groupSaved(list, order).map(function (grp) {
+        return '<h4 class="sv-g">' + esc(grp.g) + ' <span class="sv-gn">' + grp.items.length + '</span></h4><ol class="' + listClass + '">' +
+          grp.items.map(rowFn).join("") + "</ol>";
+      }).join("");
+    } finally { inSavedRows = false; }
+  }
+  function savedToolsHTML() {
+    var n = savedList().length;
+    return '<div class="sv-tools">' +
+      (n ? '<button class="sv-btn" type="button" data-sv="copy">Copy list</button><button class="sv-btn" type="button" data-sv="dl">Download backup</button>' : "") +
+      '<button class="sv-btn" type="button" data-sv="imp">Restore from backup</button>' +
+      '<input class="sv-file" type="file" accept=".json,application/json" aria-label="Choose a saved-items backup file" tabindex="-1"></div>' +
+      '<p class="sv-foot">Saved items stay in this browser on this device only; nothing is sent anywhere. The list and the backup include everything you saved on this site (papers, weekly digest and guidelines). To keep them or move them to another device, download a backup and restore it there.' +
+      (saveWarn ? " <b>This browser is blocking storage, so saves last only until you close the page.</b>" : "") + "</p>";
+  }
+
+  function exportText() {
+    var lines = ["Saved items – andresferber.org", "Exported " + new Date().toISOString().slice(0, 10), ""];
+    SECTIONS.forEach(function (sec) {
+      var list = savedList(sec[0]);
+      if (!list.length) return;
+      lines.push("=== " + sec[1] + " ===", "");
+      groupSaved(list, []).forEach(function (grp) {
+        lines.push("-- " + grp.g + " --");
+        grp.items.forEach(function (e, i) {
+          var pp = e.paper, meta = [pp.j, pp.a, e.o, pp.d].filter(Boolean).join(" · ");
+          lines.push((i + 1) + ". " + e.n);
+          if (meta) lines.push("   " + meta);
+          lines.push("   " + e.u);
+          if (pp.p) lines.push("   https://pubmed.ncbi.nlm.nih.gov/" + pp.p + "/");
+          lines.push("");
+        });
+      });
+    });
+    return lines.join("\n");
+  }
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+    return new Promise(function (res, rej) {
+      var ta = document.createElement("textarea"), ok = false;
+      ta.value = t; ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:fixed;left:-9999px;top:0";
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      if (ok) res(); else rej();
+    });
+  }
+  function downloadBackup() {
+    syncSaved();
+    var data = JSON.stringify({ format: "hog-saved-papers", version: 2, exported: new Date().toISOString(), saved: savedList() }, null, 1);
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
+    a.download = "saved-items-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function importBackup(file) {
+    if (!file) return;
+    if (file.size > 4000000) { toast("That file is too large to be a backup of saved items."); return; }
+    var rd = new FileReader();
+    rd.onerror = function () { toast("Could not read that file."); };
+    rd.onload = function () {
+      var j, added = 0;
+      try {
+        j = JSON.parse(String(rd.result || ""));
+        if (!j || j.format !== "hog-saved-papers" || !Array.isArray(j.saved)) throw new Error("format");
+      } catch (e) { toast("That file is not a saved-items backup."); return; }
+      var inc = cleanSaved(j.saved);
+      syncSaved();
+      Object.keys(inc).forEach(function (k) {
+        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); added++; }
+      });
+      persistSaved(); savedChanged();
+      toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
+    };
+    rd.readAsText(file);
+  }
+  /* click on Copy list / Download backup / Restore inside a section's Saved row; returns true if it handled the click */
+  function savedToolClick(ev, root) {
+    var b = ev.target.closest ? ev.target.closest("[data-sv]") : null;
+    if (!b) return false;
+    var act = b.getAttribute("data-sv");
+    if (act === "copy") {
+      syncSaved();
+      var n = savedList().length;
+      copyText(exportText()).then(function () { toast("Copied " + n + " saved item" + (n === 1 ? "" : "s") + " to the clipboard."); },
+        function () { toast("Could not copy here. Use Download backup instead."); });
+    } else if (act === "dl") {
+      downloadBackup(); toast("Backup downloaded.");
+    } else if (act === "imp") {
+      var f = root.querySelector(".sv-file"); if (f) f.click();
+    }
+    return true;
+  }
+  function savedFileChange(ev) {
+    var f = ev.target.closest ? ev.target.closest(".sv-file") : null;
+    if (!f) return;
+    importBackup(f.files && f.files[0]);
+    try { f.value = ""; } catch (e) {}
+  }
+
+  if (!document.getElementById("hog-saved-style")) {
+    var SC = ":is(.hor,.hdg,.hog) ";
+    var sst = document.createElement("style");
+    sst.id = "hog-saved-style";
+    sst.textContent = [
+      SC + "button.sv{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
+      SC + "button.sv[aria-pressed='true']{color:#7a4a00!important;text-decoration:none;background:#fff1d6;border-radius:999px;padding:3px 8px}",
+      SC + "button.sv:focus-visible," + SC + "button.sv-btn:focus-visible{outline:3px solid rgba(20,90,117,.45)!important;outline-offset:2px}",
+      SC + ".sv-empty{padding:10px 0;color:#56656f;font-size:15px}",
+      SC + "h4.sv-g{display:flex;gap:8px;align-items:baseline;font:700 14.5px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;margin:14px 0 2px!important;padding:0 0 4px!important;border-bottom:1px solid #cfe3ea;text-transform:none!important;letter-spacing:0!important}",
+      SC + ".sv-gn{font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;color:#145a75;background:#e3f1f6;border-radius:999px;padding:3px 7px}",
+      SC + ".sv-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 0 6px;margin-top:8px;border-top:1px solid #eef4f6}",
+      SC + "button.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;font:600 13.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:8px 11px!important}",
+      SC + "button.sv-btn:hover{background:#d6f2fc!important}",
+      SC + ".sv-file{display:none!important}",
+      SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5}",
+      SC + "button.sv.rm{color:#9b2c2c!important;text-decoration:underline;background:none;padding:0;border-radius:0}",
+      "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
+      "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
+      "#hor-toast.act{pointer-events:auto}",
+      "#hor-toast button{all:unset;cursor:pointer;margin-left:14px;font:700 14.5px/1 'Source Sans 3',system-ui,sans-serif;color:#ffd54a;text-decoration:underline;text-underline-offset:2px}",
+      "#hor-toast button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
+      "@media (prefers-reduced-motion:reduce){#hor-toast{transition:none}}"
+    ].join("\n");
+    document.head.appendChild(sst);
+  }
+  SAVED = readStore() || {};
+  window.addEventListener("hog-saved", function () { syncSaved(); applySaved(); });
+  window.addEventListener("storage", function (e) { if (e.key === SK) savedChanged(); });
+  /* ===== end of saved core ===== */
+
+  /* ---------- Saved papers row of the weekly digest ---------- */
+  var svN = 0;
+  function savedRowHTML(e, q) {
+    var pp = e.paper, rid = pp.p ? "pm" + pp.p : "u" + e.u, sidv = makeSid("digest", pp.p, e.u);
+    var cls = (isRead(rid) ? "isread " : "") + (isHeard(rid) ? "isheard" : "");
+    return '<li data-rid="' + esc(rid) + '"' + (cls.trim() ? ' class="' + cls.trim() + '"' : "") + '><div class="ti"><a href="' + esc(e.u) + '" target="_blank" rel="noopener">' + hil(e.n, q) + "</a></div>" +
+      '<div class="meta"><span>' + esc(short(pp.d)) + "</span><span>" + hil(pp.j, q) + (pp.a ? ". " + hil(pp.a, q) : "") + "</span>" +
+      (pp.ty ? '<span class="badge' + (pp.ty === "Letter" || pp.ty === "Case report" ? " ol" : "") + '">' + esc(pp.ty) + "</span>" : "") + "</div>" +
+      (e.x ? '<p class="cc"><b>' + esc(e.xl || "Summary") + ":</b> " + hil(e.x, q) + "</p>" : "") +
+      '<div class="lk">' + (pp.p ? '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a>' : "") +
+      '<button class="rd" type="button">' + (isRead(rid) ? "✓ Opened" : "Mark as opened") + "</button>" +
+      saveBtnHTML(sidv, "Save this paper") + "</div></li>";
+  }
+  function savedItemHTML(q, order) {
+    var all = savedList("digest"), items = all.filter(function (e) {
+      return !q || norm([e.n, e.paper.j, e.paper.a, e.x, e.paper.ty, e.g].join(" ")).indexOf(q) >= 0;
+    });
+    svN = items.length;
+    if (q && !items.length) return "";
+    var isOpen = q ? true : !!state.open.saved;
+    var body = items.length ? savedGroupsHTML(items, order, function (e) { return savedRowHTML(e, q); }, "l")
+      : (q ? "" : '<p class="sv-empty">Nothing saved yet. Tap ☆ Save under any paper to keep it here, grouped by topic, even after its week has passed.</p>');
+    if (!q) body += savedToolsHTML();
+    return '<div class="it' + (isOpen ? " open" : "") + '" data-t="saved"><button class="t" type="button" aria-expanded="' + isOpen + '"><span class="nm">★ Saved papers</span>' +
+      '<span class="rt"><span>' + (q ? items.length + " of " + all.length : all.length) + '</span><span class="pm" aria-hidden="true">' + (isOpen ? "–" : "+") + "</span></span>" +
+      '<span class="sb">From the weekly digest, grouped by topic; kept on this device only</span></button><div class="c">' + body + "</div></div>";
+  }
+  function weekTopicTitles() {
+    var w = INDEX && INDEX.weeks[state.wi], d = w && CACHE[w.week];
+    return d ? d.topics.map(function (t) { return t.title; }) : [];
+  }
+  /* after a save or unsave: redraw only the Saved row (the whole week while searching) */
+  function refreshSaved() {
+    if (!INDEX) return;
+    var acc = root.querySelector(".acc");
+    if (!acc) return;
+    if (state.q) { var w = INDEX.weeks[state.wi]; if (CACHE[w.week]) render(CACHE[w.week]); return; }
+    var item = acc.querySelector('.it[data-t="saved"]'), tmp = document.createElement("div");
+    tmp.innerHTML = savedItemHTML("", weekTopicTitles());
+    if (!tmp.firstChild) return;
+    if (item) item.parentNode.replaceChild(tmp.firstChild, item); else acc.insertBefore(tmp.firstChild, acc.firstChild);
+  }
+  function onSave(btn) {
+    var sidv = btn.getAttribute("data-sid"), snap = SAVED[sidv], li = btn.closest("li");
+    if (!snap) {
+      var k = (li && li.getAttribute("data-k") || "").split(":"), p = LISTS[k[0]] && LISTS[k[0]][+k[1]];
+      if (!p) return;
+      snap = { s: "digest", g: TITLES[k[0]] || "", n: p.t, u: p.doi ? "https://doi.org/" + p.doi : "https://pubmed.ncbi.nlm.nih.gov/" + p.p + "/",
+        t: Date.now(), x: p.c || "", xl: p.cl || "", paper: { p: p.p, j: p.j, a: p.a, d: p.d, ty: p.ty } };
+    }
+    saveToast(toggleSaveEntry(snap), "Saved papers", snap);
+  }
+  window.addEventListener("hog-saved", refreshSaved);
+
   function paperHTML(p, tk, idx, q, note) {
     var url = p.doi ? "https://doi.org/" + p.doi : "https://pubmed.ncbi.nlm.nih.gov/" + p.p + "/";
     var meta = '<span>' + esc(short(p.d)) + "</span><span>" + hil(p.j, q) + (p.a ? ". " + hil(p.a, q) : "") + "</span>" +
@@ -225,7 +533,7 @@
       (canSpeak && p.c ? '<button class="ls" type="button" data-play="' + esc(tk) + ":" + idx + '">▶ Listen</button>' : "") +
       (canSpeak && p.ab && p.ab.length ? '<button class="ls" type="button" data-full="1" data-play="' + esc(tk) + ":" + idx + '">▶ Listen to full abstract</button>' : "") +
       '<button class="rd" type="button">' + (isRead("pm" + p.p) ? "\u2713 Opened" : "Mark as opened") + "</button>" +
-      '<button class="hd" type="button" title="Tap to remove"' + (isHeard("pm" + p.p) ? "" : " hidden") + '>\u2713 Listened</button>';
+      saveBtnHTML(makeSid("digest", p.p, url), "Save this paper") + '<button class="hd" type="button" title="Tap to remove"' + (isHeard("pm" + p.p) ? "" : " hidden") + '>\u2713 Listened</button>';
     return '<li data-k="' + esc(tk) + ":" + idx + '" data-rid="pm' + esc(p.p) + '"' + (isRead("pm" + p.p) || isHeard("pm" + p.p) ? ' class="' + (isRead("pm" + p.p) ? "isread " : "") + (isHeard("pm" + p.p) ? "isheard" : "") + '"' : "") + ">" + (note ? '<div class="wnote">' + esc(note) + "</div>" : "") +
       '<div class="ti"><a href="' + esc(url) + '" target="_blank" rel="noopener">' + hil(p.t, q) + "</a></div>" +
       '<div class="meta">' + meta + "</div>" + cc + ab + '<div class="lk">' + links + "</div></li>";
@@ -236,6 +544,7 @@
   function render(d) {
     var q = norm(state.q.trim()), total = 0, keys = 0, html = "";
     LISTS = {}; ORDER = []; TITLES = {};
+    var svHtml = savedItemHTML(q, d.topics.map(function (t) { return t.title; }));
     d.topics.forEach(function (t) {
       ORDER.push(t.key); TITLES[t.key] = t.title;
       var ps = t.papers.filter(function (p) { return !q || norm([p.t, p.j, p.a, p.c, p.ty].join(" ")).indexOf(q) >= 0; });
@@ -260,9 +569,9 @@
         '<span class="sb">' + esc(t.sub) + "</span></button>" +
         '<div class="c">' + body + "</div></div>";
     });
-    root.querySelector(".acc").innerHTML = html || '<p class="sum">Nothing this week matches “' + esc(state.q) + '”.</p>';
+    root.querySelector(".acc").innerHTML = (svHtml + html) || '<p class="sum">Nothing this week matches “' + esc(state.q) + '”.</p>';
     root.querySelector(".sum").textContent = q
-      ? total + (total === 1 ? " match" : " matches") + " this week"
+      ? total + (total === 1 ? " match" : " matches") + " this week" + (svN ? " \u00b7 " + svN + " in Saved papers" : "")
       : total + " new papers" + (keys ? ", " + keys + (keys === 1 ? " trial, meta-analysis or guideline" : " trials, meta-analyses or guidelines") : "");
     markPlaying();
   }
@@ -502,6 +811,8 @@
     var rli = e.target.closest("li[data-rid]");
     if (rli && e.target.closest("button.hd")) { setHeard(rli.getAttribute("data-rid"), false); return; }
     if (rli && e.target.closest("button.rd")) { setRead(rli.getAttribute("data-rid"), !isRead(rli.getAttribute("data-rid"))); return; }
+    if (e.target.closest("button.sv")) { onSave(e.target.closest("button.sv")); return; }
+    if (savedToolClick(e, mount)) return;
     if (rli && e.target.closest("a")) setRead(rli.getAttribute("data-rid"), true);
     var t = e.target.closest("button.t");
     if (t) { toggle(t.parentNode); return; }
@@ -520,6 +831,7 @@
     }
   });
   mount.addEventListener("change", function (e) { if (e.target.tagName === "SELECT") loadWeek(+e.target.value); });
+  mount.addEventListener("change", savedFileChange);
   var timer;
   mount.addEventListener("input", function (e) {
     if (!e.target.classList.contains("q")) return;

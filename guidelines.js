@@ -138,6 +138,312 @@
     return esc(raw.slice(0, i)) + "<mark>" + esc(raw.slice(i, i + q.length)) + "</mark>" + esc(raw.slice(i + q.length));
   }
 
+  /* ===== SAVED CORE: identical in resources.js, digest.js and guidelines.js =====
+     One shared list for the whole site, kept only in this browser (localStorage key hogSaved), never sent anywhere.
+     Entry: { s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
+              x: note or conclusion, xl: its label, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
+     A snapshot is stored, so a saved item stays after it leaves its feed. Backups are plain JSON files the reader
+     downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
+  var SK = "hogSaved", SAVED = {}, saveWarn = false, firstSave = {};
+  var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
+  var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
+  function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
+  function makeSid(s, p, u, k) { return entryId({ s: s, k: k || "", u: u || "", paper: { p: p || "" } }); }
+  /* validate everything that comes from storage or from a backup file: only http(s) links, plain-text fields */
+  function cleanSaved(raw) {
+    var out = {}, list = Array.isArray(raw) ? raw : (raw && typeof raw === "object" ? Object.keys(raw).map(function (k) { return raw[k]; }) : []);
+    list.slice(0, 2000).forEach(function (e) {
+      if (!e || typeof e !== "object" || typeof e.n !== "string" || !e.n || !/^https?:\/\//i.test(String(e.u || ""))) return;
+      var s = /^(papers|digest|guide)$/.test(String(e.s)) ? String(e.s) : "papers";
+      var pp = e.paper && typeof e.paper === "object" ? e.paper : {};
+      var c = {
+        s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0,
+        o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60),
+        k: /^[A-Za-z0-9_.\-]{1,80}$/.test(String(e.k || "")) ? String(e.k) : "",
+        paper: {
+          p: /^\d{1,9}$/.test(String(pp.p || "")) ? String(pp.p) : "",
+          j: String(pp.j || "").slice(0, 200), a: String(pp.a || "").slice(0, 200),
+          d: /^\d{4}(-\d{2}){0,2}/.test(String(pp.d || "")) ? String(pp.d).slice(0, 10) : "",
+          ty: String(pp.ty || "").slice(0, 120)
+        }
+      };
+      if (s === "guide" && !c.k) return;
+      out[entryId(c)] = c;
+    });
+    return out;
+  }
+  function readStore() { try { return cleanSaved(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) { return null; } }
+  function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) SAVED = m; }
+  function savedList(src) {
+    return Object.keys(SAVED).map(function (k) { return SAVED[k]; })
+      .filter(function (e) { return !src || e.s === src; })
+      .sort(function (a, b) { return b.t - a.t; });
+  }
+  function persistSaved() {
+    saveWarn = false;
+    try { localStorage.setItem(SK, JSON.stringify(savedList())); } catch (e) { saveWarn = true; }
+  }
+  function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
+  function applySaved() {
+    [].forEach.call(document.querySelectorAll("button.sv[data-sid]"), function (b) {
+      if (b.classList.contains("rm")) return;
+      var on = !!SAVED[b.getAttribute("data-sid")];
+      b.textContent = on ? "★ Saved" : "☆ Save";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
+    });
+  }
+  var inSavedRows = false;   // true while a Saved row is being drawn: its buttons read Remove
+  function saveBtnHTML(sidv, label) {
+    var on = !!SAVED[sidv];
+    if (inSavedRows && on) return '<button class="sv rm" type="button" data-sid="' + esc(sidv) + '" aria-label="Remove from saved">\u2715 Remove</button>';
+    return '<button class="sv" type="button" data-sid="' + esc(sidv) + '" aria-label="' + esc(label) + '" aria-pressed="' + on + '">' + (on ? "\u2605 Saved" : "\u2606 Save") + "</button>";
+  }
+  /* save or unsave one snapshot; returns true (now saved), false (removed) or null (nothing done) */
+  function toggleSaveEntry(snap) {
+    var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
+    if (!id) return null;
+    syncSaved();
+    if (SAVED[id]) { delete SAVED[id]; now = false; } else { SAVED[id] = c[id]; now = true; }
+    persistSaved(); savedChanged();
+    return now;
+  }
+
+  var toastEl, toastT;
+  /* small message at the bottom of the screen; with act = { label, fn } it also offers a button (used for Undo).
+     The action lives on the element so that whichever of the three scripts made it, the click finds it. */
+  function toast(msg, act) {
+    toastEl = document.getElementById("hor-toast");
+    if (!toastEl) {
+      toastEl = document.createElement("div");
+      toastEl.id = "hor-toast";
+      toastEl.setAttribute("role", "status");
+      toastEl.setAttribute("aria-live", "polite");
+      toastEl.addEventListener("click", function (e) {
+        var bt = e.target.closest ? e.target.closest("button") : null, f = toastEl._act;
+        if (!bt || !f) return;
+        toastEl._act = null; toastEl.className = "";
+        f();
+      });
+      document.body.appendChild(toastEl);
+    }
+    toastEl._act = act && act.fn ? act.fn : null;
+    toastEl.textContent = msg;
+    if (act && act.label) {
+      var bt = document.createElement("button");
+      bt.type = "button"; bt.textContent = act.label;
+      toastEl.appendChild(bt);
+    }
+    toastEl.className = act ? "on act" : "on";
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { toastEl.className = ""; toastEl._act = null; }, act ? 6500 : 3800);
+  }
+  function saveToast(now, where, snap) {
+    if (now === null) return;
+    if (saveWarn) { toast(STORE_WARN); return; }
+    if (!now) {
+      toast("Removed from saved.", snap ? { label: "Undo", fn: function () { var r = toggleSaveEntry(snap); if (r) toast("Restored."); } } : null);
+      return;
+    }
+    if (!firstSave[where]) { firstSave[where] = 1; toast("Saved. Find it under \u201c" + where + "\u201d at the top of this list."); } else toast("Saved.");
+  }
+
+  /* group a list of saved entries by topic heading: headings follow the order the section shows its topics in */
+  function groupSaved(list, order) {
+    var by = {}, names = [];
+    list.forEach(function (e) { var g = e.g || "Other"; (by[g] = by[g] || []).push(e); });
+    (order || []).forEach(function (g) { if (by[g] && names.indexOf(g) < 0) names.push(g); });
+    Object.keys(by).sort().forEach(function (g) { if (names.indexOf(g) < 0 && g !== "Other") names.push(g); });
+    if (by.Other) names.push("Other");
+    return names.map(function (g) { return { g: g, items: by[g] }; });
+  }
+  function savedGroupsHTML(list, order, rowFn, listClass) {
+    inSavedRows = true;
+    try {
+      return groupSaved(list, order).map(function (grp) {
+        return '<h4 class="sv-g">' + esc(grp.g) + ' <span class="sv-gn">' + grp.items.length + '</span></h4><ol class="' + listClass + '">' +
+          grp.items.map(rowFn).join("") + "</ol>";
+      }).join("");
+    } finally { inSavedRows = false; }
+  }
+  function savedToolsHTML() {
+    var n = savedList().length;
+    return '<div class="sv-tools">' +
+      (n ? '<button class="sv-btn" type="button" data-sv="copy">Copy list</button><button class="sv-btn" type="button" data-sv="dl">Download backup</button>' : "") +
+      '<button class="sv-btn" type="button" data-sv="imp">Restore from backup</button>' +
+      '<input class="sv-file" type="file" accept=".json,application/json" aria-label="Choose a saved-items backup file" tabindex="-1"></div>' +
+      '<p class="sv-foot">Saved items stay in this browser on this device only; nothing is sent anywhere. The list and the backup include everything you saved on this site (papers, weekly digest and guidelines). To keep them or move them to another device, download a backup and restore it there.' +
+      (saveWarn ? " <b>This browser is blocking storage, so saves last only until you close the page.</b>" : "") + "</p>";
+  }
+
+  function exportText() {
+    var lines = ["Saved items – andresferber.org", "Exported " + new Date().toISOString().slice(0, 10), ""];
+    SECTIONS.forEach(function (sec) {
+      var list = savedList(sec[0]);
+      if (!list.length) return;
+      lines.push("=== " + sec[1] + " ===", "");
+      groupSaved(list, []).forEach(function (grp) {
+        lines.push("-- " + grp.g + " --");
+        grp.items.forEach(function (e, i) {
+          var pp = e.paper, meta = [pp.j, pp.a, e.o, pp.d].filter(Boolean).join(" · ");
+          lines.push((i + 1) + ". " + e.n);
+          if (meta) lines.push("   " + meta);
+          lines.push("   " + e.u);
+          if (pp.p) lines.push("   https://pubmed.ncbi.nlm.nih.gov/" + pp.p + "/");
+          lines.push("");
+        });
+      });
+    });
+    return lines.join("\n");
+  }
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+    return new Promise(function (res, rej) {
+      var ta = document.createElement("textarea"), ok = false;
+      ta.value = t; ta.setAttribute("readonly", "");
+      ta.style.cssText = "position:fixed;left:-9999px;top:0";
+      document.body.appendChild(ta); ta.select();
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      if (ok) res(); else rej();
+    });
+  }
+  function downloadBackup() {
+    syncSaved();
+    var data = JSON.stringify({ format: "hog-saved-papers", version: 2, exported: new Date().toISOString(), saved: savedList() }, null, 1);
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
+    a.download = "saved-items-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
+  }
+  function importBackup(file) {
+    if (!file) return;
+    if (file.size > 4000000) { toast("That file is too large to be a backup of saved items."); return; }
+    var rd = new FileReader();
+    rd.onerror = function () { toast("Could not read that file."); };
+    rd.onload = function () {
+      var j, added = 0;
+      try {
+        j = JSON.parse(String(rd.result || ""));
+        if (!j || j.format !== "hog-saved-papers" || !Array.isArray(j.saved)) throw new Error("format");
+      } catch (e) { toast("That file is not a saved-items backup."); return; }
+      var inc = cleanSaved(j.saved);
+      syncSaved();
+      Object.keys(inc).forEach(function (k) {
+        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); added++; }
+      });
+      persistSaved(); savedChanged();
+      toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
+    };
+    rd.readAsText(file);
+  }
+  /* click on Copy list / Download backup / Restore inside a section's Saved row; returns true if it handled the click */
+  function savedToolClick(ev, root) {
+    var b = ev.target.closest ? ev.target.closest("[data-sv]") : null;
+    if (!b) return false;
+    var act = b.getAttribute("data-sv");
+    if (act === "copy") {
+      syncSaved();
+      var n = savedList().length;
+      copyText(exportText()).then(function () { toast("Copied " + n + " saved item" + (n === 1 ? "" : "s") + " to the clipboard."); },
+        function () { toast("Could not copy here. Use Download backup instead."); });
+    } else if (act === "dl") {
+      downloadBackup(); toast("Backup downloaded.");
+    } else if (act === "imp") {
+      var f = root.querySelector(".sv-file"); if (f) f.click();
+    }
+    return true;
+  }
+  function savedFileChange(ev) {
+    var f = ev.target.closest ? ev.target.closest(".sv-file") : null;
+    if (!f) return;
+    importBackup(f.files && f.files[0]);
+    try { f.value = ""; } catch (e) {}
+  }
+
+  if (!document.getElementById("hog-saved-style")) {
+    var SC = ":is(.hor,.hdg,.hog) ";
+    var sst = document.createElement("style");
+    sst.id = "hog-saved-style";
+    sst.textContent = [
+      SC + "button.sv{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
+      SC + "button.sv[aria-pressed='true']{color:#7a4a00!important;text-decoration:none;background:#fff1d6;border-radius:999px;padding:3px 8px}",
+      SC + "button.sv:focus-visible," + SC + "button.sv-btn:focus-visible{outline:3px solid rgba(20,90,117,.45)!important;outline-offset:2px}",
+      SC + ".sv-empty{padding:10px 0;color:#56656f;font-size:15px}",
+      SC + "h4.sv-g{display:flex;gap:8px;align-items:baseline;font:700 14.5px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;margin:14px 0 2px!important;padding:0 0 4px!important;border-bottom:1px solid #cfe3ea;text-transform:none!important;letter-spacing:0!important}",
+      SC + ".sv-gn{font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;color:#145a75;background:#e3f1f6;border-radius:999px;padding:3px 7px}",
+      SC + ".sv-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 0 6px;margin-top:8px;border-top:1px solid #eef4f6}",
+      SC + "button.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;font:600 13.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:8px 11px!important}",
+      SC + "button.sv-btn:hover{background:#d6f2fc!important}",
+      SC + ".sv-file{display:none!important}",
+      SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5}",
+      SC + "button.sv.rm{color:#9b2c2c!important;text-decoration:underline;background:none;padding:0;border-radius:0}",
+      "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
+      "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
+      "#hor-toast.act{pointer-events:auto}",
+      "#hor-toast button{all:unset;cursor:pointer;margin-left:14px;font:700 14.5px/1 'Source Sans 3',system-ui,sans-serif;color:#ffd54a;text-decoration:underline;text-underline-offset:2px}",
+      "#hor-toast button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
+      "@media (prefers-reduced-motion:reduce){#hor-toast{transition:none}}"
+    ].join("\n");
+    document.head.appendChild(sst);
+  }
+  SAVED = readStore() || {};
+  window.addEventListener("hog-saved", function () { syncSaved(); applySaved(); });
+  window.addEventListener("storage", function (e) { if (e.key === SK) savedChanged(); });
+  /* ===== end of saved core ===== */
+
+  /* ---------- Saved guidelines row ---------- */
+  var svN = 0;
+  function savedRowHTML(e, q) {
+    var pp = e.paper, sidv = makeSid("guide", "", "", e.k), links = [];
+    if (pp.p) links.push('<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a>');
+    links.push('<a href="#gl-' + esc(e.k) + '" data-jump="' + esc(e.k) + '">Show in list</a>');
+    links.push(saveBtnHTML(sidv, "Save this guideline"));
+    return "<li><div class=\"dt\">" + (pp.d ? esc(fmtDate(pp.d)) : "Portal") + "</div><div>" +
+      '<div class="gn"><a href="' + esc(e.u) + '" target="_blank" rel="noopener">' + hilite(e.n, q) + "</a></div>" +
+      (e.o ? '<div class="org">' + hilite(e.o, q) + "</div>" : "") +
+      (e.x ? '<p class="note">' + hilite(e.x, q) + "</p>" : "") +
+      '<div class="lk">' + links.join("") + "</div></div></li>";
+  }
+  function savedPanelHTML(q, open) {
+    var all = savedList("guide"), items = all.filter(function (e) { return !q || norm([e.n, e.o, e.x, e.g].join(" ")).indexOf(q) >= 0; });
+    svN = items.length;
+    if (q && !items.length) return "";
+    var isOpen = q ? true : !!open.saved;
+    var order = DATA ? DATA.categories.map(function (c) { return c.title; }) : [];
+    var body = items.length ? savedGroupsHTML(items, order, function (e) { return savedRowHTML(e, q); }, "hog-list")
+      : (q ? "" : '<p class="sv-empty">Nothing saved yet. Tap ☆ Save under any guideline to keep it here, grouped by category.</p>');
+    if (!q) body += savedToolsHTML();
+    return '<div class="hog-item' + (isOpen ? " open" : "") + '" data-k="saved">' +
+      '<button class="hog-t" type="button" aria-expanded="' + isOpen + '" aria-controls="hogc-saved"><span class="nm">★ Saved guidelines</span>' +
+      '<span class="rt"><span>' + (q ? items.length + " of " + all.length : all.length) + '</span><span class="pm" aria-hidden="true">' + (isOpen ? "–" : "+") + "</span></span>" +
+      '<span class="sb">Guidelines you starred, grouped by category; kept on this device only</span></button>' +
+      '<div class="hog-c" id="hogc-saved" role="region">' + body + "</div></div>";
+  }
+  /* after a save or unsave: redraw only the Saved row (the whole list while searching) */
+  function refreshSaved() {
+    if (!DATA) return;
+    var acc = mount.querySelector(".hog-acc");
+    if (!acc) return;
+    if (state.q) { renderAcc(); return; }
+    var item = acc.querySelector('.hog-item[data-k="saved"]'), tmp = document.createElement("div");
+    tmp.innerHTML = savedPanelHTML("", { saved: item && item.classList.contains("open") });
+    if (!tmp.firstChild) return;
+    if (item) item.parentNode.replaceChild(tmp.firstChild, item); else acc.insertBefore(tmp.firstChild, acc.firstChild);
+  }
+  function onSave(btn) {
+    var sidv = btn.getAttribute("data-sid"), snap = SAVED[sidv];
+    if (!snap) {
+      var k = sidv.replace(/^guide:/, ""), e = DATA.entries.filter(function (x) { return x.k === k; })[0];
+      if (!e) return;
+      var cat = DATA.categories.filter(function (c) { return c.key === e.c; })[0];
+      snap = { s: "guide", g: cat ? cat.title : "", n: e.n, u: mainLink(e), t: Date.now(), k: e.k,
+        o: [e.o, e.cite].filter(Boolean).join(". "), x: e.x || "", paper: { p: e.p || "", d: e.d || "" } };
+    }
+    saveToast(toggleSaveEntry(snap), "Saved guidelines", snap);
+  }
+  window.addEventListener("hog-saved", refreshSaved);
+
   function rowHTML(e, q) {
     var links = [];
     if (e.u) {
@@ -153,6 +459,7 @@
     if (e.living) badges += ' <span class="badge lv">Living guideline</span>';
     if (e.old) badges += ' <span class="badge ol">Earlier version</span>';
     var cite = e.cite ? esc(e.cite) : "";
+    links.push(saveBtnHTML(makeSid("guide", "", "", e.k), "Save this guideline"));
     return '<li id="gl-' + esc(e.k) + '"' + (e.old ? ' class="old"' : "") + ">" +
       '<div class="dt' + (isNew(e) ? " isnew" : "") + '">' + (e.u ? "Portal" : esc(fmtDate(e.d))) + "</div>" +
       "<div>" +
@@ -198,7 +505,7 @@
     var acc = mount.querySelector(".hog-acc");
     var open = {};
     acc.querySelectorAll(".hog-item.open").forEach(function (n) { open[n.getAttribute("data-k")] = 1; });
-    var html = "", total = 0;
+    var html = "", total = 0, svHtml = savedPanelHTML(q, open);
     DATA.categories.forEach(function (c) {
       var all = DATA.entries.filter(function (e) { return e.c === c.key; });
       var hits = all.filter(function (e) { return match(e, q); });
@@ -215,8 +522,8 @@
         "</button>" +
         '<div class="hog-c" id="hogc-' + c.key + '" role="region">' + bodyHTML(c, hits, q) + "</div></div>";
     });
-    acc.innerHTML = html || '<p class="hog-empty">No guideline matches “' + esc(state.q) + '”. Try a disease, a society (ELN, IMWG, ASCO) or a topic such as CMV.</p>';
-    mount.querySelector(".hog-status").textContent = q ? total + (total === 1 ? " guideline" : " guidelines") + " found" : "";
+    acc.innerHTML = (svHtml + html) || '<p class="hog-empty">No guideline matches “' + esc(state.q) + '”. Try a disease, a society (ELN, IMWG, ASCO) or a topic such as CMV.</p>';
+    mount.querySelector(".hog-status").textContent = q ? total + (total === 1 ? " guideline" : " guidelines") + " found" + (svN ? " \u00b7 " + svN + " in Saved guidelines" : "") : "";
   }
 
   function toggle(item, force) {
@@ -355,6 +662,9 @@
 
     var root = mount.querySelector(".hog");
     root.addEventListener("click", function (ev) {
+      var svb = ev.target.closest("button.sv");
+      if (svb) { onSave(svb); return; }
+      if (savedToolClick(ev, root)) return;
       var t = ev.target.closest(".hog-t");
       if (t) { toggle(t.parentNode); return; }
       var j = ev.target.closest("[data-jump]");
@@ -366,6 +676,7 @@
         ev.target.closest(".hog-all").textContent = anyClosed ? "Close all" : "Open all";
       }
     });
+    root.addEventListener("change", savedFileChange);
     var timer;
     root.querySelector(".hog-q").addEventListener("input", function (ev) {
       clearTimeout(timer);
