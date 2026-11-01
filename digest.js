@@ -223,7 +223,7 @@
      downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
   var SK = "hogSaved", DK = "hogSavedDel", MK = "hogSavedMod", SAVED = {}, DELS = {}, saveWarn = false, firstSave = {};
   /* Owner-only sync: address of the sync Worker (see sync/README.md). Empty = sync is off and invisible. */
-  var SYNC_URL = "", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast";
+  var SYNC_URL = "https://hog-sync.andresferber.workers.dev/", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast";
   var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
   var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
   function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
