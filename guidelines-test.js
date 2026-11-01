@@ -186,14 +186,17 @@
   function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
   function applySaved() {
     [].forEach.call(document.querySelectorAll("button.sv[data-sid]"), function (b) {
+      if (b.classList.contains("rm")) return;
       var on = !!SAVED[b.getAttribute("data-sid")];
       b.textContent = on ? "★ Saved" : "☆ Save";
       b.setAttribute("aria-pressed", on ? "true" : "false");
     });
   }
+  var inSavedRows = false;   // true while a Saved row is being drawn: its buttons read Remove
   function saveBtnHTML(sidv, label) {
     var on = !!SAVED[sidv];
-    return '<button class="sv" type="button" data-sid="' + esc(sidv) + '" aria-label="' + esc(label) + '" aria-pressed="' + on + '">' + (on ? "★ Saved" : "☆ Save") + "</button>";
+    if (inSavedRows && on) return '<button class="sv rm" type="button" data-sid="' + esc(sidv) + '" aria-label="Remove from saved">\u2715 Remove</button>';
+    return '<button class="sv" type="button" data-sid="' + esc(sidv) + '" aria-label="' + esc(label) + '" aria-pressed="' + on + '">' + (on ? "\u2605 Saved" : "\u2606 Save") + "</button>";
   }
   /* save or unsave one snapshot; returns true (now saved), false (removed) or null (nothing done) */
   function toggleSaveEntry(snap) {
@@ -206,25 +209,42 @@
   }
 
   var toastEl, toastT;
-  function toast(msg) {
+  /* small message at the bottom of the screen; with act = { label, fn } it also offers a button (used for Undo).
+     The action lives on the element so that whichever of the three scripts made it, the click finds it. */
+  function toast(msg, act) {
     toastEl = document.getElementById("hor-toast");
     if (!toastEl) {
       toastEl = document.createElement("div");
       toastEl.id = "hor-toast";
       toastEl.setAttribute("role", "status");
       toastEl.setAttribute("aria-live", "polite");
+      toastEl.addEventListener("click", function (e) {
+        var bt = e.target.closest ? e.target.closest("button") : null, f = toastEl._act;
+        if (!bt || !f) return;
+        toastEl._act = null; toastEl.className = "";
+        f();
+      });
       document.body.appendChild(toastEl);
     }
+    toastEl._act = act && act.fn ? act.fn : null;
     toastEl.textContent = msg;
-    toastEl.className = "on";
+    if (act && act.label) {
+      var bt = document.createElement("button");
+      bt.type = "button"; bt.textContent = act.label;
+      toastEl.appendChild(bt);
+    }
+    toastEl.className = act ? "on act" : "on";
     clearTimeout(toastT);
-    toastT = setTimeout(function () { toastEl.className = ""; }, 3800);
+    toastT = setTimeout(function () { toastEl.className = ""; toastEl._act = null; }, act ? 6500 : 3800);
   }
-  function saveToast(now, where) {
+  function saveToast(now, where, snap) {
     if (now === null) return;
     if (saveWarn) { toast(STORE_WARN); return; }
-    if (!now) { toast("Removed from saved."); return; }
-    if (!firstSave[where]) { firstSave[where] = 1; toast("Saved. Find it under “" + where + "” at the top of this list."); } else toast("Saved.");
+    if (!now) {
+      toast("Removed from saved.", snap ? { label: "Undo", fn: function () { var r = toggleSaveEntry(snap); if (r) toast("Restored."); } } : null);
+      return;
+    }
+    if (!firstSave[where]) { firstSave[where] = 1; toast("Saved. Find it under \u201c" + where + "\u201d at the top of this list."); } else toast("Saved.");
   }
 
   /* group a list of saved entries by topic heading: headings follow the order the section shows its topics in */
@@ -237,10 +257,13 @@
     return names.map(function (g) { return { g: g, items: by[g] }; });
   }
   function savedGroupsHTML(list, order, rowFn, listClass) {
-    return groupSaved(list, order).map(function (grp) {
-      return '<h4 class="sv-g">' + esc(grp.g) + ' <span class="sv-gn">' + grp.items.length + '</span></h4><ol class="' + listClass + '">' +
-        grp.items.map(rowFn).join("") + "</ol>";
-    }).join("");
+    inSavedRows = true;
+    try {
+      return groupSaved(list, order).map(function (grp) {
+        return '<h4 class="sv-g">' + esc(grp.g) + ' <span class="sv-gn">' + grp.items.length + '</span></h4><ol class="' + listClass + '">' +
+          grp.items.map(rowFn).join("") + "</ol>";
+      }).join("");
+    } finally { inSavedRows = false; }
   }
   function savedToolsHTML() {
     var n = savedList().length;
@@ -354,8 +377,12 @@
       SC + "button.sv-btn:hover{background:#d6f2fc!important}",
       SC + ".sv-file{display:none!important}",
       SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5}",
+      SC + "button.sv.rm{color:#9b2c2c!important;text-decoration:underline;background:none;padding:0;border-radius:0}",
       "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
       "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
+      "#hor-toast.act{pointer-events:auto}",
+      "#hor-toast button{all:unset;cursor:pointer;margin-left:14px;font:700 14.5px/1 'Source Sans 3',system-ui,sans-serif;color:#ffd54a;text-decoration:underline;text-underline-offset:2px}",
+      "#hor-toast button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}",
       "@media (prefers-reduced-motion:reduce){#hor-toast{transition:none}}"
     ].join("\n");
     document.head.appendChild(sst);
@@ -413,7 +440,7 @@
       snap = { s: "guide", g: cat ? cat.title : "", n: e.n, u: mainLink(e), t: Date.now(), k: e.k,
         o: [e.o, e.cite].filter(Boolean).join(". "), x: e.x || "", paper: { p: e.p || "", d: e.d || "" } };
     }
-    saveToast(toggleSaveEntry(snap), "Saved guidelines");
+    saveToast(toggleSaveEntry(snap), "Saved guidelines", snap);
   }
   window.addEventListener("hog-saved", refreshSaved);
 
