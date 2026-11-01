@@ -1,5 +1,5 @@
 {
- "built": "2026-10-31 11:13 UTC",
+ "built": "2026-11-01 11:13 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "nejm",
@@ -202,6 +202,13 @@
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
    "items": [
+    {
+     "t": "When Patients Need an Enemy",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMp2606011",
+     "j": "N Engl J Med",
+     "d": "2026-10-31",
+     "a": "Daniel A. Brenner"
+    },
     {
      "t": "Splenosis",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMicm2609770",
@@ -353,17 +360,9 @@
      "d": "2026-10-15",
      "a": "Luciana Neamtiu et al.",
      "p": "42788692"
-    },
-    {
-     "t": "Chemotherapy-free Treatment of Ph-Positive ALL",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2610489",
-     "j": "N Engl J Med",
-     "d": "2026-10-15",
-     "a": "Adele K. Fielding",
-     "p": "42874109"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "leuk",
@@ -529,7 +528,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "nhl",
@@ -684,7 +683,7 @@
      "p": "42680810"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "hl",
@@ -848,7 +847,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "mm",
@@ -1006,7 +1005,7 @@
      "p": "42800806"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "mpn",
@@ -1178,7 +1177,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "mds",
@@ -1339,7 +1338,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "ba",
@@ -1531,7 +1530,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "aacr",
@@ -1723,7 +1722,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   },
   {
    "key": "jco",
@@ -1915,7 +1914,7 @@
      "ty": "Editorial"
     }
    ],
-   "updated": "2026-10-31"
+   "updated": "2026-11-01"
   }
  ]
 }
