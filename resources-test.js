@@ -1,4 +1,4 @@
-/* TEST COPY: adds Save (star) and a Saved papers row to Recent papers. Page ONE link sections for andresferber.org: Useful tools, Educational resources, Calculators.
+/* TEST COPY: adds Save (star) and a grouped Saved papers row to Recent papers. Page ONE link sections for andresferber.org: Useful tools, Educational resources, Calculators.
    Same look as the Guidelines section. Usage (one embed per section, anywhere on a page):
      <div data-hog-section="tools"></div>   (or "edu", or "calc")
      <script src="https://andresferber.github.io/hemonc-guidelines/resources.js"></script>
@@ -81,15 +81,6 @@
       ".hor li.isread{opacity:.92}",
       ".hor button.rd{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
       ".hor li.isread button.rd{color:#5b3e96!important;text-decoration:none;background:#f1ecfa;border-radius:999px;padding:3px 8px}",
-      ".hor button.sv{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
-      ".hor li.issaved button.sv{color:#7a4a00!important;text-decoration:none;background:#fff1d6;border-radius:999px;padding:3px 8px}",
-      ".hor .sv-empty{padding:10px 0;color:var(--muted);font-size:15px}",
-      ".hor .sv-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 0 4px;border-top:1px solid #eef4f6}",
-      ".hor button.hog-btn.sm{padding:8px 11px!important;font-size:13.5px!important}",
-      ".hor .sv-file{display:none!important}",
-      "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
-      "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
-      "@media (prefers-reduced-motion:reduce){#hor-toast{transition:none}}",
       ".hor .hog-empty{padding:12px 0;color:var(--muted)}",
       ".hor .hog-foot{font-size:13.5px;color:var(--muted);line-height:1.5}",
       ".hor mark{background:#fff0a8;color:inherit;padding:0 1px}",
@@ -212,50 +203,76 @@
   window.addEventListener("hog-marks", applyRead);
 
 
-  /* ---------- saved (starred) papers ----------
-     Kept only in this browser (localStorage key hogSaved), never sent anywhere. A snapshot of each paper
-     is stored, so a saved paper stays even after it drops out of its feed. Same entry format can be
-     reused by the Weekly digest later. Backups are plain JSON files the reader downloads and restores. */
-  var SK = "hogSaved", SAVED = {}, saveWarn = false, firstSave = true;
+  /* ===== SAVED CORE: identical in resources.js, digest.js and guidelines.js =====
+     One shared list for the whole site, kept only in this browser (localStorage key hogSaved), never sent anywhere.
+     Entry: { s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
+              x: note or conclusion, xl: its label, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
+     A snapshot is stored, so a saved item stays after it leaves its feed. Backups are plain JSON files the reader
+     downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
+  var SK = "hogSaved", SAVED = {}, saveWarn = false, firstSave = {};
   var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
-  function paperId(pp, u) { return pp && pp.p ? "pm" + pp.p : "u" + u; }
-  /* validate everything that comes from storage or from a backup file: only http(s) links, plain text fields */
+  var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
+  function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
+  function makeSid(s, p, u, k) { return entryId({ s: s, k: k || "", u: u || "", paper: { p: p || "" } }); }
+  /* validate everything that comes from storage or from a backup file: only http(s) links, plain-text fields */
   function cleanSaved(raw) {
     var out = {}, list = Array.isArray(raw) ? raw : (raw && typeof raw === "object" ? Object.keys(raw).map(function (k) { return raw[k]; }) : []);
     list.slice(0, 2000).forEach(function (e) {
       if (!e || typeof e !== "object" || typeof e.n !== "string" || !e.n || !/^https?:\/\//i.test(String(e.u || ""))) return;
+      var s = /^(papers|digest|guide)$/.test(String(e.s)) ? String(e.s) : "papers";
       var pp = e.paper && typeof e.paper === "object" ? e.paper : {};
       var c = {
-        n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0,
+        s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0,
+        o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60),
+        k: /^[A-Za-z0-9_.\-]{1,80}$/.test(String(e.k || "")) ? String(e.k) : "",
         paper: {
           p: /^\d{1,9}$/.test(String(pp.p || "")) ? String(pp.p) : "",
           j: String(pp.j || "").slice(0, 200), a: String(pp.a || "").slice(0, 200),
-          d: /^\d{4}-\d{2}-\d{2}/.test(String(pp.d || "")) ? String(pp.d).slice(0, 10) : "",
+          d: /^\d{4}(-\d{2}){0,2}/.test(String(pp.d || "")) ? String(pp.d).slice(0, 10) : "",
           ty: String(pp.ty || "").slice(0, 120)
         }
       };
-      out[paperId(c.paper, c.u)] = c;
+      if (s === "guide" && !c.k) return;
+      out[entryId(c)] = c;
     });
     return out;
   }
-  function loadSaved() { try { return cleanSaved(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) { return {}; } }
-  function savedList() { return Object.keys(SAVED).map(function (k) { return SAVED[k]; }).sort(function (a, b) { return b.t - a.t; }); }
+  function readStore() { try { return cleanSaved(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) { return null; } }
+  function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) SAVED = m; }
+  function savedList(src) {
+    return Object.keys(SAVED).map(function (k) { return SAVED[k]; })
+      .filter(function (e) { return !src || e.s === src; })
+      .sort(function (a, b) { return b.t - a.t; });
+  }
   function persistSaved() {
     saveWarn = false;
     try { localStorage.setItem(SK, JSON.stringify(savedList())); } catch (e) { saveWarn = true; }
   }
+  function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
   function applySaved() {
-    [].forEach.call(document.querySelectorAll("li[data-rid]"), function (li) {
-      var on = !!SAVED[li.getAttribute("data-rid")];
-      li.classList.toggle("issaved", on);
-      var b = li.querySelector("button.sv");
-      if (b) { b.textContent = on ? "★ Saved" : "☆ Save"; b.setAttribute("aria-pressed", on ? "true" : "false"); }
+    [].forEach.call(document.querySelectorAll("button.sv[data-sid]"), function (b) {
+      var on = !!SAVED[b.getAttribute("data-sid")];
+      b.textContent = on ? "★ Saved" : "☆ Save";
+      b.setAttribute("aria-pressed", on ? "true" : "false");
     });
   }
-  function savedChanged() { applySaved(); window.dispatchEvent(new Event("hog-saved")); }
+  function saveBtnHTML(sidv, label) {
+    var on = !!SAVED[sidv];
+    return '<button class="sv" type="button" data-sid="' + esc(sidv) + '" aria-label="' + esc(label) + '" aria-pressed="' + on + '">' + (on ? "★ Saved" : "☆ Save") + "</button>";
+  }
+  /* save or unsave one snapshot; returns true (now saved), false (removed) or null (nothing done) */
+  function toggleSaveEntry(snap) {
+    var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
+    if (!id) return null;
+    syncSaved();
+    if (SAVED[id]) { delete SAVED[id]; now = false; } else { SAVED[id] = c[id]; now = true; }
+    persistSaved(); savedChanged();
+    return now;
+  }
 
   var toastEl, toastT;
   function toast(msg) {
+    toastEl = document.getElementById("hor-toast");
     if (!toastEl) {
       toastEl = document.createElement("div");
       toastEl.id = "hor-toast";
@@ -268,16 +285,55 @@
     clearTimeout(toastT);
     toastT = setTimeout(function () { toastEl.className = ""; }, 3800);
   }
+  function saveToast(now, where) {
+    if (now === null) return;
+    if (saveWarn) { toast(STORE_WARN); return; }
+    if (!now) { toast("Removed from saved."); return; }
+    if (!firstSave[where]) { firstSave[where] = 1; toast("Saved. Find it under “" + where + "” at the top of this list."); } else toast("Saved.");
+  }
+
+  /* group a list of saved entries by topic heading: headings follow the order the section shows its topics in */
+  function groupSaved(list, order) {
+    var by = {}, names = [];
+    list.forEach(function (e) { var g = e.g || "Other"; (by[g] = by[g] || []).push(e); });
+    (order || []).forEach(function (g) { if (by[g] && names.indexOf(g) < 0) names.push(g); });
+    Object.keys(by).sort().forEach(function (g) { if (names.indexOf(g) < 0 && g !== "Other") names.push(g); });
+    if (by.Other) names.push("Other");
+    return names.map(function (g) { return { g: g, items: by[g] }; });
+  }
+  function savedGroupsHTML(list, order, rowFn, listClass) {
+    return groupSaved(list, order).map(function (grp) {
+      return '<h4 class="sv-g">' + esc(grp.g) + ' <span class="sv-gn">' + grp.items.length + '</span></h4><ol class="' + listClass + '">' +
+        grp.items.map(rowFn).join("") + "</ol>";
+    }).join("");
+  }
+  function savedToolsHTML() {
+    var n = savedList().length;
+    return '<div class="sv-tools">' +
+      (n ? '<button class="sv-btn" type="button" data-sv="copy">Copy list</button><button class="sv-btn" type="button" data-sv="dl">Download backup</button>' : "") +
+      '<button class="sv-btn" type="button" data-sv="imp">Restore from backup</button>' +
+      '<input class="sv-file" type="file" accept=".json,application/json" aria-label="Choose a saved-items backup file" tabindex="-1"></div>' +
+      '<p class="sv-foot">Saved items stay in this browser on this device only; nothing is sent anywhere. The list and the backup include everything you saved on this site (papers, weekly digest and guidelines). To keep them or move them to another device, download a backup and restore it there.' +
+      (saveWarn ? " <b>This browser is blocking storage, so saves last only until you close the page.</b>" : "") + "</p>";
+  }
 
   function exportText() {
-    var lines = ["Saved papers – Recent Papers in Hematology (andresferber.org)", "Exported " + new Date().toISOString().slice(0, 10), ""];
-    savedList().forEach(function (e, i) {
-      var pp = e.paper, meta = [pp.j, pp.a, pp.d].filter(Boolean).join(" · ");
-      lines.push((i + 1) + ". " + e.n);
-      if (meta) lines.push("   " + meta);
-      lines.push("   " + e.u);
-      if (pp.p) lines.push("   https://pubmed.ncbi.nlm.nih.gov/" + pp.p + "/");
-      lines.push("");
+    var lines = ["Saved items – andresferber.org", "Exported " + new Date().toISOString().slice(0, 10), ""];
+    SECTIONS.forEach(function (sec) {
+      var list = savedList(sec[0]);
+      if (!list.length) return;
+      lines.push("=== " + sec[1] + " ===", "");
+      groupSaved(list, []).forEach(function (grp) {
+        lines.push("-- " + grp.g + " --");
+        grp.items.forEach(function (e, i) {
+          var pp = e.paper, meta = [pp.j, pp.a, e.o, pp.d].filter(Boolean).join(" · ");
+          lines.push((i + 1) + ". " + e.n);
+          if (meta) lines.push("   " + meta);
+          lines.push("   " + e.u);
+          if (pp.p) lines.push("   https://pubmed.ncbi.nlm.nih.gov/" + pp.p + "/");
+          lines.push("");
+        });
+      });
     });
     return lines.join("\n");
   }
@@ -294,16 +350,17 @@
     });
   }
   function downloadBackup() {
-    var data = JSON.stringify({ format: "hog-saved-papers", version: 1, exported: new Date().toISOString(), saved: savedList() }, null, 1);
+    syncSaved();
+    var data = JSON.stringify({ format: "hog-saved-papers", version: 2, exported: new Date().toISOString(), saved: savedList() }, null, 1);
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
-    a.download = "saved-papers-" + new Date().toISOString().slice(0, 10) + ".json";
+    a.download = "saved-items-" + new Date().toISOString().slice(0, 10) + ".json";
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
   }
   function importBackup(file) {
     if (!file) return;
-    if (file.size > 2000000) { toast("That file is too large to be a backup of saved papers."); return; }
+    if (file.size > 4000000) { toast("That file is too large to be a backup of saved items."); return; }
     var rd = new FileReader();
     rd.onerror = function () { toast("Could not read that file."); };
     rd.onload = function () {
@@ -311,26 +368,74 @@
       try {
         j = JSON.parse(String(rd.result || ""));
         if (!j || j.format !== "hog-saved-papers" || !Array.isArray(j.saved)) throw new Error("format");
-      } catch (e) { toast("That file is not a saved-papers backup."); return; }
+      } catch (e) { toast("That file is not a saved-items backup."); return; }
       var inc = cleanSaved(j.saved);
+      syncSaved();
       Object.keys(inc).forEach(function (k) {
         if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); added++; }
       });
       persistSaved(); savedChanged();
-      toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved paper" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those papers are already saved.");
+      toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
     };
     rd.readAsText(file);
   }
+  /* click on Copy list / Download backup / Restore inside a section's Saved row; returns true if it handled the click */
+  function savedToolClick(ev, root) {
+    var b = ev.target.closest ? ev.target.closest("[data-sv]") : null;
+    if (!b) return false;
+    var act = b.getAttribute("data-sv");
+    if (act === "copy") {
+      syncSaved();
+      var n = savedList().length;
+      copyText(exportText()).then(function () { toast("Copied " + n + " saved item" + (n === 1 ? "" : "s") + " to the clipboard."); },
+        function () { toast("Could not copy here. Use Download backup instead."); });
+    } else if (act === "dl") {
+      downloadBackup(); toast("Backup downloaded.");
+    } else if (act === "imp") {
+      var f = root.querySelector(".sv-file"); if (f) f.click();
+    }
+    return true;
+  }
+  function savedFileChange(ev) {
+    var f = ev.target.closest ? ev.target.closest(".sv-file") : null;
+    if (!f) return;
+    importBackup(f.files && f.files[0]);
+    try { f.value = ""; } catch (e) {}
+  }
 
-  SAVED = loadSaved();
-  window.addEventListener("storage", function (e) { if (e.key === SK) { SAVED = loadSaved(); savedChanged(); } });
+  if (!document.getElementById("hog-saved-style")) {
+    var SC = ":is(.hor,.hdg,.hog) ";
+    var sst = document.createElement("style");
+    sst.id = "hog-saved-style";
+    sst.textContent = [
+      SC + "button.sv{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#56656f!important;text-decoration:underline;text-underline-offset:2px}",
+      SC + "button.sv[aria-pressed='true']{color:#7a4a00!important;text-decoration:none;background:#fff1d6;border-radius:999px;padding:3px 8px}",
+      SC + "button.sv:focus-visible," + SC + "button.sv-btn:focus-visible{outline:3px solid rgba(20,90,117,.45)!important;outline-offset:2px}",
+      SC + ".sv-empty{padding:10px 0;color:#56656f;font-size:15px}",
+      SC + "h4.sv-g{display:flex;gap:8px;align-items:baseline;font:700 14.5px/1.3 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;margin:14px 0 2px!important;padding:0 0 4px!important;border-bottom:1px solid #cfe3ea;text-transform:none!important;letter-spacing:0!important}",
+      SC + ".sv-gn{font:600 12.5px/1 'Source Sans 3',system-ui,sans-serif;color:#145a75;background:#e3f1f6;border-radius:999px;padding:3px 7px}",
+      SC + ".sv-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 0 6px;margin-top:8px;border-top:1px solid #eef4f6}",
+      SC + "button.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;font:600 13.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:8px 11px!important}",
+      SC + "button.sv-btn:hover{background:#d6f2fc!important}",
+      SC + ".sv-file{display:none!important}",
+      SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5}",
+      "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
+      "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
+      "@media (prefers-reduced-motion:reduce){#hor-toast{transition:none}}"
+    ].join("\n");
+    document.head.appendChild(sst);
+  }
+  SAVED = readStore() || {};
+  window.addEventListener("hog-saved", function () { syncSaved(); applySaved(); });
+  window.addEventListener("storage", function (e) { if (e.key === SK) savedChanged(); });
+  /* ===== end of saved core ===== */
 
   function paperHTML(it, q) {
     var pp = it.paper, meta = [pp.j, pp.a].filter(Boolean).join(". ");
     var rid = pp.p ? "pm" + pp.p : "u" + it.u;
     var links = '<div class="lk">' + (pp.p ? '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a> ' : "") +
-      '<button class="rd" type="button">' + (isRead(rid) ? "\u2713 Opened" : "Mark as opened") + '</button> <button class="sv" type="button" aria-label="Save this paper" aria-pressed="' + (SAVED[rid] ? "true" : "false") + '">' + (SAVED[rid] ? "\u2605 Saved" : "\u2606 Save") + "</button></div>";
-    return '<li class="pp' + (isRead(rid) ? " isread" : "") + (SAVED[rid] ? " issaved" : "") + '" data-rid="' + esc(rid) + '"><div class="pd' + (isRecent(pp.d, 7) ? " isnew" : "") + '">' + esc(shortDate(pp.d)) + "</div><div>" +
+      '<button class="rd" type="button">' + (isRead(rid) ? "\u2713 Opened" : "Mark as opened") + "</button> " + saveBtnHTML(makeSid("papers", pp.p, it.u), "Save this paper") + "</div>";
+    return '<li class="pp' + (isRead(rid) ? " isread" : "") + '" data-rid="' + esc(rid) + '"><div class="pd' + (isRecent(pp.d, 7) ? " isnew" : "") + '">' + esc(shortDate(pp.d)) + "</div><div>" +
       '<div class="gn"><a href="' + esc(it.u) + '" target="_blank" rel="noopener">' + hilite(it.n, q) + "</a></div>" +
       '<div class="ref">' + hilite(meta, q) + (pp.ty ? ' <span class="badge ol">' + esc(pp.ty) + "</span>" : "") + "</div>" + links + "</div></li>";
   }
@@ -371,29 +476,40 @@
       (key === "calc" ? '<p class="hog-foot">Missing a calculator or found an error? <a href="mailto:' + MAIL + '?subject=Calculators%20section">Send a suggestion</a>.</p>' : "") + "</div>";
     var root = el.firstChild, state = { q: "" };
 
-    /* paper lookup by id, used when a paper is starred */
-    var byRid = {};
-    panels.forEach(function (p) { p.items.forEach(function (it) { if (it.paper) byRid[paperId(it.paper, it.u)] = it; }); });
+    /* paper lookups used when a paper is starred, and the feed order used to order the topic groups */
+    var byRid = {}, firstFeed = {}, titleByKey = {};
+    panels.forEach(function (p) {
+      titleByKey[p.key] = p.title;
+      p.items.forEach(function (it) {
+        if (!it.paper) return;
+        var r = it.paper.p ? "pm" + it.paper.p : "u" + it.u;
+        byRid[r] = it;
+        if (!firstFeed[r]) firstFeed[r] = p.title;
+      });
+    });
+    var feedOrder = panels.map(function (p) { return p.title; });
 
-    /* the "Saved papers" row is built from the reader's own saved list and sits above the feeds (papers section only) */
+    /* the "Saved papers" row is built from the reader's own saved list and sits above the feeds (papers section only);
+       papers saved before topic groups existed are filed under the feed they are still listed in */
     function savedPanel() {
-      return { key: "saved", title: "★ Saved papers", sub: "Papers you starred, kept on this device only", fresh: 0, saved: true, items: savedList() };
-    }
-    function savedTools(n) {
-      return '<div class="sv-tools">' +
-        (n ? '<button class="hog-btn sm" type="button" data-sv="copy">Copy list</button><button class="hog-btn sm" type="button" data-sv="dl">Download backup</button>' : "") +
-        '<button class="hog-btn sm" type="button" data-sv="imp">Restore from backup</button>' +
-        '<input class="sv-file" type="file" accept=".json,application/json" aria-label="Choose a saved-papers backup file" tabindex="-1"></div>' +
-        '<p class="hog-foot">Saved papers stay in this browser on this device only; nothing is sent anywhere. To keep them or move them to another device, download a backup and restore it there.' +
-        (saveWarn ? " <b>This browser is blocking storage, so saves last only until you close the page.</b>" : "") + "</p>";
+      var list = savedList("papers").map(function (e) {
+        if (e.g) return e;
+        var r = e.paper.p ? "pm" + e.paper.p : "u" + e.u, c = {}, k;
+        for (k in e) c[k] = e[k];
+        c.g = firstFeed[r] || "";
+        return c;
+      });
+      return { key: "saved", title: "★ Saved papers", sub: "Papers you starred, grouped by topic; kept on this device only", fresh: 0, saved: true, items: list };
     }
     function panelHTML(p, q, items, isOpen) {
-      var list = '<ol class="hog-list">' + items.map(function (it, i) { return rowHTML(it, q, key + "-" + p.key, i); }).join("") + "</ol>", body;
+      var body;
       if (p.saved) {
-        body = items.length ? list : (q ? "" : '<p class="sv-empty">Nothing saved yet. Tap ☆ Save under any paper to keep it here, even after it drops off the feed.</p>');
-        if (!q) body += savedTools(p.items.length);
+        body = items.length ? savedGroupsHTML(items, feedOrder, function (it, i) { return rowHTML(it, q, key + "-saved", i); }, "hog-list")
+          : (q ? "" : '<p class="sv-empty">Nothing saved yet. Tap ☆ Save under any paper to keep it here, grouped by topic, even after it drops off the feed.</p>');
+        if (!q) body += savedToolsHTML();
       } else {
-        body = list + (p.home ? '<p class="more">More at <a href="' + esc(p.home[1]) + '" target="_blank" rel="noopener">' + esc(p.home[0]) + "</a></p>" : "");
+        body = '<ol class="hog-list">' + items.map(function (it, i) { return rowHTML(it, q, key + "-" + p.key, i); }).join("") + "</ol>" +
+          (p.home ? '<p class="more">More at <a href="' + esc(p.home[1]) + '" target="_blank" rel="noopener">' + esc(p.home[0]) + "</a></p>" : "");
       }
       return '<div class="hog-item' + (isOpen ? " open" : "") + '" data-k="' + esc(p.key) + '">' +
         '<button class="hog-t" type="button" aria-expanded="' + isOpen + '"><span class="nm">' + esc(p.title) + "</span>" +
@@ -407,7 +523,7 @@
       acc.querySelectorAll(".hog-item.open").forEach(function (n) { open[n.getAttribute("data-k")] = 1; });
       var all = key === "papers" ? [savedPanel()].concat(panels) : panels;
       all.forEach(function (p) {
-        var items = p.items.filter(function (it) { return !q || norm([it.n, it.x, it.note, it.paper ? it.paper.j + " " + it.paper.a : domain(it.u), p.title].join(" ")).indexOf(q) >= 0; });
+        var items = p.items.filter(function (it) { return !q || norm([it.n, it.x, it.note, it.paper ? it.paper.j + " " + it.paper.a : domain(it.u), p.title, it.g].join(" ")).indexOf(q) >= 0; });
         if (q && !items.length) return;
         if (p.saved) svHits += items.length; else hits += items.length;
         html += panelHTML(p, q, items, q ? true : !!open[p.key]);
@@ -427,31 +543,15 @@
       tmp.innerHTML = panelHTML(p, "", p.items, item.classList.contains("open"));
       item.parentNode.replaceChild(tmp.firstChild, item);
     }
-    function toggleSaved(rid) {
-      if (SAVED[rid]) {
-        delete SAVED[rid];
-        persistSaved(); savedChanged();
-        toast(saveWarn ? STORE_WARN : "Removed from Saved papers.");
-        return;
+    function onSave(btn, li) {
+      var sidv = btn.getAttribute("data-sid"), snap = SAVED[sidv], rid = li.getAttribute("data-rid");
+      if (!snap) {
+        var it = byRid[rid];
+        if (!it) return;
+        var pane = btn.closest(".hog-item"), pk = pane ? pane.getAttribute("data-k") : "";
+        snap = { s: "papers", g: titleByKey[pk] || firstFeed[rid] || "", n: it.n, u: it.u, t: Date.now(), paper: it.paper };
       }
-      var src = byRid[rid];
-      if (!src) return;
-      var c = cleanSaved([{ n: src.n, u: src.u, t: Date.now(), paper: src.paper }]);
-      Object.keys(c).forEach(function (k) { SAVED[k] = c[k]; });
-      persistSaved(); savedChanged();
-      toast(saveWarn ? STORE_WARN : firstSave ? "Saved. Find it under “Saved papers” at the top of this list." : "Saved.");
-      firstSave = false;
-    }
-    function savedTool(act) {
-      if (act === "copy") {
-        var n = Object.keys(SAVED).length;
-        copyText(exportText()).then(function () { toast("Copied " + n + " saved paper" + (n === 1 ? "" : "s") + " to the clipboard."); },
-          function () { toast("Could not copy here. Use Download backup instead."); });
-      } else if (act === "dl") {
-        downloadBackup(); toast("Backup downloaded.");
-      } else if (act === "imp") {
-        var f = root.querySelector(".sv-file"); if (f) f.click();
-      }
+      saveToast(toggleSaveEntry(snap), "Saved papers");
     }
     function toggle(item, on) {
       on = on == null ? !item.classList.contains("open") : on;
@@ -464,9 +564,8 @@
     root.addEventListener("click", function (ev) {
       var rli = ev.target.closest("li[data-rid]");
       if (rli && ev.target.closest("button.rd")) { setRead(rli.getAttribute("data-rid"), !isRead(rli.getAttribute("data-rid"))); return; }
-      if (rli && ev.target.closest("button.sv")) { toggleSaved(rli.getAttribute("data-rid")); return; }
-      var svt = ev.target.closest("[data-sv]");
-      if (svt) { savedTool(svt.getAttribute("data-sv")); return; }
+      if (rli && ev.target.closest("button.sv")) { onSave(ev.target.closest("button.sv"), rli); return; }
+      if (savedToolClick(ev, root)) return;
       if (rli && ev.target.closest("a")) setRead(rli.getAttribute("data-rid"), true);
       var t = ev.target.closest(".hog-t");
       if (t) { toggle(t.parentNode); return; }
@@ -487,12 +586,7 @@
       }
     });
     root.addEventListener("submit", function (ev) { ev.preventDefault(); });
-    root.addEventListener("change", function (ev) {
-      var f = ev.target.closest ? ev.target.closest(".sv-file") : null;
-      if (!f) return;
-      importBackup(f.files && f.files[0]);
-      try { f.value = ""; } catch (e) {}
-    });
+    root.addEventListener("change", savedFileChange);
     if (key === "papers") window.addEventListener("hog-saved", refreshSaved);
 
     (window.__hogClosers = window.__hogClosers || []).push(function (except) {
