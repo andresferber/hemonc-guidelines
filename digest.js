@@ -215,12 +215,15 @@
 
 
   /* ===== SAVED CORE: identical in resources.js, digest.js and guidelines.js =====
-     One shared list for the whole site, kept only in this browser (localStorage key hogSaved), never sent anywhere.
-     Entry: { s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
+     One shared list for the whole site, kept in this browser (localStorage key hogSaved). Nothing is sent anywhere unless the owner
+     turns on sync (SYNC_URL below, hidden from readers); removals are remembered in hogSavedDel so sync can carry them.
+     Entry: { m: time last changed (used to merge devices),  s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
               x: note or conclusion, xl: its label, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
      A snapshot is stored, so a saved item stays after it leaves its feed. Backups are plain JSON files the reader
      downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
-  var SK = "hogSaved", SAVED = {}, saveWarn = false, firstSave = {};
+  var SK = "hogSaved", DK = "hogSavedDel", MK = "hogSavedMod", SAVED = {}, DELS = {}, saveWarn = false, firstSave = {};
+  /* Owner-only sync: address of the sync Worker (see sync/README.md). Empty = sync is off and invisible. */
+  var SYNC_URL = "", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast";
   var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
   var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
   function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
@@ -233,7 +236,7 @@
       var s = /^(papers|digest|guide)$/.test(String(e.s)) ? String(e.s) : "papers";
       var pp = e.paper && typeof e.paper === "object" ? e.paper : {};
       var c = {
-        s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0,
+        s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0, m: +e.m || +e.t || 0,
         o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60),
         k: /^[A-Za-z0-9_.\-]{1,80}$/.test(String(e.k || "")) ? String(e.k) : "",
         paper: {
@@ -249,15 +252,32 @@
     return out;
   }
   function readStore() { try { return cleanSaved(JSON.parse(localStorage.getItem(SK) || "[]")); } catch (e) { return null; } }
-  function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) SAVED = m; }
+  function readDels() {
+    var o = {};
+    try {
+      var j = JSON.parse(localStorage.getItem(DK) || "{}");
+      if (j && typeof j === "object" && !Array.isArray(j)) Object.keys(j).slice(0, 5000).forEach(function (k) {
+        var v = +j[k]; if (v > 0 && /^(papers|digest|guide):.{1,700}$/.test(k)) o[k] = v;
+      });
+    } catch (e) {}
+    return o;
+  }
+  function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) { SAVED = m; DELS = readDels(); } }
+  function lsGet(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } }
+  function lsSet(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
+  function fmtWhen(ms) { try { return new Date(ms).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
   function savedList(src) {
     return Object.keys(SAVED).map(function (k) { return SAVED[k]; })
       .filter(function (e) { return !src || e.s === src; })
       .sort(function (a, b) { return b.t - a.t; });
   }
-  function persistSaved() {
+  function persistSaved(noTouch) {
     saveWarn = false;
-    try { localStorage.setItem(SK, JSON.stringify(savedList())); } catch (e) { saveWarn = true; }
+    try {
+      localStorage.setItem(SK, JSON.stringify(savedList()));
+      localStorage.setItem(DK, JSON.stringify(DELS));
+      if (!noTouch) localStorage.setItem(MK, String(Date.now()));
+    } catch (e) { saveWarn = true; }
   }
   function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
   function applySaved() {
@@ -279,8 +299,8 @@
     var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
     if (!id) return null;
     syncSaved();
-    if (SAVED[id]) { delete SAVED[id]; now = false; } else { SAVED[id] = c[id]; now = true; }
-    persistSaved(); savedChanged();
+    if (SAVED[id]) { delete SAVED[id]; DELS[id] = Date.now(); now = false; } else { SAVED[id] = c[id]; SAVED[id].m = Date.now(); delete DELS[id]; now = true; }
+    persistSaved(); savedChanged(); scheduleSync();
     return now;
   }
 
@@ -341,13 +361,33 @@
       }).join("");
     } finally { inSavedRows = false; }
   }
+  function syncKey() { return lsGet(SYNC_KEYK); }
+  function syncVisible() { return !!SYNC_URL && (!!syncKey() || lsGet(SYNC_SHOWK) === "1"); }
+  var syncErr = "";
+  function syncStatus() {
+    if (window.__hogSyncBusy) return "Syncing\u2026";
+    if (syncErr) return "Not synced: " + syncErr;
+    var t = +lsGet(SYNC_LASTK);
+    return t ? "Sync is on \u00b7 last synced " + fmtWhen(t) : "Sync is on";
+  }
+  function syncHTML() {
+    if (!syncVisible()) return "";
+    if (!syncKey()) return '<div class="sv-sync"><label class="sv-lab">Sync key <input class="sv-key" type="password" autocomplete="off" spellcheck="false" aria-label="Sync key"></label>' +
+      '<button class="sv-btn" type="button" data-sv="syncon">Turn on sync</button></div>';
+    return '<div class="sv-sync"><span class="sv-sync-st" role="status">' + esc(syncStatus()) + "</span>" +
+      '<button class="sv-btn" type="button" data-sv="syncnow">Sync now</button><button class="sv-btn" type="button" data-sv="syncoff">Turn off sync</button></div>';
+  }
   function savedToolsHTML() {
-    var n = savedList().length;
+    var n = savedList().length, mod = +lsGet(MK), synced = syncVisible() && !!syncKey();
     return '<div class="sv-tools">' +
       (n ? '<button class="sv-btn" type="button" data-sv="copy">Copy list</button><button class="sv-btn" type="button" data-sv="dl">Download backup</button>' : "") +
       '<button class="sv-btn" type="button" data-sv="imp">Restore from backup</button>' +
       '<input class="sv-file" type="file" accept=".json,application/json" aria-label="Choose a saved-items backup file" tabindex="-1"></div>' +
-      '<p class="sv-foot">Saved items stay in this browser on this device only; nothing is sent anywhere. The list and the backup include everything you saved on this site (papers, weekly digest and guidelines). To keep them or move them to another device, download a backup and restore it there.' +
+      syncHTML() +
+      '<p class="sv-foot sv-mod">On this device: ' + n + " saved item" + (n === 1 ? "" : "s") + (mod ? " \u00b7 last changed " + esc(fmtWhen(mod)) : "") + ".</p>" +
+      '<p class="sv-foot">' + (synced ? "Sync is on, so this list is also kept online under your private sync key and matched across your synced devices. "
+        : "Saved items stay in this browser on this device only; nothing is sent anywhere. ") +
+      "The list and the backup include everything you saved on this site (papers, weekly digest and guidelines). To keep them or move them to another device, download a backup and restore it there." +
       (saveWarn ? " <b>This browser is blocking storage, so saves last only until you close the page.</b>" : "") + "</p>";
   }
 
@@ -385,10 +425,12 @@
   }
   function downloadBackup() {
     syncSaved();
-    var data = JSON.stringify({ format: "hog-saved-papers", version: 2, exported: new Date().toISOString(), saved: savedList() }, null, 1);
+    var mod = +lsGet(MK), d = new Date(), pad = function (x) { return (x < 10 ? "0" : "") + x; };
+    var data = JSON.stringify({ format: "hog-saved-papers", version: 2, exported: d.toISOString(), count: savedList().length,
+      lastChanged: mod ? new Date(mod).toISOString() : "", saved: savedList() }, null, 1);
     var a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
-    a.download = "saved-items-" + new Date().toISOString().slice(0, 10) + ".json";
+    a.download = "saved-items-" + d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate()) + "-" + pad(d.getHours()) + pad(d.getMinutes()) + ".json";
     document.body.appendChild(a); a.click(); document.body.removeChild(a);
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 2000);
   }
@@ -406,9 +448,9 @@
       var inc = cleanSaved(j.saved);
       syncSaved();
       Object.keys(inc).forEach(function (k) {
-        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); added++; }
+        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); SAVED[k].m = Date.now(); delete DELS[k]; added++; }
       });
-      persistSaved(); savedChanged();
+      persistSaved(); savedChanged(); if (added) scheduleSync();
       toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
     };
     rd.readAsText(file);
@@ -427,6 +469,16 @@
       downloadBackup(); toast("Backup downloaded.");
     } else if (act === "imp") {
       var f = root.querySelector(".sv-file"); if (f) f.click();
+    } else if (act === "syncon") {
+      var inp = root.querySelector(".sv-key"), v = inp ? inp.value.trim() : "";
+      if (v.length < 16) { toast("That sync key is too short."); return true; }
+      lsSet(SYNC_KEYK, v); lsSet(SYNC_SHOWK, "1"); syncErr = "";
+      savedChanged(); runSync(true);
+    } else if (act === "syncnow") {
+      runSync(true);
+    } else if (act === "syncoff") {
+      lsSet(SYNC_KEYK, null); lsSet(SYNC_LASTK, null); syncErr = "";
+      toast("Sync is off on this device. Your saved list stays here."); savedChanged();
     }
     return true;
   }
@@ -435,6 +487,72 @@
     if (!f) return;
     importBackup(f.files && f.files[0]);
     try { f.value = ""; } catch (e) {}
+  }
+
+  /* ---------- owner-only sync ----------
+     The Worker keeps one merged list. Merge rule, per item: the newest change wins, where a change is either the item's
+     m (saved) or a removal time in DELS. The same rule runs here and in the Worker, so devices end up identical. */
+  function mergeRemote(ritems, rdels) {
+    var inc = cleanSaved(ritems), changed = false, rd = {};
+    if (rdels && typeof rdels === "object") Object.keys(rdels).slice(0, 5000).forEach(function (k) {
+      var v = +rdels[k]; if (v > 0 && /^(papers|digest|guide):.{1,700}$/.test(k)) rd[k] = v;
+    });
+    Object.keys(rd).forEach(function (k) { if (rd[k] > (DELS[k] || 0)) { DELS[k] = rd[k]; changed = true; } });
+    Object.keys(inc).forEach(function (k) {
+      if (DELS[k] && inc[k].m <= DELS[k]) return;
+      if (!SAVED[k] || inc[k].m > SAVED[k].m) { SAVED[k] = inc[k]; changed = true; }
+    });
+    Object.keys(DELS).forEach(function (k) { if (SAVED[k] && SAVED[k].m <= DELS[k]) { delete SAVED[k]; changed = true; } });
+    var cut = Date.now() - 180 * 864e5;
+    Object.keys(DELS).forEach(function (k) { if (DELS[k] < cut) delete DELS[k]; });
+    return changed;
+  }
+  function syncUi() {
+    [].forEach.call(document.querySelectorAll(".sv-sync-st"), function (el) { el.textContent = syncStatus(); });
+  }
+  var syncTimer;
+  function scheduleSync() {
+    if (!SYNC_URL || !syncKey()) return;
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(function () { runSync(false); }, 1500);
+  }
+  function runSync(manual) {
+    var key = syncKey();
+    if (!SYNC_URL || !key || typeof fetch !== "function") return;
+    if (window.__hogSyncBusy) { window.__hogSyncAgain = true; return; }
+    window.__hogSyncBusy = true; window.__hogSyncAt = Date.now(); syncUi();
+    syncSaved();
+    var body = JSON.stringify({ items: SAVED, dels: DELS });
+    fetch(SYNC_URL, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: body })
+      .then(function (r) {
+        if (r.status === 401) throw new Error("wrong sync key");
+        if (!r.ok) throw new Error("the sync service had a problem");
+        return r.json();
+      })
+      .then(function (j) {
+        syncSaved();
+        var before = Object.keys(SAVED).length, changed = mergeRemote(j && j.items, j && j.dels);
+        if (changed) { persistSaved(); savedChanged(); }
+        syncErr = ""; lsSet(SYNC_LASTK, String(Date.now()));
+        if (manual) toast(changed ? "Synced. Your list was updated from your other devices." : "Synced. Everything is up to date.");
+      })
+      .catch(function (e) {
+        syncErr = e && /sync/.test(String(e.message)) ? e.message : "could not reach the sync service";
+        if (manual) toast("Not synced: " + syncErr + ".");
+      })
+      .then(function () {
+        window.__hogSyncBusy = false; syncUi();
+        if (window.__hogSyncAgain) { window.__hogSyncAgain = false; scheduleSync(); }
+      });
+  }
+  if (SYNC_URL) {
+    if (/#hog-sync\b/.test(location.hash)) lsSet(SYNC_SHOWK, "1");
+    if (syncKey()) {
+      setTimeout(function () { runSync(false); }, 500);
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible" && Date.now() - (window.__hogSyncAt || 0) > 30000) runSync(false);
+      });
+    }
   }
 
   if (!document.getElementById("hog-saved-style")) {
@@ -452,7 +570,11 @@
       SC + "button.sv-btn{all:unset;box-sizing:border-box;cursor:pointer;font:600 13.5px/1 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;background:#fff!important;border:1px solid #9cc9d8!important;border-radius:8px;padding:8px 11px!important}",
       SC + "button.sv-btn:hover{background:#d6f2fc!important}",
       SC + ".sv-file{display:none!important}",
-      SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5}",
+      SC + ".sv-foot{font-size:13.5px;color:#56656f;line-height:1.5;margin:6px 0}",
+      SC + ".sv-sync{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:6px 0}",
+      SC + ".sv-lab{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px;color:#56656f}",
+      SC + "input.sv-key{box-sizing:border-box;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;padding:8px 10px;border:1px solid #9cc9d8;border-radius:8px;min-width:200px;max-width:100%;color:#1b2b34;background:#fff}",
+      SC + ".sv-sync-st{font-size:14px;color:#56656f}",
       SC + "button.sv.rm{color:#9b2c2c!important;text-decoration:underline;background:none;padding:0;border-radius:0}",
       "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
       "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
