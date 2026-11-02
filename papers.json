@@ -1,5 +1,5 @@
 {
- "built": "2026-11-01 11:13 UTC",
+ "built": "2026-11-02 11:29 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "nejm",
@@ -362,7 +362,7 @@
      "p": "42788692"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "leuk",
@@ -378,7 +378,8 @@
      "u": "https://www.nature.com/articles/s41408-026-01661-1",
      "j": "Blood Cancer J",
      "d": "2026-10-31",
-     "a": ""
+     "a": "Chang YS et al.",
+     "p": "42966782"
     },
     {
      "t": "Clinical and molecular characteristics of FLT3-ITD microclones in elderly patients with acute myeloid leukemia receiving less-intensive therapy",
@@ -528,7 +529,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "nhl",
@@ -539,6 +540,20 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Clonal hematopoiesis and cytopenias following CAR19 therapy",
+     "u": "https://www.nature.com/articles/s41588-026-02795-5",
+     "j": "Nat Genet",
+     "d": "2026-11-02",
+     "a": ""
+    },
+    {
+     "t": "The cyclin-G associated kinase (GAK) is a clinically actionable drug target required for mitosis in diffuse large B-cell lymphoma",
+     "u": "https://www.nature.com/articles/s41375-026-03174-z",
+     "j": "Leukemia",
+     "d": "2026-11-02",
+     "a": ""
+    },
     {
      "t": "Nivolumab consolidation in patients with double and triple hit high-grade B-cell lymphoma in complete metabolic remission after DA-EPOCH-R",
      "u": "https://www.nature.com/articles/s41408-026-01657-x",
@@ -597,7 +612,8 @@
      "u": "https://www.nature.com/articles/s41467-026-78100-z",
      "j": "Nat Commun",
      "d": "2026-10-05",
-     "a": ""
+     "a": "Suma S et al.",
+     "p": "42967949"
     },
     {
      "t": "ROR1 upregulation after CD19-CAR T-cell relapse in mantle cell lymphoma identifies a targetable vulnerability for ROR1-directed bispecific modalities",
@@ -673,17 +689,9 @@
      "d": "2026-09-05",
      "a": "Galli E et al.",
      "p": "42701133"
-    },
-    {
-     "t": "Pre–CAR-T B-cell–directed immunotherapy exposure and outcomes after CD19 CAR-T for large B-cell lymphoma: An EBMT registry analysis",
-     "u": "https://www.nature.com/articles/s41409-026-02979-x",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-09-01",
-     "a": "Schroeder JC et al.",
-     "p": "42680810"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "hl",
@@ -847,7 +855,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "mm",
@@ -1005,7 +1013,7 @@
      "p": "42800806"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "mpn",
@@ -1177,7 +1185,7 @@
      "p": "42469194"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "mds",
@@ -1338,7 +1346,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "ba",
@@ -1530,7 +1538,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "aacr",
@@ -1722,7 +1730,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   },
   {
    "key": "jco",
@@ -1914,7 +1922,7 @@
      "ty": "Editorial"
     }
    ],
-   "updated": "2026-11-01"
+   "updated": "2026-11-02"
   }
  ]
 }
