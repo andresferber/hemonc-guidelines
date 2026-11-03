@@ -1,5 +1,5 @@
 {
- "built": "2026-11-02 11:29 UTC",
+ "built": "2026-11-03 11:29 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,15 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Identifying novel genomic alterations in relapsed childhood B-ALL: a report from the Children's Oncology Group",
+     "u": "https://doi.org/10.1182/blood.2025032369",
+     "p": "42970619",
+     "j": "Blood",
+     "d": "2026-11-02",
+     "a": "Feng Y et al.",
+     "ty": ""
+    },
     {
      "t": "A TAG team for achieving deep remissions in BPDCN",
      "u": "https://doi.org/10.1182/blood.2026035436",
@@ -180,18 +189,9 @@
      "d": "2026-10-23",
      "a": "Weinkove R et al.",
      "ty": "Editorial, Comment"
-    },
-    {
-     "t": "One CAR is good; are 2 CARs better?",
-     "u": "https://doi.org/10.1182/blood.2026035159",
-     "p": "42911649",
-     "j": "Blood",
-     "d": "2026-10-23",
-     "a": "Manier S",
-     "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "nejm",
@@ -207,7 +207,8 @@
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMp2606011",
      "j": "N Engl J Med",
      "d": "2026-10-31",
-     "a": "Daniel A. Brenner"
+     "a": "Daniel A. Brenner",
+     "p": "42969876"
     },
     {
      "t": "Splenosis",
@@ -362,7 +363,7 @@
      "p": "42788692"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "leuk",
@@ -373,6 +374,13 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Relcobatinib, a highly selective ATP-competitive ABL1 tyrosine kinase inhibitor for the treatment of chronic myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41375-026-03184-x",
+     "j": "Leukemia",
+     "d": "2026-11-03",
+     "a": ""
+    },
     {
      "t": "STAG2 mutation predicts superior posttransplant survival in acute myeloid leukemia treated with low-intensity induction",
      "u": "https://www.nature.com/articles/s41408-026-01661-1",
@@ -520,16 +528,9 @@
      "d": "2026-10-13",
      "a": "Timmins MA et al.",
      "p": "42869960"
-    },
-    {
-     "t": "An all-oral triplet regimen (decitabine/cedazuridine, venetoclax, and gilteritinib) for newly diagnosed and relapsed/refractory FLT3-mutated AML and high-risk MDS",
-     "u": "https://www.nature.com/articles/s41408-026-01643-3",
-     "j": "Blood Cancer J",
-     "d": "2026-10-13",
-     "a": ""
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "nhl",
@@ -541,18 +542,27 @@
    ],
    "items": [
     {
+     "t": "Hematotoxicity: the hidden legacy of CAR T cell therapy",
+     "u": "https://www.nature.com/articles/s41588-026-02805-6",
+     "j": "Nat Genet",
+     "d": "2026-11-03",
+     "a": ""
+    },
+    {
      "t": "Clonal hematopoiesis and cytopenias following CAR19 therapy",
      "u": "https://www.nature.com/articles/s41588-026-02795-5",
      "j": "Nat Genet",
      "d": "2026-11-02",
-     "a": ""
+     "a": "Hamilton MP et al.",
+     "p": "42972098"
     },
     {
      "t": "The cyclin-G associated kinase (GAK) is a clinically actionable drug target required for mitosis in diffuse large B-cell lymphoma",
      "u": "https://www.nature.com/articles/s41375-026-03174-z",
      "j": "Leukemia",
      "d": "2026-11-02",
-     "a": ""
+     "a": "Farag OB et al.",
+     "p": "42972012"
     },
     {
      "t": "Nivolumab consolidation in patients with double and triple hit high-grade B-cell lymphoma in complete metabolic remission after DA-EPOCH-R",
@@ -681,17 +691,9 @@
      "j": "Blood Cancer J",
      "d": "2026-09-08",
      "a": ""
-    },
-    {
-     "t": "Early deterioration and subsequent recovery of nursing complexity after CAR-T therapy: a prospective score-based analysis",
-     "u": "https://www.nature.com/articles/s41409-026-03031-8",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-09-05",
-     "a": "Galli E et al.",
-     "p": "42701133"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "hl",
@@ -855,7 +857,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "mm",
@@ -866,6 +868,14 @@
     "https://www.nature.com/subjects/myeloma"
    ],
    "items": [
+    {
+     "t": "Denosumab in multiple myeloma patients with severe renal impairment: a multicenter phase 2 study",
+     "u": "https://www.nature.com/articles/s41408-026-01656-y",
+     "j": "Blood Cancer J",
+     "d": "2026-11-02",
+     "a": "O'Donnell EK et al.",
+     "p": "42971959"
+    },
     {
      "t": "Biomarkers of cellular senescence and their association with frailty, clinical outcomes, and survival in multiple myeloma",
      "u": "https://www.nature.com/articles/s41408-026-01652-2",
@@ -1003,17 +1013,9 @@
      "j": "Cell Death Dis",
      "d": "2026-09-26",
      "a": ""
-    },
-    {
-     "t": "Daratumumab ± pomalidomide maintenance after salvage autologous transplantation in relapsed multiple myeloma: a phase 2 study",
-     "u": "https://www.nature.com/articles/s41408-026-01620-w",
-     "j": "Blood Cancer J",
-     "d": "2026-09-26",
-     "a": "Pasvolsky O et al.",
-     "p": "42800806"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "mpn",
@@ -1024,6 +1026,13 @@
     "https://www.nature.com/subjects/myeloproliferative-disease"
    ],
    "items": [
+    {
+     "t": "Mutant calreticulin-driven myeloproliferative neoplasms favour the emergence of TIGIT-positive NK cells",
+     "u": "https://www.nature.com/articles/s41375-026-03175-y",
+     "j": "Leukemia",
+     "d": "2026-11-03",
+     "a": ""
+    },
     {
      "t": "Marrow hypercellularity is common and clinically neutral in essential thrombocythemia",
      "u": "https://www.nature.com/articles/s41375-026-03151-6",
@@ -1175,17 +1184,9 @@
      "d": "2026-07-22",
      "a": "Elgohary G et al.",
      "p": "42486917"
-    },
-    {
-     "t": "Arterial thrombosis and cancer: insights from observations in myeloproliferative neoplasms and CHIP",
-     "u": "https://www.nature.com/articles/s41408-026-01580-1",
-     "j": "Blood Cancer J",
-     "d": "2026-07-17",
-     "a": "Barbui T et al.",
-     "p": "42469194"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "mds",
@@ -1346,7 +1347,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "ba",
@@ -1357,6 +1358,15 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "The diagnosis of iron deficiency: progress toward consensus",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022237",
+     "p": "42970761",
+     "j": "Blood Adv",
+     "d": "2026-11-02",
+     "a": "Means RT Jr",
+     "ty": "Editorial, Comment"
+    },
     {
      "t": "Plasma metabolomics and ctDNA analysis in newly diagnosed diffuse large B-cell lymphoma: an exploratory study",
      "u": "https://doi.org/10.1182/bloodadvances.2026021464",
@@ -1527,18 +1537,9 @@
      "d": "2026-10-28",
      "a": "Walters MC et al.",
      "ty": ""
-    },
-    {
-     "t": "CAR T-cell therapy referral patterns and utilization for relapsed/refractory large B-cell lymphoma in the United States",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021289",
-     "p": "42950247",
-     "j": "Blood Adv",
-     "d": "2026-10-28",
-     "a": "Shadman M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "aacr",
@@ -1549,6 +1550,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Remembering Stiffness: HCC Maintains Malignancy through Heritable Hyperacetylation Driven by Mechanically Mediated Acetyl-CoA Levels",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-3004",
+     "p": "42973183",
+     "j": "Cancer Res",
+     "d": "2026-11-03",
+     "a": "Kilian KA",
+     "ty": ""
+    },
     {
      "t": "Senescence-modulating nanoparticles SELECT the right senescent cells to treat fibrosis and cancer",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-4564",
@@ -1719,18 +1729,9 @@
      "d": "2026-10-13",
      "a": "Grausam KB et al.",
      "ty": ""
-    },
-    {
-     "t": "INSR Armoring Protects CAR-NK and CAR-T Cells Against Tumor Stroma-Induced CAR Shedding by Maintaining Cholesterol Homeostasis",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1047",
-     "p": "42853033",
-     "j": "Cancer Res",
-     "d": "2026-10-09",
-     "a": "Yao L et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   },
   {
    "key": "jco",
@@ -1741,6 +1742,24 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Stereotactic Ablative Radiotherapy Versus Surgical Resection for Early-Stage Non-Small Lung Cancer: An Emulated Target Trial",
+     "u": "https://doi.org/10.1200/JCO-26-00399",
+     "p": "42970669",
+     "j": "J Clin Oncol",
+     "d": "2026-11-02",
+     "a": "Kagenaar E et al.",
+     "ty": ""
+    },
+    {
+     "t": "Immunochemotherapy for Borderline Resectable or Locally Advanced Pancreatic Cancer: A Randomized Controlled Trial",
+     "u": "https://doi.org/10.1200/JCO-26-01393",
+     "p": "42970668",
+     "j": "J Clin Oncol",
+     "d": "2026-11-02",
+     "a": "Bai X et al.",
+     "ty": ""
+    },
     {
      "t": "From TAILORx to OPTIMA: Evolving Evidence for Genomically Guided Chemotherapy in Hormone Receptor-Positive Human Epidermal Growth Factor Receptor 2-Negative Breast Cancer",
      "u": "https://doi.org/10.1200/JCO-26-01976",
@@ -1902,27 +1921,9 @@
      "d": "2026-10-19",
      "a": "Subbiah V et al.",
      "ty": ""
-    },
-    {
-     "t": "Promise and Challenge of Personalized Lung Cancer Screening",
-     "u": "https://doi.org/10.1200/JCO-26-01951",
-     "p": "42886886",
-     "j": "J Clin Oncol",
-     "d": "2026-10-16",
-     "a": "Rivera MP et al.",
-     "ty": "Editorial"
-    },
-    {
-     "t": "Beyond Phlebotomy: Iron Homeostasis in the Next Phase of Polycythemia Vera Management",
-     "u": "https://doi.org/10.1200/JCO-26-01994",
-     "p": "42886882",
-     "j": "J Clin Oncol",
-     "d": "2026-10-16",
-     "a": "Torre E et al.",
-     "ty": "Editorial"
     }
    ],
-   "updated": "2026-11-02"
+   "updated": "2026-11-03"
   }
  ]
 }
