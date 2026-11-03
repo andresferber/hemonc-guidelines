@@ -1,10 +1,10 @@
 {
- "checked": "2026-10-28 23:46 UTC",
+ "checked": "2026-11-03 08:22 UTC",
  "summary": {
   "ok": 335,
-  "blocked": 61,
-  "fail": 1,
-  "broken": 0
+  "blocked": 60,
+  "fail": 2,
+  "broken": 1
  },
  "links": {
   "https://www.nccn.org/guidelines/category_1": {
@@ -16,9 +16,9 @@
   },
   "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines/venous-thromboembolism-guidelines-1": {
    "where": "guidelines: ash-vte",
-   "status": "ok",
-   "code": 200,
-   "fails": 0,
+   "status": "fail",
+   "code": 404,
+   "fails": 1,
    "broken": false
   },
   "https://www.esmo.org/guidelines/esmo-clinical-practice-guidelines-haematological-malignancies": {
@@ -40,7 +40,8 @@
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false
+   "broken": false,
+   "final": "https://www.hematology.org/resources/clinical-practice-guidelines"
   },
   "https://www.asco.org/practice-patients/guidelines": {
    "where": "guidelines: asco",
@@ -726,7 +727,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=38ac7b1f-1c16-434e-b94a-955ee7869101"
+   "final": "https://www.nature.com/articles/s41571-025-01041-x?error=cookies_not_supported&code=a7f2563c-d4be-4290-b717-dba72830a8f6"
   },
   "https://pubmed.ncbi.nlm.nih.gov/41069303/": {
    "where": "guidelines: bsh-rrmm-2025",
@@ -2008,7 +2009,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/41740078/": {
    "where": "guidelines: asco-gf-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2036,7 +2037,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/37579533/": {
    "where": "guidelines: tls-2023",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2051,7 +2052,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/37459573/": {
    "where": "guidelines: asco-geri-2023",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2065,7 +2066,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/40106739/": {
    "where": "guidelines: asco-fert-2025",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2079,7 +2080,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/41380115/": {
    "where": "guidelines: asco-preg-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2093,7 +2094,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/32976936/": {
    "where": "guidelines: esmo-fert-2020",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2108,7 +2109,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/42617047/": {
    "where": "guidelines: ash-itp-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2122,7 +2123,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/41637560/": {
    "where": "guidelines: itp-bleed-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2136,7 +2137,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/40533296/": {
    "where": "guidelines: isth-ttp-2025",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2150,7 +2151,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/41920091/": {
    "where": "guidelines: ash-aa-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2164,7 +2165,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/42747316/": {
    "where": "guidelines: ash-iron-2026",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2178,7 +2179,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/39046779/": {
    "where": "guidelines: hlh-2024",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2192,7 +2193,7 @@
   "https://pubmed.ncbi.nlm.nih.gov/30992265/": {
    "where": "guidelines: hlh-adult-2019",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2230,7 +2231,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQVBoenpuVGNNSCtKKzBxM2NGRHF6cENVOEN1aVpEMmUwVW53RXArQ3NKVzVIMUorSlJ4RDRCcEVYUkRiaVF6bGZxcmI5N2V5WGJndzBYb2U0WWlVV3NPeUZPTXZsQjArZlYyNUZKMUJETGJBcFQwY2thZWZwNU9ad0J2K2xhdnovd0FBQUJnQVI2OUl6T25nMjVsNDJLTmZrTzArbUVzK24zbHhkTVk9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1QaHp6blRjTUgrSiswcTNjRkRxenBDVThDdWlaRDJlMFVud0VwK0NzSlc1SDFKK0pSeEQ0QnBFWFJEYmlRemxmZz09IiwieSI6IkFBQUFNS3JiOTdleVhiZ3cwWG9lNFlpVVdzT3lGT012bEIwK2ZWMjVGSjFCRExiQXBUMGNrYWVmcDVPWndCditsYXZ6L3c9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=76B1E0856081D02E06F52CAF90369C52EECC6F2F4743166C%2DDBEE39CFC01F89712525F228668A30C73E85C87EB426E35680641918FD2AD7C6&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVITE9qVXNubng5QXYlMkZUVDhTM1JxQU5qJTJCakFRWkVOenpaM3I2Zlh6Smo2OUhmSVdRRHdqbWl1SElDS0d1VXI0YUJQakZKMFhEWWp4TGFMbHVoZjNlcWhWNHVJNCUyRlRGenBCemRycGt4UmhQdUNNM1A2S2xnamxSanFZcEloQjFobSUyRlhHRkljNSUyRnRJQmRQYkpUeHl6VWNWZXBIM1olMkJiN1o2Znc4cGFlJTJGY1QweklFNUpleXNuVEFiWSUyRiUyRmdrdk5HbHVDRjdJSTRVN1YxV2I1ZjdPNm01c3NVUmZMaFlZWmclMkYwYTh5bWVseEZxM0l2ZUxndUR4YkM3elRWQjVyeWh0OVJXNjlaOG52aDJpa29WcEl3Zmo3WTNVSENRQlA5WHRPeTRzRTl2eFVjNmhrc2xnU1ZTYzh5UjZ1YVRrMFliUDNLY3YzWkk3WmgzbHozM3F0aE01OVgxQkVpZG9EeVBWNw&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=557149a2%2Dc064%2D0001%2D11f5%2D585c732dc3d5"
+   "final": "https://login.microsoftonline.com:443/55a89906-c710-436b-bc44-4c590cb67c4a/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&ear%5Fjwe%5Fcrypto=eyJhbGciOiJFQ0RILUVTIiwiZW5jIjoiQTI1NkdDTSIsImFwdiI6IkFBQUFDVVZoY2tOc2FXVnVkR2dBQUFCRlEwc3pNQUFBQUlid1BWUm51emh0dHMzV1VKSFNuVmE1cVJsV2wrb1pZU3Z1UURIS1JnYVc0d2NrV0p2TDhFSTBnZ1BiNS9RR3Q1LzRXODRIa2FBM3FiRUt6dzdEM1JCQXdHRkxGc1FXdVA2aDRzNXVIalBYbkx0TmlWTXpzOU5veExHTWdta0hWZ0FBQUJna2FXN2VMa0ZPZmROSjU4c3F4aGxJUXhVVGlkU3RyWGc9In0%3D&ear%5Fjwk=eyJhbGciOiJFQ0RILUVTIiwiY3J2IjoiUC0zODQiLCJ4IjoiQUFBQU1JYndQVlJudXpodHRzM1dVSkhTblZhNXFSbFdsK29aWVN2dVFESEtSZ2FXNHdja1dKdkw4RUkwZ2dQYjUvUUd0dz09IiwieSI6IkFBQUFNSi80Vzg0SGthQTNxYkVLenc3RDNSQkF3R0ZMRnNRV3VQNmg0czV1SGpQWG5MdE5pVk16czlOb3hMR01nbWtIVmc9PSIsImt0eSI6IkVDIn0%3D&spa%5Fclient%5Fid=08e18876%2D6177%2D487e%2Db8b5%2Dcf950c1e598c&client%5Finfo=1&response%5Ftype=code%20id%5Ftoken%20spa%5Frt&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=0AEB6767A989FC9D1588E1B26F8D47BD446D46C2E4E0B51F%2DC4B598F9B2881BA2BF64511A34FF9D14607123B7C1AA096F1C4DC7B2B77E50D6&redirect%5Furi=https%3A%2F%2Ftjuv%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0wJjMyPUFBTDVYZ0FBQUJSSUpzM3pLRHRialRyR0ZNQ0VaQkdwdWFjTXVCbzY1eEJ2dHBCSG1OcjhUNTMxS1h3dWZjT3JnS3NiMVhKY1hXcGloTGF3aXRpJTJCZ0t6M21VZzVjSXJwS1RZT21oT0dKdDNlcTE5bHRxdFhPNzZ5YVI2SHlFN3ZQY3VCSTY2Y3Z5WWglMkZhTmx2T2g5SkJpMDlFNDIxWUI5U1dsUExmbXlaT1A1VXlyOHF3VHQlMkZZN0s3Mjhoc1ZHYzkxckVlbk9kQ3NjWEFPZVY2Y0VkNTR3ZnVGQXhuVHdwTDJma1BvcGNiTnlkMyUyRkRpaTNXczYlMkJwWndmb2NpamRwWjRiRXdXSFJSQVYxdVVKVjlxeWZhWjF0Z0pVbjlJSWY5UWMyUGlEaHdEamlqNTB5WHZqYUtuTXFqUENKOTl1YldFJTJGQVlqJTJGUDEyWTRyeEdGOFpBdGVmM2VBZnN1SGZXYjFLJTJCOTRVNGRzZno1bDhCNFJqRSUyRno0MDRMVmdKRzRLMVFnJTNEJTNE&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=d62a4ba2%2D20b8%2D0001%2D23ba%2Dc88e05fd3bb2"
   },
   "http://atlasgeneticsoncology.org/": {
    "where": "tools / Genetics and molecular biology: Atlas of Genetics and Cytogenetics in Oncology and Haematology",
@@ -2270,10 +2271,11 @@
   },
   "http://www.tumorportal.org/": {
    "where": "tools / Genetics and molecular biology: Tumor Portal",
-   "status": "blocked",
-   "code": 429,
+   "status": "ok",
+   "code": 200,
    "fails": 0,
-   "broken": false
+   "broken": false,
+   "final": "https://www.tumorportal.org:443/"
   },
   "https://dailymed.nlm.nih.gov/dailymed/": {
    "where": "tools / Drugs and protocols: DailyMed",
@@ -2476,14 +2478,14 @@
   "https://pubmed.ncbi.nlm.nih.gov/17544079/": {
    "where": "calc / Thrombosis and TTP: Rogers score",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
   "https://pubmed.ncbi.nlm.nih.gov/21436241/": {
    "where": "calc / Thrombosis and TTP: IMPACT-ILL",
    "status": "ok",
-   "code": 203,
+   "code": 200,
    "fails": 0,
    "broken": false
   },
@@ -2507,7 +2509,7 @@
    "code": 200,
    "fails": 0,
    "broken": false,
-   "final": "https://validate.perfdrive.com/?ssa=bcd6ff24-293c-4fdb-9b81-af4613a07036&ssb=55429261192&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=0fddd604-cofn-4df6-b891-e6cf04bd399f&ssk=botmanager_support@radware.com&ssm=56624128307843390106859752532190&ssn=c5268c7da792d7013b66be613dc4bc0875c76caf1b53-5b81-4f06-aa7f79&sso=bee545c2-e92487ccc53677e3d106888b7815545a026e0d9e3fc33930&ssp=53088854811793229941179322670263931&ssq=84420643119431007434531194139951872551148&ssr=NjguMjIwLjYxLjUy&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA2Y2FmMWI1My01YjgxLTRmMDYtYTVjMi1lOTI0ODdjY2M1MzYxLTE3OTMyMzExOTQ5NjgwLTAwNThmMDYwNTNmNTU1OWRlYjgxMCIsInJkIjoiYXBocC5mciIsInV6bXgiOiI3ZmMwMDA4YTMxOWI1MC05ZGY2LTRiODItODMxMC00MWUzZjliZWMyZmIxLTE3OTMyMzExOTQ5NjgwLTAwYjg3MzQzNzc2NDNlYzE4NTUxMCJ9"
+   "final": "https://validate.perfdrive.com/?ssa=292f5179-1566-4689-a32f-9f900398f468&ssb=44097299757&ssc=http%3A%2F%2Fsaintantoine.aphp.fr%2Fscore%2F&ssi=b74f84d9-cofn-4fe6-a709-9c8a7f377c1f&ssk=botmanager_support@radware.com&ssm=23702531327269453104225025043431&ssn=9adee6c3531ebe963e7d85e925380ce8dcbea5ebbb1c-c185-424f-999fe5&sso=554520f5-d44fe0f87bbf6f217bd85ddec98a55d75b584e501f485d04&ssp=87106810951793678787179366552361293&ssq=80210969414557318664294145744193410461917&ssr=MTcyLjE3Mi4yMDUuMjE2&sst=Mozilla/5.0%20(Macintosh;%20Intel%20Mac%20OS%20X%2014_0)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJyZCI6ImFwaHAuZnIiLCJ1em14IjoiN2ZjMDAwZTRmNmVhOGUtODdmNC00NjViLTliYTMtYzk1Y2I2OTY3Mzc5MS0xNzkzNjk0MTQ1NjQ3MC0wMGM5MTVmMGYwODk3OThlY2E1MTAiLCJfX3V6bWYiOiI3ZjkwMDBhNWViYmIxYy1jMTg1LTQyNGYtOTBmNS1kNDRmZTBmODdiYmYxLTE3OTM2OTQxNDU2NDcwLTAwNWFlZWViMDUzYzVlY2ZlZDMxMCJ9"
   },
   "https://www.andresferber.org/uploads/5/6/7/1/56718329/204_hlh_diagnostic_criteria.png": {
    "where": "calc / HLH: HLH-2004 diagnostic criteria",
@@ -2706,8 +2708,8 @@
    "where": "patient education / Treatment and side effects: Find a clinical trial (NCI) (Español)",
    "status": "fail",
    "code": 404,
-   "fails": 1,
-   "broken": false
+   "fails": 2,
+   "broken": true
   },
   "https://clotconnect.org/patient-resources/": {
    "where": "patient education / Blood clots and non-cancer blood conditions: Clot Connect (UNC)",
@@ -2728,7 +2730,8 @@
    "status": "ok",
    "code": 200,
    "fails": 0,
-   "broken": false
+   "broken": false,
+   "final": "https://www.hematology.org/resources/patients"
   },
   "https://www.nhlbi.nih.gov/health": {
    "where": "patient education / Blood clots and non-cancer blood conditions: NHLBI blood diseases",
