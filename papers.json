@@ -1,5 +1,5 @@
 {
- "built": "2026-11-03 11:29 UTC",
+ "built": "2026-11-04 11:35 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42788692"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "leuk",
@@ -379,7 +379,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03184-x",
      "j": "Leukemia",
      "d": "2026-11-03",
-     "a": ""
+     "a": "Gross SD et al.",
+     "p": "42977784"
     },
     {
      "t": "STAG2 mutation predicts superior posttransplant survival in acute myeloid leukemia treated with low-intensity induction",
@@ -530,7 +531,7 @@
      "p": "42869960"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "nhl",
@@ -545,6 +546,14 @@
      "t": "Hematotoxicity: the hidden legacy of CAR T cell therapy",
      "u": "https://www.nature.com/articles/s41588-026-02805-6",
      "j": "Nat Genet",
+     "d": "2026-11-03",
+     "a": "",
+     "p": "42977824"
+    },
+    {
+     "t": "CAPA induction followed by sequential radiotherapy for newly diagnosed stage I/II extranodal NK/T-cell lymphoma: a multicentre, single-arm, phase 2 trial",
+     "u": "https://www.nature.com/articles/s41408-026-01623-7",
+     "j": "Blood Cancer J",
      "d": "2026-11-03",
      "a": ""
     },
@@ -684,16 +693,9 @@
      "d": "2026-09-15",
      "a": "Kendler J et al.",
      "p": "42881166"
-    },
-    {
-     "t": "Safety and efficacy of birelentinib, a novel LYN/BTK dual inhibitor, in relapsed/refractory diffuse large B-cell lymphoma: a phase 2 study (TAI-SHAN9)",
-     "u": "https://www.nature.com/articles/s41408-026-01617-5",
-     "j": "Blood Cancer J",
-     "d": "2026-09-08",
-     "a": ""
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "hl",
@@ -857,7 +859,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "mm",
@@ -1006,16 +1008,9 @@
      "j": "Blood Cancer J",
      "d": "2026-10-01",
      "a": ""
-    },
-    {
-     "t": "IRF1-mediated thioredoxin (TXN) protects multiple myeloma cells from ferroptosis through remodeling of PUFA-containing phospholipids",
-     "u": "https://www.nature.com/articles/s41419-026-09291-y",
-     "j": "Cell Death Dis",
-     "d": "2026-09-26",
-     "a": ""
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "mpn",
@@ -1031,7 +1026,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03175-y",
      "j": "Leukemia",
      "d": "2026-11-03",
-     "a": ""
+     "a": "Witalisz-Siepracka A et al.",
+     "p": "42977786"
     },
     {
      "t": "Marrow hypercellularity is common and clinically neutral in essential thrombocythemia",
@@ -1186,7 +1182,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "mds",
@@ -1347,7 +1343,7 @@
      "p": "42380663"
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "ba",
@@ -1539,7 +1535,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "aacr",
@@ -1550,6 +1546,24 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "KRAS Inhibitor Resistance Confers a Targetable Vulnerability to Ferroptosis in Pancreatic Ductal Adenocarcinoma",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1490",
+     "p": "42975513",
+     "j": "Cancer Res",
+     "d": "2026-11-03",
+     "a": "Huo S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Co-targeting PARP and SHP2 Overcomes Resistance to Apoptosis and Induces Durable Responses in Breast Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-25-0799",
+     "p": "42975120",
+     "j": "Cancer Res",
+     "d": "2026-11-03",
+     "a": "Luna A et al.",
+     "ty": ""
+    },
     {
      "t": "Remembering Stiffness: HCC Maintains Malignancy through Heritable Hyperacetylation Driven by Mechanically Mediated Acetyl-CoA Levels",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-3004",
@@ -1711,27 +1725,9 @@
      "d": "2026-10-13",
      "a": "Duan G et al.",
      "ty": ""
-    },
-    {
-     "t": "KAT5 is Dual-Function Therapeutic Target with Direct Antitumor and Immunomodulatory Activity in Endometrial Cancer",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0507",
-     "p": "42868002",
-     "j": "Cancer Res",
-     "d": "2026-10-13",
-     "a": "Lian J et al.",
-     "ty": ""
-    },
-    {
-     "t": "A syngeneic murine glioma model recapitulates key molecular, immunologic, and functional features of human glioblastoma to enable therapeutic development",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5766",
-     "p": "42867366",
-     "j": "Cancer Res",
-     "d": "2026-10-13",
-     "a": "Grausam KB et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   },
   {
    "key": "jco",
@@ -1742,6 +1738,24 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "When Practice Outpaces Evidence: Comparative Evidence for Stereotactic Ablative Radiotherapy Versus Surgical Resection for Stage I Non‑Small Cell Lung Cancer",
+     "u": "https://doi.org/10.1200/JCO-26-01859",
+     "p": "42976310",
+     "j": "J Clin Oncol",
+     "d": "2026-11-03",
+     "a": "Stiles BM",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Feasibility and Tolerability of Chemoimmunotherapy Given During Induction for Treatment of Patients With High-Risk Neuroblastoma: A Report From the Children's Oncology Group",
+     "u": "https://doi.org/10.1200/JCO-26-00810",
+     "p": "42976306",
+     "j": "J Clin Oncol",
+     "d": "2026-11-03",
+     "a": "Federico SM et al.",
+     "ty": ""
+    },
     {
      "t": "Stereotactic Ablative Radiotherapy Versus Surgical Resection for Early-Stage Non-Small Lung Cancer: An Emulated Target Trial",
      "u": "https://doi.org/10.1200/JCO-26-00399",
@@ -1903,27 +1917,9 @@
      "d": "2026-10-20",
      "a": "Li ZQ et al.",
      "ty": ""
-    },
-    {
-     "t": "Hypofractionated Versus Conventionally Fractionated Postmastectomy Radiotherapy With Internal Mammary Node Irradiation for High-Risk Breast Cancer (HypoMast-IMNI): A Randomized Phase III Trial",
-     "u": "https://doi.org/10.1200/JCO-25-02843",
-     "p": "42896129",
-     "j": "J Clin Oncol",
-     "d": "2026-10-19",
-     "a": "Wang X et al.",
-     "ty": ""
-    },
-    {
-     "t": "Time-of-Day Immunotherapy: Why the Field Still Needs Randomized Evidence",
-     "u": "https://doi.org/10.1200/JCO-26-01876",
-     "p": "42896127",
-     "j": "J Clin Oncol",
-     "d": "2026-10-19",
-     "a": "Subbiah V et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-03"
+   "updated": "2026-11-04"
   }
  ]
 }
