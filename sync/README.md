@@ -9,8 +9,10 @@ once, and nothing works without the secret sync key.
   Sync is off while `SYNC_URL` is empty (the default).
 - Each saved item has `m` (time last changed) and each removal is remembered in `hogSavedDel`. Per item the newest
   change wins, and a removal beats an item last changed before it. The widget and the Worker use the same rule.
-- A device syncs when the page opens, when you tap Sync now, a moment after each save or remove, and when you come back to the tab.
-- Device clocks should be roughly right (set automatically on phones and computers).
+- A device syncs when the page opens, when you tap Sync now, a moment after each save or remove (or right away if you close or leave the page first), when you come back to the tab or the device goes back online, and about every 45 seconds while the page is open and visible.
+- Changes are stamped with the device clock corrected by the Worker's clock (`now` in each reply), so a device with a wrong clock cannot overrule newer changes.
+- The Worker writes to storage only when something changed, so the frequent checks stay inside the free allowance.
+- Cloudflare KV can take up to about a minute to show a change in another location, so a change may need one more check (up to a couple of minutes) to appear everywhere.
 - The Worker stores one record, `owner`, in KV: titles, links and topic headings only. Removal marks older than 180 days are dropped.
 
 ## One-time setup (free Cloudflare account)

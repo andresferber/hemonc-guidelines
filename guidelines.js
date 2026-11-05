@@ -147,7 +147,7 @@
      downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
   var SK = "hogSaved", DK = "hogSavedDel", MK = "hogSavedMod", SAVED = {}, DELS = {}, saveWarn = false, firstSave = {};
   /* Owner-only sync: address of the sync Worker (see sync/README.md). Empty = sync is off and invisible. */
-  var SYNC_URL = "https://hog-sync.andresferber.workers.dev/", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast";
+  var SYNC_URL = "https://hog-sync.andresferber.workers.dev/", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast", SYNC_SKEWK = "hogSyncSkew", POLL_MS = 45000;
   var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
   var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
   function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
@@ -187,6 +187,8 @@
     return o;
   }
   function syncSaved() { if (saveWarn) return; var m = readStore(); if (m) { SAVED = m; DELS = readDels(); } }
+  /* time stamp for changes: this device's clock corrected by how far it differs from the sync server's clock */
+  function stamp() { return Date.now() + (+lsGet(SYNC_SKEWK) || 0); }
   function lsGet(k) { try { return localStorage.getItem(k) || ""; } catch (e) { return ""; } }
   function lsSet(k, v) { try { if (v === null) localStorage.removeItem(k); else localStorage.setItem(k, v); } catch (e) {} }
   function fmtWhen(ms) { try { return new Date(ms).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } }
@@ -223,7 +225,7 @@
     var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
     if (!id) return null;
     syncSaved();
-    if (SAVED[id]) { delete SAVED[id]; DELS[id] = Date.now(); now = false; } else { SAVED[id] = c[id]; SAVED[id].m = Date.now(); delete DELS[id]; now = true; }
+    if (SAVED[id]) { delete SAVED[id]; DELS[id] = stamp(); now = false; } else { SAVED[id] = c[id]; SAVED[id].m = stamp(); delete DELS[id]; now = true; }
     persistSaved(); savedChanged(); scheduleSync();
     return now;
   }
@@ -372,7 +374,7 @@
       var inc = cleanSaved(j.saved);
       syncSaved();
       Object.keys(inc).forEach(function (k) {
-        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); SAVED[k].m = Date.now(); delete DELS[k]; added++; }
+        if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); SAVED[k].m = stamp(); delete DELS[k]; added++; }
       });
       persistSaved(); savedChanged(); if (added) scheduleSync();
       toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
@@ -434,28 +436,31 @@
   function syncUi() {
     [].forEach.call(document.querySelectorAll(".sv-sync-st"), function (el) { el.textContent = syncStatus(); });
   }
-  var syncTimer;
+  var syncTimer, syncPending = false;
   function scheduleSync() {
     if (!SYNC_URL || !syncKey()) return;
-    clearTimeout(syncTimer);
+    clearTimeout(syncTimer); syncPending = true;
     syncTimer = setTimeout(function () { runSync(false); }, 1500);
   }
-  function runSync(manual) {
+  /* page is being hidden or closed: send a waiting change now instead of losing it */
+  function flushSync() { if (syncPending) { clearTimeout(syncTimer); runSync(false, true); } }
+  function runSync(manual, leaving) {
     var key = syncKey();
     if (!SYNC_URL || !key || typeof fetch !== "function") return;
     if (window.__hogSyncBusy) { window.__hogSyncAgain = true; return; }
-    window.__hogSyncBusy = true; window.__hogSyncAt = Date.now(); syncUi();
+    window.__hogSyncBusy = true; window.__hogSyncAt = Date.now(); syncPending = false; syncUi();
     syncSaved();
-    var body = JSON.stringify({ items: SAVED, dels: DELS });
-    fetch(SYNC_URL, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: body })
+    var body = JSON.stringify({ items: SAVED, dels: DELS }), t0 = Date.now();
+    fetch(SYNC_URL, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: body, keepalive: !!leaving && body.length < 60000 })
       .then(function (r) {
         if (r.status === 401) throw new Error("wrong sync key");
         if (!r.ok) throw new Error("the sync service had a problem");
         return r.json();
       })
       .then(function (j) {
+        if (j && +j.now) lsSet(SYNC_SKEWK, String(Math.round(+j.now - (t0 + Date.now()) / 2)));
         syncSaved();
-        var before = Object.keys(SAVED).length, changed = mergeRemote(j && j.items, j && j.dels);
+        var changed = mergeRemote(j && j.items, j && j.dels);
         if (changed) { persistSaved(); savedChanged(); }
         syncErr = ""; lsSet(SYNC_LASTK, String(Date.now()));
         if (manual) toast(changed ? "Synced. Your list was updated from your other devices." : "Synced. Everything is up to date.");
@@ -471,12 +476,16 @@
   }
   if (SYNC_URL) {
     if (/#hog-sync\b/.test(location.hash)) lsSet(SYNC_SHOWK, "1");
-    if (syncKey()) {
-      setTimeout(function () { runSync(false); }, 500);
-      document.addEventListener("visibilitychange", function () {
-        if (document.visibilityState === "visible" && Date.now() - (window.__hogSyncAt || 0) > 30000) runSync(false);
-      });
-    }
+    var due = function (ms) { return syncKey() && document.visibilityState === "visible" && Date.now() - (window.__hogSyncAt || 0) > ms; };
+    if (syncKey()) setTimeout(function () { runSync(false); }, 500);
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "hidden") flushSync();
+      else if (due(15000)) runSync(false);
+    });
+    window.addEventListener("pagehide", flushSync);
+    window.addEventListener("online", function () { if (syncKey()) runSync(false); });
+    /* while the page is open, look for changes from other devices now and then */
+    setInterval(function () { if (due(POLL_MS - 5000)) runSync(false); }, POLL_MS);
   }
 
   if (!document.getElementById("hog-saved-style")) {

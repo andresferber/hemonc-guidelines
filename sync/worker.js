@@ -74,7 +74,8 @@ export default {
       if (raw) { const s = JSON.parse(raw); stored = { items: cleanItems(s.items), dels: cleanDels(s.dels) }; }
     } catch (e) {}
     const out = merge(stored, { items: cleanItems(j.items), dels: cleanDels(j.dels) });
-    await env.SAVED_KV.put("owner", JSON.stringify({ items: out.items, dels: out.dels, at: Date.now() }));
-    return new Response(JSON.stringify(out), { status: 200, headers: Object.assign({ "Content-Type": "application/json" }, h) });
+    /* write only when something changed, so frequent checks do not use up the free write allowance */
+    if (JSON.stringify(out) !== JSON.stringify(stored)) await env.SAVED_KV.put("owner", JSON.stringify(out));
+    return new Response(JSON.stringify({ items: out.items, dels: out.dels, now: Date.now() }), { status: 200, headers: Object.assign({ "Content-Type": "application/json" }, h) });
   }
 };
