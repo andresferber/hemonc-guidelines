@@ -1,11 +1,11 @@
 /* Sync Worker for the Saved lists on andresferber.org (owner only).
    Cloudflare Worker with one KV namespace bound as SAVED_KV and one secret named SYNC_KEY.
-   POST with header "Authorization: Bearer <SYNC_KEY>" and body {items:{id:entry}, dels:{id:time}};
+   POST with header "Authorization: Bearer <SYNC_KEY>" and body {items, dels, read, heard, mdels};
    it merges that with what is stored (newest change per item wins, removals included), stores the result
    and returns it. Without the right key nothing is read or written. See sync/README.md for setup. */
 const SITE_ORIGINS = ["https://andresferber.org", "https://www.andresferber.org", "https://andresferber.github.io"];
 const ID = /^(papers|digest|guide):.{1,700}$/;
-const MAX_BODY = 1500000, MAX_ITEMS = 2000, MAX_DELS = 5000, KEEP_DELS_MS = 180 * 864e5;
+const MAX_BODY = 1500000, MAX_ITEMS = 2000, MAX_DELS = 5000, MAX_MARKS = 20000, KEEP_DELS_MS = 180 * 864e5, KEEP_MARKS_MS = 365 * 864e5;
 
 function cors(origin, env) {
   const ok = SITE_ORIGINS.concat(String(env.ALLOWED_ORIGINS || "").split(",").filter(Boolean));
@@ -41,6 +41,23 @@ function cleanDels(o) {
   Object.keys(o).slice(0, MAX_DELS).forEach((k) => { const v = +o[k]; if (ID.test(k) && v > 0) out[k] = v; });
   return out;
 }
+function cleanMarks(o) {
+  const out = {};
+  if (!o || typeof o !== "object" || Array.isArray(o)) return out;
+  Object.keys(o).slice(0, MAX_MARKS).forEach((k) => { const v = +o[k]; if (k.length < 800 && v > 0) out[k] = v; });
+  return out;
+}
+/* "opened" / "listened" marks: id -> time; an un-mark is a removal time under "r:id" / "h:id"; newest change wins */
+function mergeMarks(a, b) {
+  const mdels = {}, out = { read: {}, heard: {} }, cut = Date.now() - KEEP_MARKS_MS;
+  [a.mdels, b.mdels].forEach((d) => Object.keys(d).forEach((k) => { if (d[k] > (mdels[k] || 0)) mdels[k] = d[k]; }));
+  [["read", "r:"], ["heard", "h:"]].forEach((p) => {
+    [a[p[0]], b[p[0]]].forEach((m) => Object.keys(m).forEach((id) => { if (m[id] > (out[p[0]][id] || 0)) out[p[0]][id] = m[id]; }));
+    Object.keys(out[p[0]]).forEach((id) => { if ((mdels[p[1] + id] || 0) >= out[p[0]][id] || out[p[0]][id] < cut) delete out[p[0]][id]; });
+  });
+  Object.keys(mdels).forEach((k) => { if (mdels[k] < cut) delete mdels[k]; });
+  return { read: out.read, heard: out.heard, mdels };
+}
 /* newest change per item wins; a removal beats an item that was last changed at or before it */
 function merge(a, b) {
   const items = {}, dels = {};
@@ -68,14 +85,19 @@ export default {
     let j;
     try { j = JSON.parse(text); } catch (e) { return new Response("Bad request", { status: 400, headers: h }); }
     if (!j || typeof j !== "object") return new Response("Bad request", { status: 400, headers: h });
-    let stored = { items: {}, dels: {} };
+    let stored = { items: {}, dels: {}, read: {}, heard: {}, mdels: {} };
     try {
       const raw = await env.SAVED_KV.get("owner");
-      if (raw) { const s = JSON.parse(raw); stored = { items: cleanItems(s.items), dels: cleanDels(s.dels) }; }
+      if (raw) {
+        const s = JSON.parse(raw);
+        stored = { items: cleanItems(s.items), dels: cleanDels(s.dels), read: cleanMarks(s.read), heard: cleanMarks(s.heard), mdels: cleanMarks(s.mdels) };
+      }
     } catch (e) {}
-    const out = merge(stored, { items: cleanItems(j.items), dels: cleanDels(j.dels) });
+    const a = merge(stored, { items: cleanItems(j.items), dels: cleanDels(j.dels) });
+    const mk = mergeMarks(stored, { read: cleanMarks(j.read), heard: cleanMarks(j.heard), mdels: cleanMarks(j.mdels) });
+    const out = { items: a.items, dels: a.dels, read: mk.read, heard: mk.heard, mdels: mk.mdels };
     /* write only when something changed, so frequent checks do not use up the free write allowance */
     if (JSON.stringify(out) !== JSON.stringify(stored)) await env.SAVED_KV.put("owner", JSON.stringify(out));
-    return new Response(JSON.stringify({ items: out.items, dels: out.dels, now: Date.now() }), { status: 200, headers: Object.assign({ "Content-Type": "application/json" }, h) });
+    return new Response(JSON.stringify(Object.assign({ now: Date.now() }, out)), { status: 200, headers: Object.assign({ "Content-Type": "application/json" }, h) });
   }
 };

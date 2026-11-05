@@ -178,9 +178,10 @@
   function setRead(id, on) {
     if (!id) return;
     var m = readMap(), now = Date.now();
-    if (on) m[id] = now; else delete m[id];
+    if (on) m[id] = stamp(); else delete m[id];
     for (var k in m) if (now - m[k] > 365 * 864e5) delete m[k];          // forget after a year
     try { localStorage.setItem(RK, JSON.stringify(m)); } catch (e) {}
+    markTomb("r:", id, on);
     applyRead();
   }
   /* "listened" marks: same privacy as "opened" (this browser only), set when a paper has been read aloud to the end */
@@ -190,9 +191,10 @@
   function setHeard(id, on) {
     if (!id) return;
     var m = heardMap(), now = Date.now();
-    if (on) m[id] = now; else delete m[id];
+    if (on) m[id] = stamp(); else delete m[id];
     for (var k in m) if (now - m[k] > 365 * 864e5) delete m[k];
     try { localStorage.setItem(HK, JSON.stringify(m)); } catch (e) {}
+    markTomb("h:", id, on);
     applyRead();
   }
   function applyRead() {
@@ -223,7 +225,7 @@
      downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
   var SK = "hogSaved", DK = "hogSavedDel", MK = "hogSavedMod", SAVED = {}, DELS = {}, saveWarn = false, firstSave = {};
   /* Owner-only sync: address of the sync Worker (see sync/README.md). Empty = sync is off and invisible. */
-  var SYNC_URL = "https://hog-sync.andresferber.workers.dev/", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast", SYNC_SKEWK = "hogSyncSkew", POLL_MS = 45000;
+  var SYNC_URL = "https://hog-sync.andresferber.workers.dev/", SYNC_KEYK = "hogSyncKey", SYNC_SHOWK = "hogSyncShow", SYNC_LASTK = "hogSyncLast", SYNC_SKEWK = "hogSyncSkew", POLL_MS = 45000, RK_ = "hogRead", HK_ = "hogHeard";
   var STORE_WARN = "Saved for this visit only: this browser is blocking storage on this device.";
   var SECTIONS = [["papers", "Recent papers"], ["digest", "Weekly digest"], ["guide", "Guidelines"]];
   function entryId(c) { return c.s + ":" + (c.s === "guide" ? c.k : (c.paper && c.paper.p ? "pm" + c.paper.p : "u" + c.u)); }
@@ -509,6 +511,32 @@
     Object.keys(DELS).forEach(function (k) { if (DELS[k] < cut) delete DELS[k]; });
     return changed;
   }
+  /* ---------- "opened" and "listened" marks travel with sync too ----------
+     hogRead / hogHeard map an id to the time it was marked; un-marking leaves a removal time in hogMarkDel ("r:id" / "h:id").
+     Same rule as saved items: per id the newest change wins. The marks code of each section calls markTomb() after a change. */
+  var MD = "hogMarkDel";
+  function cleanMarkMap(o) {
+    var r = {};
+    if (o && typeof o === "object" && !Array.isArray(o)) Object.keys(o).slice(0, 20000).forEach(function (k) { var v = +o[k]; if (v > 0 && k.length < 800) r[k] = v; });
+    return r;
+  }
+  function lsMap(k) { try { return cleanMarkMap(JSON.parse(localStorage.getItem(k) || "{}")); } catch (e) { return {}; } }
+  function putMap(k, o) { try { localStorage.setItem(k, JSON.stringify(o)); } catch (e) {} }
+  function markTomb(p, id, on) { var md = lsMap(MD); if (on) delete md[p + id]; else md[p + id] = stamp(); putMap(MD, md); scheduleSync(); }
+  function marksPayload() { return { read: lsMap(RK_), heard: lsMap(HK_), mdels: lsMap(MD) }; }
+  function mergeMarks(j) {
+    var inc = j && typeof j === "object" ? j : {}, changed = false, cut = Date.now() - 365 * 864e5, md = lsMap(MD), rmd = cleanMarkMap(inc.mdels);
+    Object.keys(rmd).forEach(function (k) { if (rmd[k] > (md[k] || 0)) { md[k] = rmd[k]; changed = true; } });
+    [[RK_, "r:", inc.read], [HK_, "h:", inc.heard]].forEach(function (p) {
+      var loc = lsMap(p[0]), rem = cleanMarkMap(p[2]), before = JSON.stringify(loc);
+      Object.keys(rem).forEach(function (id) { if (rem[id] > (loc[id] || 0)) loc[id] = rem[id]; });
+      Object.keys(loc).forEach(function (id) { if ((md[p[1] + id] || 0) >= loc[id] || loc[id] < cut) delete loc[id]; });
+      if (JSON.stringify(loc) !== before) { putMap(p[0], loc); changed = true; }
+    });
+    Object.keys(md).forEach(function (k) { if (md[k] < cut) delete md[k]; });
+    putMap(MD, md);
+    return changed;
+  }
   function syncUi() {
     [].forEach.call(document.querySelectorAll(".sv-sync-st"), function (el) { el.textContent = syncStatus(); });
   }
@@ -526,7 +554,7 @@
     if (window.__hogSyncBusy) { window.__hogSyncAgain = true; return; }
     window.__hogSyncBusy = true; window.__hogSyncAt = Date.now(); syncPending = false; syncUi();
     syncSaved();
-    var body = JSON.stringify({ items: SAVED, dels: DELS }), t0 = Date.now();
+    var pl = marksPayload(), body = JSON.stringify({ items: SAVED, dels: DELS, read: pl.read, heard: pl.heard, mdels: pl.mdels }), t0 = Date.now();
     fetch(SYNC_URL, { method: "POST", headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" }, body: body, keepalive: !!leaving && body.length < 60000 })
       .then(function (r) {
         if (r.status === 401) throw new Error("wrong sync key");
@@ -536,8 +564,10 @@
       .then(function (j) {
         if (j && +j.now) lsSet(SYNC_SKEWK, String(Math.round(+j.now - (t0 + Date.now()) / 2)));
         syncSaved();
-        var changed = mergeRemote(j && j.items, j && j.dels);
+        var changed = mergeRemote(j && j.items, j && j.dels), mch = mergeMarks(j);
         if (changed) { persistSaved(); savedChanged(); }
+        if (mch) window.dispatchEvent(new Event("hog-marks"));
+        changed = changed || mch;
         syncErr = ""; lsSet(SYNC_LASTK, String(Date.now()));
         if (manual) toast(changed ? "Synced. Your list was updated from your other devices." : "Synced. Everything is up to date.");
       })
