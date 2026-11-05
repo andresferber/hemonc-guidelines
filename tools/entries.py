@@ -58,6 +58,7 @@ dict(k="ash-all-rr-2026", c="lym", s="ALL", n="ASH 2026 guidelines: relapsed/ref
 dict(k="esmo-all-2024", c="lym", s="ALL", n="ESMO interim update: targeted therapy in ALL", o="ESMO", p="37832649", x="Updates the 2016 ESMO ALL guideline for newer targeted agents."),
 dict(k="cart-all-2026", c="lym", s="ALL", n="Consensus recommendations for CAR T-cell administration in adult ALL", o="Expert panel (Delphi)", p="42154904", x="Patient selection, bridging and post-CAR-T management in adult ALL."),
 dict(k="asp-2025", c="lym", s="ALL", n="Adverse events of asparaginase in adult ALL: expert consensus", o="Expert panel", p="40109190", x="Recognition, prevention and management of asparaginase toxicity."),
+dict(k="sitc-al-2026", c="lym", s="ALL", n="SITC clinical practice guideline: immunotherapy for acute leukemia (version 2.0)", o="SITC", p="42767771", x="T-cell engagers, antibody-drug conjugates and CAR-T in ALL and AML."),
 dict(k="eha-cll-2026", c="lym", s="CLL", n="EHA guidelines: CLL and Richter transformation", o="EHA", p="42293463", x="Current European CLL guideline, including Richter transformation."),
 dict(k="bsh-cll-2025", c="lym", s="CLL", n="BSH 2025 guideline: treatment of CLL", o="BSH", p="41069109", x="UK treatment guideline."),
 dict(k="eric-tp53-2024", c="lym", s="CLL", n="ERIC 2024 recommendations: TP53 mutation analysis in CLL", o="ERIC", p="38755420", x="How to test and report TP53 status."),
@@ -133,6 +134,7 @@ dict(k="astct-agvhd-2026", c="ct", s="GVHD and survivorship", n="ASTCT evidence-
 dict(k="ebmt-gvhd-2024", c="ct", s="GVHD and survivorship", n="EBMT updated recommendations: prophylaxis and management of GVHD", o="EBMT", p="38184001", x="European GVHD prophylaxis and treatment."),
 dict(k="tatma-2025", c="ct", s="GVHD and survivorship", n="ASTCT/CIBMTR/EBMT/APBMT: response criteria for transplant-associated TMA", o="ASTCT / CIBMTR / EBMT / APBMT", p="40514012", x="Defining response in TA-TMA."),
 dict(k="survivor-2023", c="ct", s="GVHD and survivorship", n="International screening recommendations for long-term transplant and cellular therapy survivors (2023)", o="CIBMTR / EBMT / ASTCT and others", p="38413247", x="Late-effects screening and prevention."),
+dict(k="ebmt-pall-2026", c="ct", s="GVHD and survivorship", n="EBMT recommendations: palliative and supportive care in transplant and cellular therapy", o="EBMT", p="42934286", x="Integrating palliative and supportive care across the HCT and CAR-T course."),
 
 # ---------- thrombosis ----------
 dict(k="asco-vte-2023", c="thr", s="Cancer-associated VTE", n="ASCO 2023 guideline update: VTE prophylaxis and treatment in cancer", o="ASCO", p="37075273", x="Prophylaxis in ambulatory and surgical patients and treatment of VTE."),
@@ -169,6 +171,7 @@ dict(k="hfa-prev-2025", c="card", n="HFA/ESC consensus: prevention of cancer the
 dict(k="hfa-immuno-2024", c="card", n="HFA/ESC scientific statement: cardiovascular toxicities of immune therapies", o="HFA (ESC)", p="39087551", x="Includes CAR-T and bispecific antibodies."),
 dict(k="asco-card-2017", c="card", n="ASCO guideline: cardiac dysfunction in survivors of adult cancers", o="ASCO", p="27918725", x="Prevention and monitoring in survivors."),
 dict(k="aha-chip-2026", c="card", n="AHA scientific statement: clonal hematopoiesis and cardiovascular disease", o="AHA", p="41664921", x="CHIP as a cardiovascular risk factor."),
+dict(k="scmr-co-2026", c="card", n="SCMR expert consensus: cardiovascular MRI in cardio-oncology", o="SCMR (endorsed by IC-OS)", p="42906855", x="When and how to use cardiac MRI in patients with cancer, including after radiotherapy and transplant."),
 
 # ---------- imaging ----------
 dict(k="lugano-img", c="img", n="Lugano classification: PET/CT staging and response in lymphoma", o="International panel", p="25113753", x="Same reference as in the criteria section; the imaging standard for lymphoma.", dup=True),
@@ -181,6 +184,7 @@ dict(k="rt-target-2024", c="img", n="NCTN consensus: radiation target nomenclatu
 # ---------- supportive ----------
 dict(k="aabb-rbc-2023", c="sup", s="Transfusion", n="AABB 2023 international guidelines: red blood cell transfusion", o="AABB", p="37824153", x="Restrictive thresholds, including hematology-oncology patients."),
 dict(k="aabb-plt-2025", c="sup", s="Transfusion", n="AABB/ICTMG 2025 international guidelines: platelet transfusion", o="AABB / ICTMG", p="40440268", x="Prophylactic thresholds and procedures."),
+dict(k="ason-anemia-2026", c="sup", s="Transfusion", n="American Society of Onconephrology: anemia in patients with cancer and chronic kidney disease", o="ASON", p="42933492", x="Diagnosis and management with iron, erythropoiesis-stimulating agents and transfusion when cancer and CKD coexist."),
 dict(k="asco-gf-2026", c="sup", s="Growth factors and antiemetics", n="ASCO 2026 guideline update: WBC growth factors", o="ASCO", p="41740078", x="Primary and secondary prophylaxis with G-CSF.", prev="asco-gf-2015"),
 dict(k="asco-emesis-2020", c="sup", s="Growth factors and antiemetics", n="ASCO guideline update: antiemetics", o="ASCO", p="32658626", x="Prevention of chemotherapy-induced nausea and vomiting."),
 dict(k="tls-2023", c="sup", s="Tumor lysis", n="US expert consensus: prophylaxis and management of tumor lysis syndrome", o="Expert panel (Delphi)", p="37579533", x="Risk-based TLS prevention and treatment."),

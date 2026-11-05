@@ -1,5 +1,5 @@
 {
- "built": "2026-10-25",
+ "built": "2026-11-05",
  "dismissed": [],
  "categories": [
   {
@@ -415,8 +415,7 @@
    "doi": "10.1016/j.annonc.2025.07.014",
    "pmc": "",
    "au": "Eyre TA",
-   "free": "repo",
-   "repo": "https://pure.amsterdamumc.nl/en/publications/eee16631-2222-4428-85e7-325fcbca4550"
+   "free": "publisher"
   },
   {
    "k": "ash-all-aya-2026",
@@ -501,6 +500,23 @@
    "doi": "10.3324/haematol.2024.286744",
    "pmc": "PMC12666278",
    "au": "Curran E",
+   "free": "pmc"
+  },
+  {
+   "k": "sitc-al-2026",
+   "c": "lym",
+   "s": "ALL",
+   "n": "SITC clinical practice guideline: immunotherapy for acute leukemia (version 2.0)",
+   "o": "SITC",
+   "p": "42767771",
+   "x": "T-cell engagers, antibody-drug conjugates and CAR-T in ALL and AML.",
+   "t": "Society for Immunotherapy of Cancer (SITC) clinical practice guideline on immunotherapy for the treatment of acute leukemia, version 2.0",
+   "j": "J Immunother Cancer",
+   "d": "2026-09",
+   "cite": "J Immunother Cancer 2026;14(9)",
+   "doi": "10.1136/jitc-2026-015963",
+   "pmc": "PMC13599912",
+   "au": "Shah NN",
    "free": "pmc"
   },
   {
@@ -703,9 +719,7 @@
    "cite": "Lancet Haematol 2025;12(2):e138-e150",
    "doi": "10.1016/S2352-3026(24)00351-X",
    "pmc": "",
-   "au": "Ribrag V",
-   "free": "repo",
-   "repo": "https://pure.amsterdamumc.nl/files/142738372/Diagnosis-and-treatment-of-burkitt-lymphoma-in-adults.pdf"
+   "au": "Ribrag V"
   },
   {
    "k": "hiv-lym-2024",
@@ -857,7 +871,8 @@
    "cite": "JCO Oncol Pract 2026;22(9):1468-1489",
    "doi": "10.1200/OP-26-00311",
    "pmc": "",
-   "au": "Lockwood CM"
+   "au": "Lockwood CM",
+   "free": "publisher"
   },
   {
    "k": "asco-mm-living",
@@ -1680,6 +1695,23 @@
    "free": "pmc"
   },
   {
+   "k": "ebmt-pall-2026",
+   "c": "ct",
+   "s": "GVHD and survivorship",
+   "n": "EBMT recommendations: palliative and supportive care in transplant and cellular therapy",
+   "o": "EBMT",
+   "p": "42934286",
+   "x": "Integrating palliative and supportive care across the HCT and CAR-T course.",
+   "t": "The role of palliative and supportive care in haematopoietic cell transplantation and cellular therapy. Recommendations from the EBMT practice harmonisation and guidelines committee",
+   "j": "Bone Marrow Transplant",
+   "d": "2026-10",
+   "cite": "Bone Marrow Transplant 2026",
+   "doi": "10.1038/s41409-026-03061-2",
+   "pmc": "",
+   "au": "Kenyon M",
+   "free": "publisher"
+  },
+  {
    "k": "asco-vte-2023",
    "c": "thr",
    "s": "Cancer-associated VTE",
@@ -2176,6 +2208,22 @@
    "au": "Rhee JW"
   },
   {
+   "k": "scmr-co-2026",
+   "c": "card",
+   "n": "SCMR expert consensus: cardiovascular MRI in cardio-oncology",
+   "o": "SCMR (endorsed by IC-OS)",
+   "p": "42906855",
+   "x": "When and how to use cardiac MRI in patients with cancer, including after radiotherapy and transplant.",
+   "t": "Cardiovascular Magnetic Resonance Imaging in Cardio-Oncology: An Expert Consensus Statement from the Society for Cardiovascular Magnetic Resonance. Endorsed by the International Cardio-Oncology Society (ICOS)",
+   "j": "J Cardiovasc Magn Reson",
+   "d": "2026-10",
+   "cite": "J Cardiovasc Magn Reson 2026;:102818",
+   "doi": "10.1016/j.jocmr.2026.102818",
+   "pmc": "",
+   "au": "Baldassarre LA",
+   "free": "publisher"
+  },
+  {
    "k": "lugano-img",
    "c": "img",
    "n": "Lugano classification: PET/CT staging and response in lymphoma",
@@ -2307,6 +2355,22 @@
    "au": "Metcalf RA"
   },
   {
+   "k": "ason-anemia-2026",
+   "c": "sup",
+   "s": "Transfusion",
+   "n": "American Society of Onconephrology: anemia in patients with cancer and chronic kidney disease",
+   "o": "ASON",
+   "p": "42933492",
+   "x": "Diagnosis and management with iron, erythropoiesis-stimulating agents and transfusion when cancer and CKD coexist.",
+   "t": "Recommendations for the management of anemia in patients with cancer and chronic kidney disease: a position statement from the American Society of Onconephrology",
+   "j": "Kidney Int",
+   "d": "2026-09",
+   "cite": "Kidney Int 2026",
+   "doi": "10.1016/j.kint.2026.09.007",
+   "pmc": "",
+   "au": "Costa E Silva VT"
+  },
+  {
    "k": "asco-gf-2026",
    "c": "sup",
    "s": "Growth factors and antiemetics",
@@ -2434,9 +2498,9 @@
    "d": "2026-10",
    "cite": "Blood Adv 2026;10(20):7076-7097",
    "doi": "10.1182/bloodadvances.2026021269",
-   "pmc": "",
+   "pmc": "PMC13696133",
    "au": "Cuker A",
-   "free": "publisher"
+   "free": "pmc"
   },
   {
    "k": "itp-bleed-2026",
@@ -2495,8 +2559,8 @@
    "x": "Ferritin thresholds and diagnostic testing.",
    "t": "American Society of Hematology 2026 guidelines for diagnosis of iron deficiency",
    "j": "Blood Adv",
-   "d": "2026-08",
-   "cite": "Blood Adv 2026",
+   "d": "2026-11",
+   "cite": "Blood Adv 2026;10(21):7353-7374",
    "doi": "10.1182/bloodadvances.2025015950",
    "pmc": "",
    "au": "Powers JM",

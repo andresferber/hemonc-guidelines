@@ -242,7 +242,7 @@
     {
      "n": "Find a clinical trial (NCI)",
      "u": "https://www.cancer.gov/research/participate/clinical-trials-search",
-     "u_es": "https://www.cancer.gov/espanol/investigacion/participe/buscar",
+     "u_es": "https://www.cancer.gov/espanol/investigacion/participe",
      "en": "Search open trials, or call the number above for help.",
      "es": "Busque estudios abiertos, o llame al número de arriba.",
      "tags": [
