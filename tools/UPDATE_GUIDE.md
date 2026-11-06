@@ -33,7 +33,7 @@ care, fertility and pregnancy, benign hematology relevant to cancer care).
      `prev="<old key>"` on the new one. After about 12 months, remove the old entry.
    - Keep each category focused: when a category exceeds ~25 entries, retire older items
      that are fully superseded. Andres chose (2026-11-06) to keep all Lymphoid entries even
-     above ~25 (28 at that date): do not trim a category only for its size, and do not ask again.
+     above ~25 (28 at that date): do not trim Lymphoid for size, and do not ask again.
 4. Verify every new PMID: title, journal, first author and that it is the guideline itself
    (not a commentary, summary or erratum). Read the abstract before writing the note.
 5. Add any skipped PubMed IDs that the live feed keeps showing (e.g. pediatric, regional,
