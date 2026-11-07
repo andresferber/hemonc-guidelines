@@ -1,5 +1,5 @@
 {
- "built": "2026-11-06 11:29 UTC",
+ "built": "2026-11-07 11:16 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42874107"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "leuk",
@@ -379,14 +379,16 @@
      "u": "https://www.nature.com/articles/s41375-026-03179-8",
      "j": "Leukemia",
      "d": "2026-11-05",
-     "a": ""
+     "a": "Granberg RE et al.",
+     "p": "42988841"
     },
     {
      "t": "Transcriptional alterations in SKAP1-associated inside-out signaling in CNS-infiltrated pediatric T-cell acute lymphoblastic leukemia",
      "u": "https://www.nature.com/articles/s41420-026-03452-w",
      "j": "Cell Death Discov",
      "d": "2026-11-05",
-     "a": ""
+     "a": "Enlund S et al.",
+     "p": "42988822"
     },
     {
      "t": "Relcobatinib, a highly selective ATP-competitive ABL1 tyrosine kinase inhibitor for the treatment of chronic myeloid leukemia",
@@ -522,7 +524,7 @@
      "p": "42888202"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "nhl",
@@ -533,6 +535,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Proton pump inhibitors and outcome after axicabtagene ciloleucel for the treatment of non-Hodgkin B-cell lymphoma, a retrospective study with the DESCAR-T registry",
+     "u": "https://www.nature.com/articles/s41409-026-03076-9",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-06",
+     "a": ""
+    },
     {
      "t": "Acquired resistance to vorinostat in cutaneous T cell lymphoma involves augmented ERK phosphorylation",
      "u": "https://www.nature.com/articles/s42003-026-11237-1",
@@ -676,16 +685,9 @@
      "j": "Blood Cancer J",
      "d": "2026-09-23",
      "a": ""
-    },
-    {
-     "t": "Long-term survival and cause-specific mortality after event-free survival at 24 months (EFS24) in mantle cell lymphoma: an international multicohort study",
-     "u": "https://www.nature.com/articles/s41408-026-01625-5",
-     "j": "Blood Cancer J",
-     "d": "2026-09-22",
-     "a": ""
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "hl",
@@ -849,7 +851,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "mm",
@@ -1000,7 +1002,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "mpn",
@@ -1172,7 +1174,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "mds",
@@ -1188,7 +1190,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03186-9",
      "j": "Leukemia",
      "d": "2026-11-05",
-     "a": ""
+     "a": "Obwar SG et al.",
+     "p": "42988842"
     },
     {
      "t": "Biopsy-free score for screening myelodysplastic syndrome and related diseases in cytopenic patients",
@@ -1332,7 +1335,7 @@
      "p": "42431867"
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "ba",
@@ -1524,7 +1527,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "aacr",
@@ -1535,6 +1538,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Regulatory T Cell Interventions to Boost Anti-tumor Immune Responses",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0789",
+     "p": "42993877",
+     "j": "Cancer Res",
+     "d": "2026-11-06",
+     "a": "Zhang Y et al.",
+     "ty": ""
+    },
     {
      "t": "Selection for Targeted Therapy Resistance Indirectly Selects for Cancer Cells with Enhanced Phenotypic Plasticity and Evolvability to Orthogonal Stressors",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-1247",
@@ -1705,18 +1717,9 @@
      "d": "2026-10-19",
      "a": "Simó C et al.",
      "ty": ""
-    },
-    {
-     "t": "Antiviral T cells doing double-duty to fight cancer",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4373",
-     "p": "42879662",
-     "j": "Cancer Res",
-     "d": "2026-10-15",
-     "a": "Hirsh NH et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   },
   {
    "key": "jco",
@@ -1727,6 +1730,24 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Image-Based Consensus Molecular Subtyping Refines Prognostication in Stage II/III Colorectal Cancer: A Retrospective Analysis of the SCOT Trial",
+     "u": "https://doi.org/10.1200/JCO-25-02761",
+     "p": "42993920",
+     "j": "J Clin Oncol",
+     "d": "2026-11-06",
+     "a": "Lafarge MW et al.",
+     "ty": ""
+    },
+    {
+     "t": "Methylphenidate for Fatigue in Patients With Stable Hematologic Malignancies",
+     "u": "https://doi.org/10.1200/JCO-26-02335",
+     "p": "42993919",
+     "j": "J Clin Oncol",
+     "d": "2026-11-06",
+     "a": "Chin-Yee N et al.",
+     "ty": "Editorial"
+    },
     {
      "t": "Perfluoroalkyl Substances and Estrogen Receptor‑Negative Breast Cancer: Looking Beyond Traditional Risk Factors",
      "u": "https://doi.org/10.1200/JCO-26-02225",
@@ -1888,27 +1909,9 @@
      "d": "2026-10-27",
      "a": "Li H",
      "ty": "Letter"
-    },
-    {
-     "t": "Reply to: Was Futility in RADICAL Robust to Analytic Specification?",
-     "u": "https://doi.org/10.1200/JCO-26-02352",
-     "p": "42945497",
-     "j": "J Clin Oncol",
-     "d": "2026-10-27",
-     "a": "McKay RR et al.",
-     "ty": ""
-    },
-    {
-     "t": "Dalmelitinib Plus Aumolertinib in Advanced NSCLC Patients With EGFR-TKI Resistance and MET Amplification: A Randomized Phase 3 Trial",
-     "u": "https://doi.org/10.1200/JCO-26-02432",
-     "p": "42928710",
-     "j": "J Clin Oncol",
-     "d": "2026-10-26",
-     "a": "Li Z et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-06"
+   "updated": "2026-11-07"
   }
  ]
 }
