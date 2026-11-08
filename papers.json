@@ -1,5 +1,5 @@
 {
- "built": "2026-11-07 11:16 UTC",
+ "built": "2026-11-08 11:16 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "nejm",
@@ -202,6 +202,13 @@
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
    "items": [
+    {
+     "t": "Early Days, Late Nights",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMp2607215",
+     "j": "N Engl J Med",
+     "d": "2026-11-07",
+     "a": "Ellen M. Einterz"
+    },
     {
      "t": "Intravenous Thrombolysis for Acute Ischemic Stroke — New Directions",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMra2519017",
@@ -353,17 +360,9 @@
      "d": "2026-10-15",
      "a": "Danny M. Cohn et al.",
      "p": "42294842"
-    },
-    {
-     "t": "Case 29-2026: A 39-Year-Old Man with Abdominal Pain, Foot Drop, and a Spinal Mass",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603183",
-     "j": "N Engl J Med",
-     "d": "2026-10-15",
-     "a": "Allan E. Pineda et al.",
-     "p": "42874107"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "leuk",
@@ -524,7 +523,7 @@
      "p": "42888202"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "nhl",
@@ -540,7 +539,8 @@
      "u": "https://www.nature.com/articles/s41409-026-03076-9",
      "j": "Bone Marrow Transplant",
      "d": "2026-11-06",
-     "a": ""
+     "a": "Desbrousses E et al.",
+     "p": "42995238"
     },
     {
      "t": "Acquired resistance to vorinostat in cutaneous T cell lymphoma involves augmented ERK phosphorylation",
@@ -687,7 +687,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "hl",
@@ -851,7 +851,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "mm",
@@ -862,6 +862,13 @@
     "https://www.nature.com/subjects/myeloma"
    ],
    "items": [
+    {
+     "t": "Influence of CAR T-cell expansion and persistence in the peripheral blood on CAR T-cell therapy efficacy and adverse events in multiple myeloma",
+     "u": "https://www.nature.com/articles/s41409-026-03083-w",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-07",
+     "a": ""
+    },
     {
      "t": "Denosumab in multiple myeloma patients with severe renal impairment: a multicenter phase 2 study",
      "u": "https://www.nature.com/articles/s41408-026-01656-y",
@@ -993,16 +1000,9 @@
      "j": "Blood Cancer J",
      "d": "2026-10-01",
      "a": ""
-    },
-    {
-     "t": "Infection risk and management in patients with relapsed/refractory multiple myeloma treated with linvoseltamab in the LINKER-MM1 study",
-     "u": "https://www.nature.com/articles/s41408-026-01636-2",
-     "j": "Blood Cancer J",
-     "d": "2026-10-01",
-     "a": ""
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "mpn",
@@ -1174,7 +1174,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "mds",
@@ -1335,7 +1335,7 @@
      "p": "42431867"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "ba",
@@ -1527,7 +1527,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "aacr",
@@ -1719,7 +1719,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   },
   {
    "key": "jco",
@@ -1911,7 +1911,7 @@
      "ty": "Letter"
     }
    ],
-   "updated": "2026-11-07"
+   "updated": "2026-11-08"
   }
  ]
 }
