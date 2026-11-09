@@ -14,7 +14,7 @@ once, and nothing works without the secret sync key.
 - Changes are stamped with the device clock corrected by the Worker's clock (`now` in each reply), so a device with a wrong clock cannot overrule newer changes.
 - The Worker writes to storage only when something changed, so the frequent checks stay inside the free allowance.
 - Cloudflare KV can take up to about a minute to show a change in another location, so a change may need one more check (up to a couple of minutes) to appear everywhere.
-- The Worker stores one record, `owner`, in KV: titles, links and topic headings only. Removal marks older than 180 days are dropped.
+- The Worker stores one record, `owner`, in KV: titles, links and topic headings, plus any private notes you wrote on saved items (field `z`; no change to the Worker was needed for them). Removal marks older than 180 days are dropped.
 
 ## One-time setup (free Cloudflare account)
 1. Make a free account at cloudflare.com.

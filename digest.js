@@ -220,7 +220,7 @@
      One shared list for the whole site, kept in this browser (localStorage key hogSaved). Nothing is sent anywhere unless the owner
      turns on sync (SYNC_URL below, hidden from readers); removals are remembered in hogSavedDel so sync can carry them.
      Entry: { m: time last changed (used to merge devices),  s: "papers"|"digest"|"guide", g: topic heading, n: title, u: link, t: time saved, o: organisation,
-              x: note or conclusion, xl: its label, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
+              x: note or conclusion, xl: its label, z: the reader's own private note, k: guideline key, paper: { p: PMID, j: journal, a: authors, d: date, ty: type } }
      A snapshot is stored, so a saved item stays after it leaves its feed. Backups are plain JSON files the reader
      downloads and restores. Every write re-reads the store first, so the three sections never overwrite each other. */
   var SK = "hogSaved", DK = "hogSavedDel", MK = "hogSavedMod", SAVED = {}, DELS = {}, saveWarn = false, firstSave = {};
@@ -239,7 +239,7 @@
       var pp = e.paper && typeof e.paper === "object" ? e.paper : {};
       var c = {
         s: s, g: String(e.g || "").slice(0, 120), n: e.n.slice(0, 500), u: String(e.u).slice(0, 600), t: +e.t || 0, m: +e.m || +e.t || 0,
-        o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60),
+        o: String(e.o || "").slice(0, 300), x: String(e.x || "").slice(0, 1500), xl: String(e.xl || "").slice(0, 60), z: String(e.z || "").slice(0, 3000),
         k: /^[A-Za-z0-9_.\-]{1,80}$/.test(String(e.k || "")) ? String(e.k) : "",
         paper: {
           p: /^\d{1,9}$/.test(String(pp.p || "")) ? String(pp.p) : "",
@@ -283,7 +283,11 @@
       if (!noTouch) localStorage.setItem(MK, String(Date.now()));
     } catch (e) { saveWarn = true; }
   }
-  function savedChanged() { window.dispatchEvent(new Event("hog-saved")); }
+  function savedChanged(fromSync) {
+    if (fromSync && document.querySelector("textarea.nt-ta")) { noteDefer = true; return; }   // do not wipe a note being typed
+    commitOpenNotes();
+    window.dispatchEvent(new Event("hog-saved"));
+  }
   function applySaved() {
     [].forEach.call(document.querySelectorAll("button.sv[data-sid]"), function (b) {
       if (b.classList.contains("rm")) return;
@@ -303,9 +307,74 @@
     var c = cleanSaved([snap]), id = Object.keys(c)[0], now = null;
     if (!id) return null;
     syncSaved();
+    if (SAVED[id] && SAVED[id].z && !confirmDropNote()) return null;
     if (SAVED[id]) { delete SAVED[id]; DELS[id] = stamp(); now = false; } else { SAVED[id] = c[id]; SAVED[id].m = stamp(); delete DELS[id]; now = true; }
     persistSaved(); savedChanged(); scheduleSync();
     return now;
+  }
+
+  /* ---------- private notes on saved items ----------
+     The note is the field z of the saved entry, so it is stored, backed up and synced with the item (newest change wins).
+     The editor saves as you type; Done just closes it. Changes that arrive from sync wait until the editor is closed. */
+  var noteDefer = false, noteTimer = null;
+  function confirmDropNote() {
+    try { return typeof confirm !== "function" || confirm("This saved item has your personal note. Remove it and the note?"); } catch (e) { return true; }
+  }
+  function noteViewHTML(z, q, hl, id) {
+    return (z ? '<p class="nt-t"><b>My note:</b> ' + (q && hl ? hl(z, q) : esc(z)) + "</p>" : "") +
+      '<button class="nt-b" type="button" data-sv="note" data-nid="' + esc(id) + '">' + (z ? "✎ Edit note" : "✎ Add note") + "</button>";
+  }
+  function noteHTML(e, q, hl) {
+    return '<div class="nt" data-nid="' + esc(entryId(e)) + '">' + noteViewHTML(e.z || "", q, hl, entryId(e)) + "</div>";
+  }
+  function commitNote(ta) {
+    if (!ta) return;
+    clearTimeout(noteTimer);
+    var id = ta.getAttribute("data-nid"), st = ta.parentNode.querySelector(".nt-st");
+    syncSaved();
+    var e = SAVED[id];
+    if (!e) { if (st) st.textContent = "This item is no longer saved, so the note was not kept."; return; }
+    var v = String(ta.value || "").slice(0, 3000);
+    if (v === (e.z || "")) return;
+    e.z = v; e.m = stamp();
+    persistSaved(); scheduleSync();
+    if (st) st.textContent = saveWarn ? STORE_WARN : "Note saved.";
+  }
+  function commitOpenNotes() { [].forEach.call(document.querySelectorAll("textarea.nt-ta"), commitNote); }
+  function noteClick(b, act) {
+    var box = b.closest ? b.closest(".nt") : null, id = b.getAttribute("data-nid");
+    if (!box) return;
+    if (act === "note") {
+      syncSaved();
+      var cur = SAVED[id] ? SAVED[id].z || "" : "";
+      box.innerHTML = '<div class="nt-ed"><label class="nt-lab">My note</label><textarea class="nt-ta" rows="4" maxlength="3000" aria-label="My note on this item"></textarea>' +
+        '<div class="nt-row"><button class="nt-b nt-done" type="button" data-sv="notedone" data-nid="' + esc(id) + '">Done</button><span class="nt-st" role="status"></span></div>' +
+        '<p class="nt-hint">Private: stays on this device (and your synced devices). Please do not enter patient information.</p></div>';
+      var ta = box.querySelector("textarea");
+      ta.setAttribute("data-nid", id); ta.value = cur;
+      try { ta.focus(); ta.setSelectionRange(ta.value.length, ta.value.length); } catch (er) {}
+    } else {
+      commitNote(box.querySelector("textarea"));
+      syncSaved();
+      var z = SAVED[id] ? SAVED[id].z || "" : "";
+      if (z !== z.trim()) { z = z.trim(); if (SAVED[id]) { SAVED[id].z = z; SAVED[id].m = stamp(); persistSaved(); scheduleSync(); } }
+      box.innerHTML = noteViewHTML(z, "", null, id);
+      if (noteDefer) { noteDefer = false; savedChanged(); }
+    }
+  }
+  function wireNotes() {
+    if (window.__hogNotesWired) return;
+    window.__hogNotesWired = true;
+    document.addEventListener("input", function (ev) {
+      var ta = ev.target;
+      if (!ta || !ta.classList || !ta.classList.contains("nt-ta")) return;
+      clearTimeout(noteTimer);
+      noteTimer = setTimeout(function () { commitNote(ta); }, 500);
+    });
+    document.addEventListener("focusout", function (ev) {
+      var ta = ev.target;
+      if (ta && ta.classList && ta.classList.contains("nt-ta")) commitNote(ta);
+    });
   }
 
   var toastEl, toastT;
@@ -409,6 +478,7 @@
           if (meta) lines.push("   " + meta);
           lines.push("   " + e.u);
           if (pp.p) lines.push("   https://pubmed.ncbi.nlm.nih.gov/" + pp.p + "/");
+          if (e.z) lines.push("   My note: " + e.z.replace(/\r?\n/g, "\n      "));
           lines.push("");
         });
       });
@@ -453,6 +523,7 @@
       syncSaved();
       Object.keys(inc).forEach(function (k) {
         if (!SAVED[k]) { SAVED[k] = inc[k]; if (!SAVED[k].t) SAVED[k].t = Date.now(); SAVED[k].m = stamp(); delete DELS[k]; added++; }
+        else if (inc[k].z && !SAVED[k].z) { SAVED[k].z = inc[k].z; SAVED[k].m = stamp(); added++; }
       });
       persistSaved(); savedChanged(); if (added) scheduleSync();
       toast(saveWarn ? STORE_WARN : added ? "Restored " + added + " saved item" + (added === 1 ? "" : "s") + "." : "Nothing new to restore: those items are already saved.");
@@ -464,6 +535,7 @@
     var b = ev.target.closest ? ev.target.closest("[data-sv]") : null;
     if (!b) return false;
     var act = b.getAttribute("data-sv");
+    if (act === "note" || act === "notedone") { noteClick(b, act); return true; }
     if (act === "copy") {
       syncSaved();
       var n = savedList().length;
@@ -565,7 +637,7 @@
         if (j && +j.now) lsSet(SYNC_SKEWK, String(Math.round(+j.now - (t0 + Date.now()) / 2)));
         syncSaved();
         var changed = mergeRemote(j && j.items, j && j.dels), mch = mergeMarks(j);
-        if (changed) { persistSaved(); savedChanged(); }
+        if (changed) { persistSaved(); savedChanged(true); }
         if (mch) window.dispatchEvent(new Event("hog-marks"));
         changed = changed || mch;
         syncErr = ""; lsSet(SYNC_LASTK, String(Date.now()));
@@ -615,6 +687,15 @@
       SC + "input.sv-key{box-sizing:border-box;font:600 14px/1.2 'Source Sans 3',system-ui,sans-serif;padding:8px 10px;border:1px solid #9cc9d8;border-radius:8px;min-width:200px;max-width:100%;color:#1b2b34;background:#fff}",
       SC + ".sv-sync-st{font-size:14px;color:#56656f}",
       SC + "button.sv.rm{color:#9b2c2c!important;text-decoration:underline;background:none;padding:0;border-radius:0}",
+      SC + ".nt{margin:6px 0 2px}",
+      SC + ".nt-t{margin:4px 0 6px!important;padding:8px 11px;background:#f4f9fb;border-left:3px solid #9cc9d8;border-radius:0 6px 6px 0;font-size:15px;line-height:1.5;color:#1b2b34;white-space:pre-wrap;overflow-wrap:anywhere}",
+      SC + "button.nt-b{all:unset;cursor:pointer;font:600 13px/1.2 'Source Sans 3',system-ui,sans-serif!important;color:#145a75!important;text-decoration:underline;text-underline-offset:2px}",
+      SC + "button.nt-b:focus-visible{outline:3px solid rgba(20,90,117,.45)!important;outline-offset:2px}",
+      SC + ".nt-lab{display:block;font:700 13px/1.3 'Source Sans 3',system-ui,sans-serif;color:#145a75;margin:4px 0}",
+      SC + "textarea.nt-ta{box-sizing:border-box;display:block;width:100%;min-height:96px;font:400 16px/1.5 'Source Sans 3',system-ui,sans-serif;padding:8px 10px;border:1px solid #9cc9d8;border-radius:8px;color:#1b2b34;background:#fff;resize:vertical}",
+      SC + ".nt-row{display:flex;gap:12px;align-items:center;margin-top:6px}",
+      SC + ".nt-st{font-size:13px;color:#56656f}",
+      SC + ".nt-hint{font-size:12.5px;color:#56656f;margin:4px 0 0!important}",
       "#hor-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(16px);max-width:min(92vw,420px);box-sizing:border-box;background:#145a75;color:#fff;font:600 14.5px/1.35 'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;padding:10px 16px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:2147483000;text-align:center}",
       "#hor-toast.on{opacity:1;transform:translateX(-50%)}",
       "#hor-toast.act{pointer-events:auto}",
@@ -626,7 +707,8 @@
   }
   SAVED = readStore() || {};
   window.addEventListener("hog-saved", function () { syncSaved(); applySaved(); });
-  window.addEventListener("storage", function (e) { if (e.key === SK) savedChanged(); });
+  wireNotes();
+  window.addEventListener("storage", function (e) { if (e.key === SK) savedChanged(true); });
   /* ===== end of saved core ===== */
 
   /* ---------- Saved papers row of the weekly digest ---------- */
@@ -640,11 +722,11 @@
       (e.x ? '<p class="cc"><b>' + esc(e.xl || "Summary") + ":</b> " + hil(e.x, q) + "</p>" : "") +
       '<div class="lk">' + (pp.p ? '<a href="https://pubmed.ncbi.nlm.nih.gov/' + esc(pp.p) + '/" target="_blank" rel="noopener">PubMed</a>' : "") +
       '<button class="rd" type="button">' + (isRead(rid) ? "✓ Opened" : "Mark as opened") + "</button>" +
-      saveBtnHTML(sidv, "Save this paper") + "</div></li>";
+      saveBtnHTML(sidv, "Save this paper") + "</div>" + noteHTML(e, q, hil) + "</li>";
   }
   function savedItemHTML(q, order) {
     var all = savedList("digest"), items = all.filter(function (e) {
-      return !q || norm([e.n, e.paper.j, e.paper.a, e.x, e.paper.ty, e.g].join(" ")).indexOf(q) >= 0;
+      return !q || norm([e.n, e.paper.j, e.paper.a, e.x, e.paper.ty, e.g, e.z].join(" ")).indexOf(q) >= 0;
     });
     svN = items.length;
     if (q && !items.length) return "";
