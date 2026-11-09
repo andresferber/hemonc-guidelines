@@ -1,5 +1,5 @@
 {
- "built": "2026-11-08 11:16 UTC",
+ "built": "2026-11-09 11:31 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "nejm",
@@ -362,7 +362,7 @@
      "p": "42294842"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "p": "42888202"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "nhl",
@@ -534,6 +534,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Metabolic tumor volume trajectory during bridging and association with outcomes after CAR T infusion in large B-cell lymphoma",
+     "u": "https://www.nature.com/articles/s41409-026-03058-x",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-09",
+     "a": ""
+    },
     {
      "t": "Proton pump inhibitors and outcome after axicabtagene ciloleucel for the treatment of non-Hodgkin B-cell lymphoma, a retrospective study with the DESCAR-T registry",
      "u": "https://www.nature.com/articles/s41409-026-03076-9",
@@ -678,16 +685,9 @@
      "d": "2026-09-23",
      "a": "Arvanitis I et al.",
      "p": "42778657"
-    },
-    {
-     "t": "Comparative efficacy and safety of CD19 chimeric antigen receptor T-cell therapy versus CD3/CD20 bispecific antibodies in relapsed/refractory mantle cell lymphoma: a meta-analysis of clinical trials and real-world studies",
-     "u": "https://www.nature.com/articles/s41408-026-01624-6",
-     "j": "Blood Cancer J",
-     "d": "2026-09-23",
-     "a": ""
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "hl",
@@ -851,7 +851,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "mm",
@@ -867,7 +867,8 @@
      "u": "https://www.nature.com/articles/s41409-026-03083-w",
      "j": "Bone Marrow Transplant",
      "d": "2026-11-07",
-     "a": ""
+     "a": "Boettger M et al.",
+     "p": "42999004"
     },
     {
      "t": "Denosumab in multiple myeloma patients with severe renal impairment: a multicenter phase 2 study",
@@ -1002,7 +1003,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "mpn",
@@ -1174,7 +1175,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "mds",
@@ -1185,6 +1186,13 @@
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
    "items": [
+    {
+     "t": "Mesenchymal stromal cells drive immune escape in MDS and sAML through metabolic rewiring of NK cells",
+     "u": "https://www.nature.com/articles/s41375-026-03172-1",
+     "j": "Leukemia",
+     "d": "2026-11-09",
+     "a": ""
+    },
     {
      "t": "Hyperactivation of type I IFN signaling underlies a broad inflammatory program in VEXAS syndrome",
      "u": "https://www.nature.com/articles/s41375-026-03186-9",
@@ -1325,17 +1333,9 @@
      "d": "2026-07-14",
      "a": "Yu Y et al.",
      "p": "42448935"
-    },
-    {
-     "t": "Genomic landscape, clinical correlates and prognostic implications of U2AF1 mutation subtypes in myelodysplastic neoplasms",
-     "u": "https://www.nature.com/articles/s41408-026-01573-0",
-     "j": "Blood Cancer J",
-     "d": "2026-07-10",
-     "a": "Bao Z et al.",
-     "p": "42431867"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "ba",
@@ -1527,7 +1527,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "aacr",
@@ -1719,7 +1719,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   },
   {
    "key": "jco",
@@ -1911,7 +1911,7 @@
      "ty": "Letter"
     }
    ],
-   "updated": "2026-11-08"
+   "updated": "2026-11-09"
   }
  ]
 }
