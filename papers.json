@@ -1,5 +1,5 @@
 {
- "built": "2026-11-09 11:31 UTC",
+ "built": "2026-11-10 11:28 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,24 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Detection, Monitoring, and Discrimination of Amyloidogenic vs Innocent Light Chains in Systemic Amyloidoses",
+     "u": "https://doi.org/10.1182/blood.2026034465",
+     "p": "43002606",
+     "j": "Blood",
+     "d": "2026-11-09",
+     "a": "Palladini G et al.",
+     "ty": ""
+    },
+    {
+     "t": "Terminal differentiation program of CD8 T cells guides immunotherapeutic options for CLL patients",
+     "u": "https://doi.org/10.1182/blood.2026035207",
+     "p": "43002581",
+     "j": "Blood",
+     "d": "2026-11-09",
+     "a": "Camerini E et al.",
+     "ty": ""
+    },
     {
      "t": "The Pathogen Recognition Receptor RIG-I is Functional in Platelets and Limits Thrombotic Responses",
      "u": "https://doi.org/10.1182/blood.2026034983",
@@ -171,27 +189,9 @@
      "d": "2026-10-29",
      "a": "Powell JA et al.",
      "ty": "Editorial, Comment"
-    },
-    {
-     "t": "ITP: a new CAR for an old road",
-     "u": "https://doi.org/10.1182/blood.2026035830",
-     "p": "42954978",
-     "j": "Blood",
-     "d": "2026-10-29",
-     "a": "Semple JW et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Splicing mishap in ITP: exon skipping dysregulates T cells",
-     "u": "https://doi.org/10.1182/blood.2026035941",
-     "p": "42954977",
-     "j": "Blood",
-     "d": "2026-10-29",
-     "a": "Kapur R",
-     "ty": "Editorial, Comment"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "nejm",
@@ -207,7 +207,8 @@
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMp2607215",
      "j": "N Engl J Med",
      "d": "2026-11-07",
-     "a": "Ellen M. Einterz"
+     "a": "Ellen M. Einterz",
+     "p": "43001750"
     },
     {
      "t": "Intravenous Thrombolysis for Acute Ischemic Stroke — New Directions",
@@ -362,7 +363,7 @@
      "p": "42294842"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "leuk",
@@ -523,7 +524,7 @@
      "p": "42888202"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "nhl",
@@ -687,7 +688,7 @@
      "p": "42778657"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "hl",
@@ -851,7 +852,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "mm",
@@ -1003,7 +1004,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "mpn",
@@ -1175,7 +1176,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "mds",
@@ -1335,7 +1336,7 @@
      "p": "42448935"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "ba",
@@ -1527,7 +1528,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "aacr",
@@ -1538,6 +1539,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Tumor Cells Hijack Coagulation Signaling to Enable Immune Escape and Metastatic Dissemination",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5733",
+     "p": "43002440",
+     "j": "Cancer Res",
+     "d": "2026-11-09",
+     "a": "Wang S et al.",
+     "ty": ""
+    },
     {
      "t": "Regulatory T Cell Interventions to Boost Anti-tumor Immune Responses",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-0789",
@@ -1708,18 +1718,9 @@
      "d": "2026-10-19",
      "a": "Kim H et al.",
      "ty": ""
-    },
-    {
-     "t": "Beyond Internalization: Target Binding as the Trigger",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4375",
-     "p": "42895468",
-     "j": "Cancer Res",
-     "d": "2026-10-19",
-     "a": "Simó C et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   },
   {
    "key": "jco",
@@ -1730,6 +1731,15 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Modeling Long-Term Progression-Free Survival in Newly Diagnosed Multiple Myeloma Treated With Daratumumab, Bortezomib, Lenalidomide, and Dexamethasone",
+     "u": "https://doi.org/10.1200/JCO-26-00384",
+     "p": "43002730",
+     "j": "J Clin Oncol",
+     "d": "2026-11-09",
+     "a": "Sonneveld P et al.",
+     "ty": ""
+    },
     {
      "t": "Image-Based Consensus Molecular Subtyping Refines Prognostication in Stage II/III Colorectal Cancer: A Retrospective Analysis of the SCOT Trial",
      "u": "https://doi.org/10.1200/JCO-25-02761",
@@ -1900,18 +1910,9 @@
      "d": "2026-10-27",
      "a": "Roberts MC",
      "ty": "Editorial"
-    },
-    {
-     "t": "Was Futility in RADICAL Robust to Analytic Specification?",
-     "u": "https://doi.org/10.1200/JCO-26-02068",
-     "p": "42945503",
-     "j": "J Clin Oncol",
-     "d": "2026-10-27",
-     "a": "Li H",
-     "ty": "Letter"
     }
    ],
-   "updated": "2026-11-09"
+   "updated": "2026-11-10"
   }
  ]
 }
