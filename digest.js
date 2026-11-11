@@ -803,7 +803,7 @@
       } else {
         var kp = ps.filter(function (p) { return p.key; }), op = ps.filter(function (p) { return !p.key; });
         var list = function (arr) { return '<ol class="l">' + arr.map(function (p) { return paperHTML(p, t.key, ps.indexOf(p), q); }).join("") + "</ol>"; };
-        body = (canSpeak && ps.some(function (p) { return p.c; }) ? '<div class="tools"><button class="b solid listen" type="button" data-topic="' + esc(t.key) + '">▶ Listen to this topic</button></div>' : "") +
+        body = (canSpeak && ps.some(function (p) { return p.c; }) ? '<div class="tools"><button class="b solid listen" type="button" data-topic="' + esc(t.key) + '">▶ Listen to the whole topic</button></div>' : "") +
           (kp.length && op.length ? '<h4 class="sh">Trials, meta-analyses and guidelines</h4>' + list(kp) + '<h4 class="sh">Other papers</h4>' + list(op) : list(ps));
       }
       html += '<div class="it' + (open ? " open" : "") + '" data-t="' + esc(t.key) + '">' +
@@ -839,7 +839,7 @@
       found = found.slice(0, 5);
       LISTS[tk] = found.map(function (f) { return f.p; });
       box.innerHTML = '<p class="wnote">No new papers this week. The most recent ones:</p>' +
-        (canSpeak ? '<div class="tools" style="margin-top:8px"><button class="b solid listen" type="button" data-topic="' + esc(tk) + '">▶ Listen to these</button></div>' : "") +
+        (canSpeak ? '<div class="tools" style="margin-top:8px"><button class="b solid listen" type="button" data-topic="' + esc(tk) + '">▶ Listen to all of these</button></div>' : "") +
         '<ol class="l">' + found.map(function (f, k) { return paperHTML(f.p, tk, k, "", weekLabel(f.w.week, f.w.end)); }).join("") + "</ol>";
     }
     next();
@@ -865,11 +865,11 @@
       if (el.parentNode !== document.documentElement) document.documentElement.appendChild(el);
     }).observe(document.body, { childList: true, subtree: true });
   })(bar);
-  var P = { list: [], i: -1, tk: "", paused: false, done: false, end: false, rate: 1, gen: 0, auto: false, lock: null };
-  try { P.auto = localStorage.getItem("hdgAuto") === "1"; } catch (e) {}
+  var P = { list: [], i: -1, tk: "", paused: false, done: false, end: false, rate: 1, gen: 0, auto: true, lock: null };
+  try { P.auto = localStorage.getItem("hdgAuto2") !== "0"; } catch (e) {}
   function setAuto(on) {
     P.auto = !!on;
-    try { localStorage.setItem("hdgAuto", P.auto ? "1" : "0"); } catch (e) {}
+    try { localStorage.setItem("hdgAuto2", P.auto ? "1" : "0"); } catch (e) {}
     var sw = mount.querySelector("#hdg-auto");
     if (sw) sw.setAttribute("aria-checked", P.auto ? "true" : "false");
     bar.querySelector(".au").setAttribute("aria-pressed", P.auto ? "true" : "false");
@@ -970,7 +970,7 @@
   function finished() {
     var cur = P.list[P.i];
     if (cur && cur.p) setHeard("pm" + cur.p, true);
-    if (!P.auto) { P.done = true; updateBar(); return; }           // default: wait for Next
+    if (!P.auto) { P.done = true; updateBar(); return; }           // only when Auto is switched off: wait for Next
     if (P.i + 1 < P.list.length) { play(P.i + 1); return; }
     var k = ORDER.indexOf(P.tk);                                    // end of a topic: go on to the next one
     for (var j = k + 1; j < ORDER.length; j++) {
