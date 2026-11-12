@@ -803,7 +803,7 @@
       } else {
         var kp = ps.filter(function (p) { return p.key; }), op = ps.filter(function (p) { return !p.key; });
         var list = function (arr) { return '<ol class="l">' + arr.map(function (p) { return paperHTML(p, t.key, ps.indexOf(p), q); }).join("") + "</ol>"; };
-        body = (canSpeak && ps.some(function (p) { return p.c; }) ? '<div class="tools"><button class="b solid listen" type="button" data-topic="' + esc(t.key) + '">▶ Listen to the whole topic</button></div>' : "") +
+        body = (canSpeak && ps.some(function (p) { return p.c; }) ? '<div class="tools"><button class="b solid listen" type="button" data-topic="' + esc(t.key) + '">▶ Listen to all the abstracts</button></div>' : "") +
           (kp.length && op.length ? '<h4 class="sh">Trials, meta-analyses and guidelines</h4>' + list(kp) + '<h4 class="sh">Other papers</h4>' + list(op) : list(ps));
       }
       html += '<div class="it' + (open ? " open" : "") + '" data-t="' + esc(t.key) + '">' +
@@ -839,7 +839,7 @@
       found = found.slice(0, 5);
       LISTS[tk] = found.map(function (f) { return f.p; });
       box.innerHTML = '<p class="wnote">No new papers this week. The most recent ones:</p>' +
-        (canSpeak ? '<div class="tools" style="margin-top:8px"><button class="b solid listen" type="button" data-topic="' + esc(tk) + '">▶ Listen to all of these</button></div>' : "") +
+        (canSpeak ? '<div class="tools" style="margin-top:8px"><button class="b solid listen" type="button" data-topic="' + esc(tk) + '">▶ Listen to all these abstracts</button></div>' : "") +
         '<ol class="l">' + found.map(function (f, k) { return paperHTML(f.p, tk, k, "", weekLabel(f.w.week, f.w.end)); }).join("") + "</ol>";
     }
     next();
