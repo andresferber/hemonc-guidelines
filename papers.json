@@ -1,5 +1,5 @@
 {
- "built": "2026-11-11 11:32 UTC",
+ "built": "2026-11-12 11:33 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "nejm",
@@ -203,12 +203,52 @@
    ],
    "items": [
     {
+     "t": "Prevention of Venous Thromboembolism after Total Hip or Knee Replacement",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2602435",
+     "j": "N Engl J Med",
+     "d": "2026-11-12",
+     "a": "Vincent D. Pellegrini Jr. et al.",
+     "p": "43013818"
+    },
+    {
+     "t": "Rivaroxaban Then Aspirin vs. Aspirin Alone after Total Hip or Knee Arthroplasty",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2603649",
+     "j": "N Engl J Med",
+     "d": "2026-11-12",
+     "a": "Sudeep Shivakumar et al.",
+     "p": "42437501"
+    },
+    {
      "t": "Early Days, Late Nights",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMp2607215",
      "j": "N Engl J Med",
-     "d": "2026-11-07",
+     "d": "2026-11-12",
      "a": "Ellen M. Einterz",
      "p": "43001750"
+    },
+    {
+     "t": "Aspirin Therapy — Enough after Arthroplasty?",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2612392",
+     "j": "N Engl J Med",
+     "d": "2026-11-12",
+     "a": "John W. Eikelboom",
+     "p": "43013823"
+    },
+    {
+     "t": "Intismeran Autogene plus Pembrolizumab for Resected Stage IIB to IV Melanoma",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2609762",
+     "j": "N Engl J Med",
+     "d": "2026-11-11",
+     "a": "Georgina V. Long et al.",
+     "p": "43013837"
+    },
+    {
+     "t": "Cancer Vaccines — From Treatment to Prevention",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2614041",
+     "j": "N Engl J Med",
+     "d": "2026-11-11",
+     "a": "Mark Yarchoan",
+     "p": "43013817"
     },
     {
      "t": "Intravenous Thrombolysis for Acute Ischemic Stroke — New Directions",
@@ -321,49 +361,9 @@
      "d": "2026-10-22",
      "a": "Hong Li et al.",
      "p": "42906088"
-    },
-    {
-     "t": "Reengineering Coagulation with a Bispecific Antibody",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcibr2608873",
-     "j": "N Engl J Med",
-     "d": "2026-10-22",
-     "a": "Flora Peyvandi",
-     "p": "42714038"
-    },
-    {
-     "t": "Case 30-2026: A 52-Year-Old Man with Vision Loss in the Left Eye",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603184",
-     "j": "N Engl J Med",
-     "d": "2026-10-22",
-     "a": "Lucia Sobrin et al.",
-     "p": "42906090"
-    },
-    {
-     "t": "In Vivo Aquaporin-1 Circular RNA Therapy for Radiation-Induced Xerostomia",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMc2604891",
-     "j": "N Engl J Med",
-     "d": "2026-10-22",
-     "a": "Henry T. Hoffman et al.",
-     "p": "42906095"
-    },
-    {
-     "t": "Ponatinib–Blinatumomab or Imatinib–Chemotherapy for Adult Ph-Positive ALL",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2606208",
-     "j": "N Engl J Med",
-     "d": "2026-10-15",
-     "a": "Sabina Chiaretti et al.",
-     "p": "42874102"
-    },
-    {
-     "t": "Lonvoguran Ziclumeran — In Vivo CRISPR Gene Editing in Hereditary Angioedema",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2600931",
-     "j": "N Engl J Med",
-     "d": "2026-10-15",
-     "a": "Danny M. Cohn et al.",
-     "p": "42294842"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "leuk",
@@ -379,7 +379,16 @@
      "u": "https://www.nature.com/articles/s41375-026-03173-0",
      "j": "Leukemia",
      "d": "2026-11-11",
-     "a": ""
+     "a": "Aitchedji C et al.",
+     "p": "43015369"
+    },
+    {
+     "t": "Evolutionary dynamics in the years preceding acute myeloid leukaemia",
+     "u": "https://www.nature.com/articles/s41586-026-11269-x",
+     "j": "Nature",
+     "d": "2026-11-11",
+     "a": "Watson CJ et al.",
+     "p": "43015468"
     },
     {
      "t": "Maternal donor risk in haploidentical transplant with post-transplant cyclophosphamide: the role of recipient sex",
@@ -513,17 +522,9 @@
      "d": "2026-10-21",
      "a": "Wang Y et al.",
      "p": "42907595"
-    },
-    {
-     "t": "Targeting the mitochondrial complex I subunit NDUFS2 potentiates FLT3 inhibition in acute myeloid leukaemia with FLT3 internal tandem duplication",
-     "u": "https://www.nature.com/articles/s41375-026-03170-3",
-     "j": "Leukemia",
-     "d": "2026-10-19",
-     "a": "Tong X et al.",
-     "p": "42897233"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "nhl",
@@ -534,6 +535,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Functionally divergent RHOA mutations drive peripheral T cell lymphoma development by engaging a common neomorphic pathway",
+     "u": "https://www.nature.com/articles/s41467-026-79260-8",
+     "j": "Nat Commun",
+     "d": "2026-11-11",
+     "a": ""
+    },
     {
      "t": "Metabolic tumor volume trajectory during bridging and association with outcomes after CAR T infusion in large B-cell lymphoma",
      "u": "https://www.nature.com/articles/s41409-026-03058-x",
@@ -678,17 +686,9 @@
      "j": "Cell Death Dis",
      "d": "2026-09-28",
      "a": ""
-    },
-    {
-     "t": "Reduced-intensity T-replete allogeneic stem cell transplantation provides long-term survival in relapsed angioimmunoblastic T-cell lymphoma post-autologous transplant in patients over the age of 50",
-     "u": "https://www.nature.com/articles/s41409-026-03037-2",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-09-23",
-     "a": "Arvanitis I et al.",
-     "p": "42778657"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "hl",
@@ -852,7 +852,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "mm",
@@ -868,14 +868,16 @@
      "u": "https://www.nature.com/articles/s41408-026-01641-5",
      "j": "Blood Cancer J",
      "d": "2026-11-11",
-     "a": ""
+     "a": "Tan MS et al.",
+     "p": "43015299"
     },
     {
      "t": "T cell redirection in high-risk smouldering multiple myeloma: can deep responses prevent progression to multiple myeloma?",
      "u": "https://www.nature.com/articles/s41571-026-01230-2",
      "j": "Nat Rev Clin Oncol",
      "d": "2026-11-10",
-     "a": ""
+     "a": "Mateos MV",
+     "p": "43009557"
     },
     {
      "t": "Influence of CAR T-cell expansion and persistence in the peripheral blood on CAR T-cell therapy efficacy and adverse events in multiple myeloma",
@@ -1003,7 +1005,7 @@
      "p": "42839070"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "mpn",
@@ -1175,7 +1177,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "mds",
@@ -1336,7 +1338,7 @@
      "p": "42448935"
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "ba",
@@ -1528,7 +1530,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "aacr",
@@ -1720,7 +1722,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   },
   {
    "key": "jco",
@@ -1912,7 +1914,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-11"
+   "updated": "2026-11-12"
   }
  ]
 }
