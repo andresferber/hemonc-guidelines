@@ -1,5 +1,5 @@
 {
- "built": "2026-11-12 11:33 UTC",
+ "built": "2026-11-13 11:32 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,78 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "The new Iron Age in polycythemia vera",
+     "u": "https://doi.org/10.1182/blood.2026036007",
+     "p": "43019000",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Ross DM",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Targeting TMPRSS6 in β-thalassemia: of mice and men",
+     "u": "https://doi.org/10.1182/blood.2026034177",
+     "p": "43018999",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Finberg KE",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Fit for the fight: BTK inhibitors prime CAR T cells in CLL",
+     "u": "https://doi.org/10.1182/blood.2026035633",
+     "p": "43018998",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Gribben JG",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Et tu, CD70? When friend turns foe for follicular lymphoma",
+     "u": "https://doi.org/10.1182/blood.2026035585",
+     "p": "43018997",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Roddie C et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "A clone by any other name: convergence of CCUS and LR-MDS",
+     "u": "https://doi.org/10.1182/blood.2026035791",
+     "p": "43018996",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Jain J et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Beyond provoked and unprovoked: guiding clinical decisions",
+     "u": "https://doi.org/10.1182/blood.2026035793",
+     "p": "43018995",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Nagler M",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Correcting a genetic overSTATement",
+     "u": "https://doi.org/10.1182/blood.2026035795",
+     "p": "43018994",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Guérin A et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Paravertebral extramedullary chronic myelomonocytic leukemia mimicking myeloid sarcoma",
+     "u": "https://doi.org/10.1182/blood.2026035091",
+     "p": "43018993",
+     "j": "Blood",
+     "d": "2026-11-12",
+     "a": "Sarami I et al.",
+     "ty": ""
+    },
     {
      "t": "Is Circulating Tumor DNA Ready for Clinical Use in Large B-cell Lymphoma?",
      "u": "https://doi.org/10.1182/blood.2026033073",
@@ -117,81 +189,9 @@
      "d": "2026-11-05",
      "a": "Hermine O et al.",
      "ty": ""
-    },
-    {
-     "t": "Chasing the Aurora: naturally occurring prothrombotic FVIII",
-     "u": "https://doi.org/10.1182/blood.2026035514",
-     "p": "42986631",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Song A et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Prime advantage: making T cells drug resistant",
-     "u": "https://doi.org/10.1182/blood.2026035660",
-     "p": "42986630",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Qasim W",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Epigenetically activating T cells to attack AML",
-     "u": "https://doi.org/10.1182/blood.2026035673",
-     "p": "42986629",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Malek SN",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Don't rush it: early CNI exposure derails tolerance",
-     "u": "https://doi.org/10.1182/blood.2026035927",
-     "p": "42986628",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Tkachev V",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "MRD is a journey, not a snapshot",
-     "u": "https://doi.org/10.1182/blood.2026035636",
-     "p": "42986627",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Landgren O et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Less is more: expanding human HSCs via a novel mimetic niche",
-     "u": "https://doi.org/10.1182/blood.2026035656",
-     "p": "42986626",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Dong F et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "A kindlin splice for stressful times",
-     "u": "https://doi.org/10.1182/blood.2026035879",
-     "p": "42986625",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Maugeri N et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Choi HR, Piao H, Atriardi SR, et al. Selective depletion of ABO-responsive B cells by T-cell-engaging bispecific antibody conjugates for ABOi transplantation. Blood. 2026;147(17):1928-1940",
-     "u": "https://doi.org/10.1182/blood.2026036628",
-     "p": "42986624",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "leuk",
@@ -374,6 +374,22 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Genomic and transcriptomic features associated with responses and outcomes of third-generation tyrosine kinase-inhibitor therapy in chronic myeloid leukemia",
+     "u": "https://www.nature.com/articles/s41375-026-03182-z",
+     "j": "Leukemia",
+     "d": "2026-11-12",
+     "a": "Zhang X et al.",
+     "p": "43020916"
+    },
+    {
+     "t": "Differentiation hierarchy in adult B-cell acute lymphoblastic leukemia at clonal resolution",
+     "u": "https://www.nature.com/articles/s41375-026-03181-0",
+     "j": "Leukemia",
+     "d": "2026-11-12",
+     "a": "Geßner A et al.",
+     "p": "43020918"
+    },
     {
      "t": "Mediator kinase inhibition exposes a transcriptional vulnerability and synergizes with venetoclax in AML",
      "u": "https://www.nature.com/articles/s41375-026-03173-0",
@@ -506,25 +522,9 @@
      "d": "2026-10-21",
      "a": "Zeng YY et al.",
      "p": "42907450"
-    },
-    {
-     "t": "Allogeneic transplantation for plasma cell myeloma clears pre-transplant clonal haematopoiesis and is associated with a low rate of myeloid neoplasm post-cytotoxic-therapy",
-     "u": "https://www.nature.com/articles/s41409-026-02949-3",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-10-21",
-     "a": "Ashby M et al.",
-     "p": "42907484"
-    },
-    {
-     "t": "ROR2-expressing acute myelogenous leukemia cells can be selectively targeted by anti-ROR2 CAR T cells",
-     "u": "https://www.nature.com/articles/s41417-026-01087-8",
-     "j": "Cancer Gene Ther",
-     "d": "2026-10-21",
-     "a": "Wang Y et al.",
-     "p": "42907595"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "nhl",
@@ -535,6 +535,14 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Survival trends in Waldenström macroglobulinemia and comparison of outcomes with the general United States population",
+     "u": "https://www.nature.com/articles/s41375-026-03187-8",
+     "j": "Leukemia",
+     "d": "2026-11-12",
+     "a": "Khan MA et al.",
+     "p": "43020917"
+    },
     {
      "t": "Functionally divergent RHOA mutations drive peripheral T cell lymphoma development by engaging a common neomorphic pathway",
      "u": "https://www.nature.com/articles/s41467-026-79260-8",
@@ -679,16 +687,9 @@
      "j": "Blood Cancer J",
      "d": "2026-09-29",
      "a": ""
-    },
-    {
-     "t": "Targeting USP14 disrupts lipid metabolism and survival pathways in diffuse large B-cell lymphoma (DLBCL)",
-     "u": "https://www.nature.com/articles/s41419-026-09311-x",
-     "j": "Cell Death Dis",
-     "d": "2026-09-28",
-     "a": ""
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "hl",
@@ -852,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "mm",
@@ -1005,7 +1006,7 @@
      "p": "42839070"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "mpn",
@@ -1177,7 +1178,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "mds",
@@ -1338,7 +1339,7 @@
      "p": "42448935"
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "ba",
@@ -1349,6 +1350,15 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Cytoreduction for MPN-associated splanchnic vein thrombosis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022149",
+     "p": "43019490",
+     "j": "Blood Adv",
+     "d": "2026-11-12",
+     "a": "Achar RK et al.",
+     "ty": "Editorial, Comment"
+    },
     {
      "t": "Interpreting recurrence estimates in thrombophilia",
      "u": "https://doi.org/10.1182/bloodadvances.2026022915",
@@ -1519,18 +1529,9 @@
      "d": "2026-10-30",
      "a": "Son H et al.",
      "ty": ""
-    },
-    {
-     "t": "Immunogenicity of CpG-Adjuvanted Hepatitis B Vaccine in Hematopoietic Cell Transplant Recipients",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021625",
-     "p": "42962267",
-     "j": "Blood Adv",
-     "d": "2026-10-30",
-     "a": "Einarsdottir S et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "aacr",
@@ -1541,6 +1542,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Ketogenic Fasting Suppresses Tumor Growth and Enhances PD-1 Blockade Efficacy Through Glutamine Partitioning and Microbial Metabolite Remodeling",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1941",
+     "p": "43018440",
+     "j": "Cancer Res",
+     "d": "2026-11-12",
+     "a": "Xiao M et al.",
+     "ty": ""
+    },
     {
      "t": "Tumor Cells Hijack Coagulation Signaling to Enable Immune Escape and Metastatic Dissemination",
      "u": "https://doi.org/10.1158/0008-5472.CAN-25-5733",
@@ -1711,18 +1721,9 @@
      "d": "2026-10-19",
      "a": "Wu Y et al.",
      "ty": ""
-    },
-    {
-     "t": "Mechanical Stress Induces Nuclear Envelope Rupture in Melanoma Cells to Reorganize Tumor-Stromal Interactions",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-2084",
-     "p": "42896122",
-     "j": "Cancer Res",
-     "d": "2026-10-19",
-     "a": "Kim H et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   },
   {
    "key": "jco",
@@ -1733,6 +1734,15 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Second Cancer Risk in Female Survivors of Hodgkin Lymphoma: A National Cohort Analysis Across Treatment Eras",
+     "u": "https://doi.org/10.1200/JCO-26-00418",
+     "p": "43019503",
+     "j": "J Clin Oncol",
+     "d": "2026-11-12",
+     "a": "Macklin-Doherty A et al.",
+     "ty": ""
+    },
     {
      "t": "To Be Loved",
      "u": "https://doi.org/10.1200/JCO-26-00493",
@@ -1894,27 +1904,9 @@
      "d": "2026-10-28",
      "a": "McKean M et al.",
      "ty": ""
-    },
-    {
-     "t": "Immunotherapy With Stereotactic Body Radiation Therapy in Early-Stage Non‑Small Cell Lung Cancer: Matching Risk, Biology, and Timing",
-     "u": "https://doi.org/10.1200/JCO-26-01966",
-     "p": "42950185",
-     "j": "J Clin Oncol",
-     "d": "2026-10-28",
-     "a": "Shaverdian N et al.",
-     "ty": "Editorial"
-    },
-    {
-     "t": "KEYNOTE-867: A Phase III, Randomized, Double-Blind Study of Stereotactic Body Radiotherapy With Pembrolizumab for Unresected Stage I or II Non-Small Cell Lung Cancer",
-     "u": "https://doi.org/10.1200/JCO-26-00404",
-     "p": "42950173",
-     "j": "J Clin Oncol",
-     "d": "2026-10-28",
-     "a": "Jabbour SK et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-12"
+   "updated": "2026-11-13"
   }
  ]
 }
