@@ -1,5 +1,5 @@
 {
- "built": "2026-11-13 11:32 UTC",
+ "built": "2026-11-14 11:16 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,33 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "CAR-T Targeting of Mutant Calreticulin Selectively Eradicates Myeloproliferative Neoplasm-Sustaining Stem Cells",
+     "u": "https://doi.org/10.1182/blood.2026033948",
+     "p": "43023553",
+     "j": "Blood",
+     "d": "2026-11-13",
+     "a": "Choi DC et al.",
+     "ty": ""
+    },
+    {
+     "t": "Optimizing Reduced-Intensity Conditioning for Older Patients with AML and MDS: A Large-Scale Analysis from the CIBMTR",
+     "u": "https://doi.org/10.1182/blood.2026036096",
+     "p": "43023552",
+     "j": "Blood",
+     "d": "2026-11-13",
+     "a": "Kongtim P et al.",
+     "ty": ""
+    },
+    {
+     "t": "Aligning Clinical Trial Reporting: A systematic analysis and position statement by the International Consortium for MDS",
+     "u": "https://doi.org/10.1182/blood.2026035348",
+     "p": "43023550",
+     "j": "Blood",
+     "d": "2026-11-13",
+     "a": "Brunner AM et al.",
+     "ty": ""
+    },
     {
      "t": "The new Iron Age in polycythemia vera",
      "u": "https://doi.org/10.1182/blood.2026036007",
@@ -162,36 +189,9 @@
      "d": "2026-11-05",
      "a": "Romero-Mulero MC et al.",
      "ty": ""
-    },
-    {
-     "t": "Mechanistically distinct classes of BCR::ABL1 mutations confer resistance to asciminib",
-     "u": "https://doi.org/10.1182/blood.2026036032",
-     "p": "42986905",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Leske IB et al.",
-     "ty": ""
-    },
-    {
-     "t": "Upfront whole genome and transcriptome sequencing to improve diagnosis in inherited bone marrow failure syndromes",
-     "u": "https://doi.org/10.1182/blood.2026035448",
-     "p": "42986897",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Fox LC et al.",
-     "ty": ""
-    },
-    {
-     "t": "Tyrosine kinase inhibitors are associated with reduced AML transformation in systemic mastocytosis with myeloid neoplasm",
-     "u": "https://doi.org/10.1182/blood.2026035465",
-     "p": "42986895",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Hermine O et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "leuk",
@@ -374,6 +374,13 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Development and validation of a machine learning model to predict the daily risk of febrile neutropenia in patients with AML undergoing chemotherapy",
+     "u": "https://www.nature.com/articles/s43856-026-02001-x",
+     "j": "Commun Med",
+     "d": "2026-11-13",
+     "a": ""
+    },
     {
      "t": "Genomic and transcriptomic features associated with responses and outcomes of third-generation tyrosine kinase-inhibitor therapy in chronic myeloid leukemia",
      "u": "https://www.nature.com/articles/s41375-026-03182-z",
@@ -514,17 +521,9 @@
      "j": "Cell Death Dis",
      "d": "2026-10-21",
      "a": ""
-    },
-    {
-     "t": "Immune reconstitution and clinical outcomes in B-ALL patients with versus without pre-HSCT Immunotherapy",
-     "u": "https://www.nature.com/articles/s41408-026-01638-0",
-     "j": "Blood Cancer J",
-     "d": "2026-10-21",
-     "a": "Zeng YY et al.",
-     "p": "42907450"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "nhl",
@@ -535,6 +534,22 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Optimal levetiracetam dosage regimen for preventing seizures related to immune effector cell-associated neurotoxicity syndrome",
+     "u": "https://www.nature.com/articles/s41409-026-03038-1",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-14",
+     "a": "Sugimoto Y et al.",
+     "p": "43026258"
+    },
+    {
+     "t": "Bridging to CD19 CAR T-cell therapy for large B-cell lymphoma: An analysis of 1,134 patients by the EBMT Lymphoma Working Party and the GoCART Coalition",
+     "u": "https://www.nature.com/articles/s41409-026-03074-x",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-13",
+     "a": "Berning P et al.",
+     "p": "43026256"
+    },
     {
      "t": "Survival trends in Waldenström macroglobulinemia and comparison of outcomes with the general United States population",
      "u": "https://www.nature.com/articles/s41375-026-03187-8",
@@ -672,24 +687,9 @@
      "d": "2026-10-01",
      "a": "Yao Y et al.",
      "p": "42823506"
-    },
-    {
-     "t": "Real-world treatment patterns and outcomes of brentuximab vedotin–based therapy in CD30-positive lymphomas in China: the prospective BRAVE study",
-     "u": "https://www.nature.com/articles/s41408-026-01627-3",
-     "j": "Blood Cancer J",
-     "d": "2026-09-30",
-     "a": "Cai MC et al.",
-     "p": "42816478"
-    },
-    {
-     "t": "End-of-induction circulating tumor DNA outperforms conventional cellular MRD for predicting early progression in follicular lymphoma: an ancillary study of the RELEVANCE randomized trial",
-     "u": "https://www.nature.com/articles/s41408-026-01631-7",
-     "j": "Blood Cancer J",
-     "d": "2026-09-29",
-     "a": ""
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "hl",
@@ -853,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "mm",
@@ -864,6 +864,14 @@
     "https://www.nature.com/subjects/myeloma"
    ],
    "items": [
+    {
+     "t": "Impact of residual clonal plasma cell proliferation rate after autologous stem cell transplant on outcomes in multiple myeloma",
+     "u": "https://www.nature.com/articles/s41408-026-01676-8",
+     "j": "Blood Cancer J",
+     "d": "2026-11-13",
+     "a": "Hellou T et al.",
+     "p": "43026206"
+    },
     {
      "t": "Real-world treatment patterns and clinical outcomes in relapsed/refractory multiple myeloma across Asia: a multicenter Asian Myeloma Network study (AMN010)",
      "u": "https://www.nature.com/articles/s41408-026-01641-5",
@@ -996,17 +1004,9 @@
      "d": "2026-10-06",
      "a": "Dholaria BR et al.",
      "p": "42839068"
-    },
-    {
-     "t": "MAIA frailty subgroup analysis: long-term follow-up with daratumumab plus lenalidomide/dexamethasone in transplant-ineligible newly diagnosed myeloma",
-     "u": "https://www.nature.com/articles/s41375-026-03128-5",
-     "j": "Leukemia",
-     "d": "2026-10-06",
-     "a": "Facon T et al.",
-     "p": "42839070"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "mpn",
@@ -1178,7 +1178,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "mds",
@@ -1339,7 +1339,7 @@
      "p": "42448935"
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "ba",
@@ -1350,6 +1350,24 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Salvage at molecular relapse: many paths, few signposts",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021994",
+     "p": "43024493",
+     "j": "Blood Adv",
+     "d": "2026-11-13",
+     "a": "Loo S et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Blinatumomab for pediatric B-ALL in LMICs: promise or peril?",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022294",
+     "p": "43024492",
+     "j": "Blood Adv",
+     "d": "2026-11-13",
+     "a": "Ozuah NW",
+     "ty": "Editorial, Comment"
+    },
     {
      "t": "Cytoreduction for MPN-associated splanchnic vein thrombosis",
      "u": "https://doi.org/10.1182/bloodadvances.2026022149",
@@ -1511,27 +1529,9 @@
      "d": "2026-10-30",
      "a": "Martín-Carrizosa A et al.",
      "ty": ""
-    },
-    {
-     "t": "Comparative survival and time toxicity outcomes of CAR-T versus bispecific antibody therapies in relapsed/refractory FL",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020899",
-     "p": "42962270",
-     "j": "Blood Adv",
-     "d": "2026-10-30",
-     "a": "Major A et al.",
-     "ty": ""
-    },
-    {
-     "t": "Therapeutic Synergy and Immune Activation by SUMOylation Pathway Inhibition in Acute Myeloid Leukemia",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020561",
-     "p": "42962268",
-     "j": "Blood Adv",
-     "d": "2026-10-30",
-     "a": "Son H et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "aacr",
@@ -1542,6 +1542,24 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "RNA-Bound MYBL2 Engages the Oncogenic Transcription Factors MAFG and FRA1 to Promote Melanoma Progression",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4122",
+     "p": "43024359",
+     "j": "Cancer Res",
+     "d": "2026-11-13",
+     "a": "Wang K et al.",
+     "ty": ""
+    },
+    {
+     "t": "Compartment-Resolved Profiling Identifies Shared Stromal Programs and Clarifies Molecular Subtype Origins in Ovarian Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1330",
+     "p": "43024049",
+     "j": "Cancer Res",
+     "d": "2026-11-13",
+     "a": "Djirackor S et al.",
+     "ty": ""
+    },
     {
      "t": "Ketogenic Fasting Suppresses Tumor Growth and Enhances PD-1 Blockade Efficacy Through Glutamine Partitioning and Microbial Metabolite Remodeling",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-1941",
@@ -1703,27 +1721,9 @@
      "d": "2026-10-23",
      "a": "Lin M et al.",
      "ty": ""
-    },
-    {
-     "t": "PHGDH Sustains Oncometabolite Production to Drive Resistance to Mutant IDH Inhibition in Glioma that can be Monitored by Metabolic Imaging",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-4071",
-     "p": "42911092",
-     "j": "Cancer Res",
-     "d": "2026-10-23",
-     "a": "Taglang C et al.",
-     "ty": ""
-    },
-    {
-     "t": "Spatial Transcriptomics on a Diverse Pancreatic Cancer Cohort Reveals Race-Related Differences in Tumor Subtypes and Immune Microenvironments",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-2748",
-     "p": "42896131",
-     "j": "Cancer Res",
-     "d": "2026-10-19",
-     "a": "Wu Y et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   },
   {
    "key": "jco",
@@ -1734,6 +1734,33 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Dasatinib Dose Optimization With Weekend Drug Holiday for Improved Tolerability in Chronic Myeloid Leukemia (DasaHIT): A German Chronic Myeloid Leukemia Alliance Randomized Trial",
+     "u": "https://doi.org/10.1200/JCO-26-00899",
+     "p": "43024850",
+     "j": "J Clin Oncol",
+     "d": "2026-11-13",
+     "a": "La Rosée P et al.",
+     "ty": ""
+    },
+    {
+     "t": "Eosinophils in Breast Cancer: One for All and All for One",
+     "u": "https://doi.org/10.1200/JCO-26-02258",
+     "p": "43024841",
+     "j": "J Clin Oncol",
+     "d": "2026-11-13",
+     "a": "Savas P et al.",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Early Treatment Failure in Patients With Relapsed/Refractory Multiple Myeloma Receiving Bispecific T-Cell Engagers: Development and Validation of the CHARGE Prognostic Index",
+     "u": "https://doi.org/10.1200/JCO-26-01039",
+     "p": "43024836",
+     "j": "J Clin Oncol",
+     "d": "2026-11-13",
+     "a": "Zanwar S et al.",
+     "ty": ""
+    },
     {
      "t": "Second Cancer Risk in Female Survivors of Hodgkin Lymphoma: A National Cohort Analysis Across Treatment Eras",
      "u": "https://doi.org/10.1200/JCO-26-00418",
@@ -1877,36 +1904,9 @@
      "d": "2026-10-30",
      "a": "Abdou Y et al.",
      "ty": ""
-    },
-    {
-     "t": "Methylphenidate for Hematologic Cancer-Related Fatigue: A Randomized Clinical Trial",
-     "u": "https://doi.org/10.1200/JCO-26-00578",
-     "p": "42962158",
-     "j": "J Clin Oncol",
-     "d": "2026-10-30",
-     "a": "Frederiksen H et al.",
-     "ty": ""
-    },
-    {
-     "t": "Therapy for Stage IV Non-Small Cell Lung Cancer With Driver Alterations: ASCO Living Guideline, Version 2026.3.4",
-     "u": "https://doi.org/10.1200/JCO-26-02597",
-     "p": "42956324",
-     "j": "J Clin Oncol",
-     "d": "2026-10-29",
-     "a": "Reuss J et al.",
-     "ty": ""
-    },
-    {
-     "t": "Darovasertib and Crizotinib First-Line Treatment for Metastatic Uveal Melanoma: Overall Survival, Efficacy, and Safety From the OptimUM-01 Study",
-     "u": "https://doi.org/10.1200/JCO-26-00802",
-     "p": "42950186",
-     "j": "J Clin Oncol",
-     "d": "2026-10-28",
-     "a": "McKean M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-13"
+   "updated": "2026-11-14"
   }
  ]
 }
