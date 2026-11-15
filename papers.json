@@ -1,5 +1,5 @@
 {
- "built": "2026-11-14 11:16 UTC",
+ "built": "2026-11-15 11:19 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "nhl",
@@ -689,7 +689,7 @@
      "p": "42823506"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "hl",
@@ -853,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "mm",
@@ -1006,7 +1006,7 @@
      "p": "42839068"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "mpn",
@@ -1178,7 +1178,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "mds",
@@ -1189,6 +1189,13 @@
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
    "items": [
+    {
+     "t": "Implications of TP53 mutations in patients with higher risk myelodysplastic syndromes (MDS) who received hypomethylating agent therapy: an analysis from the VALIDATE database of the International Consortium for MDS",
+     "u": "https://www.nature.com/articles/s41408-026-01584-x",
+     "j": "Blood Cancer J",
+     "d": "2026-11-14",
+     "a": ""
+    },
     {
      "t": "Mesenchymal stromal cells drive immune escape in MDS and sAML through metabolic rewiring of NK cells",
      "u": "https://www.nature.com/articles/s41375-026-03172-1",
@@ -1329,17 +1336,9 @@
      "d": "2026-07-18",
      "a": "Ren Y et al.",
      "p": "42471475"
-    },
-    {
-     "t": "IKZF1N159S is associated with adverse outcomes in patients with myelodysplastic neoplasms",
-     "u": "https://www.nature.com/articles/s41375-026-03066-2",
-     "j": "Leukemia",
-     "d": "2026-07-14",
-     "a": "Yu Y et al.",
-     "p": "42448935"
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "ba",
@@ -1531,7 +1530,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "aacr",
@@ -1723,7 +1722,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   },
   {
    "key": "jco",
@@ -1906,7 +1905,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-14"
+   "updated": "2026-11-15"
   }
  ]
 }
