@@ -1,5 +1,5 @@
 {
- "built": "2026-11-15 11:19 UTC",
+ "built": "2026-11-16 11:48 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "nhl",
@@ -689,7 +689,7 @@
      "p": "42823506"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "hl",
@@ -853,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "mm",
@@ -1006,7 +1006,7 @@
      "p": "42839068"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "mpn",
@@ -1178,7 +1178,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "mds",
@@ -1267,19 +1267,20 @@
      "p": "42749863"
     },
     {
-     "t": "SRSF2 mutations contribute to bone marrow immune microenvironment alterations",
-     "u": "https://www.nature.com/articles/s41419-026-09205-y",
-     "j": "Cell Death Dis",
-     "d": "2026-08-19",
-     "a": ""
-    },
-    {
      "t": "Prognostic factors of second allogeneic hematopoietic stem cell transplantation for relapsed or refractory myelodysplastic syndromes: nationwide registry analysis",
      "u": "https://www.nature.com/articles/s41409-026-03015-8",
      "j": "Bone Marrow Transplant",
      "d": "2026-08-19",
      "a": "Shiraishi K et al.",
      "p": "42618732"
+    },
+    {
+     "t": "SRSF2 mutations contribute to bone marrow immune microenvironment alterations",
+     "u": "https://www.nature.com/articles/s41419-026-09205-y",
+     "j": "Cell Death Dis",
+     "d": "2026-08-19",
+     "a": "Tao C et al.",
+     "p": "43035463"
     },
     {
      "t": "Allogeneic hematopoietic cell transplantation for myelodysplastic syndromes harboring a paroxysmal nocturnal hemoglobinuria clone—a study on behalf of the Chronic Malignancies and Severe Aplastic Anemia Working Parties of the EBMT",
@@ -1338,7 +1339,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "ba",
@@ -1530,7 +1531,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "aacr",
@@ -1722,7 +1723,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   },
   {
    "key": "jco",
@@ -1905,7 +1906,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-15"
+   "updated": "2026-11-16"
   }
  ]
 }
