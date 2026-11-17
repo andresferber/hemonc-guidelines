@@ -1,5 +1,5 @@
 {
- "built": "2026-11-16 11:48 UTC",
+ "built": "2026-11-17 11:26 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,51 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Microbiota-derived short-chain fatty acids control cGVHD development by regulating antibody production",
+     "u": "https://doi.org/10.1182/blood.2026034453",
+     "p": "43038184",
+     "j": "Blood",
+     "d": "2026-11-16",
+     "a": "Wolfe AE et al.",
+     "ty": ""
+    },
+    {
+     "t": "Carfilzomib-based strategies in transplant-eligible multiple myeloma: long-term follow-up of the phase 2 FORTE trial",
+     "u": "https://doi.org/10.1182/blood.2026035635",
+     "p": "43038178",
+     "j": "Blood",
+     "d": "2026-11-16",
+     "a": "Bertuglia G et al.",
+     "ty": ""
+    },
+    {
+     "t": "CENTRAL NERVOUS SYSTEM GRAFT VERSUS HOST DISEASE PATHOPHYSIOLOGY: MECHANISTIC PATHWAYS AND THERAPEUTIC TARGETS",
+     "u": "https://doi.org/10.1182/blood.2026035230",
+     "p": "43038176",
+     "j": "Blood",
+     "d": "2026-11-16",
+     "a": "Rayasam A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Etentamig in Relapsed/Refractory Multiple Myeloma: Pooled Phase 1 Data of an Investigational BCMA Bispecific Antibody",
+     "u": "https://doi.org/10.1182/blood.2026034590",
+     "p": "43038173",
+     "j": "Blood",
+     "d": "2026-11-16",
+     "a": "Baljevic M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Regenerative Stress Contributes to Higher Clonal Hematopoiesis with Myelodysplastic Features in Sickle Cell Disease Mice",
+     "u": "https://doi.org/10.1182/blood.2026034793",
+     "p": "43038169",
+     "j": "Blood",
+     "d": "2026-11-16",
+     "a": "Chi M et al.",
+     "ty": ""
+    },
     {
      "t": "CAR-T Targeting of Mutant Calreticulin Selectively Eradicates Myeloproliferative Neoplasm-Sustaining Stem Cells",
      "u": "https://doi.org/10.1182/blood.2026033948",
@@ -144,54 +189,9 @@
      "d": "2026-11-10",
      "a": "Huang QL et al.",
      "ty": ""
-    },
-    {
-     "t": "Detection, Monitoring, and Discrimination of Amyloidogenic vs Innocent Light Chains in Systemic Amyloidoses",
-     "u": "https://doi.org/10.1182/blood.2026034465",
-     "p": "43002606",
-     "j": "Blood",
-     "d": "2026-11-09",
-     "a": "Palladini G et al.",
-     "ty": ""
-    },
-    {
-     "t": "Terminal differentiation program of CD8 T cells guides immunotherapeutic options for CLL patients",
-     "u": "https://doi.org/10.1182/blood.2026035207",
-     "p": "43002581",
-     "j": "Blood",
-     "d": "2026-11-09",
-     "a": "Camerini E et al.",
-     "ty": ""
-    },
-    {
-     "t": "The Pathogen Recognition Receptor RIG-I is Functional in Platelets and Limits Thrombotic Responses",
-     "u": "https://doi.org/10.1182/blood.2026034983",
-     "p": "42986914",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Sciaudone AR et al.",
-     "ty": ""
-    },
-    {
-     "t": "CD20-directed Autologous CAR T-cell Therapy for Waldenström Macroglobulinemia",
-     "u": "https://doi.org/10.1182/blood.2026034987",
-     "p": "42986912",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Shadman M et al.",
-     "ty": ""
-    },
-    {
-     "t": "Multimodal omics identifies a lymphoid-biased multipotent progenitor population with limited age-associated remodeling",
-     "u": "https://doi.org/10.1182/blood.2026034629",
-     "p": "42986910",
-     "j": "Blood",
-     "d": "2026-11-05",
-     "a": "Romero-Mulero MC et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "nhl",
@@ -689,7 +689,7 @@
      "p": "42823506"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "hl",
@@ -853,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "mm",
@@ -864,6 +864,14 @@
     "https://www.nature.com/subjects/myeloma"
    ],
    "items": [
+    {
+     "t": "Solitary plasmacytoma of bone (SPB): observations from a randomized phase III trial that evaluated the additional of adjuvant systemic treatment to zoledronic acid (ZA) after definitive radiation (alliance A061402)",
+     "u": "https://www.nature.com/articles/s41408-026-01674-w",
+     "j": "Blood Cancer J",
+     "d": "2026-11-16",
+     "a": "Sborov DW et al.",
+     "p": "43039885"
+    },
     {
      "t": "Impact of residual clonal plasma cell proliferation rate after autologous stem cell transplant on outcomes in multiple myeloma",
      "u": "https://www.nature.com/articles/s41408-026-01676-8",
@@ -996,17 +1004,9 @@
      "d": "2026-10-06",
      "a": "Bird SA et al.",
      "p": "42838937"
-    },
-    {
-     "t": "Measurable residual disease-guided, fixed-duration, potentially definitive therapy for standard risk newly diagnosed multiple myeloma",
-     "u": "https://www.nature.com/articles/s41375-026-03162-3",
-     "j": "Leukemia",
-     "d": "2026-10-06",
-     "a": "Dholaria BR et al.",
-     "p": "42839068"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "mpn",
@@ -1178,7 +1178,7 @@
      "p": "42486917"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "mds",
@@ -1339,7 +1339,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "ba",
@@ -1350,6 +1350,15 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Looking beyond the perfect (mis)match",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022053",
+     "p": "43038094",
+     "j": "Blood Adv",
+     "d": "2026-11-16",
+     "a": "Ueda Oshima M et al.",
+     "ty": "Editorial, Comment"
+    },
     {
      "t": "Salvage at molecular relapse: many paths, few signposts",
      "u": "https://doi.org/10.1182/bloodadvances.2026021994",
@@ -1520,18 +1529,9 @@
      "d": "2026-10-30",
      "a": "Dondolin R et al.",
      "ty": ""
-    },
-    {
-     "t": "Progressive Multifocal Leukoencephalopathy in Lymphoid Malignancies: A Multicenter GELTAMO Case Series",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021203",
-     "p": "42962271",
-     "j": "Blood Adv",
-     "d": "2026-10-30",
-     "a": "Martín-Carrizosa A et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "aacr",
@@ -1542,6 +1542,15 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "Hypoactive APOBEC3A Achieves High-Level Mutagenesis and Drives Squamous Cell Carcinoma",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5211",
+     "p": "43037278",
+     "j": "Cancer Res",
+     "d": "2026-11-16",
+     "a": "Xu Z et al.",
+     "ty": ""
+    },
     {
      "t": "RNA-Bound MYBL2 Engages the Oncogenic Transcription Factors MAFG and FRA1 to Promote Melanoma Progression",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-4122",
@@ -1712,18 +1721,9 @@
      "d": "2026-10-26",
      "a": "DeWitt JT et al.",
      "ty": ""
-    },
-    {
-     "t": "Gastric Mixed Neuroendocrine-Non-neuroendocrine Neoplasms Develop from POU2F3+ Multipotent Progenitors",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5714",
-     "p": "42912192",
-     "j": "Cancer Res",
-     "d": "2026-10-23",
-     "a": "Lin M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   },
   {
    "key": "jco",
@@ -1734,6 +1734,42 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Reply to: Unanswered Question Regarding CNS Prophylaxis in CD5-Positive Diffuse Large B-Cell Lymphoma",
+     "u": "https://doi.org/10.1200/JCO-26-02452",
+     "p": "43038505",
+     "j": "J Clin Oncol",
+     "d": "2026-11-16",
+     "a": "Wilson MR et al.",
+     "ty": ""
+    },
+    {
+     "t": "Enhancing Workforce Research Methodology to Match Patients' Need in Contemporary Oncology Practice",
+     "u": "https://doi.org/10.1200/JCO-26-02081",
+     "p": "43038498",
+     "j": "J Clin Oncol",
+     "d": "2026-11-16",
+     "a": "Patel MI et al.",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Unanswered Question Regarding CNS Prophylaxis in CD5-Positive Diffuse Large B-Cell Lymphoma",
+     "u": "https://doi.org/10.1200/JCO-26-01793",
+     "p": "43038497",
+     "j": "J Clin Oncol",
+     "d": "2026-11-16",
+     "a": "Kidoguchi K et al.",
+     "ty": "Letter"
+    },
+    {
+     "t": "Brachytherapy Returns to the Brain: The ROADS Trial and a Second Look at Cavity Radiosurgery",
+     "u": "https://doi.org/10.1200/JCO-26-02475",
+     "p": "43038496",
+     "j": "J Clin Oncol",
+     "d": "2026-11-16",
+     "a": "Lehrer EJ et al.",
+     "ty": "Editorial"
+    },
     {
      "t": "Dasatinib Dose Optimization With Weekend Drug Holiday for Improved Tolerability in Chronic Myeloid Leukemia (DasaHIT): A German Chronic Myeloid Leukemia Alliance Randomized Trial",
      "u": "https://doi.org/10.1200/JCO-26-00899",
@@ -1868,45 +1904,9 @@
      "d": "2026-11-03",
      "a": "Stiles BM",
      "ty": "Editorial"
-    },
-    {
-     "t": "Feasibility and Tolerability of Chemoimmunotherapy Given During Induction for Treatment of Patients With High-Risk Neuroblastoma: A Report From the Children's Oncology Group",
-     "u": "https://doi.org/10.1200/JCO-26-00810",
-     "p": "42976306",
-     "j": "J Clin Oncol",
-     "d": "2026-11-03",
-     "a": "Federico SM et al.",
-     "ty": ""
-    },
-    {
-     "t": "Stereotactic Ablative Radiotherapy Versus Surgical Resection for Early-Stage Non-Small Cell Lung Cancer: An Emulated Target Trial",
-     "u": "https://doi.org/10.1200/JCO-26-00399",
-     "p": "42970669",
-     "j": "J Clin Oncol",
-     "d": "2026-11-02",
-     "a": "Kagenaar E et al.",
-     "ty": ""
-    },
-    {
-     "t": "Immunochemotherapy for Borderline Resectable or Locally Advanced Pancreatic Cancer: A Randomized Controlled Trial",
-     "u": "https://doi.org/10.1200/JCO-26-01393",
-     "p": "42970668",
-     "j": "J Clin Oncol",
-     "d": "2026-11-02",
-     "a": "Bai X et al.",
-     "ty": ""
-    },
-    {
-     "t": "From TAILORx to OPTIMA: Evolving Evidence for Genomically Guided Chemotherapy in Hormone Receptor-Positive Human Epidermal Growth Factor Receptor 2-Negative Breast Cancer",
-     "u": "https://doi.org/10.1200/JCO-26-01976",
-     "p": "42962160",
-     "j": "J Clin Oncol",
-     "d": "2026-10-30",
-     "a": "Abdou Y et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-16"
+   "updated": "2026-11-17"
   }
  ]
 }
