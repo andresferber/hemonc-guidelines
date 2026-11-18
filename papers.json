@@ -1,5 +1,5 @@
 {
- "built": "2026-11-17 11:26 UTC",
+ "built": "2026-11-18 11:34 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,15 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Cytokines to modulate CAR T cells",
+     "u": "https://doi.org/10.1182/blood.2026035098",
+     "p": "43043871",
+     "j": "Blood",
+     "d": "2026-11-17",
+     "a": "Savoldo B et al.",
+     "ty": ""
+    },
     {
      "t": "Microbiota-derived short-chain fatty acids control cGVHD development by regulating antibody production",
      "u": "https://doi.org/10.1182/blood.2026034453",
@@ -180,18 +189,9 @@
      "d": "2026-11-10",
      "a": "Beeler JS et al.",
      "ty": ""
-    },
-    {
-     "t": "Nuclear Receptor Nur77 Orchestrates Hematopoietic Lineage Commitment to Avert Anemia in Diabetes",
-     "u": "https://doi.org/10.1182/blood.2026034088",
-     "p": "43008228",
-     "j": "Blood",
-     "d": "2026-11-10",
-     "a": "Huang QL et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42906088"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "nhl",
@@ -534,6 +534,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "PIM kinase inhibition induces epigenetically conditioned transcriptional changes, abnormal RNA splicing and DNA damage in diffuse large B-cell lymphoma cells",
+     "u": "https://www.nature.com/articles/s41388-026-04044-9",
+     "j": "Oncogene",
+     "d": "2026-11-18",
+     "a": ""
+    },
     {
      "t": "Optimal levetiracetam dosage regimen for preventing seizures related to immune effector cell-associated neurotoxicity syndrome",
      "u": "https://www.nature.com/articles/s41409-026-03038-1",
@@ -679,17 +686,9 @@
      "d": "2026-10-05",
      "a": "Suma S et al.",
      "p": "42967949"
-    },
-    {
-     "t": "ROR1 upregulation after CD19-CAR T-cell relapse in mantle cell lymphoma identifies a targetable vulnerability for ROR1-directed bispecific modalities",
-     "u": "https://www.nature.com/articles/s41375-026-03146-3",
-     "j": "Leukemia",
-     "d": "2026-10-01",
-     "a": "Yao Y et al.",
-     "p": "42823506"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "hl",
@@ -853,7 +852,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "mm",
@@ -1006,7 +1005,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "mpn",
@@ -1017,6 +1016,22 @@
     "https://www.nature.com/subjects/myeloproliferative-disease"
    ],
    "items": [
+    {
+     "t": "Stem cell source, CD34+ dose and outcomes in haploidentical hematopoietic cell transplantation for myelofibrosis: a study of the Chronic Malignancies Working Party of EBMT",
+     "u": "https://www.nature.com/articles/s41409-026-03018-5",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-17",
+     "a": "Czerw T et al.",
+     "p": "43045775"
+    },
+    {
+     "t": "European LeukemiaNet clinical signs and symptoms as prognostic markers in polycythemia vera during ruxolitinib",
+     "u": "https://www.nature.com/articles/s41375-026-03183-y",
+     "j": "Leukemia",
+     "d": "2026-11-17",
+     "a": "Palandri F et al.",
+     "p": "43045826"
+    },
     {
      "t": "Mutant calreticulin-driven myeloproliferative neoplasms favour the emergence of TIGIT-positive NK cells",
      "u": "https://www.nature.com/articles/s41375-026-03175-y",
@@ -1160,25 +1175,9 @@
      "d": "2026-07-25",
      "a": "Gangat N et al.",
      "p": "42502117"
-    },
-    {
-     "t": "Molecular and clinical analyses of c-CBL mutations affecting tyrosine 371 in myelodysplastic and proliferative disorders",
-     "u": "https://www.nature.com/articles/s41375-026-03072-4",
-     "j": "Leukemia",
-     "d": "2026-07-22",
-     "a": "Guarnera L et al.",
-     "p": "42486998"
-    },
-    {
-     "t": "Nonmyeloablative and reduced-intensity conditioning for allogeneic hematopoietic stem cell transplantation in sickle cell disease: a narrative review of safety, engraftment, and graft-versus-host-disease outcomes in adults and high-risk populations",
-     "u": "https://www.nature.com/articles/s41409-026-02982-2",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-07-22",
-     "a": "Elgohary G et al.",
-     "p": "42486917"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "mds",
@@ -1339,7 +1338,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "ba",
@@ -1350,6 +1349,42 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Trafficking Dynamics of Steady State Versus Mobilized Hematopoietic Stem and Progenitor Cells in Non-Human Primates",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022287",
+     "p": "43044128",
+     "j": "Blood Adv",
+     "d": "2026-11-17",
+     "a": "Fan X et al.",
+     "ty": ""
+    },
+    {
+     "t": "Assessing Differences in Timeliness of Emergency Department Pain Treatment for Adult Sickle Cell Pain and Renal Colic",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021103",
+     "p": "43044127",
+     "j": "Blood Adv",
+     "d": "2026-11-17",
+     "a": "Gwarzo I et al.",
+     "ty": ""
+    },
+    {
+     "t": "Heterogeneity and GRADE in recurrent VTE prognosis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022963",
+     "p": "43044125",
+     "j": "Blood Adv",
+     "d": "2026-11-17",
+     "a": "Marti-Carvajal A",
+     "ty": ""
+    },
+    {
+     "t": "Treatment journey and outcomes of patients with RRMM after quadruple-class exposure: a critical unmet need",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021159",
+     "p": "43044123",
+     "j": "Blood Adv",
+     "d": "2026-11-17",
+     "a": "Hansen DK et al.",
+     "ty": ""
+    },
     {
      "t": "Looking beyond the perfect (mis)match",
      "u": "https://doi.org/10.1182/bloodadvances.2026022053",
@@ -1493,45 +1528,9 @@
      "d": "2026-11-05",
      "a": "Xie Y et al.",
      "ty": ""
-    },
-    {
-     "t": "A Roadmap for Developing and Implementing Duffy Null-Specific Reference Intervals",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021681",
-     "p": "42986297",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Merz LE et al.",
-     "ty": ""
-    },
-    {
-     "t": "Establishing Absolute Neutrophil Count and White Blood Cell Count Reference Intervals for the Duffy Null Population",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020900",
-     "p": "42986295",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Merz LE et al.",
-     "ty": ""
-    },
-    {
-     "t": "The diagnosis of iron deficiency: progress toward consensus",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022237",
-     "p": "42970761",
-     "j": "Blood Adv",
-     "d": "2026-11-02",
-     "a": "Means RT Jr",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Plasma metabolomics and ctDNA analysis in newly diagnosed diffuse large B-cell lymphoma: an exploratory study",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021464",
-     "p": "42962272",
-     "j": "Blood Adv",
-     "d": "2026-10-30",
-     "a": "Dondolin R et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "aacr",
@@ -1723,7 +1722,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   },
   {
    "key": "jco",
@@ -1734,6 +1733,33 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Partial-Breast Irradiation Versus Whole-Breast Irradiation for Low-Risk Invasive Breast Carcinoma: 5-Year Results of the Multicenter, Randomized, Phase III IRMA Trial",
+     "u": "https://doi.org/10.1200/JCO-26-00969",
+     "p": "43044095",
+     "j": "J Clin Oncol",
+     "d": "2026-11-17",
+     "a": "Meduri B et al.",
+     "ty": ""
+    },
+    {
+     "t": "Reply to: Tumor Site Heterogeneity in OrigAMI-4: Biological Implications and Open Questions for OrigAMI-5",
+     "u": "https://doi.org/10.1200/JCO-26-02504",
+     "p": "43044092",
+     "j": "J Clin Oncol",
+     "d": "2026-11-17",
+     "a": "Burtness B et al.",
+     "ty": ""
+    },
+    {
+     "t": "Tumor Site Heterogeneity in OrigAMI-4: Biological Implications and Open Questions for OrigAMI-5",
+     "u": "https://doi.org/10.1200/JCO-26-01516",
+     "p": "43044088",
+     "j": "J Clin Oncol",
+     "d": "2026-11-17",
+     "a": "De Luca P et al.",
+     "ty": "Letter"
+    },
     {
      "t": "Reply to: Unanswered Question Regarding CNS Prophylaxis in CD5-Positive Diffuse Large B-Cell Lymphoma",
      "u": "https://doi.org/10.1200/JCO-26-02452",
@@ -1886,27 +1912,9 @@
      "d": "2026-11-04",
      "a": "Shi X et al.",
      "ty": ""
-    },
-    {
-     "t": "Circulating Tumor DNA Profiling Across Phase II/III Ewing Sarcoma Trials Identifies High-Risk Patients With TP53, STAG2, and CDKN2A Alterations",
-     "u": "https://doi.org/10.1200/JCO-26-00280",
-     "p": "42981545",
-     "j": "J Clin Oncol",
-     "d": "2026-11-04",
-     "a": "Mous L et al.",
-     "ty": ""
-    },
-    {
-     "t": "When Practice Outpaces Evidence: Comparative Evidence for Stereotactic Ablative Radiotherapy Versus Surgical Resection for Stage I Non‑Small Cell Lung Cancer",
-     "u": "https://doi.org/10.1200/JCO-26-01859",
-     "p": "42976310",
-     "j": "J Clin Oncol",
-     "d": "2026-11-03",
-     "a": "Stiles BM",
-     "ty": "Editorial"
     }
    ],
-   "updated": "2026-11-17"
+   "updated": "2026-11-18"
   }
  ]
 }
