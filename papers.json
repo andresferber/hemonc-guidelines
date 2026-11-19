@@ -1,5 +1,5 @@
 {
- "built": "2026-11-18 11:34 UTC",
+ "built": "2026-11-19 11:32 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,15 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Endothelial IDO1 Drives BBB Disruption in CAR-T-Associated Neurotoxicity Through KYNU-AA-Wnt/β-catenin Pathway",
+     "u": "https://doi.org/10.1182/blood.2026035669",
+     "p": "43050395",
+     "j": "Blood",
+     "d": "2026-11-18",
+     "a": "Zhang W et al.",
+     "ty": ""
+    },
     {
      "t": "Cytokines to modulate CAR T cells",
      "u": "https://doi.org/10.1182/blood.2026035098",
@@ -180,18 +189,9 @@
      "d": "2026-11-10",
      "a": "Kotrova M et al.",
      "ty": ""
-    },
-    {
-     "t": "Pivekimab sunirine and the evolving treatment of blastic plasmacytoid dendritic cell neoplasm",
-     "u": "https://doi.org/10.1182/blood.2026035185",
-     "p": "43008230",
-     "j": "Blood",
-     "d": "2026-11-10",
-     "a": "Beeler JS et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "nejm",
@@ -202,6 +202,30 @@
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
    "items": [
+    {
+     "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
+     "j": "N Engl J Med",
+     "d": "2026-11-19",
+     "a": "Jiayu Wang et al.",
+     "p": "42929681"
+    },
+    {
+     "t": "Targeting HER2 — A Triumph of Science",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2611466",
+     "j": "N Engl J Med",
+     "d": "2026-11-19",
+     "a": "Sandra M. Swain",
+     "p": "42929707"
+    },
+    {
+     "t": "Case 33-2026: A 73-Year-Old Woman with Fever, Weight Loss, and Leg Weakness",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603186",
+     "j": "N Engl J Med",
+     "d": "2026-11-19",
+     "a": "Michael P. Janjigian et al.",
+     "p": "43050663"
+    },
     {
      "t": "Prevention of Venous Thromboembolism after Total Hip or Knee Replacement",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2602435",
@@ -323,14 +347,6 @@
      "p": "42929692"
     },
     {
-     "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
-     "j": "N Engl J Med",
-     "d": "2026-10-24",
-     "a": "Jiayu Wang et al.",
-     "p": "42929681"
-    },
-    {
      "t": "Tarlatamab–Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2609482",
      "j": "N Engl J Med",
@@ -339,31 +355,15 @@
      "p": "42929702"
     },
     {
-     "t": "Targeting HER2 — A Triumph of Science",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2611466",
-     "j": "N Engl J Med",
-     "d": "2026-10-24",
-     "a": "Sandra M. Swain",
-     "p": "42929707"
-    },
-    {
      "t": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610229",
      "j": "N Engl J Med",
      "d": "2026-10-22",
      "a": "Yuanyuan Zhao et al.",
      "p": "42734213"
-    },
-    {
-     "t": "Helicobacter pylori Infection — Advances, Challenges, and the Road Ahead",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMra2414530",
-     "j": "N Engl J Med",
-     "d": "2026-10-22",
-     "a": "Hong Li et al.",
-     "p": "42906088"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "nhl",
@@ -539,7 +539,8 @@
      "u": "https://www.nature.com/articles/s41388-026-04044-9",
      "j": "Oncogene",
      "d": "2026-11-18",
-     "a": ""
+     "a": "Dębek S et al.",
+     "p": "43052377"
     },
     {
      "t": "Optimal levetiracetam dosage regimen for preventing seizures related to immune effector cell-associated neurotoxicity syndrome",
@@ -688,7 +689,7 @@
      "p": "42967949"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "hl",
@@ -852,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "mm",
@@ -1005,7 +1006,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "mpn",
@@ -1177,7 +1178,7 @@
      "p": "42502117"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "mds",
@@ -1338,7 +1339,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "ba",
@@ -1349,6 +1350,69 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Nodal peripheral T-cell lymphoma: a prognostic index developed by the T-cell project",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021721",
+     "p": "43050693",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Luminari S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Impact of Age on Real-World Outcomes of Bispecific Antibodies in Patients with Relapsed Refractory DLBCL: CUBIC Consortium Analysis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021461",
+     "p": "43050692",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Kambhampati Thiruvengadam S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Targeting smoldering myeloma and monoclonal gammopathy of undetermined significance using multi-antigen specific T cells",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022521",
+     "p": "43050688",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Vasileiou S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Real World Comparison of Asciminib Versus Ponatinib in Chronic Myeloid Leukemia with Propensity Score-Matched Analysis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021475",
+     "p": "43050686",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Perusini MA et al.",
+     "ty": ""
+    },
+    {
+     "t": "Low Uptake of Guideline-Recommended MRI Screening for Silent Cerebral Infarcts over the Lifespan in Sickle Cell Anemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021489",
+     "p": "43046963",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Hurley G et al.",
+     "ty": ""
+    },
+    {
+     "t": "Combined inhibition of BCL2 activity and CD28 signaling to prevent graft-versus-host disease",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021048",
+     "p": "43046952",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Chen H et al.",
+     "ty": ""
+    },
+    {
+     "t": "Iron Deficiency in Children Across Ferritin Methods",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022684",
+     "p": "43046941",
+     "j": "Blood Adv",
+     "d": "2026-11-18",
+     "a": "Sepiashvili L et al.",
+     "ty": ""
+    },
     {
      "t": "Trafficking Dynamics of Steady State Versus Mobilized Hematopoietic Stem and Progenitor Cells in Non-Human Primates",
      "u": "https://doi.org/10.1182/bloodadvances.2026022287",
@@ -1465,72 +1529,9 @@
      "d": "2026-11-10",
      "a": "Velazquez J et al.",
      "ty": ""
-    },
-    {
-     "t": "Idiopathic Multicentric Castleman Disease Unresponsive to One IL-6 Inhibitor May Respond to Another IL-6 Inhibitor",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020893",
-     "p": "43008264",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "McHugh K et al.",
-     "ty": ""
-    },
-    {
-     "t": "NLRC4 inflammasome: a key driver in TET2-deficient MDS",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021746",
-     "p": "43007668",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Varelias A",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Dasatinib in pediatric patients with chronic myeloid leukemia in chronic phase: long-term efficacy and endocrine analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021359",
-     "p": "42987920",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Samis J et al.",
-     "ty": ""
-    },
-    {
-     "t": "Quantitative and mutational properties in the ctDNA uncovered by systemic inflammation in large B-cell lymphoma",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021161",
-     "p": "42987335",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Arffman M et al.",
-     "ty": ""
-    },
-    {
-     "t": "Cardiovascular risk and endothelial injury in hemophilia",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022566",
-     "p": "42987334",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Evangelidis P Dr et al.",
-     "ty": ""
-    },
-    {
-     "t": "Research Needs on Bispecific Antibodies and PML",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022510",
-     "p": "42987320",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Le Henaff JR et al.",
-     "ty": ""
-    },
-    {
-     "t": "Interpreting FXIa Inhibitor Interference Outside Plasma",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022447",
-     "p": "42986798",
-     "j": "Blood Adv",
-     "d": "2026-11-05",
-     "a": "Xie Y et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "aacr",
@@ -1722,7 +1723,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   },
   {
    "key": "jco",
@@ -1914,7 +1915,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-18"
+   "updated": "2026-11-19"
   }
  ]
 }
