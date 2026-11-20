@@ -1,5 +1,5 @@
 {
- "built": "2026-11-19 11:32 UTC",
+ "built": "2026-11-20 11:33 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,96 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Beyond cyclosporine alone in moderate aplastic anemia",
+     "u": "https://doi.org/10.1182/blood.2026035998",
+     "p": "43056141",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "McQuilten ZK",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Not noninferior: what OPTI-AML really tells us",
+     "u": "https://doi.org/10.1182/blood.2026035657",
+     "p": "43056140",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Bataller A et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Factor V gains a direct anticoagulant role",
+     "u": "https://doi.org/10.1182/blood.2026035752",
+     "p": "43056139",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Gilbert GE",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Rewriting resistance: NRAS resets AML cell state",
+     "u": "https://doi.org/10.1182/blood.2026035435",
+     "p": "43056138",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Keeshan K",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Solving for X in R-CHOP+X: is epcoritamab the answer?",
+     "u": "https://doi.org/10.1182/blood.2026035658",
+     "p": "43056137",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Olszewski AJ",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "The PAX to FLT3 targeting",
+     "u": "https://doi.org/10.1182/blood.2026035828",
+     "p": "43056136",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Iacobucci I",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Histidine-rich glycoprotein is the new \"antithrombin V\"",
+     "u": "https://doi.org/10.1182/blood.2026035906",
+     "p": "43056135",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Schmaier AH",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Eltrombopag for moderate aplastic anemia",
+     "u": "https://doi.org/10.1182/blood.2026036658",
+     "p": "43056134",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "",
+     "ty": ""
+    },
+    {
+     "t": "Not everything that looks like a gametocyte is malaria",
+     "u": "https://doi.org/10.1182/blood.2026035562",
+     "p": "43056133",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Marek A et al.",
+     "ty": ""
+    },
+    {
+     "t": "When it comes to therapeutics, new is good, but what we really need are breakthrough drugs and products",
+     "u": "https://doi.org/10.1182/blood.2026035564",
+     "p": "43056132",
+     "j": "Blood",
+     "d": "2026-11-19",
+     "a": "Roberts AW",
+     "ty": ""
+    },
     {
      "t": "Endothelial IDO1 Drives BBB Disruption in CAR-T-Associated Neurotoxicity Through KYNU-AA-Wnt/β-catenin Pathway",
      "u": "https://doi.org/10.1182/blood.2026035669",
@@ -99,99 +189,9 @@
      "d": "2026-11-13",
      "a": "Brunner AM et al.",
      "ty": ""
-    },
-    {
-     "t": "The new Iron Age in polycythemia vera",
-     "u": "https://doi.org/10.1182/blood.2026036007",
-     "p": "43019000",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Ross DM",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Targeting TMPRSS6 in β-thalassemia: of mice and men",
-     "u": "https://doi.org/10.1182/blood.2026034177",
-     "p": "43018999",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Finberg KE",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Fit for the fight: BTK inhibitors prime CAR T cells in CLL",
-     "u": "https://doi.org/10.1182/blood.2026035633",
-     "p": "43018998",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Gribben JG",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Et tu, CD70? When friend turns foe for follicular lymphoma",
-     "u": "https://doi.org/10.1182/blood.2026035585",
-     "p": "43018997",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Roddie C et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "A clone by any other name: convergence of CCUS and LR-MDS",
-     "u": "https://doi.org/10.1182/blood.2026035791",
-     "p": "43018996",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Jain J et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Beyond provoked and unprovoked: guiding clinical decisions",
-     "u": "https://doi.org/10.1182/blood.2026035793",
-     "p": "43018995",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Nagler M",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Correcting a genetic overSTATement",
-     "u": "https://doi.org/10.1182/blood.2026035795",
-     "p": "43018994",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Guérin A et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Paravertebral extramedullary chronic myelomonocytic leukemia mimicking myeloid sarcoma",
-     "u": "https://doi.org/10.1182/blood.2026035091",
-     "p": "43018993",
-     "j": "Blood",
-     "d": "2026-11-12",
-     "a": "Sarami I et al.",
-     "ty": ""
-    },
-    {
-     "t": "Is Circulating Tumor DNA Ready for Clinical Use in Large B-cell Lymphoma?",
-     "u": "https://doi.org/10.1182/blood.2026033073",
-     "p": "43008236",
-     "j": "Blood",
-     "d": "2026-11-10",
-     "a": "Merryman RW et al.",
-     "ty": ""
-    },
-    {
-     "t": "International Cross-Age Consensus Guideline on Measurable Residual Disease Assessment in Acute Lymphoblastic Leukemia",
-     "u": "https://doi.org/10.1182/blood.2026035088",
-     "p": "43008231",
-     "j": "Blood",
-     "d": "2026-11-10",
-     "a": "Kotrova M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42734213"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "leuk",
@@ -523,7 +523,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "nhl",
@@ -689,7 +689,7 @@
      "p": "42967949"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "hl",
@@ -853,7 +853,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "mm",
@@ -1006,7 +1006,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "mpn",
@@ -1178,7 +1178,7 @@
      "p": "42502117"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "mds",
@@ -1339,7 +1339,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "ba",
@@ -1350,6 +1350,33 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Beyond thrombophilia status: clinical context matters",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022867",
+     "p": "43055284",
+     "j": "Blood Adv",
+     "d": "2026-11-19",
+     "a": "Waldman Radinsky L et al.",
+     "ty": ""
+    },
+    {
+     "t": "Diagnosis and management of acute myeloid leukemia with mutated CEBPA using CEBPA-Trass, a targeted sequencing approach",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021717",
+     "p": "43055274",
+     "j": "Blood Adv",
+     "d": "2026-11-19",
+     "a": "Nakata J et al.",
+     "ty": ""
+    },
+    {
+     "t": "Mechanistic basis of activity and safety of resecabtagene autoleucel across multiple autoimmune diseases",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022484",
+     "p": "43055273",
+     "j": "Blood Adv",
+     "d": "2026-11-19",
+     "a": "Stadanlick J et al.",
+     "ty": ""
+    },
     {
      "t": "Nodal peripheral T-cell lymphoma: a prognostic index developed by the T-cell project",
      "u": "https://doi.org/10.1182/bloodadvances.2026021721",
@@ -1502,36 +1529,9 @@
      "d": "2026-11-10",
      "a": "Loeffler L et al.",
      "ty": ""
-    },
-    {
-     "t": "Characterizing clinical heterogeneity by whole-genome sequencing of 591 patients with Hemoglobin H disease",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020999",
-     "p": "43008312",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Liu Y et al.",
-     "ty": ""
-    },
-    {
-     "t": "CD19-CD28 costimulatory bispecific antibody plus glofitamab in R/R B-NHL: a phase 1 dose-escalation study",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020917",
-     "p": "43008309",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Dickinson MJ et al.",
-     "ty": ""
-    },
-    {
-     "t": "Racial and Ethnic Differences in the Incidence of Langerhans Cell Histiocytosis Across the Age Spectrum",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022208",
-     "p": "43008305",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Velazquez J et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "aacr",
@@ -1542,6 +1542,33 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "PHGDH Inhibition Confers a Targetable Glutamine Dependency in Pancreatic Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1484",
+     "p": "43055344",
+     "j": "Cancer Res",
+     "d": "2026-11-19",
+     "a": "Kim Y et al.",
+     "ty": ""
+    },
+    {
+     "t": "Myeloid CD209 Drives Tumor Immune Evasion and Resistance to PD-1 Blockade Through ICAM-2-Mediated T-Cell Mechanosuppression",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-2612",
+     "p": "43055341",
+     "j": "Cancer Res",
+     "d": "2026-11-19",
+     "a": "Pan T et al.",
+     "ty": ""
+    },
+    {
+     "t": "Pretreatment Histopathology-Based Tumor Microenvironment Modeling Predicts Treatment-Specific Objective Responses in Non-small Cell Lung Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1365",
+     "p": "43055329",
+     "j": "Cancer Res",
+     "d": "2026-11-19",
+     "a": "Pan L et al.",
+     "ty": ""
+    },
     {
      "t": "Hypoactive APOBEC3A Achieves High-Level Mutagenesis and Drives Squamous Cell Carcinoma",
      "u": "https://doi.org/10.1158/0008-5472.CAN-25-5211",
@@ -1694,36 +1721,9 @@
      "d": "2026-10-27",
      "a": "Coffey NJ et al.",
      "ty": ""
-    },
-    {
-     "t": "SLC3A2 Drives an Immunosuppressive Metabolic Axis that Limits Oncolytic Virotherapy Efficacy",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1659",
-     "p": "42944699",
-     "j": "Cancer Res",
-     "d": "2026-10-27",
-     "a": "Dai W et al.",
-     "ty": ""
-    },
-    {
-     "t": "Histopathology-Based Spatial Profiling of Immune and Molecular Features Predicts Cancer Risk in Barrett's Esophagus Patients",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1476",
-     "p": "42944677",
-     "j": "Cancer Res",
-     "d": "2026-10-27",
-     "a": "Ercan C et al.",
-     "ty": ""
-    },
-    {
-     "t": "Patient Sociodemographic Factors Impact the Breast Cancer Microenvironment",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-25-5500",
-     "p": "42929736",
-     "j": "Cancer Res",
-     "d": "2026-10-26",
-     "a": "DeWitt JT et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   },
   {
    "key": "jco",
@@ -1915,7 +1915,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-19"
+   "updated": "2026-11-20"
   }
  ]
 }
