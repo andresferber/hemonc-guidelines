@@ -1,5 +1,5 @@
 {
- "built": "2026-11-20 11:33 UTC",
+ "built": "2026-11-21 11:26 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42734213"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "leuk",
@@ -374,6 +374,14 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Cholesterol dysregulation contributes to hematopoietic failure in parn-mutant zebrafish with implications for dyskeratosis congenita",
+     "u": "https://www.nature.com/articles/s41467-026-79105-4",
+     "j": "Nat Commun",
+     "d": "2026-11-20",
+     "a": "Ketharnathan S et al.",
+     "p": "43064760"
+    },
     {
      "t": "Development and validation of a machine learning model to predict the daily risk of febrile neutropenia in patients with AML undergoing chemotherapy",
      "u": "https://www.nature.com/articles/s43856-026-02001-x",
@@ -514,16 +522,9 @@
      "d": "2026-10-22",
      "a": "Fiorica G et al.",
      "p": "42918824"
-    },
-    {
-     "t": "FZR1 deficiency induces synthetic lethality with ATR inhibition by promoting premature cell cycle and mitotic catastrophe in acute lymphoblastic leukemia",
-     "u": "https://www.nature.com/articles/s41419-026-09310-y",
-     "j": "Cell Death Dis",
-     "d": "2026-10-21",
-     "a": ""
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "nhl",
@@ -689,7 +690,7 @@
      "p": "42967949"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "hl",
@@ -853,7 +854,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "mm",
@@ -1006,7 +1007,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "mpn",
@@ -1178,7 +1179,7 @@
      "p": "42502117"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "mds",
@@ -1339,7 +1340,7 @@
      "p": "42471475"
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "ba",
@@ -1350,6 +1351,60 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Base Editing of Hematopoietic Stem Cells Corrects Gain-of-Function Mutations in APDS",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021020",
+     "p": "43063921",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Orf K et al.",
+     "ty": ""
+    },
+    {
+     "t": "FLT3 Mutations in Myelodysplastic Syndromes and Chronic Myelomonocytic Leukemia: A Multi-Center Analysis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020859",
+     "p": "43063920",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Rodríguez-Sevilla JJ et al.",
+     "ty": ""
+    },
+    {
+     "t": "STI-8591: A Novel FLT3 Inhibitor Targeting Resistant FLT3 Mutations and central nervous system Leukemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020796",
+     "p": "43063919",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Zhang Y et al.",
+     "ty": ""
+    },
+    {
+     "t": "Systematic Review Supporting the American Society of Hematology Practice Guidelines on the Management of Myelofibrosis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021619",
+     "p": "43063918",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Hasan B et al.",
+     "ty": ""
+    },
+    {
+     "t": "Increasing Donor Age Remains Associated with Adverse Transplant Outcomes in the Post-Transplant Cyclophosphamide Era",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021494",
+     "p": "43063917",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Xie Y et al.",
+     "ty": ""
+    },
+    {
+     "t": "Navitoclax and Venetoclax with Chemotherapy for Relapsed/Refractory ALL in Children and Young Adults",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021957",
+     "p": "43063518",
+     "j": "Blood Adv",
+     "d": "2026-11-20",
+     "a": "Del Bufalo F et al.",
+     "ty": ""
+    },
     {
      "t": "Beyond thrombophilia status: clinical context matters",
      "u": "https://doi.org/10.1182/bloodadvances.2026022867",
@@ -1475,63 +1530,9 @@
      "d": "2026-11-17",
      "a": "Hansen DK et al.",
      "ty": ""
-    },
-    {
-     "t": "Looking beyond the perfect (mis)match",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022053",
-     "p": "43038094",
-     "j": "Blood Adv",
-     "d": "2026-11-16",
-     "a": "Ueda Oshima M et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Salvage at molecular relapse: many paths, few signposts",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021994",
-     "p": "43024493",
-     "j": "Blood Adv",
-     "d": "2026-11-13",
-     "a": "Loo S et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Blinatumomab for pediatric B-ALL in LMICs: promise or peril?",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022294",
-     "p": "43024492",
-     "j": "Blood Adv",
-     "d": "2026-11-13",
-     "a": "Ozuah NW",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Cytoreduction for MPN-associated splanchnic vein thrombosis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022149",
-     "p": "43019490",
-     "j": "Blood Adv",
-     "d": "2026-11-12",
-     "a": "Achar RK et al.",
-     "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Interpreting recurrence estimates in thrombophilia",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022915",
-     "p": "43008317",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Li Q et al.",
-     "ty": ""
-    },
-    {
-     "t": "Active Surveillance of JAK2V617F Clonal Hematopoiesis Toward Myeloproliferative Neoplasms",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021062",
-     "p": "43008313",
-     "j": "Blood Adv",
-     "d": "2026-11-10",
-     "a": "Loeffler L et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "aacr",
@@ -1723,7 +1724,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   },
   {
    "key": "jco",
@@ -1734,6 +1735,51 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Timing of Alectinib in Resectable ALK-Positive Non-Small Cell Lung Cancer: Lessons From ALNEO",
+     "u": "https://doi.org/10.1200/JCO-26-02424",
+     "p": "43063374",
+     "j": "J Clin Oncol",
+     "d": "2026-11-20",
+     "a": "Borgeaud M et al.",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Reach of State-Mandated Insurance Coverage for Fertility Preservation in Patients With Cancer",
+     "u": "https://doi.org/10.1200/JCO-26-01296",
+     "p": "43063371",
+     "j": "J Clin Oncol",
+     "d": "2026-11-20",
+     "a": "Chacón KM et al.",
+     "ty": ""
+    },
+    {
+     "t": "Effect of a Multidisciplinary Intervention on Fatigue in Lymphoma Survivors With Persistent Fatigue: A Randomized Controlled Trial (the REFUEL trial)",
+     "u": "https://doi.org/10.1200/JCO-26-00414",
+     "p": "43063370",
+     "j": "J Clin Oncol",
+     "d": "2026-11-20",
+     "a": "Bøhn SH et al.",
+     "ty": ""
+    },
+    {
+     "t": "Confronting Fatigue in Cancer Survivorship by Moving Beyond Interventions Targeting a Single Cause",
+     "u": "https://doi.org/10.1200/JCO-26-02269",
+     "p": "43063369",
+     "j": "J Clin Oncol",
+     "d": "2026-11-20",
+     "a": "Nelson AM et al.",
+     "ty": "Editorial"
+    },
+    {
+     "t": "Alectinib as Neoadjuvant Treatment in Potentially Resectable Stage III Anaplastic Lymphoma Kinase-Positive Non-Small Cell Lung Cancer: ALNEO Phase II Trial (GOIRC-01-2020-ML42316)",
+     "u": "https://doi.org/10.1200/JCO-26-00854",
+     "p": "43063368",
+     "j": "J Clin Oncol",
+     "d": "2026-11-20",
+     "a": "Leonetti A et al.",
+     "ty": ""
+    },
     {
      "t": "Partial-Breast Irradiation Versus Whole-Breast Irradiation for Low-Risk Invasive Breast Carcinoma: 5-Year Results of the Multicenter, Randomized, Phase III IRMA Trial",
      "u": "https://doi.org/10.1200/JCO-26-00969",
@@ -1868,54 +1914,9 @@
      "d": "2026-11-09",
      "a": "Sonneveld P et al.",
      "ty": ""
-    },
-    {
-     "t": "Image-Based Consensus Molecular Subtyping Refines Prognostication in Stage II/III Colorectal Cancer: A Retrospective Analysis of the SCOT Trial",
-     "u": "https://doi.org/10.1200/JCO-25-02761",
-     "p": "42993920",
-     "j": "J Clin Oncol",
-     "d": "2026-11-06",
-     "a": "Lafarge MW et al.",
-     "ty": ""
-    },
-    {
-     "t": "Methylphenidate for Fatigue in Patients With Stable Hematologic Malignancies",
-     "u": "https://doi.org/10.1200/JCO-26-02335",
-     "p": "42993919",
-     "j": "J Clin Oncol",
-     "d": "2026-11-06",
-     "a": "Chin-Yee N et al.",
-     "ty": "Editorial"
-    },
-    {
-     "t": "Perfluoroalkyl Substances and Estrogen Receptor‑Negative Breast Cancer: Looking Beyond Traditional Risk Factors",
-     "u": "https://doi.org/10.1200/JCO-26-02225",
-     "p": "42987248",
-     "j": "J Clin Oncol",
-     "d": "2026-11-05",
-     "a": "Setiawan VW",
-     "ty": "Editorial"
-    },
-    {
-     "t": "Per- and Polyfluoroalkyl Substance Exposure and Breast Cancer Incidence in the Sister Study",
-     "u": "https://doi.org/10.1200/JCO-26-00318",
-     "p": "42987247",
-     "j": "J Clin Oncol",
-     "d": "2026-11-05",
-     "a": "Chang CJ et al.",
-     "ty": ""
-    },
-    {
-     "t": "International Initiative on a Refined Staging System for Medullary Thyroid Cancer: A Multinational Multicenter Study",
-     "u": "https://doi.org/10.1200/JCO-26-01146",
-     "p": "42981561",
-     "j": "J Clin Oncol",
-     "d": "2026-11-04",
-     "a": "Shi X et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-20"
+   "updated": "2026-11-21"
   }
  ]
 }
