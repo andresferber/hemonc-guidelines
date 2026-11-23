@@ -1,5 +1,5 @@
 {
- "built": "2026-11-22 11:24 UTC",
+ "built": "2026-11-23 22:13 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -191,7 +191,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42734213"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "leuk",
@@ -374,6 +374,13 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Opportunities and challenges for cancer therapy with menin inhibitors",
+     "u": "https://www.nature.com/articles/s41571-026-01223-1",
+     "j": "Nat Rev Clin Oncol",
+     "d": "2026-11-23",
+     "a": ""
+    },
     {
      "t": "Cholesterol dysregulation contributes to hematopoietic failure in parn-mutant zebrafish with implications for dyskeratosis congenita",
      "u": "https://www.nature.com/articles/s41467-026-79105-4",
@@ -514,17 +521,9 @@
      "d": "2026-10-23",
      "a": "Sinanidis I et al.",
      "p": "42919894"
-    },
-    {
-     "t": "Concordance between bone marrow and blood measurable residual disease after first-line novel agent treatment for chronic lymphocytic leukemia: a systematic review and meta-analysis",
-     "u": "https://www.nature.com/articles/s41375-026-03178-9",
-     "j": "Leukemia",
-     "d": "2026-10-22",
-     "a": "Fiorica G et al.",
-     "p": "42918824"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "nhl",
@@ -535,6 +534,13 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "Consolidation radiotherapy in bulky diffuse large B cell lymphoma by PET-based response assessment",
+     "u": "https://www.nature.com/articles/s41408-026-01667-9",
+     "j": "Blood Cancer J",
+     "d": "2026-11-23",
+     "a": ""
+    },
     {
      "t": "PIM kinase inhibition induces epigenetically conditioned transcriptional changes, abnormal RNA splicing and DNA damage in diffuse large B-cell lymphoma cells",
      "u": "https://www.nature.com/articles/s41388-026-04044-9",
@@ -680,17 +686,9 @@
      "j": "Sci Rep",
      "d": "2026-10-08",
      "a": ""
-    },
-    {
-     "t": "A multi-center, single-arm, phase 2 trial of dasatinib in T follicular helper cell lymphomas",
-     "u": "https://www.nature.com/articles/s41467-026-78100-z",
-     "j": "Nat Commun",
-     "d": "2026-10-05",
-     "a": "Suma S et al.",
-     "p": "42967949"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "hl",
@@ -854,7 +852,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "mm",
@@ -1007,7 +1005,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "mpn",
@@ -1018,6 +1016,13 @@
     "https://www.nature.com/subjects/myeloproliferative-disease"
    ],
    "items": [
+    {
+     "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
+     "u": "https://www.nature.com/articles/s41375-026-03137-4",
+     "j": "Leukemia",
+     "d": "2026-11-23",
+     "a": ""
+    },
     {
      "t": "Stem cell source, CD34+ dose and outcomes in haploidentical hematopoietic cell transplantation for myelofibrosis: a study of the Chronic Malignancies Working Party of EBMT",
      "u": "https://www.nature.com/articles/s41409-026-03018-5",
@@ -1169,17 +1174,9 @@
      "d": "2026-07-27",
      "a": "Kim AS et al.",
      "p": "42509252"
-    },
-    {
-     "t": "Selinexor for myelofibrosis or a drug in search of a disease?",
-     "u": "https://www.nature.com/articles/s41408-026-01587-8",
-     "j": "Blood Cancer J",
-     "d": "2026-07-25",
-     "a": "Gangat N et al.",
-     "p": "42502117"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "mds",
@@ -1190,6 +1187,13 @@
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
    "items": [
+    {
+     "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
+     "u": "https://www.nature.com/articles/s41375-026-03137-4",
+     "j": "Leukemia",
+     "d": "2026-11-23",
+     "a": ""
+    },
     {
      "t": "Implications of TP53 mutations in patients with higher risk myelodysplastic syndromes (MDS) who received hypomethylating agent therapy: an analysis from the VALIDATE database of the International Consortium for MDS",
      "u": "https://www.nature.com/articles/s41408-026-01584-x",
@@ -1330,17 +1334,9 @@
      "d": "2026-07-22",
      "a": "Guarnera L et al.",
      "p": "42486998"
-    },
-    {
-     "t": "Successful allogeneic hematopoietic stem cell transplantation in children with myeloid malignancies secondary to GATA2 deficiency using decitabine-containing busulfan conditioning",
-     "u": "https://www.nature.com/articles/s41409-026-02978-y",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-07-18",
-     "a": "Ren Y et al.",
-     "p": "42471475"
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "ba",
@@ -1532,7 +1528,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "aacr",
@@ -1543,6 +1539,24 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "DiffDriver Detects Context-Associated Selection of Cancer Driver Genes",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1527",
+     "p": "43070797",
+     "j": "Cancer Res",
+     "d": "2026-11-23",
+     "a": "Zhou J et al.",
+     "ty": ""
+    },
+    {
+     "t": "Targeting C1GalT1 Facilitates MHC-I Dependent CD8+ T-cell-Mediated Cytotoxicity in Colorectal Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-1549",
+     "p": "43070790",
+     "j": "Cancer Res",
+     "d": "2026-11-23",
+     "a": "Li Y et al.",
+     "ty": ""
+    },
     {
      "t": "PHGDH Inhibition Confers a Targetable Glutamine Dependency in Pancreatic Cancer",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-1484",
@@ -1704,27 +1718,9 @@
      "d": "2026-10-29",
      "a": "Haerr ME et al.",
      "ty": ""
-    },
-    {
-     "t": "FUCA1-Mediated Metabolic Adaptation Facilitates Lactylation-Induced Vasculogenic Mimicry in Glioblastoma",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0035",
-     "p": "42954743",
-     "j": "Cancer Res",
-     "d": "2026-10-29",
-     "a": "Fu J et al.",
-     "ty": ""
-    },
-    {
-     "t": "Targeting Branched-Chain Amino Acid Transamination Sensitizes Clear Cell Renal Cell Carcinoma to Glutaminase Inhibition",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0563",
-     "p": "42945304",
-     "j": "Cancer Res",
-     "d": "2026-10-27",
-     "a": "Coffey NJ et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   },
   {
    "key": "jco",
@@ -1916,7 +1912,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-22"
+   "updated": "2026-11-23"
   }
  ]
 }
