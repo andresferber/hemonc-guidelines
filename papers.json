@@ -1,5 +1,5 @@
 {
- "built": "2026-11-23 22:13 UTC",
+ "built": "2026-11-24 20:53 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,24 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "The Revised Mutation-Adjusted Risk Score (MARS-R) for patients with advanced systemic mastocytosis on KIT inhibitors",
+     "u": "https://doi.org/10.1182/blood.2026035298",
+     "p": "43071607",
+     "j": "Blood",
+     "d": "2026-11-23",
+     "a": "Lübke J et al.",
+     "ty": ""
+    },
+    {
+     "t": "SclCre-ERT;Kit*D814V mice represent a novel transgenic model for systemic mastocytosis",
+     "u": "https://doi.org/10.1182/blood.2025031428",
+     "p": "43071601",
+     "j": "Blood",
+     "d": "2026-11-23",
+     "a": "Konantz M et al.",
+     "ty": ""
+    },
     {
      "t": "Beyond cyclosporine alone in moderate aplastic anemia",
      "u": "https://doi.org/10.1182/blood.2026035998",
@@ -171,27 +189,9 @@
      "d": "2026-11-13",
      "a": "Choi DC et al.",
      "ty": ""
-    },
-    {
-     "t": "Optimizing Reduced-Intensity Conditioning for Older Patients with AML and MDS: A Large-Scale Analysis from the CIBMTR",
-     "u": "https://doi.org/10.1182/blood.2026036096",
-     "p": "43023552",
-     "j": "Blood",
-     "d": "2026-11-13",
-     "a": "Kongtim P et al.",
-     "ty": ""
-    },
-    {
-     "t": "Aligning Clinical Trial Reporting: A systematic analysis and position statement by the International Consortium for MDS",
-     "u": "https://doi.org/10.1182/blood.2026035348",
-     "p": "43023550",
-     "j": "Blood",
-     "d": "2026-11-13",
-     "a": "Brunner AM et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42734213"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "leuk",
@@ -375,11 +375,19 @@
    ],
    "items": [
     {
+     "t": "Epigenetic activation of the ATF5–NCAM1 axis promotes leukemic cell survival and shapes azacitidine sensitivity in DNMT3A-mutant AML",
+     "u": "https://www.nature.com/articles/s41419-026-09430-5",
+     "j": "Cell Death Dis",
+     "d": "2026-11-24",
+     "a": ""
+    },
+    {
      "t": "Opportunities and challenges for cancer therapy with menin inhibitors",
      "u": "https://www.nature.com/articles/s41571-026-01223-1",
      "j": "Nat Rev Clin Oncol",
      "d": "2026-11-23",
-     "a": ""
+     "a": "Bourgeois W et al.",
+     "p": "43073364"
     },
     {
      "t": "Cholesterol dysregulation contributes to hematopoietic failure in parn-mutant zebrafish with implications for dyskeratosis congenita",
@@ -513,17 +521,9 @@
      "d": "2026-10-23",
      "a": "Williams EK et al.",
      "p": "42919908"
-    },
-    {
-     "t": "Serine auxotrophy is a targetable vulnerability driven by PSAT1 suppression in AML",
-     "u": "https://www.nature.com/articles/s41375-026-03176-x",
-     "j": "Leukemia",
-     "d": "2026-10-23",
-     "a": "Sinanidis I et al.",
-     "p": "42919894"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "nhl",
@@ -688,7 +688,7 @@
      "a": ""
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "hl",
@@ -852,7 +852,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "mm",
@@ -1005,7 +1005,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "mpn",
@@ -1017,11 +1017,19 @@
    ],
    "items": [
     {
+     "t": "Quality of life assessment in Myeloproliferative Neoplasms: A key aspect of therapy management with impact on survival?",
+     "u": "https://www.nature.com/articles/s41375-026-03200-0",
+     "j": "Leukemia",
+     "d": "2026-11-24",
+     "a": ""
+    },
+    {
      "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
      "u": "https://www.nature.com/articles/s41375-026-03137-4",
      "j": "Leukemia",
      "d": "2026-11-23",
-     "a": ""
+     "a": "Friedrich C et al.",
+     "p": "43073346"
     },
     {
      "t": "Stem cell source, CD34+ dose and outcomes in haploidentical hematopoietic cell transplantation for myelofibrosis: a study of the Chronic Malignancies Working Party of EBMT",
@@ -1166,17 +1174,9 @@
      "d": "2026-08-03",
      "a": "Mosnier C et al.",
      "p": "42547820"
-    },
-    {
-     "t": "Improved inter-lab precision after CML international scale adoption: a 15-year history of BCR::ABL1 proficiency testing",
-     "u": "https://www.nature.com/articles/s41375-026-03062-6",
-     "j": "Leukemia",
-     "d": "2026-07-27",
-     "a": "Kim AS et al.",
-     "p": "42509252"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "mds",
@@ -1192,7 +1192,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03137-4",
      "j": "Leukemia",
      "d": "2026-11-23",
-     "a": ""
+     "a": "Friedrich C et al.",
+     "p": "43073346"
     },
     {
      "t": "Implications of TP53 mutations in patients with higher risk myelodysplastic syndromes (MDS) who received hypomethylating agent therapy: an analysis from the VALIDATE database of the International Consortium for MDS",
@@ -1336,7 +1337,7 @@
      "p": "42486998"
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "ba",
@@ -1528,7 +1529,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "aacr",
@@ -1539,6 +1540,24 @@
     "https://aacrjournals.org/cancerres"
    ],
    "items": [
+    {
+     "t": "FYN and Other Src Family Kinases Antagonize Response to RAS Inhibition in Pancreatic Ductal Adenocarcinoma",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0691",
+     "p": "43076691",
+     "j": "Cancer Res",
+     "d": "2026-11-24",
+     "a": "Ting HC et al.",
+     "ty": ""
+    },
+    {
+     "t": "Temporal Phosphoproteomic Analysis Identifies Src Family Kinases as Key Mediators of Adaptive Resistance to KRAS Inhibition in Pancreatic Cancer",
+     "u": "https://doi.org/10.1158/0008-5472.CAN-26-0777",
+     "p": "43076663",
+     "j": "Cancer Res",
+     "d": "2026-11-24",
+     "a": "Lin Q et al.",
+     "ty": ""
+    },
     {
      "t": "DiffDriver Detects Context-Associated Selection of Cancer Driver Genes",
      "u": "https://doi.org/10.1158/0008-5472.CAN-26-1527",
@@ -1700,27 +1719,9 @@
      "d": "2026-11-03",
      "a": "Kilian KA",
      "ty": ""
-    },
-    {
-     "t": "Senescence-modulating nanoparticles SELECT the right senescent cells to treat fibrosis and cancer",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4564",
-     "p": "42961778",
-     "j": "Cancer Res",
-     "d": "2026-10-30",
-     "a": "Mori H et al.",
-     "ty": ""
-    },
-    {
-     "t": "Opening the window for immunotherapy in pancreatic cancer",
-     "u": "https://doi.org/10.1158/0008-5472.CAN-26-4570",
-     "p": "42954752",
-     "j": "Cancer Res",
-     "d": "2026-10-29",
-     "a": "Haerr ME et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   },
   {
    "key": "jco",
@@ -1731,6 +1732,15 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Multicenter Randomized Phase II Trial of Maintenance Systemic Therapy Versus Local Consolidative Therapy Plus Maintenance Systemic Therapy for Limited Metastatic Non-Small Cell Lung Cancer (NRG-LU002)",
+     "u": "https://doi.org/10.1200/JCO-25-02395",
+     "p": "43071915",
+     "j": "J Clin Oncol",
+     "d": "2026-11-23",
+     "a": "Iyengar P et al.",
+     "ty": ""
+    },
     {
      "t": "Timing of Alectinib in Resectable ALK-Positive Non-Small Cell Lung Cancer: Lessons From ALNEO",
      "u": "https://doi.org/10.1200/JCO-26-02424",
@@ -1901,18 +1911,9 @@
      "d": "2026-11-10",
      "a": "Chen YP et al.",
      "ty": ""
-    },
-    {
-     "t": "Modeling Long-Term Progression-Free Survival in Newly Diagnosed Multiple Myeloma Treated With Daratumumab, Bortezomib, Lenalidomide, and Dexamethasone",
-     "u": "https://doi.org/10.1200/JCO-26-00384",
-     "p": "43002730",
-     "j": "J Clin Oncol",
-     "d": "2026-11-09",
-     "a": "Sonneveld P et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-23"
+   "updated": "2026-11-24"
   }
  ]
 }
