@@ -1,5 +1,5 @@
 {
- "built": "2026-11-24 20:53 UTC",
+ "built": "2026-11-25 20:10 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,15 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Apraglutide plus ruxolitinib in steroid-refractory gastrointestinal acute graft-versus-host disease: the STARGAZE study",
+     "u": "https://doi.org/10.1182/blood.2026034825",
+     "p": "43077366",
+     "j": "Blood",
+     "d": "2026-11-24",
+     "a": "Zeiser R et al.",
+     "ty": ""
+    },
     {
      "t": "The Revised Mutation-Adjusted Risk Score (MARS-R) for patients with advanced systemic mastocytosis on KIT inhibitors",
      "u": "https://doi.org/10.1182/blood.2026035298",
@@ -180,18 +189,9 @@
      "d": "2026-11-16",
      "a": "Chi M et al.",
      "ty": ""
-    },
-    {
-     "t": "CAR-T Targeting of Mutant Calreticulin Selectively Eradicates Myeloproliferative Neoplasm-Sustaining Stem Cells",
-     "u": "https://doi.org/10.1182/blood.2026033948",
-     "p": "43023553",
-     "j": "Blood",
-     "d": "2026-11-13",
-     "a": "Choi DC et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "nejm",
@@ -363,7 +363,7 @@
      "p": "42734213"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "leuk",
@@ -374,6 +374,13 @@
     "https://www.nature.com/subjects/leukaemia"
    ],
    "items": [
+    {
+     "t": "Clinical and therapeutic determinants of outcomes in germline DDX41-mutated myeloid neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03191-y",
+     "j": "Leukemia",
+     "d": "2026-11-25",
+     "a": ""
+    },
     {
      "t": "Epigenetic activation of the ATF5–NCAM1 axis promotes leukemic cell survival and shapes azacitidine sensitivity in DNMT3A-mutant AML",
      "u": "https://www.nature.com/articles/s41419-026-09430-5",
@@ -513,17 +520,9 @@
      "j": "Commun Biol",
      "d": "2026-10-27",
      "a": ""
-    },
-    {
-     "t": "Gradient-driven microfluidic framework for the screening of ratiometric drug combinations towards precision oncology in paediatric leukaemia",
-     "u": "https://www.nature.com/articles/s41551-026-01818-0",
-     "j": "Nat Biomed Eng",
-     "d": "2026-10-23",
-     "a": "Williams EK et al.",
-     "p": "42919908"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "nhl",
@@ -534,6 +533,20 @@
     "https://www.nature.com/subjects/non-hodgkin-lymphoma"
    ],
    "items": [
+    {
+     "t": "High-dimensional T-cell phenotyping identifies a CD8+ CD57+ T-cell state associated with shorter time to progression in diffuse large B-cell lymphoma",
+     "u": "https://www.nature.com/articles/s41408-026-01665-x",
+     "j": "Blood Cancer J",
+     "d": "2026-11-25",
+     "a": ""
+    },
+    {
+     "t": "CD19-directed CAR T-cell therapy for relapsed/refractory follicular lymphoma: off-trial outcomes and subsequent therapy",
+     "u": "https://www.nature.com/articles/s41408-026-01664-y",
+     "j": "Blood Cancer J",
+     "d": "2026-11-25",
+     "a": ""
+    },
     {
      "t": "Consolidation radiotherapy in bulky diffuse large B cell lymphoma by PET-based response assessment",
      "u": "https://www.nature.com/articles/s41408-026-01667-9",
@@ -671,24 +684,9 @@
      "d": "2026-10-16",
      "a": "Tominaga R et al.",
      "p": "42888215"
-    },
-    {
-     "t": "Combating CD24 to overcome CD19 CAR-T resistance via induction of innate and adaptive immunity in B-cell malignancies",
-     "u": "https://www.nature.com/articles/s41375-026-03159-y",
-     "j": "Leukemia",
-     "d": "2026-10-12",
-     "a": "Yin Q et al.",
-     "p": "42864416"
-    },
-    {
-     "t": "Targeting the gene encoding human T-cell leukemia virus type 1 basic zip factor via CRISPR/Cas9 potentially affects ATL cell survival",
-     "u": "https://www.nature.com/articles/s41598-026-74231-x",
-     "j": "Sci Rep",
-     "d": "2026-10-08",
-     "a": ""
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "hl",
@@ -852,7 +850,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "mm",
@@ -1005,7 +1003,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "mpn",
@@ -1021,7 +1019,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03200-0",
      "j": "Leukemia",
      "d": "2026-11-24",
-     "a": ""
+     "a": "Isfort S et al.",
+     "p": "43079027"
     },
     {
      "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
@@ -1176,7 +1175,7 @@
      "p": "42547820"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "mds",
@@ -1187,6 +1186,13 @@
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
    "items": [
+    {
+     "t": "Clinical and therapeutic determinants of outcomes in germline DDX41-mutated myeloid neoplasms",
+     "u": "https://www.nature.com/articles/s41375-026-03191-y",
+     "j": "Leukemia",
+     "d": "2026-11-25",
+     "a": ""
+    },
     {
      "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
      "u": "https://www.nature.com/articles/s41375-026-03137-4",
@@ -1327,17 +1333,9 @@
      "d": "2026-07-27",
      "a": "Zhang Z et al.",
      "p": "42509427"
-    },
-    {
-     "t": "Molecular and clinical analyses of c-CBL mutations affecting tyrosine 371 in myelodysplastic and proliferative disorders",
-     "u": "https://www.nature.com/articles/s41375-026-03072-4",
-     "j": "Leukemia",
-     "d": "2026-07-22",
-     "a": "Guarnera L et al.",
-     "p": "42486998"
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "ba",
@@ -1348,6 +1346,60 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Health-Related Quality of Life in Pediatric Hematopoietic Cell Donors and Their Families: A DonorKids QL Study",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021527",
+     "p": "43077695",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Switzer GE et al.",
+     "ty": ""
+    },
+    {
+     "t": "Cardiovascular Risk in Hemophilia",
+     "u": "https://doi.org/10.1182/bloodadvances.2026023052",
+     "p": "43077694",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Nagao A",
+     "ty": ""
+    },
+    {
+     "t": "Impact of extranodal burden on the outcomes of bispecific antibody therapy in large B-cell lymphoma: A GELTAMO study",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021459",
+     "p": "43077693",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Bosch-Schips M et al.",
+     "ty": ""
+    },
+    {
+     "t": "Multimodal profiling identifies an HLH-spectrum inflammatory program in OHI-positive lymphoma patients",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021571",
+     "p": "43077692",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Zoref-Lorenz A et al.",
+     "ty": ""
+    },
+    {
+     "t": "Mismatched unrelated with PTCy versus matched unrelated donors with antithymocyte globulin in AML",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021022",
+     "p": "43077690",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Battipaglia G et al.",
+     "ty": ""
+    },
+    {
+     "t": "Selecting Optimal Conditioning Approaches Based on Measurable Residual Disease in Pediatric Leukemia",
+     "u": "https://doi.org/10.1182/bloodadvances.2025017122",
+     "p": "43077689",
+     "j": "Blood Adv",
+     "d": "2026-11-24",
+     "a": "Cho S et al.",
+     "ty": ""
+    },
     {
      "t": "Base Editing of Hematopoietic Stem Cells Corrects Gain-of-Function Mutations in APDS",
      "u": "https://doi.org/10.1182/bloodadvances.2026021020",
@@ -1473,63 +1525,9 @@
      "d": "2026-11-18",
      "a": "Hurley G et al.",
      "ty": ""
-    },
-    {
-     "t": "Combined inhibition of BCL2 activity and CD28 signaling to prevent graft-versus-host disease",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021048",
-     "p": "43046952",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Chen H et al.",
-     "ty": ""
-    },
-    {
-     "t": "Iron Deficiency in Children Across Ferritin Methods",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022684",
-     "p": "43046941",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Sepiashvili L et al.",
-     "ty": ""
-    },
-    {
-     "t": "Trafficking Dynamics of Steady State Versus Mobilized Hematopoietic Stem and Progenitor Cells in Non-Human Primates",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022287",
-     "p": "43044128",
-     "j": "Blood Adv",
-     "d": "2026-11-17",
-     "a": "Fan X et al.",
-     "ty": ""
-    },
-    {
-     "t": "Assessing Differences in Timeliness of Emergency Department Pain Treatment for Adult Sickle Cell Pain and Renal Colic",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021103",
-     "p": "43044127",
-     "j": "Blood Adv",
-     "d": "2026-11-17",
-     "a": "Gwarzo I et al.",
-     "ty": ""
-    },
-    {
-     "t": "Heterogeneity and GRADE in recurrent VTE prognosis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022963",
-     "p": "43044125",
-     "j": "Blood Adv",
-     "d": "2026-11-17",
-     "a": "Marti-Carvajal A",
-     "ty": ""
-    },
-    {
-     "t": "Treatment journey and outcomes of patients with RRMM after quadruple-class exposure: a critical unmet need",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021159",
-     "p": "43044123",
-     "j": "Blood Adv",
-     "d": "2026-11-17",
-     "a": "Hansen DK et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "aacr",
@@ -1721,7 +1719,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   },
   {
    "key": "jco",
@@ -1732,6 +1730,24 @@
     "https://ascopubs.org/journal/jco"
    ],
    "items": [
+    {
+     "t": "Out-of-Office Illusion",
+     "u": "https://doi.org/10.1200/JCO-26-01835",
+     "p": "43077660",
+     "j": "J Clin Oncol",
+     "d": "2026-11-24",
+     "a": "Nabhan C",
+     "ty": ""
+    },
+    {
+     "t": "Randomized Phase II Clinical Trials in Rare Cancer Populations",
+     "u": "https://doi.org/10.1200/JCO-26-01504",
+     "p": "43077656",
+     "j": "J Clin Oncol",
+     "d": "2026-11-24",
+     "a": "Ballman KV",
+     "ty": ""
+    },
     {
      "t": "Multicenter Randomized Phase II Trial of Maintenance Systemic Therapy Versus Local Consolidative Therapy Plus Maintenance Systemic Therapy for Limited Metastatic Non-Small Cell Lung Cancer (NRG-LU002)",
      "u": "https://doi.org/10.1200/JCO-25-02395",
@@ -1893,27 +1909,9 @@
      "d": "2026-11-10",
      "a": "Driscoll A",
      "ty": ""
-    },
-    {
-     "t": "Treatment of Recurrent and/or Metastatic Nasopharyngeal Carcinoma: CSCO and ASCO Joint Guideline",
-     "u": "https://doi.org/10.1200/JCO-26-02650",
-     "p": "43008245",
-     "j": "J Clin Oncol",
-     "d": "2026-11-10",
-     "a": "Jiang W et al.",
-     "ty": ""
-    },
-    {
-     "t": "Treatment of Stage IB to III Nasopharyngeal Carcinoma: CSCO-ASCO Guideline Update",
-     "u": "https://doi.org/10.1200/JCO-26-02648",
-     "p": "43008242",
-     "j": "J Clin Oncol",
-     "d": "2026-11-10",
-     "a": "Chen YP et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-24"
+   "updated": "2026-11-25"
   }
  ]
 }
