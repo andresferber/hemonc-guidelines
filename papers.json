@@ -1,5 +1,5 @@
 {
- "built": "2026-11-25 20:10 UTC",
+ "built": "2026-11-26 19:49 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,15 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Dasatinib is a novel therapy for SRC-related thrombocytopenia",
+     "u": "https://doi.org/10.1182/blood.2026035087",
+     "p": "43084368",
+     "j": "Blood",
+     "d": "2026-11-25",
+     "a": "Vyas H et al.",
+     "ty": ""
+    },
     {
      "t": "Apraglutide plus ruxolitinib in steroid-refractory gastrointestinal acute graft-versus-host disease: the STARGAZE study",
      "u": "https://doi.org/10.1182/blood.2026034825",
@@ -180,18 +189,9 @@
      "d": "2026-11-16",
      "a": "Baljevic M et al.",
      "ty": ""
-    },
-    {
-     "t": "Regenerative Stress Contributes to Higher Clonal Hematopoiesis with Myelodysplastic Features in Sickle Cell Disease Mice",
-     "u": "https://doi.org/10.1182/blood.2026034793",
-     "p": "43038169",
-     "j": "Blood",
-     "d": "2026-11-16",
-     "a": "Chi M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "nejm",
@@ -202,6 +202,44 @@
     "https://www.nejm.org/medical-articles/hematology-oncology"
    ],
    "items": [
+    {
+     "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611280",
+     "j": "N Engl J Med",
+     "d": "2026-11-26",
+     "a": "Fei Zhou et al.",
+     "p": "42929694"
+    },
+    {
+     "t": "Case 34-2026: A 78-Year-Old Man with Periorbital Edema and Conjunctival Injection",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMcpc2603177",
+     "j": "N Engl J Med",
+     "d": "2026-11-26",
+     "a": "K. Matthew McKay et al.",
+     "p": "43084790"
+    },
+    {
+     "t": "Blockade of CTLA-4 and PD-1 after LAG-3 and PD-1 Inhibition in a Patient with Melanoma and a Liver Transplant",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMc2610406",
+     "j": "N Engl J Med",
+     "d": "2026-11-26",
+     "a": "Jiaxing J. Qin et al.",
+     "p": "43084794"
+    },
+    {
+     "t": "Giredestrant in the Treatment of ER-Positive, HER2-Negative Early Breast Cancer",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2608669",
+     "j": "N Engl J Med",
+     "d": "2026-11-25",
+     "a": "Charles E. Geyer Jr. et al."
+    },
+    {
+     "t": "Selective Estrogen Receptor Degraders for Early-Stage ER-Positive Breast Cancer — Dawn of a New Era?",
+     "u": "https://www.nejm.org/doi/full/10.1056/NEJMe2613377",
+     "j": "N Engl J Med",
+     "d": "2026-11-25",
+     "a": "Matthew P. Goetz"
+    },
     {
      "t": "Anbenitamab plus HB1801 for HER2-Positive Advanced Breast Cancer",
      "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610345",
@@ -321,49 +359,9 @@
      "d": "2026-10-25",
      "a": "Shun Lu et al.",
      "p": "42929693"
-    },
-    {
-     "t": "Divarasib as Compared with Sotorasib or Adagrasib in KRAS G12C–Mutated NSCLC",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2605703",
-     "j": "N Engl J Med",
-     "d": "2026-10-25",
-     "a": "Ferdinandos Skoulidis et al.",
-     "p": "42929675"
-    },
-    {
-     "t": "Sacituzumab Tirumotecan plus Pembrolizumab in PD-L1–Negative Advanced NSCLC",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2611280",
-     "j": "N Engl J Med",
-     "d": "2026-10-25",
-     "a": "Fei Zhou et al.",
-     "p": "42929694"
-    },
-    {
-     "t": "Durvalumab, Tremelimumab, and Enfortumab Vedotin in Muscle-Invasive Bladder Cancer",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2608323",
-     "j": "N Engl J Med",
-     "d": "2026-10-24",
-     "a": "Thomas Powles et al.",
-     "p": "42929692"
-    },
-    {
-     "t": "Tarlatamab–Durvalumab Maintenance for Extensive-Stage Small-Cell Lung Cancer",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2609482",
-     "j": "N Engl J Med",
-     "d": "2026-10-24",
-     "a": "Maurice Pérol et al.",
-     "p": "42929702"
-    },
-    {
-     "t": "Tambotatug Pelitecan in Small-Cell Lung Cancer after Platinum-Based Therapy",
-     "u": "https://www.nejm.org/doi/full/10.1056/NEJMoa2610229",
-     "j": "N Engl J Med",
-     "d": "2026-10-22",
-     "a": "Yuanyuan Zhao et al.",
-     "p": "42734213"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "leuk",
@@ -375,11 +373,19 @@
    ],
    "items": [
     {
+     "t": "Zanubrutinib Versus Acalabrutinib in Chronic Lymphocytic Leukemia: A Multicenter Real-World Comparative Analysis of Treatment Persistence and Clinical Outcomes",
+     "u": "https://www.nature.com/articles/s41408-026-01650-4",
+     "j": "Blood Cancer J",
+     "d": "2026-11-26",
+     "a": ""
+    },
+    {
      "t": "Clinical and therapeutic determinants of outcomes in germline DDX41-mutated myeloid neoplasms",
      "u": "https://www.nature.com/articles/s41375-026-03191-y",
      "j": "Leukemia",
      "d": "2026-11-25",
-     "a": ""
+     "a": "Badar T et al.",
+     "p": "43086315"
     },
     {
      "t": "Epigenetic activation of the ATF5–NCAM1 axis promotes leukemic cell survival and shapes azacitidine sensitivity in DNMT3A-mutant AML",
@@ -492,13 +498,6 @@
      "p": "42957753"
     },
     {
-     "t": "Oncogenic modulation of MAPK signaling in leukemia via SPNS2-driven sphingolipid metabolism and membrane nanodomains remodeling",
-     "u": "https://www.nature.com/articles/s41467-026-78821-1",
-     "j": "Nat Commun",
-     "d": "2026-10-28",
-     "a": ""
-    },
-    {
      "t": "Rapid proteasomal degradation of mutant feline McDonough sarcoma-like tyrosine kinase-3 overcomes inhibitor resistance mechanisms of acute myeloid leukemia cells",
      "u": "https://www.nature.com/articles/s41375-026-03168-x",
      "j": "Leukemia",
@@ -507,22 +506,23 @@
      "p": "42957752"
     },
     {
+     "t": "Oncogenic modulation of MAPK signaling in leukemia via SPNS2-driven sphingolipid metabolism and membrane nanodomains remodeling",
+     "u": "https://www.nature.com/articles/s41467-026-78821-1",
+     "j": "Nat Commun",
+     "d": "2026-10-28",
+     "a": "Sodaro G et al.",
+     "p": "43086243"
+    },
+    {
      "t": "Outcomes with fractionated gemtuzumab ozogamicin in molecularly defined favorable-risk acute myeloid leukemia",
      "u": "https://www.nature.com/articles/s41408-026-01655-z",
      "j": "Blood Cancer J",
      "d": "2026-10-27",
      "a": "Chornenki N et al.",
      "p": "42946711"
-    },
-    {
-     "t": "Albendazole induces ferroptosis through the USP7-GPX4 axis in B-cell acute lymphoblastic leukemia",
-     "u": "https://www.nature.com/articles/s42003-026-11229-1",
-     "j": "Commun Biol",
-     "d": "2026-10-27",
-     "a": ""
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "nhl",
@@ -545,7 +545,8 @@
      "u": "https://www.nature.com/articles/s41408-026-01664-y",
      "j": "Blood Cancer J",
      "d": "2026-11-25",
-     "a": ""
+     "a": "Rivas-Delgado A et al.",
+     "p": "43086237"
     },
     {
      "t": "Consolidation radiotherapy in bulky diffuse large B cell lymphoma by PET-based response assessment",
@@ -686,7 +687,7 @@
      "p": "42888215"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "hl",
@@ -850,7 +851,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "mm",
@@ -1003,7 +1004,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "mpn",
@@ -1175,7 +1176,7 @@
      "p": "42547820"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "mds",
@@ -1191,7 +1192,8 @@
      "u": "https://www.nature.com/articles/s41375-026-03191-y",
      "j": "Leukemia",
      "d": "2026-11-25",
-     "a": ""
+     "a": "Badar T et al.",
+     "p": "43086315"
     },
     {
      "t": "Atypical proliferative evolution in myelodysplastic neoplasms: a molecularly characterized series of 16 cases",
@@ -1335,7 +1337,7 @@
      "p": "42509427"
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "ba",
@@ -1346,6 +1348,105 @@
     "https://ashpublications.org/bloodadvances"
    ],
    "items": [
+    {
+     "t": "Elranatamab following B-cell maturation antigen-directed therapies in relapsed/refractory multiple myeloma",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020298",
+     "p": "43084918",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Manier S et al.",
+     "ty": ""
+    },
+    {
+     "t": "Building a Career in Hemostasis and Thrombosis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022468",
+     "p": "43084849",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Lim MY et al.",
+     "ty": ""
+    },
+    {
+     "t": "Tissue-Resident Lymphocyte Frequency Predicts Poor Steroid Response in Acute Gastrointestinal Graft-versus-Host Disease",
+     "u": "https://doi.org/10.1182/bloodadvances.2025018675",
+     "p": "43084845",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Gaksch L et al.",
+     "ty": ""
+    },
+    {
+     "t": "Engineered iPSC derived B- and plasma cells provide insights into B cell development and a novel therapeutic platform",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021008",
+     "p": "43084844",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Fink JM et al.",
+     "ty": ""
+    },
+    {
+     "t": "Activation of platelets by thrombopoietin triggers fatal thrombosis in mouse models of myeloproliferative neoplasms",
+     "u": "https://doi.org/10.1182/bloodadvances.2025018314",
+     "p": "43084842",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Guy A et al.",
+     "ty": ""
+    },
+    {
+     "t": "B12 promotes an inflammatory microenvironment, gut dysbiosis, and potentiates myeloid-biased clonal hematopoiesis",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020856",
+     "p": "43084841",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Lyon PD et al.",
+     "ty": ""
+    },
+    {
+     "t": "Durability of giroctocogene fitelparvovec gene therapy in severe hemophilia A: five-year follow-up of Alta study",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020506",
+     "p": "43084840",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Konkle BA et al.",
+     "ty": ""
+    },
+    {
+     "t": "Incomplete Myeloid Correction Underlies IL-1-Sensitive Late Inflammation After Gene Therapy for Wiskott-Aldrich Syndrome",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022158",
+     "p": "43084839",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Diana JS et al.",
+     "ty": ""
+    },
+    {
+     "t": "A great LEAP forward for ENKTL?",
+     "u": "https://doi.org/10.1182/bloodadvances.2026020226",
+     "p": "43084307",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Swain F et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "An unfixed risk: immune dynamics influence infection in MDS",
+     "u": "https://doi.org/10.1182/bloodadvances.2026021993",
+     "p": "43084306",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "Shallis RM et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "John S, Curran KJ, Hall EM, et al. Real-world data for tisagenlecleucel in patients with R/R B-ALL: subgroup analyses from the CIBMTR registry. Blood Adv. 2025;9(20):5249-5262",
+     "u": "https://doi.org/10.1182/bloodadvances.2026022609",
+     "p": "43084305",
+     "j": "Blood Adv",
+     "d": "2026-11-25",
+     "a": "",
+     "ty": ""
+    },
     {
      "t": "Health-Related Quality of Life in Pediatric Hematopoietic Cell Donors and Their Families: A DonorKids QL Study",
      "u": "https://doi.org/10.1182/bloodadvances.2026021527",
@@ -1401,60 +1502,6 @@
      "ty": ""
     },
     {
-     "t": "Base Editing of Hematopoietic Stem Cells Corrects Gain-of-Function Mutations in APDS",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021020",
-     "p": "43063921",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Orf K et al.",
-     "ty": ""
-    },
-    {
-     "t": "FLT3 Mutations in Myelodysplastic Syndromes and Chronic Myelomonocytic Leukemia: A Multi-Center Analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020859",
-     "p": "43063920",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Rodríguez-Sevilla JJ et al.",
-     "ty": ""
-    },
-    {
-     "t": "STI-8591: A Novel FLT3 Inhibitor Targeting Resistant FLT3 Mutations and central nervous system Leukemia",
-     "u": "https://doi.org/10.1182/bloodadvances.2026020796",
-     "p": "43063919",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Zhang Y et al.",
-     "ty": ""
-    },
-    {
-     "t": "Systematic Review Supporting the American Society of Hematology Practice Guidelines on the Management of Myelofibrosis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021619",
-     "p": "43063918",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Hasan B et al.",
-     "ty": ""
-    },
-    {
-     "t": "Increasing Donor Age Remains Associated with Adverse Transplant Outcomes in the Post-Transplant Cyclophosphamide Era",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021494",
-     "p": "43063917",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Xie Y et al.",
-     "ty": ""
-    },
-    {
-     "t": "Navitoclax and Venetoclax with Chemotherapy for Relapsed/Refractory ALL in Children and Young Adults",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021957",
-     "p": "43063518",
-     "j": "Blood Adv",
-     "d": "2026-11-20",
-     "a": "Del Bufalo F et al.",
-     "ty": ""
-    },
-    {
      "t": "Beyond thrombophilia status: clinical context matters",
      "u": "https://doi.org/10.1182/bloodadvances.2026022867",
      "p": "43055284",
@@ -1480,54 +1527,9 @@
      "d": "2026-11-19",
      "a": "Stadanlick J et al.",
      "ty": ""
-    },
-    {
-     "t": "Nodal peripheral T-cell lymphoma: a prognostic index developed by the T-cell project",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021721",
-     "p": "43050693",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Luminari S et al.",
-     "ty": ""
-    },
-    {
-     "t": "Impact of Age on Real-World Outcomes of Bispecific Antibodies in Patients with Relapsed Refractory DLBCL: CUBIC Consortium Analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021461",
-     "p": "43050692",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Kambhampati Thiruvengadam S et al.",
-     "ty": ""
-    },
-    {
-     "t": "Targeting smoldering myeloma and monoclonal gammopathy of undetermined significance using multi-antigen specific T cells",
-     "u": "https://doi.org/10.1182/bloodadvances.2026022521",
-     "p": "43050688",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Vasileiou S et al.",
-     "ty": ""
-    },
-    {
-     "t": "Real World Comparison of Asciminib Versus Ponatinib in Chronic Myeloid Leukemia with Propensity Score-Matched Analysis",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021475",
-     "p": "43050686",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Perusini MA et al.",
-     "ty": ""
-    },
-    {
-     "t": "Low Uptake of Guideline-Recommended MRI Screening for Silent Cerebral Infarcts over the Lifespan in Sickle Cell Anemia",
-     "u": "https://doi.org/10.1182/bloodadvances.2026021489",
-     "p": "43046963",
-     "j": "Blood Adv",
-     "d": "2026-11-18",
-     "a": "Hurley G et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "aacr",
@@ -1719,7 +1721,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   },
   {
    "key": "jco",
@@ -1911,7 +1913,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-25"
+   "updated": "2026-11-26"
   }
  ]
 }
