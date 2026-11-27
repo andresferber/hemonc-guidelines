@@ -1,5 +1,5 @@
 {
- "built": "2026-11-26 19:49 UTC",
+ "built": "2026-11-27 19:39 UTC",
  "feeds": [
   {
    "key": "blood",
@@ -10,6 +10,87 @@
     "https://ashpublications.org/blood/first-edition"
    ],
    "items": [
+    {
+     "t": "Is it time to redefine talquetamab beyond the bridge?",
+     "u": "https://doi.org/10.1182/blood.2026035511",
+     "p": "43097414",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Biran N",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "You GATA know: defining phenotypes in GATA2 deficiency",
+     "u": "https://doi.org/10.1182/blood.2026035794",
+     "p": "43097413",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Stahl M",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "CXXC1 breaks the IRF4 self-regulatory loop in myeloma",
+     "u": "https://doi.org/10.1182/blood.2026036189",
+     "p": "43097412",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Neri P",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Third time's a charm: saga of αVβ3 antibodies in FNAIT",
+     "u": "https://doi.org/10.1182/blood.2026035634",
+     "p": "43097411",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Curtis BR",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Interferon gamma: the dose makes the poison in GVHD",
+     "u": "https://doi.org/10.1182/blood.2026035751",
+     "p": "43097410",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Ogoke O et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Keep calm and carry on, resilient HSCs!",
+     "u": "https://doi.org/10.1182/blood.2026036168",
+     "p": "43097409",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Salik B et al.",
+     "ty": "Editorial, Comment"
+    },
+    {
+     "t": "Khoder A, Sarvaria A, Alsuliman A, et al. Regulatory B cells are enriched within the IgM memory and transitional subsets in healthy donors but are deficient in chronic GVHD. Blood. 2014;124(13):2034-2045",
+     "u": "https://doi.org/10.1182/blood.2026036801",
+     "p": "43097408",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "",
+     "ty": ""
+    },
+    {
+     "t": "Megaloblastic anemia mimicking acute myeloid leukemia by flow cytometry",
+     "u": "https://doi.org/10.1182/blood.2026035936",
+     "p": "43097407",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "Rieu JB et al.",
+     "ty": ""
+    },
+    {
+     "t": "Ahmed S, Martín García-Sancho A, Reguera Ortega JL, et al. Durable efficacy and manageable long-term safety of lisocabtagene maraleucel for 3L+ FL: 3-year update from TRANSCEND FL. Blood. 2026;148(14):1789-1799",
+     "u": "https://doi.org/10.1182/blood.2026036948",
+     "p": "43097406",
+     "j": "Blood",
+     "d": "2026-11-26",
+     "a": "",
+     "ty": ""
+    },
     {
      "t": "Dasatinib is a novel therapy for SRC-related thrombocytopenia",
      "u": "https://doi.org/10.1182/blood.2026035087",
@@ -108,90 +189,9 @@
      "d": "2026-11-19",
      "a": "Schmaier AH",
      "ty": "Editorial, Comment"
-    },
-    {
-     "t": "Eltrombopag for moderate aplastic anemia",
-     "u": "https://doi.org/10.1182/blood.2026036658",
-     "p": "43056134",
-     "j": "Blood",
-     "d": "2026-11-19",
-     "a": "",
-     "ty": ""
-    },
-    {
-     "t": "Not everything that looks like a gametocyte is malaria",
-     "u": "https://doi.org/10.1182/blood.2026035562",
-     "p": "43056133",
-     "j": "Blood",
-     "d": "2026-11-19",
-     "a": "Marek A et al.",
-     "ty": ""
-    },
-    {
-     "t": "When it comes to therapeutics, new is good, but what we really need are breakthrough drugs and products",
-     "u": "https://doi.org/10.1182/blood.2026035564",
-     "p": "43056132",
-     "j": "Blood",
-     "d": "2026-11-19",
-     "a": "Roberts AW",
-     "ty": ""
-    },
-    {
-     "t": "Endothelial IDO1 Drives BBB Disruption in CAR-T-Associated Neurotoxicity Through KYNU-AA-Wnt/β-catenin Pathway",
-     "u": "https://doi.org/10.1182/blood.2026035669",
-     "p": "43050395",
-     "j": "Blood",
-     "d": "2026-11-18",
-     "a": "Zhang W et al.",
-     "ty": ""
-    },
-    {
-     "t": "Cytokines to modulate CAR T cells",
-     "u": "https://doi.org/10.1182/blood.2026035098",
-     "p": "43043871",
-     "j": "Blood",
-     "d": "2026-11-17",
-     "a": "Savoldo B et al.",
-     "ty": ""
-    },
-    {
-     "t": "Microbiota-derived short-chain fatty acids control cGVHD development by regulating antibody production",
-     "u": "https://doi.org/10.1182/blood.2026034453",
-     "p": "43038184",
-     "j": "Blood",
-     "d": "2026-11-16",
-     "a": "Wolfe AE et al.",
-     "ty": ""
-    },
-    {
-     "t": "Carfilzomib-based strategies in transplant-eligible multiple myeloma: long-term follow-up of the phase 2 FORTE trial",
-     "u": "https://doi.org/10.1182/blood.2026035635",
-     "p": "43038178",
-     "j": "Blood",
-     "d": "2026-11-16",
-     "a": "Bertuglia G et al.",
-     "ty": ""
-    },
-    {
-     "t": "CENTRAL NERVOUS SYSTEM GRAFT VERSUS HOST DISEASE PATHOPHYSIOLOGY: MECHANISTIC PATHWAYS AND THERAPEUTIC TARGETS",
-     "u": "https://doi.org/10.1182/blood.2026035230",
-     "p": "43038176",
-     "j": "Blood",
-     "d": "2026-11-16",
-     "a": "Rayasam A et al.",
-     "ty": ""
-    },
-    {
-     "t": "Etentamig in Relapsed/Refractory Multiple Myeloma: Pooled Phase 1 Data of an Investigational BCMA Bispecific Antibody",
-     "u": "https://doi.org/10.1182/blood.2026034590",
-     "p": "43038173",
-     "j": "Blood",
-     "d": "2026-11-16",
-     "a": "Baljevic M et al.",
-     "ty": ""
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "nejm",
@@ -361,7 +361,7 @@
      "p": "42929693"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "leuk",
@@ -373,11 +373,40 @@
    ],
    "items": [
     {
+     "t": "Female-specific characteristics of UBA1 variants among VEXAS and myeloid malignancy",
+     "u": "https://www.nature.com/articles/s41375-026-03188-7",
+     "j": "Leukemia",
+     "d": "2026-11-27",
+     "a": ""
+    },
+    {
+     "t": "In-depth immune and metabolic profiling of chronic lymphocytic leukemia patients to uncover treatment-specific changes to the T-cell compartment",
+     "u": "https://www.nature.com/articles/s41375-026-03196-7",
+     "j": "Leukemia",
+     "d": "2026-11-27",
+     "a": ""
+    },
+    {
+     "t": "Impact of TPMT noncoding tandem repeat sequence on thiopurine metabolism and toxicity in children with acute lymphoblastic leukemia",
+     "u": "https://www.nature.com/articles/s41375-026-03199-4",
+     "j": "Leukemia",
+     "d": "2026-11-27",
+     "a": ""
+    },
+    {
+     "t": "Venetoclax promotes expansion of effector-like exhausted CD8⁺ T cells and enhances anti-PD-1 efficacy in venetoclax-resistant AML",
+     "u": "https://www.nature.com/articles/s41388-026-04060-9",
+     "j": "Oncogene",
+     "d": "2026-11-27",
+     "a": ""
+    },
+    {
      "t": "Zanubrutinib Versus Acalabrutinib in Chronic Lymphocytic Leukemia: A Multicenter Real-World Comparative Analysis of Treatment Persistence and Clinical Outcomes",
      "u": "https://www.nature.com/articles/s41408-026-01650-4",
      "j": "Blood Cancer J",
      "d": "2026-11-26",
-     "a": ""
+     "a": "Martino EA et al.",
+     "p": "43099012"
     },
     {
      "t": "Clinical and therapeutic determinants of outcomes in germline DDX41-mutated myeloid neoplasms",
@@ -488,41 +517,9 @@
      "d": "2026-10-30",
      "a": "Hupe HC et al.",
      "p": "42963415"
-    },
-    {
-     "t": "Measurable residual disease is not a universally reliable surrogate for progression-free survival in clinical trials of new chronic lymphocytic leukemia therapies",
-     "u": "https://www.nature.com/articles/s41375-026-03185-w",
-     "j": "Leukemia",
-     "d": "2026-10-28",
-     "a": "Wang Y et al.",
-     "p": "42957753"
-    },
-    {
-     "t": "Rapid proteasomal degradation of mutant feline McDonough sarcoma-like tyrosine kinase-3 overcomes inhibitor resistance mechanisms of acute myeloid leukemia cells",
-     "u": "https://www.nature.com/articles/s41375-026-03168-x",
-     "j": "Leukemia",
-     "d": "2026-10-28",
-     "a": "Halilovic M et al.",
-     "p": "42957752"
-    },
-    {
-     "t": "Oncogenic modulation of MAPK signaling in leukemia via SPNS2-driven sphingolipid metabolism and membrane nanodomains remodeling",
-     "u": "https://www.nature.com/articles/s41467-026-78821-1",
-     "j": "Nat Commun",
-     "d": "2026-10-28",
-     "a": "Sodaro G et al.",
-     "p": "43086243"
-    },
-    {
-     "t": "Outcomes with fractionated gemtuzumab ozogamicin in molecularly defined favorable-risk acute myeloid leukemia",
-     "u": "https://www.nature.com/articles/s41408-026-01655-z",
-     "j": "Blood Cancer J",
-     "d": "2026-10-27",
-     "a": "Chornenki N et al.",
-     "p": "42946711"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "nhl",
@@ -687,7 +684,7 @@
      "p": "42888215"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "hl",
@@ -851,7 +848,7 @@
      "p": "40295827"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "mm",
@@ -1004,7 +1001,7 @@
      "p": "42838937"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "mpn",
@@ -1176,7 +1173,7 @@
      "p": "42547820"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "mds",
@@ -1187,6 +1184,20 @@
     "https://www.nature.com/subjects/myelodysplastic-syndrome"
    ],
    "items": [
+    {
+     "t": "The 3‑month window: Early transplantation is associated with improved survival in IPSS‑M higher‑risk MDS‑IB",
+     "u": "https://www.nature.com/articles/s41409-026-03084-9",
+     "j": "Bone Marrow Transplant",
+     "d": "2026-11-27",
+     "a": ""
+    },
+    {
+     "t": "Female-specific characteristics of UBA1 variants among VEXAS and myeloid malignancy",
+     "u": "https://www.nature.com/articles/s41375-026-03188-7",
+     "j": "Leukemia",
+     "d": "2026-11-27",
+     "a": ""
+    },
     {
      "t": "Clinical and therapeutic determinants of outcomes in germline DDX41-mutated myeloid neoplasms",
      "u": "https://www.nature.com/articles/s41375-026-03191-y",
@@ -1319,25 +1330,9 @@
      "d": "2026-08-10",
      "a": "Yang C et al.",
      "p": "42575953"
-    },
-    {
-     "t": "SLF2 and SMC5 dysfunction drives HSC aging and predisposes to MDS, defining a new inherited bone marrow failure syndrome",
-     "u": "https://www.nature.com/articles/s41375-026-03061-7",
-     "j": "Leukemia",
-     "d": "2026-08-07",
-     "a": "Shibata S et al.",
-     "p": "42562919"
-    },
-    {
-     "t": "Impacts of IPSS-M and transplant conditioning intensity in allogeneic stem cell transplant for myelodysplastic neoplasms",
-     "u": "https://www.nature.com/articles/s41409-026-02939-5",
-     "j": "Bone Marrow Transplant",
-     "d": "2026-07-27",
-     "a": "Zhang Z et al.",
-     "p": "42509427"
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "ba",
@@ -1529,7 +1524,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "aacr",
@@ -1721,7 +1716,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   },
   {
    "key": "jco",
@@ -1913,7 +1908,7 @@
      "ty": ""
     }
    ],
-   "updated": "2026-11-26"
+   "updated": "2026-11-27"
   }
  ]
 }
